@@ -25,6 +25,8 @@ You can clone this repo and run it on your local machine.
     2. Set Up the MySQL Database (MySQL Database is needed)        
         a. Create a new database in MySQL (for example, portfolio_db).
         b. Import the database schema using migration and seed files:
+            npx knex migrate:latest --env development
+            npx knex seed:run --env development
 
     3. Configure Environment Variables
         a. Create a .env file in the root of the project and add your MySQL credentials. 
