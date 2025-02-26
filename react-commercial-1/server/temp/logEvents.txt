@@ -1,2 +1,1 @@
-02-26-2025	20:15:38	03b5d268-fd6e-4902-a3a8-d3c06bb432b7	Logged Out Successful	undefined
-02-26-2025	20:15:51	8d9143e3-f9fd-468f-aa11-eba5c3bf5dc8	Logged In Successful	User: GeorgeTza email: gtzahristas@hotmail.com
+02-26-2025	20:19:21	f5ca9a70-a0f3-4221-89c4-1d124dd07add	Logged In Successful	User: GeorgeTza email: gtzahristas@hotmail.com
