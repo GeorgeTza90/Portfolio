@@ -14,10 +14,13 @@ const logEvents = async (message, logName) => {
     const logItem = `${dateTime}\t${uuid()}\t${message}\t${logName}\n`;
     console.log(logItem);
     try {
-        if(!fs.existsSync( LogPath )) {   
+        if(!fs.existsSync( LogDir )) {   
             await fsPromises.mkdir(LogDir);
+        }
+        if(!fs.existsSync( LogPath )) {   
             await fsPromises.writeFile(LogPath, '');
         }
+
         await fsPromises.appendFile( LogPath , logItem);
     } catch(err) {
         console.log(err);
