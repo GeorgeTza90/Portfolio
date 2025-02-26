@@ -1,0 +1,35 @@
+.carousel {
+    position: relative;
+    width: auto;
+    height: 250px;
+    margin: auto;
+    overflow: hidden;
+}
+
+.image {
+    height: auto;
+    width: 250px;
+    box-shadow: 5px 5px 10px #0000006c;
+    border-radius: 10dvb;
+}
+
+.leftArrow,
+.rightArrow {
+    position: absolute;
+    top: 50%;
+    transform: translateY(-50%);
+    background: rgba(0, 0, 0, 0.5);
+    color: white;
+    border: none;
+    font-size: 2rem;
+    cursor: pointer;
+    padding: 10px;
+}
+
+.leftArrow {
+    left: 10rem;
+}
+
+.rightArrow {
+    right: 10rem;
+}

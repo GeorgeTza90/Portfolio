@@ -1,0 +1,53 @@
+.card {
+    background-color: rgba(240, 248, 255, 0.38);
+    border-radius: 10%;
+    padding: 20px;
+    color: #260b03;
+    margin-bottom: 50px;
+}
+
+.all {
+    background-color: #dff6f6bd;
+    border-radius: 10%;
+    padding: 25px;
+}
+
+.label {
+    font-size: x-large;
+    text-shadow: 3px 3px 5px #0000002b;
+}
+
+.image {
+    -webkit-mask-image: linear-gradient(to right, transparent 0%, black 20%, transparent 100%);
+    mask-image: linear-gradient(to right, transparent 0%, black 20%, transparent 100%);
+    padding: 10px;
+    height: 100px;
+}
+
+.text {
+    font-size: medium;
+    text-shadow: 3px 3px 5px #0000002b;
+    text-align: left;
+    margin-left: 50px;
+    margin-right: 50px;
+    display: grid;
+    align-items: center;
+    justify-items: center;
+}
+
+.ul {
+    font-size: medium;
+}
+
+.interactionContainer {
+    display: flex;
+    justify-content: right;
+}
+
+.interaction {
+    display: grid;
+    margin-top: 5px;
+    grid-template-columns: repeat(3, 1fr);
+    justify-items: right;
+    font-size: 90%;
+}

@@ -1,0 +1,16 @@
+# Exclude projects
+react-commercial-2/
+react-commercial-3/
+react-commercial-4/
+
+# Exclude node_modules and package-lock.json 
+react-commercial-1/client/node_modules/
+react-commercial-1/client/package-lock.json
+react-commercial-1/server/node_modules/
+react-commercial-1/server/package-lock.json
+
+# ENV
+react-commercial-1/server/.env
+
+# EXTRA
+notes.txt

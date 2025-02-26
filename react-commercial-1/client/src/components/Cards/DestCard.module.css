@@ -1,0 +1,85 @@
+.all {
+    display: flex;
+    align-content: center;
+    justify-content: center;
+}
+
+.card {
+    background-image: url(src/assets/DestCardImg.png);
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: cover;
+    height: 100%;
+    width: auto;
+    margin-bottom: 50px;
+    border-radius: 50dvb;
+}
+
+.items {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+}
+
+.imgDiv {
+    margin-top: 40px;
+}
+
+.destImage {
+    height: auto;
+    width: 300px;
+    box-shadow: 5px 5px 50px #0000006c;
+    border-radius: 10dvb;
+}
+
+.textDiv {
+    color: #421406;
+    margin-left: 25px;
+    text-shadow: 3px 3px 5px #0000002b;
+    padding: 25px;
+    text-align: center;
+    margin-right: 80px;
+}
+
+.textP {
+    text-align: justify;
+}
+
+.textPAbout {
+    text-align: justify;
+    padding: 50px;
+    font-size: larger;
+}
+
+.purchButton {
+    background-color: rgb(202, 202, 202);
+    border-radius: 25px;
+    color: #000000;
+    padding: 10px 50px;
+    cursor: pointer;
+}
+
+.purchButton:hover {
+    background-color: rgb(109, 124, 124);
+    border-radius: 25px;
+    color: #ffffff;
+    padding: "10px 50px";
+    cursor: "pointer";
+}
+
+.card2 {
+    background-image: url(src/assets/DestCardImg.png);
+    color: #000000;
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: cover;
+    height: 100%;
+    width: auto;
+    padding: 50px;
+    margin-bottom: 50px;
+}
+
+.logo {
+    height: 90px;
+    width: auto;
+    margin-bottom: 25px;
+}
