@@ -11,8 +11,7 @@ You can clone this repo and run it on your local machine.
 # Getting Started
 # Clone the repository
         (This will clone the repository to your local machine. Let me know if you need anything else!)
-        Clone the repo using this command:
-        
+        Clone the repo using this command:        
 ```bash
     git clone https://github.com/GeorgeTza90/Portfolio.git
 ```
