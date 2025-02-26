@@ -10,13 +10,13 @@ You can clone this repo and run it on your local machine.
 
 # Getting Started
 # Clone the repository
-    Clone the repo using this command:
-    
+        (This will clone the repository to your local machine. Let me know if you need anything else!)
+        Clone the repo using this command:
+        
 ```bash
     git clone https://github.com/GeorgeTza90/Portfolio.git
 ```
-    This will clone the repository to your local machine. Let me know if you need anything else! 
-
+     
 # server side
     1. Install Dependencies
         a. Navigate to the project directory and install dependencies:
