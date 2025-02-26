@@ -19,38 +19,38 @@ You can clone this repo and run it on your local machine.
 
 # server side
 1. Install Dependencies
-a. Navigate to the project directory and install dependencies:
-cd react-commercial-1/server
-npm install
+    a. Navigate to the project directory and install dependencies:
+        cd react-commercial-1/server
+        npm install
 
 2. Set Up the MySQL Database (MySQL Database is needed)        
-a. Create a new database in MySQL (for example, portfolio_db).
-b. Import the database schema using migration and seed files:
+    a. Create a new database in MySQL (for example, portfolio_db).
+    b. Import the database schema using migration and seed files:
 
 3. Configure Environment Variables
-a. Create a .env file in the root of the project and add your MySQL credentials. 
-Example: 
-DB_HOST=localhost
-DB_USER=your_mysql_username
-DB_PASSWORD=your_mysql_password
-DB_NAME=react_projects
-JWT_SECRET=give_a_key
-SMTP_USER=*****@ethereal.email (optional)
-SMTP_PASS=ethereal_generated_password (optional)
+    a. Create a .env file in the root of the project and add your MySQL credentials. 
+        Example: 
+            DB_HOST=localhost
+            DB_USER=your_mysql_username
+            DB_PASSWORD=your_mysql_password
+            DB_NAME=react_projects
+            JWT_SECRET=give_a_key
+            SMTP_USER=*****@ethereal.email (optional)
+            SMTP_PASS=ethereal_generated_password (optional)
 
 # client side
 1. Install Dependencies
-a. Navigate to the project directory and install dependencies:
-cd react-commercial-1/client
-npm install
+    a. Navigate to the project directory and install dependencies:
+        cd react-commercial-1/client
+        npm install
 
 # Run the App locally
 1. For the frontend (React):
-cd client
-npm run dev
+    cd client
+    npm run dev
 
 2. For the backend (Node.js):
-cd server
-npm start
+    cd server
+    npm start
 
 
