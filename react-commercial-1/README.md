@@ -3,14 +3,13 @@
 This is my portfolio web app built with React (client), Node.js (server), and MySQL (Database). 
 You can clone this repo and run it on your local machine.
 
-## Prerequisites
+# Prerequisites
 - React (version 19 or latest)
 - Node.js (version 23 or later)
 - MySQL Database (mysql2@3.12.0 or later)
 
-## Getting Started
-
-## Clone the repository
+# Getting Started
+# Clone the repository
     Clone the repo using this command:
     
 ```bash
@@ -18,7 +17,7 @@ You can clone this repo and run it on your local machine.
 ```
     This will clone the repository to your local machine. Let me know if you need anything else! 
 
-## server side
+# server side
     1. Install Dependencies
         a. Navigate to the project directory and install dependencies:
             cd react-commercial-1/server
@@ -39,13 +38,13 @@ You can clone this repo and run it on your local machine.
             SMTP_USER=*****@ethereal.email (optional)
             SMTP_PASS=ethereal_generated_password (optional)
 
-## client side
+# client side
     1. Install Dependencies
         a. Navigate to the project directory and install dependencies:
             cd react-commercial-1/client
             npm install
 
-## Run the App locally
+# Run the App locally
     1. For the frontend (React):
         cd client
         npm run dev
