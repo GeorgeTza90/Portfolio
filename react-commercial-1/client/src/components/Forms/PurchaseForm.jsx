@@ -37,6 +37,10 @@ function PurchaseForm() {
         setTicketQuantity(1);
     };
 
+    useEffect(() => {
+        nameRef.current.focus();
+    }, [])
+
     useEffect(() => setValidEmail(EMAIL_REGEX.test(email)), [email]);
     useEffect(() => {
         setValidName(NAME_REGEX.test(firstName) && NAME_REGEX.test(lastName))
@@ -93,6 +97,7 @@ function PurchaseForm() {
             console.log("Purchasing:", response.data);
 
             setSuccess(true);
+            resetForm();
         } catch (err) {
             console.log("Error during Purchase", err);
             setErrMsg("Error during Purchase")
@@ -121,6 +126,7 @@ function PurchaseForm() {
                                     <input
                                         type="text"
                                         id="firstName"
+                                        ref={nameRef}
                                         value={firstName}
                                         onChange={(e) => setFirstName(e.target.value)}
                                         required
@@ -200,6 +206,8 @@ function PurchaseForm() {
                                     />
                                 </div><br />
                                 <label className={styles.label}>Price: {price}</label><br /><br />
+
+                                <p ref={errRef} className={errMsg ? "errmsg" : "offscreen"}>{errMsg}</p>
 
                                 <Button1 slot="Continue to Payment" disabled={!validName || !validEmail} />
                             </form>
