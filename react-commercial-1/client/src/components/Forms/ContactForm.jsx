@@ -156,11 +156,11 @@ function ContactForm({ user }) {
                                 required
                             >
                                 <option value="">-- Select a topic --</option>
-                                <option value="topic_1">topic_1</option>
-                                <option value="topic_2">topic_2</option>
-                                <option value="topic_3">topic_3</option>
-                                <option value="topic_4">topic_4</option>
-                                <option value="topic_5">topic_5</option>
+                                <option value="General Inquiry">1. General Inquiry</option>
+                                <option value="tBooking Assistance">2. Booking Assistance</option>
+                                <option value="Custom Travel Packages">3. Custom Travel Packages</option>
+                                <option value="Safety & Travel Guidelines">4. Safety & Travel Guidelines</option>
+                                <option value="Career Opportunities">5. Career Opportunities</option>
                             </select><br />
 
                             <textarea
