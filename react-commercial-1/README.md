@@ -1,13 +1,13 @@
-# Portfolio Web App
-
-This is my portfolio web app built with React (client), Node.js (server), and MySQL (Database). 
-No framework used in this one.
-You can clone this repo and run it on your local machine.
+# Portfolio Web App - George Tzachristas
+# react-commercial-1 v0.1
+- This is my portfolio web app built with React (client), Node.js (server), and MySQL (Database). 
+- No framework used in this one.
+- You can clone this repo and run it on your local machine.
 
 # Prerequisites
-- React (version 19 or latest)
 - Node.js (version 23 or later)
 - MySQL Database (mysql2@3.12.0 or later)
+- MySQL Server (version 8 or later)
 
 # Getting Started
 ## Clone the repository
