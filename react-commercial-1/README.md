@@ -62,4 +62,12 @@ No framework was used in this one. You can clone this repo and run it on your lo
         cd server
         npm start
 
+## Upcoming Features
+- comment on comment system
+- admin check for users 
+- create post, if admin feature
+- css style fixes for smartphone view and more...
+
+
+
 Thank you very much!!!
