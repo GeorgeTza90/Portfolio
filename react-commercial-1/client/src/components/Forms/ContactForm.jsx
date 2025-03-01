@@ -10,8 +10,6 @@ const PHONE_REGEX = /^[0-9]{10,}$/;
 
 
 function ContactForm({ user }) {
-
-    const emailRef = useRef();
     const errRef = useRef();
     const navigate = useNavigate();
 
@@ -26,12 +24,12 @@ function ContactForm({ user }) {
     const [validPhoneNumber, setValidPhoneNumber] = useState(false);
     const [phoneNumberFocus, setPhoneNumberFocus] = useState(false);
 
-
     const [topic, setTopic] = useState("");
     const [message, setMessage] = useState("");
 
     const [errMsg, setErrMsg] = useState("");
     const [success, setSuccess] = useState(false);
+
 
     const resetForm = () => {
         setFirstName("");
@@ -44,22 +42,22 @@ function ContactForm({ user }) {
 
     useEffect(() => setValidEmail(EMAIL_REGEX.test(email)), [email]);
     useEffect(() => setValidPhoneNumber(PHONE_REGEX.test(phoneNumber)), [phoneNumber]);
+    useEffect(() => setErrMsg(""), [firstName, lastName, email, phoneNumber, topic, message]);
+
     useEffect(() => {
-        if (user !== "Guest") {
+        if (user && user !== "Guest") {
             setEmail(user);
         }
     }, [user])
 
-    useEffect(() => {
-        if (success) {
-            setTimeout(() => {
-                navigate('/');
-            }, 3000);
-        }
-    }, [success, navigate]);
 
     const handleContact = async (e) => {
         e.preventDefault();
+
+        if (phoneNumber && !validPhoneNumber) {
+            setErrMsg("Invalid phone number format.");
+            return;
+        }
 
         if (!firstName || !lastName || !validEmail || !topic || !message) {
             setErrMsg("Fill in all the form fields marked with *");
@@ -78,6 +76,15 @@ function ContactForm({ user }) {
             errRef.current.focus();
         }
     };
+
+    useEffect(() => {
+        if (success) {
+            setTimeout(() => {
+                navigate('/');
+            }, 3000);
+        }
+    }, [success, navigate]);
+
 
     return (
         <>
@@ -132,20 +139,20 @@ function ContactForm({ user }) {
                             </p><br />
 
                             <input
-                                type="number"
+                                type="tel"
                                 id="phonenumber"
                                 value={phoneNumber}
-                                onChange={(e) => setPhoneNumber(e.target.value)}
+                                onChange={(e) => setPhoneNumber(e.target.value.replace(/\D/g, ""))}
                                 className={styles.myInput2}
                                 placeholder="Phone Number (optional)"
-                                aria-invalid={validEmail ? "false" : "true"}
+                                aria-invalid={validPhoneNumber ? "false" : "true"}
                                 aria-describedby="phonenote"
                                 onFocus={() => setPhoneNumberFocus(true)}
                                 onBlur={() => setPhoneNumberFocus(false)}
                             />
                             <span className={validPhoneNumber || !phoneNumber ? styles.offscreen : styles.invalid}> ❌ check phone number</span>
                             <p id="phonenote" className={phoneNumberFocus && !validPhoneNumber ? styles.instructions : styles.offscreen}>
-                                Must be a valid phone nymber.
+                                Must be a valid phone number format.
                             </p><br />
 
                             <select
@@ -157,7 +164,7 @@ function ContactForm({ user }) {
                             >
                                 <option value="">-- Select a topic --</option>
                                 <option value="General Inquiry">1. General Inquiry</option>
-                                <option value="tBooking Assistance">2. Booking Assistance</option>
+                                <option value="Booking Assistance">2. Booking Assistance</option>
                                 <option value="Custom Travel Packages">3. Custom Travel Packages</option>
                                 <option value="Safety & Travel Guidelines">4. Safety & Travel Guidelines</option>
                                 <option value="Career Opportunities">5. Career Opportunities</option>
@@ -172,6 +179,9 @@ function ContactForm({ user }) {
                                 placeholder="*Message"
                             >
                             </textarea><br />
+
+                            <p ref={errRef} className={errMsg ? styles.errmsg : styles.offscreen}>{errMsg}</p>
+
                             <Button1 slot="Submit" disabled={!firstName || !lastName || !validEmail || !topic || !message} />
                         </form>
                     </div>

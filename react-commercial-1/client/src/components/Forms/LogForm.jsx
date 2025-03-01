@@ -1,5 +1,5 @@
 import { useCookies } from "react-cookie";
-import { useEffect, useState } from "react";
+import { useEffect, useState, useRef } from "react";
 import { useNavigate } from "react-router-dom";
 import PostService from "../../services/PostService";
 import styles from "./logForm.module.css";
@@ -7,13 +7,16 @@ import Button1 from "../Buttons/Button1"
 
 
 function LogForm() {
-
+    const errRef = useRef();
+    const navigate = useNavigate();
     const [email, setEmail] = useState("");
     const [password, setPassword] = useState("");
     const [errMsg, setErrMsg] = useState("");
     const [success, setSuccess] = useState(false);
-    const navigate = useNavigate();
     const [cookies, setCookies] = useCookies('auth_token');
+
+
+    useEffect(() => setErrMsg(""), [email, password]);
 
     const handleSubmit = async (e) => {
         e.preventDefault();
@@ -40,6 +43,7 @@ function LogForm() {
             }, 1800);
         }
     }, [success, navigate]);
+
 
     return (
         <section className={styles.LogContainer}>
@@ -74,7 +78,7 @@ function LogForm() {
                             placeholder="password"
                         />
 
-                        <p className={errMsg ? "errmsg" : "offscreen"}>{errMsg}</p>
+                        <p ref={errRef} className={errMsg ? styles.errmsg : styles.offscreen}>{errMsg}</p><br />
 
                         <Button1 slot="Sign In" />
                     </form><br />

@@ -13,9 +13,20 @@
     border-radius: 10dvb;
 }
 
-.leftArrow,
+.leftArrow {
+    position: left;
+    top: 50%;
+    transform: translateY(-50%);
+    background: rgba(0, 0, 0, 0.5);
+    color: white;
+    border: none;
+    font-size: 2rem;
+    cursor: pointer;
+    padding: 10px;
+}
+
 .rightArrow {
-    position: absolute;
+    position: right;
     top: 50%;
     transform: translateY(-50%);
     background: rgba(0, 0, 0, 0.5);

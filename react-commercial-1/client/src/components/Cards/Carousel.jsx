@@ -1,8 +1,8 @@
 import { useState, useEffect } from 'react';
 import styles from './carousel.module.css';
 
-function Carousel({ images }) {
 
+function Carousel({ images }) {
     const [currentIndex, setCurrentIndex] = useState(0);
 
     const nextSlide = () => {
@@ -21,6 +21,7 @@ function Carousel({ images }) {
         const interval = setInterval(nextSlide, getRandomInterval(5000, 15000));
         return () => clearInterval(interval);
     }, []);
+
 
     return (
         <div className={styles.carousel}>

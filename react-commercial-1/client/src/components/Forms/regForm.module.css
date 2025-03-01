@@ -44,6 +44,10 @@
     left: -9999px;
 }
 
+.errmsg {
+    color: #421406;
+}
+
 .valid {
     font-size: larger;
     border-radius: 15px;
@@ -76,7 +80,6 @@
     color: #fff0eb;
     text-decoration: double;
     font-size: x-large;
-
 }
 
 .SignIn:hover {

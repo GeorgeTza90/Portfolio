@@ -4,12 +4,13 @@ import { useRef, useState, useEffect } from "react";
 import { useNavigate } from "react-router-dom";
 import PostService from "../../services/PostService";
 
+
 const USER_REGEX = /^[A-z][A-z0-9-_]{3,23}$/;
 const PWD_REGEX = /^(?=.*[a-z])(?=.*[A-Z])(?=.*[0-9])(?=.*[!@#$%]).{8,24}$/;
 const EMAIL_REGEX = /^[a-zA-Z0-9._%+-]+@[a-zA-Z0-9.-]+\.[a-zA-Z]{2,}$/;
 
+
 function RegForm() {
-    const userRef = useRef();
     const errRef = useRef();
     const navigate = useNavigate();
 
@@ -39,9 +40,6 @@ function RegForm() {
         setEmail("");
     };
 
-    useEffect(() => {
-        userRef.current.focus();
-    }, [])
 
     useEffect(() => setValidName(USER_REGEX.test(user)), [user]);
     useEffect(() => setValidPwd(PWD_REGEX.test(pwd)), [pwd]);
@@ -72,10 +70,11 @@ function RegForm() {
             resetForm();
         } catch (err) {
             console.error("Error during registration:", err);
-            setErrMsg(err.response?.status === 409 ? "This UserName or Email already exists" : "Registration Failed");
+            setErrMsg(err.response?.status === 409 ? "This User Name or Email already exists" : "Registration Failed");
             errRef.current.focus();
         };
     };
+
 
     return (
         <>
@@ -95,7 +94,6 @@ function RegForm() {
                                 className={styles.myInput}
                                 type="text"
                                 id="username"
-                                ref={userRef}
                                 autoComplete="off"
                                 onChange={(e) => setUser(e.target.value)}
                                 required
@@ -170,10 +168,9 @@ function RegForm() {
                             <span className={validEmail ? styles.valid : styles.offscreen}> ✅</span>
                             <span className={validEmail || !email ? styles.offscreen : styles.invalid}> ❌</span>
                             <p id="emailnote" className={emailFocus && !validEmail ? styles.instructions : styles.offscreen}> Must be a valid email.</p>
-
                         </div>
 
-                        <p ref={errRef} className={errMsg ? "errmsg" : "offscreen"}>{errMsg}</p>
+                        <p ref={errRef} className={errMsg ? styles.errmsg : styles.offscreen}>{errMsg}</p>
 
                         <Button1 slot="Sign Up" disabled={!validName || !validPwd || !validMatch || !validEmail} />
                     </form><br />

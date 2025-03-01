@@ -1,6 +1,5 @@
 import axios from "axios";
 
-
 class DeleteService {
   constructor() {
     this.api = axios.create({

@@ -1,7 +1,6 @@
 import styles from "./commentsCard.module.css";
 import LikeButton from "../Buttons/LikeButton";
 import React, { useState, useEffect } from 'react';
-import axios from 'axios';
 import Button1 from "../Buttons/Button1";
 import PostService from "../../services/PostService";
 import DeleteService from "../../services/DeleteService";
@@ -13,6 +12,7 @@ function CommentsCard({ comments, likes, user, postID, sendData }) {
     const [likeCount, setLikeCount] = useState([]);
     const [newComment, setnewComment] = useState("");
     const [commentsAll, setCommentsAll] = useState(comments);
+
 
     useEffect(() => {
         let filteredLiked = [];
@@ -34,7 +34,6 @@ function CommentsCard({ comments, likes, user, postID, sendData }) {
         setLikeCount(count);
         setLiked(filteredLiked);
     }, [likes, user]);
-
 
     const handleLike = async (kind, id, sendData) => {
         try {

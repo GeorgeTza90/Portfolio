@@ -29,15 +29,20 @@ exports.deleteComment = async (req, res) => {
   try {
     const { commentID } = req.params;
     const { username } = req.body;
-
+    
     const [result] = await db.promise().query(
-      "DELETE FROM comments WHERE id = ? AND username = ?",
-      [commentID, username]
-    );
+        "DELETE FROM comments WHERE id = ? AND username = ?",
+        [commentID, username]
+      );
 
     if (result.affectedRows === 0) {
       return res.status(404).json({ message: "Comment not found or unauthorized" });
     }
+
+    await db.promise().query(
+      "DELETE FROM likes WHERE kind = ? AND kindID = ?",
+      ["comment", commentID]
+    );     
 
     res.status(200).json({ message: `Comment ID ${commentID} deleted` });
     LogEvents(`${username} deleted comment ID ${commentID}`);

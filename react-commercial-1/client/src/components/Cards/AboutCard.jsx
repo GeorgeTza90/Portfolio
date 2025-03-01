@@ -3,7 +3,6 @@ import LogoImg from "../../assets/logo2.png";
 
 
 function AboutCard() {
-
     return (
         <>
             <div className={styles.all}>
@@ -12,7 +11,6 @@ function AboutCard() {
                         <img src={LogoImg} className={styles.logo} alt="IceCream Vacations" >
                         </img>
                         <div className={styles.textPAbout}>
-
                             <p>
                                 Welcome to IceCream Vacations, the premier travel agency for interplanetary adventures! Explore the wonders of the solar system with our exclusive vacation packages to imaginary cities built on the most breathtaking planets and moons.
                             </p>
@@ -22,7 +20,6 @@ function AboutCard() {
                             <p>
                                 Whether you're looking for adventure, serenity, or thes ultimate space-age getaway, Cosmic Getaways turns science fiction into reality—one planet at a time!
                             </p>
-
                         </div>
                     </div>
                 </div>
