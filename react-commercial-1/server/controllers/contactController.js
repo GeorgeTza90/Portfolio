@@ -2,6 +2,7 @@ const db = require("../db");
 const LogEvents = require('../logEvents');
 const MailMe = require( "../services/MailMe");
 
+
 exports.getContact = async (req, res) => {
   try {
     let heading = "Contact Us";
@@ -16,11 +17,8 @@ exports.getContact = async (req, res) => {
       }
     }
 
-    res.json({
-      heading,
-      user,
-    });
-
+    res.json({ heading, user });
+    
   } catch (error) {
     console.error("Server Error:", error);
     res.status(500).json({ message: "Internal Server Error" });
@@ -43,10 +41,9 @@ exports.postContact = async (req, res) => {
       `Hello ${firstName},\n We have stored your request on ${topic} and you will have an answer soon!.`  // Add backticks here
     );
     
-
     res.status(201).json({ message: "Contact - Success" });
-
     LogEvents(`${firstName} ${lastName} email: ${email} phoneNumber: ${phoneNumber} on: ${topic} message: ${message}`);
+
   } catch (error) {
     console.error("Error in Contact Form:", error);
   }

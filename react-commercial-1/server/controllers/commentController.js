@@ -1,6 +1,7 @@
 const db = require("../db");  
 const LogEvents = require('../logEvents');
 
+
 exports.addComment = async (req, res) => {
   try {
     const { username, text, kind, kindID } = req.body;

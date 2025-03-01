@@ -1,5 +1,5 @@
 const db = require("../db");
-const LogEvents = require('../logEvents');
+
 
 exports.getDestination = async (req, res) => {
   try {    

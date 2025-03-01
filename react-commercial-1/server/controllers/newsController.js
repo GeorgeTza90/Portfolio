@@ -1,5 +1,6 @@
 const db = require("../db");
 
+
 exports.getNews = async (req, res) => {
   try {
     const [posts] = await db.promise().query("SELECT * FROM posts");
@@ -19,13 +20,8 @@ exports.getNews = async (req, res) => {
       }
     }
 
-    res.json({
-      heading,
-      user,
-      posts,
-      comments,
-      likes
-    });
+    res.json({ heading, user, posts, comments, likes });
+    
   } catch (error) {
     console.error("Server Error:", error);
     res.status(500).json({ message: "Internal Server Error" });

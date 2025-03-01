@@ -1,6 +1,7 @@
 const db = require("../db");
 const LogEvents = require('../logEvents');
 
+
 exports.addLike = async (req, res) => {
   try {
     const { kind, kindID, user } = req.body;
@@ -9,6 +10,7 @@ exports.addLike = async (req, res) => {
 
     res.status(201).json({ message: `${user} liked ${kind} No. ${kindID}` });
     LogEvents(`${user} liked ${kind} No. ${kindID}`);
+
   } catch (error) {
     console.error("Like not accepted: ", error);
     res.status(500).json({ message: "Internal Server Error" });
@@ -23,6 +25,7 @@ exports.removeLike = async (req, res) => {
 
     res.status(201).json({ message: `${user} recalled like on ${kind} No. ${kindID}` });
     LogEvents(`${user} recalled like on ${kind} No. ${kindID}`);
+    
   } catch (error) {
     console.error("Like not accepted: ", error);
     res.status(500).json({ message: "Internal Server Error" });

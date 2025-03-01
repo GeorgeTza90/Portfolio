@@ -2,6 +2,7 @@ const db = require("../db");
 const LogEvents = require('../logEvents');
 const bcrypt = require("bcrypt");
 
+
 exports.getRegister = async (req, res) => {
   res.json({ heading: "Sign Up" });
 };
