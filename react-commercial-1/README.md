@@ -25,7 +25,7 @@ No framework was used in this one. You can clone this repo and run it on your lo
             cd react-commercial-1/server
             npm install
 
-## 2. Configure Environment Variables
+### 2. Configure Environment Variables
 ####    a. Create a .env file in the root of the project (react-commercial-1/server/.env) and add your MySQL credentials. 
 #####   Example: 
             DB_HOST=your_mysql_host (ex. localhost)
