@@ -12,11 +12,6 @@ No framework was used in this one. You can clone this repo and run it on your lo
 - **MySQL Database** (`mysql2@3.12.0` or later)  
 - **MySQL Server** (version 8 or later)  
 
-## Prerequisites
-- Node.js (version 20 or later)
-- MySQL Database (mysql2@3.12.0 or later)
-- MySQL Server (version 8 or later)
-
 # Getting Started
 ## Clone the repository
         Clone this repository using the following command:      
