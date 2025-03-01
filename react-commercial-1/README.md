@@ -15,9 +15,9 @@ No framework was used in this one. You can clone this repo and run it on your lo
 # Getting Started
 ## Clone the repository
         Clone this repository using the following command:      
-```bash
+
     git clone https://github.com/GeorgeTza90/Portfolio.git
-```
+
      
 ## Server Side
     1. Install Dependencies
