@@ -4,11 +4,12 @@ import GetService from "../../services/GetService";
 import Heading from "../../layouts/Heading/Heading";
 import ContactForm from "../../components/Forms/ContactForm";
 
-function Contact() {
 
+function Contact() {
   const [heading, setHeading] = useState("");
   const [cookies] = useCookies("auth_token");
   const [user, setUser] = useState("");
+
 
   useEffect(() => {
     const fetchData = async () => {
@@ -26,15 +27,14 @@ function Contact() {
     fetchData();
   }, [cookies.auth_token]);
 
+
   return (
     <>
-
       <Heading heading={heading} />
 
       <div className="body">
         <ContactForm user={user} />
       </div>
-
     </>
   );
 }

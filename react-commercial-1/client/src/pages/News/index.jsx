@@ -13,6 +13,7 @@ function News() {
   const [comments, setComments] = useState([]);
   const [likes, setLikes] = useState([]);
 
+
   useEffect(() => {
     const fetchData = async () => {
       try {
@@ -35,16 +36,14 @@ function News() {
     fetchData();
   }, [cookies.auth_token]);
 
+
   return (
     <>
-
       <Heading heading={heading} />
 
       <div className="body">
         <PostCard posts={posts} comments={comments} user={user} likes={likes} />
       </div>
-
-
     </>
   );
 }

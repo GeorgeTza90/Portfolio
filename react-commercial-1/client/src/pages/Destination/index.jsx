@@ -5,11 +5,10 @@ import DestCard from "../../components/Cards/DestCard";
 
 
 function Destination() {
-
   const [heading, setHeading] = useState("");
   const [destinations, setDestinations] = useState([]);
-
   const [error, setError] = useState(null);
+
 
   useEffect(() => {
     const fetchData = async () => {
@@ -32,13 +31,11 @@ function Destination() {
 
   return (
     <>
-
       <Heading heading={heading} />
 
       <div className="body">
         <DestCard dest={destinations} />
       </div>
-
     </>
   );
 }

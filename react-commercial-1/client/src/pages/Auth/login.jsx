@@ -3,9 +3,11 @@ import GetService from "../../services/GetService";
 import Heading from "../../layouts/Heading/Heading";
 import LogForm from "../../components/Forms/LogForm"
 
+
 function LogIn() {
     const [heading, setHeading] = useState("");
     const [error, setError] = useState(null);
+
 
     useEffect(() => {
         const fetchData = async () => {
@@ -23,6 +25,7 @@ function LogIn() {
     if (error) {
         return <div>{error}</div>;
     }
+
 
     return (
         <>

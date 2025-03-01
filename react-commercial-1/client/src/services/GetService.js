@@ -1,5 +1,6 @@
 import axios from "axios";
 
+
 class GetService {
   constructor() {
     this.api = axios.create({

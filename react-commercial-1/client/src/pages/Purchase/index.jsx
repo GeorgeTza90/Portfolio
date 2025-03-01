@@ -5,7 +5,6 @@ import PurchaseForm from "../../components/Forms/PurchaseForm";
 
 
 function Purchase() {
-
     const [heading, setHeading] = useState("");
     const [destination, setDestination] = useState("");
     const [error, setError] = useState(null);
@@ -28,6 +27,7 @@ function Purchase() {
     if (error) {
         return <div>{error}</div>;
     }
+
 
     return (
         <>

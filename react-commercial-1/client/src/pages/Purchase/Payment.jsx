@@ -5,7 +5,6 @@ import UnderConstruction from "../../components/Other/UnderConstruction";
 
 
 function Purchase() {
-
     const [heading, setHeading] = useState("");
     const [error, setError] = useState(null);
 
@@ -28,12 +27,12 @@ function Purchase() {
         return <div>{error}</div>;
     }
 
+
     return (
         <>
             <Heading heading={heading} />
 
             <div className="body">
-
                 <UnderConstruction slot="Page Under Construction" />
             </div>
         </>
