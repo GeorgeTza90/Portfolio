@@ -20,12 +20,12 @@ No framework was used in this one. You can clone this repo and run it on your lo
 
      
 ## Server Side
-### 1. Install Dependencies
+##  1. Install Dependencies
 ###     a. Navigate to the project directory and install dependencies:
             cd react-commercial-1/server
             npm install
 
-## 2. Configure Environment Variables
+##  2. Configure Environment Variables
 ###     a. Create a .env file in the root of the project (react-commercial-1/server/.env) and add your MySQL credentials. 
 ###     Example: 
             DB_HOST=your_mysql_host (ex. localhost)
@@ -36,14 +36,14 @@ No framework was used in this one. You can clone this repo and run it on your lo
             SMTP_USER=*****@ethereal.email (optional)
             SMTP_PASS=ethereal_generated_password (optional)
 
-### 3. Set Up the MySQL Database (MySQL Database is needed)        
+##  3. Set Up the MySQL Database (MySQL Database is needed)        
 ###     a. Create a new database in MySQL (for example, portfolio_db).
 ###     b. Import the database schema using migration and seed files:
             npx knex migrate:latest --env development
             npx knex seed:run --env development
 
 ## Client Side
-### 1. Install Dependencies
+##  1. Install Dependencies
 ###     a. Navigate to the project directory and install dependencies:
             cd react-commercial-1/client
             npm install
