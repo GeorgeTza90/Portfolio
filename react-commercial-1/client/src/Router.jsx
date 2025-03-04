@@ -8,7 +8,7 @@ import Payment from "./pages/Purchase/payment";
 import Login from "./pages/Auth/login";
 import Register from "./pages/Auth/register";
 import LoadingScreen from "./pages/Loading/LoadingScreen";
-import MainLayout from "./layouts/MainLeyout";
+import MainLayout from "./layouts/MainLayout";
 import useLoading from "./hooks/useLoading"
 
 function AppRouter() {
