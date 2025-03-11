@@ -1,6 +1,6 @@
 import styles from "./Footer.module.css";
 
-function Nav() {
+function Footer() {
   return (
     <>
       <nav className={styles.footer}>
@@ -13,4 +13,4 @@ function Nav() {
   );
 }
 
-export default Nav;
+export default Footer;
