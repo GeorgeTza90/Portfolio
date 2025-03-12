@@ -80,7 +80,7 @@ function LogForm() {
 
                         <p ref={errRef} className={errMsg ? styles.errmsg : styles.offscreen}>{errMsg}</p><br />
 
-                        <Button1 slot="Sign In" />
+                        <Button1 slot="Sign In" disabled={!email || !password} />
                     </form><br />
 
                     <a href="/register" className={styles.signInMsg} >What? You don't have an account yet?</a>

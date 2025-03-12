@@ -78,7 +78,7 @@ class PostService {
       return response;
 
     } catch (error) {
-      console.error("Failed to login:", error);
+      console.error("Failed to logout:", error);
       throw error;
     }
   }
@@ -93,7 +93,7 @@ class PostService {
       return response;
 
     } catch (error) {
-      console.error("Failed to login:", error);
+      console.error("Failed to register:", error);
       throw error;
     }
   }
@@ -112,10 +112,7 @@ class PostService {
       throw error;
     }
   }
-
-
   
 }
-
 
 export default new PostService();  
