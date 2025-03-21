@@ -16,3 +16,9 @@
   font-size: 90%;
   margin-top: 100px;
 }
+
+.labeled {
+  font-family: 'Times New Roman', Times;
+  color: rgba(240, 248, 255, 0.285);
+  margin-left: 100px;
+}

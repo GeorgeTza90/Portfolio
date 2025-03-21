@@ -7,8 +7,8 @@ function Footer() {
         <div className={styles.text}>
           &copy;{new Date().getFullYear()} IceCream Vacations
         </div>
-
       </nav>
+      <label className={styles.labeled}>by George Tzachristas</label>
     </>
   );
 }
