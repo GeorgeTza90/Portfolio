@@ -19,5 +19,6 @@ react-commercial-2/server/.env
 notes.txt
 react-commercial-1/server/temp/
 react-commercial-2/server/temp/
+.gitignore
 
 
