@@ -1,0 +1,21 @@
+.footer {
+    background-image: url(src/assets/foot3.png);
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: cover;
+    height: 140px;
+    display: grid;
+    grid-template-columns: 1fr;
+    margin-top: 150px;
+}
+
+.footer:hover {
+    background-image: url(src/assets/foot3_hover.png);
+    transition: background-image 0.40s;
+}
+
+.labeled {
+    font-family: 'Times New Roman', Times;
+    color: rgba(240, 248, 255, 0.285);
+    margin-left: 100px;
+}

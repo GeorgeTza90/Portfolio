@@ -1,0 +1,93 @@
+.nav {
+    background-image: url(src/assets/nav3.png);
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: cover;
+    height: 100px;
+    width: auto;
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    cursor: pointer;
+}
+
+.navHidden {
+    background-image: url(src/assets/nav3.png);
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: cover;
+    height: 100px;
+    width: auto;
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    cursor: pointer;
+    margin-bottom: 44px;
+}
+
+.all {
+    background: linear-gradient(to bottom, #dadadaad, #dadada);
+    display: grid;
+    grid-template-columns: repeat(5, 1fr);
+    padding: 5px;
+    display: flexbox;
+    justify-items: center;
+    align-items: center;
+}
+
+.hidden {
+    position: absolute;
+    left: -9999px;
+}
+
+.label {
+    text-decoration: double;
+    font-size: larger;
+    font-weight: bold;
+    color: rgba(0, 0, 0, 0.628);
+    text-shadow: 2px 2px 15px #0000002b;
+    width: 400px;
+    padding-left: 50px;
+    padding-right: 25px;
+    margin-left: 50px;
+}
+
+.navButton {
+    font-family: Arial, Helvetica, sans-serif;
+    background-color: #dadadae5;
+    text-decoration: double;
+    font-weight: bold;
+    font-size: large;
+    color: #010053;
+    text-shadow: 2px 2px 15px #0000002b;
+    box-shadow: 2px 2px 15px #0000002b;
+    padding: 8px;
+    padding-left: 25px;
+    padding-right: 25px;
+    border-radius: 25px;
+}
+
+
+.trademark {
+    color: #ffffff5b;
+    text-decoration: double;
+}
+
+/* HOVERS */
+.nav:hover {
+    background-image: url(src/assets/nav3_hover.png);
+    transition: background-image 0.40s;
+}
+
+.navHidden:hover {
+    background-image: url(src/assets/nav3_hover.png);
+    transition: background-image 0.40s;
+}
+
+.navButton:hover {
+    background-color: #fffffdd0;
+    text-decoration: double;
+    font-weight: bold;
+    color: rgb(28, 0, 154);
+    text-shadow: 2px 2px 15px #0000002b;
+    box-shadow: 2px 2px 15px #00000088;
+    transition: background-color 0.40s;
+}

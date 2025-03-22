@@ -1,0 +1,143 @@
+.all {
+    background-image: url(src/assets/bg2.png);
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: 100%;
+    border-radius: 500%;
+    color: black;
+    font-weight: bold;
+    font-family: sans-serif;
+    display: flexbox;
+    justify-items: center;
+    align-items: center;
+    font-weight: bold;
+    font-size: large;
+    text-shadow: 5px 5px 15px #000000;
+}
+
+.Container {
+    background: linear-gradient(to left, #d1d1ff3d, #fbffe8b3);
+    border-radius: 500%;
+    padding: 140px;
+}
+
+.logo {
+    height: 65px;
+    width: auto;
+    margin-bottom: 25px;
+}
+
+.label {
+    background-color: #000128;
+    color: #dadada;
+    width: 130px;
+    padding: 8px;
+    border-radius: 10px;
+    box-shadow: 2px 2px 10px #0000006e;
+}
+
+.label2 {
+    background-color: #000128;
+    color: #dadada;
+    width: 90px;
+    padding: 8px;
+    border-radius: 10px;
+    box-shadow: 2px 2px 10px #0000006e;
+    display: flex;
+    text-align: right;
+    margin-left: 360px;
+}
+
+.row {
+    display: grid;
+    grid-template-columns: repeat(2, 0.5fr);
+}
+
+.myInput1 {
+    background-color: rgb(31, 30, 34);
+    border: 1px solid rgba(254, 255, 177, 0.624);
+    color: aliceblue;
+    border-radius: 5px;
+    height: 40px;
+    max-width: 300px;
+    text-align: center;
+    text-justify: center;
+    letter-spacing: 1.8px;
+    margin: 10px;
+    font-size: large;
+}
+
+.myInput2 {
+    background-color: rgb(31, 30, 34);
+    border: 1px solid rgba(254, 255, 177, 0.624);
+    color: aliceblue;
+    border-radius: 5px;
+    height: 40px;
+    width: 630px;
+    text-align: center;
+    text-justify: center;
+    margin: 10px;
+    font-size: large;
+}
+
+.myInput3 {
+    background-color: rgb(31, 30, 34);
+    border: 1px solid rgba(254, 255, 177, 0.624);
+    color: aliceblue;
+    border-radius: 5px;
+    height: 40px;
+    width: 410px;
+    text-align: center;
+    text-justify: center;
+    letter-spacing: 1.8px;
+    margin: 10px;
+    font-size: large;
+}
+
+.myInput4 {
+    background-color: rgb(31, 30, 34);
+    border: 1px solid rgba(254, 255, 177, 0.624);
+    color: aliceblue;
+    border-radius: 5px;
+    height: 40px;
+    width: 100px;
+    text-align: center;
+    text-justify: center;
+    letter-spacing: 1.8px;
+    margin: 10px;
+    margin-left: 100px;
+    font-size: large;
+}
+
+.img {
+    height: 50px;
+    margin-left: 400px;
+}
+
+
+.instructions {
+    color: rgb(229, 255, 0);
+    font-size: smaller;
+    width: auto;
+    text-shadow: 2px 2px 5px #000000;
+}
+
+.offscreen {
+    position: absolute;
+    left: -9999px;
+}
+
+.valid {
+    font-size: larger;
+    border-radius: 15px;
+}
+
+.invalid {
+    font-size: small;
+    border-radius: 15px;
+}
+
+.success {
+    margin-top: 100px;
+    font-size: large;
+}

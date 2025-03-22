@@ -1,0 +1,63 @@
+.LogContainer {
+    justify-items: center;
+}
+
+.text {
+    display: flexbox;
+    align-items: center;
+    justify-items: center;
+    margin-top: 60px;
+    font-size: 110%;
+    max-width: 500px;
+}
+
+.fillContainer {
+    display: grid;
+    grid-template-columns: 5fr 1fr;
+}
+
+.buttonContainer {
+    display: grid;
+    grid-template-columns: 2fr;
+    justify-items: center;
+}
+
+.myInput {
+    padding: 10px;
+    font-size: 80%;
+    border-radius: 15px;
+    letter-spacing: 1.8px;
+    margin-bottom: 30px;
+    min-width: 250px;
+}
+
+.myInput::placeholder {
+    color: rgba(54, 54, 54, 0.464);
+}
+
+.offscreen {
+    position: absolute;
+    left: -9999px;
+}
+
+.errmsg {
+    color: #ffdfdf;
+}
+
+.success {
+    margin-top: 100px;
+    font-size: large;
+}
+
+.signInMsg {
+    color: #ffffffac;
+    font-size: large;
+    text-decoration: double;
+    margin-top: 50px;
+}
+
+.signInMsg:hover {
+    color: #ffffff;
+    text-decoration: double;
+    text-shadow: 2px 2px 5px #000000;
+}

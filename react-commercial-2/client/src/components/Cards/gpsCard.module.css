@@ -1,0 +1,19 @@
+.all {
+    font-size: large;
+    font-family: sans-serif;
+    display: flexbox;
+    align-items: center;
+    justify-items: center;
+    margin-top: 100px
+}
+
+.main {
+    text-align: left;
+    line-height: 40px;
+    max-width: 1200px;
+}
+
+.img {
+    height: 80px;
+    width: auto;
+}

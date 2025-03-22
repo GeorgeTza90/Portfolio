@@ -1,0 +1,98 @@
+.RegContainer {
+    justify-items: center;
+}
+
+.text {
+    margin-top: 60px;
+    font-size: 110%;
+    max-width: 500px;
+}
+
+.avatars {
+    display: grid;
+    grid-template-columns: repeat(5, 0.12fr);
+}
+
+.fillContainer {
+    display: grid;
+    grid-template-columns: 2fr 1fr 0.7fr;
+}
+
+.buttonContainer {
+    display: grid;
+    grid-template-columns: 2fr;
+    justify-items: center;
+}
+
+.checkContainer {
+    margin-left: 10px;
+}
+
+.myInput {
+    padding: 10px;
+    font-size: 80%;
+    border-radius: 15px;
+    letter-spacing: 1.8px;
+    margin-bottom: 30px;
+    min-width: 250px;
+}
+
+.myInput::placeholder {
+    color: rgba(54, 54, 54, 0.464);
+}
+
+.instructions {
+    color: rgb(218, 252, 255);
+    font-size: smaller;
+    background-color: #1c1b1a;
+    padding: 5px;
+    width: auto;
+}
+
+.offscreen {
+    position: absolute;
+    left: -9999px;
+}
+
+.errmsg {
+    color: #ffdfdf;
+}
+
+.valid {
+    font-size: larger;
+    border-radius: 15px;
+}
+
+.invalid {
+    font-size: small;
+    border-radius: 15px;
+}
+
+.Registered {
+    color: #ffffffac;
+    font-size: large;
+    text-decoration: double;
+    margin-top: 50px;
+}
+
+.Registered:hover {
+    color: #ffffff;
+    text-decoration: double;
+    text-shadow: 2px 2px 5px #000000;
+}
+
+.success {
+    margin-top: 100px;
+    font-size: large;
+}
+
+.SignIn {
+    color: #fff0eb;
+    text-decoration: double;
+    font-size: x-large;
+}
+
+.SignIn:hover {
+    color: #ffffff;
+    text-shadow: 2px 2px 5px #000000;
+}

@@ -1,0 +1,118 @@
+.overal {
+    display: flexbox;
+    justify-items: center;
+    align-items: center;
+}
+
+.bg {
+    background: linear-gradient(to left, #dadada0d, #dadada9a);
+    border-radius: 150px;
+    padding: 30px;
+}
+
+.all {
+    background-image: url(src/assets/bg2.png);
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: 180%;
+    border-radius: 150px;
+    color: black;
+    font-weight: bold;
+    font-family: sans-serif;
+    display: flexbox;
+    justify-items: center;
+    align-items: center;
+    font-weight: bold;
+    font-size: large;
+}
+
+.stats1 {
+    display: grid;
+    grid-template-columns: 2fr 1fr;
+    margin-right: 100px;
+    margin: 10px;
+    display: flexbox;
+    justify-items: left;
+}
+
+.stats2 {
+    display: grid;
+    grid-template-columns: 2fr 1fr;
+    margin: 10px;
+    display: flexbox;
+    justify-items: left;
+    align-items: center;
+    margin-left: 40px;
+    color: #fdfdfd;
+    text-shadow: 5px 5px 10px #000000;
+}
+
+.Label1 {
+    background-color: #000128;
+    color: #dadada;
+    padding: 8px;
+    border-radius: 10px;
+    padding-left: 150px;
+    padding-right: 150px;
+    box-shadow: 2px 2px 10px #0000006e;
+}
+
+.img {
+    width: 230px;
+    height: auto;
+    border-radius: 40%;
+    box-shadow: 5px 5px 15px #000000;
+}
+
+.labeled {
+    background-color: rgba(0, 0, 0, 0.591);
+    color: #dadada;
+    max-height: 20px;
+    min-width: 160px;
+    padding: 10px;
+    border-radius: 10px;
+    margin-right: 25px
+}
+
+.premium {
+    background-color: #ffff00bd;
+    color: #1100ff;
+    border-radius: 10px;
+    padding: 2px;
+    box-shadow: 2px 2px 15px #ffea00be;
+    padding-left: 10px;
+    padding-right: 10px;
+    text-shadow: 2px 2px 15px #f6ff00;
+}
+
+.songs {
+    display: grid;
+    grid-template-columns: 1fr 2fr 0.5fr;
+}
+
+.stats3 {
+    text-decoration: double;
+    font-size: large;
+    color: #fdfdfd;
+    text-shadow: 5px 5px 10px #000000;
+    cursor: pointer;
+}
+
+.stats3:hover {
+    background-color: #fff200;
+    border-radius: 10px;
+    text-decoration: double;
+    font-size: large;
+    font-weight: bold;
+    color: #fdfdfd;
+    text-shadow: 5px 5px 10px #000000;
+}
+
+.info {
+    cursor: pointer;
+    color: #1100ff9d;
+}
+
+.delete {
+    cursor: pointer;
+}

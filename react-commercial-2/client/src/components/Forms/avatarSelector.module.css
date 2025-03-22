@@ -1,0 +1,13 @@
+.all {}
+
+.unselected {
+    width: 60px;
+    height: auto;
+    padding: 27px;
+}
+
+.selected {
+    width: 100px;
+    height: auto;
+    border: solid rgb(255, 234, 0);
+}

@@ -1,17 +1,23 @@
 # Exclude projects
-react-commercial-2/
+
 
 # Exclude node_modules and package-lock.json 
 react-commercial-1/client/node_modules/
 react-commercial-1/client/package-lock.json
 react-commercial-1/server/node_modules/
 react-commercial-1/server/package-lock.json
+react-commercial-2/client/node_modules/
+react-commercial-2/client/package-lock.json
+react-commercial-2/server/node_modules/
+react-commercial-2/server/package-lock.json
 
 # ENV
 react-commercial-1/server/.env
+react-commercial-2/server/.env
 
 # EXTRA
 notes.txt
 react-commercial-1/server/temp/
+react-commercial-2/server/temp/
 
 
