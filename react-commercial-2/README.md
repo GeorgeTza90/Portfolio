@@ -1,5 +1,5 @@
 # Portfolio Web App - George Tzachristas
-## react-commercial-1 v0.1
+## react-commercial-2 v0.1
 This is my second portfolio web app built with:  
 - **React** (client)  
 - **Node.js** (server)  
