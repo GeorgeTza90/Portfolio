@@ -6,31 +6,29 @@ class DeleteService {
       baseURL: "/api",  
     });
   }
+  
 
   async deleteLikeData(kind, id, user) {
-    try {
-      const response = await this.api.delete(
-        "/like",
-        { data: { kind, kindID: id, user }, headers: { "Content-Type": "application/json" } }
-      );
-      return response;
-
-    } catch (error) {
-      console.error(error.response, `Cannot like/unlike this ${kind}`);
-      throw error;
-    }
+    const data = { kind, id, user };
+    const headers = { "Content-Type": "application/json" };
+    const err = `Cannot like/unlike this ${kind}`;
+    return this.deleteData("/like", { data, headers }, err);
   }
 
-  async deleteCommentData(commentID, user) {
+  async deleteCommentData(commentID, user) {    
+    const data = { user };
+    const headers = { "Content-Type": "application/json" };
+    const err = "Error deleting comment:";
+    return this.deleteData(`/comment/${commentID}`, { data, headers }, err);
+  }
+  
+  
+  async deleteData(endpoint, { data, headers }, err) {
     try {
-      const response = await this.api.delete(
-        `/comment/${commentID}`,
-        { data: { username: user }, headers: { "Content-Type": "application/json" } }
-      );
-      return response;
-      
+      const response = await this.api.delete(endpoint, { data, headers });
+      return response.data;
     } catch (error) {
-      console.error("Error deleting comment:", error.response);
+      console.error(`${err}`, error.response ? error.response.data : error.message);
       throw error;
     }
   }

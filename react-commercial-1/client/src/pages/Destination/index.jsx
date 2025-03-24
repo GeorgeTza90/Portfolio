@@ -9,7 +9,6 @@ function Destination() {
   const [destinations, setDestinations] = useState([]);
   const [error, setError] = useState(null);
 
-
   useEffect(() => {
     const fetchData = async () => {
       try {

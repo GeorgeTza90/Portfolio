@@ -19,12 +19,13 @@ exports.addLike = async (req, res) => {
 
 exports.removeLike = async (req, res) => {
   try {
-    const { kind, kindID, user } = req.body;
+    const { kind, id, user } = req.body;
+    console.log(kind, id, user);
 
-    await db.promise().query("DELETE FROM likes WHERE kind = ? AND kindID = ? AND user = ?", [kind, kindID, user]);
+    await db.promise().query("DELETE FROM likes WHERE kind = ? AND kindID = ? AND user = ?", [kind, id, user]);
 
-    res.status(201).json({ message: `${user} recalled like on ${kind} No. ${kindID}` });
-    LogEvents(`${user} recalled like on ${kind} No. ${kindID}`);
+    res.status(201).json({ message: `${user} recalled like on ${kind} No. ${id}` });
+    LogEvents(`${user} recalled like on ${kind} No. ${id}`);
     
   } catch (error) {
     console.error("Like not accepted: ", error);

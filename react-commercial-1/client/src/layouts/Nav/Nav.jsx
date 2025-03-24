@@ -6,6 +6,7 @@ import NavImage from "../../assets/logo2.png";
 import UserImage from "../../assets/userImage.png";
 import LogOutButton from "../../components/Forms/LogOut";
 
+
 function Nav() {
   const [cookies, setCookies, removeCookies] = useCookies(["auth_token"]);
   const [isLoggedIn, setIsLoggedIn] = useState(false);
@@ -20,8 +21,6 @@ function Nav() {
     setCookies(false);
   }, [cookies.auth_token]);
 
-  // console.log(cookies.auth_token);
-  // console.log(isLoggedIn);
 
   return (
     <nav>

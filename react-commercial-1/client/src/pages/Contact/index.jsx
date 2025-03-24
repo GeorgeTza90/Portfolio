@@ -10,7 +10,6 @@ function Contact() {
   const [cookies] = useCookies("auth_token");
   const [user, setUser] = useState("");
 
-
   useEffect(() => {
     const fetchData = async () => {
       try {

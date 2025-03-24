@@ -2,6 +2,8 @@ import styles from "./LoadingScreen.module.css";
 
 
 function LoadingScreen() {
+
+
     return (
         <div className={styles.loadingContainer}>
             <video autoPlay loop muted className={styles.video}>

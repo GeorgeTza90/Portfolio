@@ -8,7 +8,6 @@ function About() {
   const [heading, setHeading] = useState("");
   const [error, setError] = useState(null);
 
-
   useEffect(() => {
     const fetchData = async () => {
       try {

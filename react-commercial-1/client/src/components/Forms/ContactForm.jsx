@@ -8,7 +8,6 @@ import Button1 from "../Buttons/Button1";
 const EMAIL_REGEX = /^[a-zA-Z0-9._%+-]+@[a-zA-Z0-9.-]+\.[a-zA-Z]{2,}$/;
 const PHONE_REGEX = /^[0-9]{10,}$/;
 
-
 function ContactForm({ user }) {
     const errRef = useRef();
     const navigate = useNavigate();
@@ -30,7 +29,6 @@ function ContactForm({ user }) {
     const [errMsg, setErrMsg] = useState("");
     const [success, setSuccess] = useState(false);
 
-
     const resetForm = () => {
         setFirstName("");
         setLastName("");
@@ -39,17 +37,6 @@ function ContactForm({ user }) {
         setTopic("");
         setMessage("");
     };
-
-    useEffect(() => setValidEmail(EMAIL_REGEX.test(email)), [email]);
-    useEffect(() => setValidPhoneNumber(PHONE_REGEX.test(phoneNumber)), [phoneNumber]);
-    useEffect(() => setErrMsg(""), [firstName, lastName, email, phoneNumber, topic, message]);
-
-    useEffect(() => {
-        if (user && user !== "Guest") {
-            setEmail(user);
-        }
-    }, [user])
-
 
     const handleContact = async (e) => {
         e.preventDefault();
@@ -78,12 +65,22 @@ function ContactForm({ user }) {
     };
 
     useEffect(() => {
+        setValidEmail(EMAIL_REGEX.test(email));
+        setValidPhoneNumber(PHONE_REGEX.test(phoneNumber));
+        setErrMsg("");
+    }, [email, phoneNumber, message]);
+
+    useEffect(() => {
+        if (user && user !== "Guest") {
+            setEmail(user);
+        }
+
         if (success) {
             setTimeout(() => {
                 navigate('/');
             }, 3000);
         }
-    }, [success, navigate]);
+    }, [user, success]);
 
 
     return (

@@ -15,9 +15,6 @@ function LogForm() {
     const [success, setSuccess] = useState(false);
     const [cookies, setCookies] = useCookies('auth_token');
 
-
-    useEffect(() => setErrMsg(""), [email, password]);
-
     const handleSubmit = async (e) => {
         e.preventDefault();
 
@@ -35,6 +32,8 @@ function LogForm() {
             setErrMsg("Invalid email or password");
         }
     };
+
+    useEffect(() => setErrMsg(""), [email, password]);
 
     useEffect(() => {
         if (success) {
@@ -85,11 +84,9 @@ function LogForm() {
 
                     <a href="/register" className={styles.signInMsg} >What? You don't have an account yet?</a>
                 </div>
-
             )}
         </section>
     );
 }
-
 
 export default LogForm;

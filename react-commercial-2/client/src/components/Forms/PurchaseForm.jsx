@@ -173,14 +173,7 @@ function PurchaseForm() {
                                     type="number"
                                     id="points"
                                     value={points}
-                                    onChange={(e) => {
-                                        const newPoints = Number(e.target.value);
-                                        if (newPoints >= 0) {
-                                            setPoints(newPoints);
-                                        } else {
-                                            setPoints(0);
-                                        }
-                                    }}
+                                    onChange={(e) => setPoints(Math.max(0, Number(e.target.value)))}
                                     className={styles.myInput4}
                                 />
                             </div><br /><br />

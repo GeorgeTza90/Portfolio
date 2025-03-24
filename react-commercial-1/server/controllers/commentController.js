@@ -28,11 +28,12 @@ exports.addComment = async (req, res) => {
 exports.deleteComment = async (req, res) => {
   try {
     const { commentID } = req.params;
-    const { username } = req.body;
+    const { user } = req.body;
+    console.log(user);
     
     const [result] = await db.promise().query(
         "DELETE FROM comments WHERE id = ? AND username = ?",
-        [commentID, username]
+        [commentID, user]
       );
 
     if (result.affectedRows === 0) {
@@ -45,7 +46,7 @@ exports.deleteComment = async (req, res) => {
     );     
 
     res.status(200).json({ message: `Comment ID ${commentID} deleted` });
-    LogEvents(`${username} deleted comment ID ${commentID}`);
+    LogEvents(`${user} deleted comment ID ${commentID}`);
   } catch (error) {
     console.error("Cannot delete comment:", error);
     res.status(500).json({ message: "Internal Server Error" });

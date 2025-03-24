@@ -14,8 +14,6 @@
 }
 
 .commentSection {
-    margin-left: 65px;
-    margin-bottom: 25px;
     font-size: 80%;
 }
 
@@ -41,7 +39,7 @@
     justify-content: center;
     align-items: center;
     height: 40px;
-    min-width: 500px;
+    min-width: 450px;
 }
 
 .interaction {
@@ -59,7 +57,7 @@
     margin-right: 25px;
     height: auto;
     min-height: 40px;
-    min-width: 500px;
+    min-width: 450px;
 }
 
 .deleteButton {

@@ -9,7 +9,6 @@ function Purchase() {
     const [destination, setDestination] = useState("");
     const [error, setError] = useState(null);
 
-
     useEffect(() => {
         const fetchData = async () => {
             try {

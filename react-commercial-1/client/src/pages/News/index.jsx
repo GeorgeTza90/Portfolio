@@ -13,7 +13,6 @@ function News() {
   const [comments, setComments] = useState([]);
   const [likes, setLikes] = useState([]);
 
-
   useEffect(() => {
     const fetchData = async () => {
       try {

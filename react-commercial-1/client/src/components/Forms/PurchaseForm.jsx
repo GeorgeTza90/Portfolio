@@ -37,51 +37,6 @@ function PurchaseForm() {
         setTicketQuantity(1);
     };
 
-    useEffect(() => {
-        nameRef.current.focus();
-    }, [])
-
-    useEffect(() => setValidEmail(EMAIL_REGEX.test(email)), [email]);
-    useEffect(() => {
-        setValidName(NAME_REGEX.test(firstName) && NAME_REGEX.test(lastName))
-    }, [firstName, lastName]);
-
-    useEffect(() => {
-        let price = 0;
-        switch (ticketType) {
-            case "Mars - New Olympus":
-                price = 14199.99 * ticketQuantity;
-                break;
-            case "Europa - Aquatropolis":
-                price = 27599.99 * ticketQuantity;
-                break;
-            case "Titan - Titan Harbor":
-                price = 32299.99 * ticketQuantity;
-                break;
-            case "Enceladus - Crystal Bay":
-                price = 25699.99 * ticketQuantity;
-                break;
-            case "Ganymede - Auroria":
-                price = 20599.99 * ticketQuantity;
-                break;
-            case "Callisto - Stormhaven":
-                price = 13599.99 * ticketQuantity;
-                break;
-        }
-
-        //price = (price.toFixed(2).toString().slice(0, -6) + "." + price.toFixed(2).toString().slice(-6, -3) + "," + price.toFixed(2).toString().slice(-2));
-        price = new Intl.NumberFormat("en-US", { style: "currency", currency: "USD" }).format(price);
-        setPrice(price);
-    }, [ticketType, ticketQuantity])
-
-    useEffect(() => {
-        if (success) {
-            setTimeout(() => {
-                navigate('/payment');
-            }, 3000);
-        }
-    }, [success, navigate]);
-
     const handleSubmit = async (e) => {
         e.preventDefault();
 
@@ -104,6 +59,51 @@ function PurchaseForm() {
             errRef.current.focus();
         }
     };
+
+    useEffect(() => {
+        nameRef.current.focus();
+    }, [])
+
+    useEffect(() => {
+        setValidEmail(EMAIL_REGEX.test(email));
+        setValidName(NAME_REGEX.test(firstName) && NAME_REGEX.test(lastName));
+    }, [firstName, lastName, email]);
+
+    useEffect(() => {
+        let price = 0;
+
+        switch (ticketType) {
+            case "Mars - New Olympus":
+                price = 14199.99 * ticketQuantity;
+                break;
+            case "Europa - Aquatropolis":
+                price = 27599.99 * ticketQuantity;
+                break;
+            case "Titan - Titan Harbor":
+                price = 32299.99 * ticketQuantity;
+                break;
+            case "Enceladus - Crystal Bay":
+                price = 25699.99 * ticketQuantity;
+                break;
+            case "Ganymede - Auroria":
+                price = 20599.99 * ticketQuantity;
+                break;
+            case "Callisto - Stormhaven":
+                price = 13599.99 * ticketQuantity;
+                break;
+        }
+
+        price = new Intl.NumberFormat("en-US", { style: "currency", currency: "USD" }).format(price);
+        setPrice(price);
+    }, [ticketType, ticketQuantity])
+
+    useEffect(() => {
+        if (success) {
+            setTimeout(() => {
+                navigate('/payment');
+            }, 3000);
+        }
+    }, [success, navigate]);
 
 
     return (
@@ -200,7 +200,7 @@ function PurchaseForm() {
                                         type="number"
                                         id="ticketQuantity"
                                         value={ticketQuantity}
-                                        onChange={(e) => setTicketQuantity(Number(e.target.value))}
+                                        onChange={(e) => setTicketQuantity(Math.max(1, Number(e.target.value)))}
                                         className={styles.myInput4}
                                         placeholder="1"
                                     />

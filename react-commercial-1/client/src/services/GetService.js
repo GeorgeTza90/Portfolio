@@ -1,107 +1,65 @@
 import axios from "axios";
 
-
 class GetService {
   constructor() {
     this.api = axios.create({
-      baseURL: "/api",  
+      baseURL: "/api",
     });
   }
 
-  async getNewsData(authToken) {
-    try {
-      const response = await this.api.get("/news", {
-      headers: authToken ? { Authorization: `Bearer ${authToken}` } : {},
-      });
-      return response.data;  
 
-    } catch (error) {
-      console.error("Error fetching data:", error); 
-      throw error;
-    }
+  async getNewsData(authToken) {
+    const headers = authToken ? { Authorization: `Bearer ${authToken}` } : {};
+    const err = "Error fetching news data:";
+    return this.getData("/news", { headers }, err);
   }
 
   async getDestinationData() {
-    try {
-      const response = await this.api.get("/destination");  
-      return response.data;  
-
-    } catch (error) {
-      console.error("Error fetching data:", error); 
-      throw error;
-    }
+    const err = "Error fetching destination data:";
+    return this.getData("/destination", {}, err);
   }
-  
-  async getAboutData() {
-    try {
-      const response = await this.api.get("/about");  
-      return response.data;  
 
-    } catch (error) {
-      console.error("Error fetching data:", error); 
-      throw error;
-    }
+  async getAboutData() {
+    const err = "Error fetching about data:";
+    return this.getData("/about", {}, err);
   }
 
   async getContactData(authToken) {
-    try {
-      if(authToken) {
-        const response = await this.api.get("/contact", {
-          headers: authToken ? { Authorization: `Bearer ${authToken}` } : {},
-        });       
-        return response.data;   
-      }
-
-    } catch (error) {
-      console.error("Error fetching contact:", error); 
-      throw error;
-    }
+    const headers = authToken ? { Authorization: `Bearer ${authToken}` } : {};
+    const err = "Error fetching contact data:";
+    return this.getData("/contact", { headers }, err);
   }
 
   async getLoginData() {
-    try {
-      const response = await this.api.get("/login");  
-      return response.data;  
-
-    } catch (error) {
-      console.error("Error fetching data:", error); 
-      throw error;
-    }
+    const err = "Error fetching login data:";
+    return this.getData("/login", {}, err);
   }
 
   async getRegisterData() {
-    try {
-      const response = await this.api.get("/register");  
-      return response.data; 
-       
-    } catch (error) {
-      console.error("Error fetching data:", error); 
-      throw error;
-    }
+    const err = "Error fetching register data:";
+    return this.getData("/register", {}, err);
   }
 
   async getPurchaseData() {
-    try {
-      const response = await this.api.get("/purchase");
-      return response.data;
-
-    } catch (error) {
-      console.error("Error fetching data:", error); 
-      throw error;
-    }
+    const err = "Error fetching purchase data:";
+    return this.getData("/purchase", {}, err);
   }
 
   async getPaymentData() {
+    const err = "Error fetching payment data:";
+    return this.getData("/payment", {}, err);
+  }
+
+
+  async getData(endpoint, { headers }, err) {
     try {
-      const response = await this.api.get("/payment");
+      const response = await this.api.get(endpoint, { headers });
       return response.data;
-  
     } catch (error) {
-      console.error("Error fetching data:", error); 
+      console.error(`${err}`, error);
       throw error;
     }
   }
-
 }
 
-export default new GetService();  
+export default new GetService();

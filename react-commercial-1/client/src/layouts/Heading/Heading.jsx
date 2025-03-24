@@ -1,5 +1,6 @@
 import styles from "./Heading.module.css";
 
+
 function Heading({ heading = "Current Page" }) {
   return (
     <div className={styles.heading}>
@@ -7,7 +8,5 @@ function Heading({ heading = "Current Page" }) {
     </div>
   );
 }
-
-
 
 export default Heading;

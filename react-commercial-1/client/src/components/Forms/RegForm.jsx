@@ -9,7 +9,6 @@ const USER_REGEX = /^[A-z][A-z0-9-_]{3,23}$/;
 const PWD_REGEX = /^(?=.*[a-z])(?=.*[A-Z])(?=.*[0-9])(?=.*[!@#$%]).{8,24}$/;
 const EMAIL_REGEX = /^[a-zA-Z0-9._%+-]+@[a-zA-Z0-9.-]+\.[a-zA-Z]{2,}$/;
 
-
 function RegForm() {
     const errRef = useRef();
     const navigate = useNavigate();
@@ -40,21 +39,6 @@ function RegForm() {
         setEmail("");
     };
 
-
-    useEffect(() => setValidName(USER_REGEX.test(user)), [user]);
-    useEffect(() => setValidPwd(PWD_REGEX.test(pwd)), [pwd]);
-    useEffect(() => setValidMatch(pwd === matchPwd), [pwd, matchPwd]);
-    useEffect(() => setValidEmail(EMAIL_REGEX.test(email)), [email]);
-    useEffect(() => setErrMsg(""), [user, pwd, matchPwd, email]);
-
-    useEffect(() => {
-        if (success) {
-            setTimeout(() => {
-                navigate('/login');
-            }, 3000);
-        }
-    }, [success, navigate]);
-
     const handleSubmit = async (e) => {
         e.preventDefault();
         if (!validName || !validPwd || !validMatch || !validEmail) {
@@ -74,6 +58,22 @@ function RegForm() {
             errRef.current.focus();
         };
     };
+
+    useEffect(() => {
+        setValidName(USER_REGEX.test(user));
+        setValidPwd(PWD_REGEX.test(pwd));
+        setValidMatch(pwd === matchPwd);
+        setValidEmail(EMAIL_REGEX.test(email));
+        setErrMsg("");
+    }, [user, pwd, matchPwd, email])
+
+    useEffect(() => {
+        if (success) {
+            setTimeout(() => {
+                navigate('/login');
+            }, 3000);
+        }
+    }, [success, navigate]);
 
 
     return (
