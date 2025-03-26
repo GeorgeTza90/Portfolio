@@ -1,5 +1,5 @@
 .container {
-    background-image: url(src/assets/UnderConstruction.png);
+    background-image: url(/assets/UnderConstruction.png);
     background-position: center;
     background-repeat: no-repeat;
     background-size: contain;

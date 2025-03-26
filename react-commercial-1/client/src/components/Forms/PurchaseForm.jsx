@@ -1,6 +1,6 @@
 import styles from "./purchseForm.module.css";
 import Button1 from "../Buttons/Button1";
-import LogoImg from "../../assets/logo2.png";
+import LogoImg from "/assets/logo2.png";
 import { useRef, useState, useEffect } from "react";
 import { useNavigate } from "react-router-dom";
 import PostService from "../../services/PostService";

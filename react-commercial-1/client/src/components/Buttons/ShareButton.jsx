@@ -4,7 +4,7 @@ function ShareButton({ slot = "Click Me", size = 3.8, disabled }) {
     const [isHovered, setIsHovered] = useState(false);
 
     const styles = {
-        backgroundImage: isHovered ? "url(src/assets/share_hovered.png)" : "url(src/assets/share.png)",
+        backgroundImage: isHovered ? "url(/assets/share_hovered.png)" : "url(/assets/share.png)",
         backgroundPosition: "center",
         backgroundRepeat: "no-repeat",
         backgroundSize: `${size}ch`,

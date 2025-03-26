@@ -4,7 +4,7 @@ function LikeButton({ slot = "Click Me", disabled, size = 3.8, onClick }) {
     const [isHovered, setIsHovered] = useState(false);
 
     const styles = {
-        backgroundImage: isHovered ? "url(src/assets/heart_hovered.png)" : "url(src/assets/heart.png)",
+        backgroundImage: isHovered ? "url(/assets/heart_hovered.png)" : "url(/assets/heart.png)",
         backgroundPosition: "center",
         backgroundRepeat: "no-repeat",
         backgroundSize: `${size}ch`,
