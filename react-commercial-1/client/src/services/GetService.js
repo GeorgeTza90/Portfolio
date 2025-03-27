@@ -1,11 +1,11 @@
 import axios from "axios";
-// const API_URL = process.env.REACT_APP_API_URL || 'https://icvacations.up.railway.app';
+const API_URL = process.env.REACT_APP_API_URL || 'https://icvacations.up.railway.app';
 
 
 class GetService {
   constructor() {
     this.api = axios.create({
-      baseURL: `https://icvacations.up.railway.app/api`, 
+      baseURL: `${API_URL}/api`, 
     });
   }
 
