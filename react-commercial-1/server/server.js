@@ -21,9 +21,7 @@ const registerController = require("./controllers/registerController");
 
 
 // MIDDLEWARE
-app.use(cors({
-  origin: "https://icvacations.netlify.app",
-}));
+app.use(cors());
 app.use(express.json());
 
 
@@ -33,7 +31,7 @@ app.delete("/api/like", likeController.removeLike);
 app.post("/api/comment", commentController.addComment);
 app.delete("/api/comment/:commentID", commentController.deleteComment);
 
-app.get("/news", optAuthToken, newsController.getNews);
+app.get(`/api/news`, optAuthToken, newsController.getNews);
 app.get("/api/destination", destinationController.getDestination);
 app.get("/api/purchase", purchaseController.getPurchase);
 app.post("/api/purchase", purchaseController.postPurchase);
