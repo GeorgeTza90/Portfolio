@@ -22,7 +22,7 @@ const registerController = require("./controllers/registerController");
 
 // MIDDLEWARE
 app.use(cors({
-  origin: "https://icvacations.up.railway.app",
+  origin: "https://icvacations.netlify.app",
 }));
 app.use(express.json());
 
