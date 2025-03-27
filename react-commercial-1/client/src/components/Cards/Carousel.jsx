@@ -23,6 +23,7 @@ function Carousel({ images }) {
     }, []);
 
 
+
     return (
         <div className={styles.carousel}>
             <button onClick={prevSlide} className={styles.leftArrow}>‹</button>

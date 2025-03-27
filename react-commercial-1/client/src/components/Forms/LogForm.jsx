@@ -44,6 +44,7 @@ function LogForm() {
     }, [success, navigate]);
 
 
+
     return (
         <section className={styles.LogContainer}>
             {success ? (

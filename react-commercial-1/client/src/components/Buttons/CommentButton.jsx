@@ -1,10 +1,11 @@
 import { useState } from "react";
 
+
 function CommentButton({ slot = "Click Me", disabled, size = 3.8, onClick }) {
     const [isHovered, setIsHovered] = useState(false);
 
     const styles = {
-        backgroundImage: isHovered ? "url(src/assets/comment_hovered.png)" : "url(src/assets/comment.png)",
+        backgroundImage: isHovered ? "url(/assets/comment_hovered.png)" : "url(/assets/comment.png)",
         backgroundPosition: "center",
         backgroundRepeat: "no-repeat",
         backgroundSize: `${size}ch`,
@@ -16,6 +17,7 @@ function CommentButton({ slot = "Click Me", disabled, size = 3.8, onClick }) {
         backgroundColor: "transparent",
         border: "none",
     };
+
 
     return (
         <button

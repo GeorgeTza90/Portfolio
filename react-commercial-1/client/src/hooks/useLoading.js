@@ -1,6 +1,7 @@
 import { useState, useEffect } from "react";
 import { useLocation } from "react-router-dom";
 
+
 const useLoading = (delay = 800) => {
   const [loading, setLoading] = useState(false);
   const location = useLocation();
@@ -14,6 +15,7 @@ const useLoading = (delay = 800) => {
     return () => clearTimeout(timer);
   }, [location.pathname, delay]);
 
+  
   return loading;
 };
 

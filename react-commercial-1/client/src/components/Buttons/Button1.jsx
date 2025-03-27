@@ -1,5 +1,6 @@
 import { useState } from "react";
 
+
 function Button1({ slot = "Click Me", disabled, onClick }) {
   const [isHovered, setIsHovered] = useState(false);
 
@@ -10,6 +11,7 @@ function Button1({ slot = "Click Me", disabled, onClick }) {
     padding: "10px 50px",
     cursor: "pointer",
   };
+
 
   return (
     <button

@@ -1,4 +1,4 @@
-import styles from "./LoadingScreen.module.css";
+import styles from "./loadingScreen.module.css";
 
 
 function LoadingScreen() {

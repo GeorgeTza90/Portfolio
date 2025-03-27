@@ -1,7 +1,7 @@
 import { useState } from "react";
 import { useNavigate } from "react-router-dom";
 import { useCookies } from "react-cookie";
-import styles from "./DestCard.module.css";
+import styles from "./destCard.module.css";
 import Carousel from "../Cards/Carousel";
 
 

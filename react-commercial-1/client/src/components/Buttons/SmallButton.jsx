@@ -1,5 +1,6 @@
 import { useState } from "react";
 
+
 function SmallButton({ slot = "Show " }) {
   const [isHovered, setIsHovered] = useState(false);
 
@@ -11,6 +12,7 @@ function SmallButton({ slot = "Show " }) {
     padding: "10px 120px",
     cursor: "pointer",
   };
+
 
   return (
     <button

@@ -8,6 +8,7 @@ import Button1 from "../Buttons/Button1";
 const EMAIL_REGEX = /^[a-zA-Z0-9._%+-]+@[a-zA-Z0-9.-]+\.[a-zA-Z]{2,}$/;
 const PHONE_REGEX = /^[0-9]{10,}$/;
 
+
 function ContactForm({ user }) {
     const errRef = useRef();
     const navigate = useNavigate();

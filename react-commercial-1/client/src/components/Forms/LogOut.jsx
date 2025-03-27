@@ -2,7 +2,7 @@ import React from 'react';
 import { useNavigate } from 'react-router-dom';
 import { useCookies } from 'react-cookie';
 import PostService from "../../services/PostService";
-import styles from "../../layouts/Nav/Nav.module.css";
+import styles from "../../layouts/Nav/nav.module.css";
 
 
 function LogOutButton() {

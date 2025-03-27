@@ -5,7 +5,7 @@ class DeleteService {
     this.api = axios.create({
       baseURL: "/api",  
     });
-  }
+  }  
   
 
   async deleteLikeData(kind, id, user) {

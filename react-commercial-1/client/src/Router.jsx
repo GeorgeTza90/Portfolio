@@ -4,7 +4,7 @@ import Destination from "./pages/Destination/index";
 import About from "./pages/About/index";
 import Contact from "./pages/Contact/index";
 import Purchase from "./pages/Purchase/index";
-import Payment from "./pages/Purchase/payment";
+import Payment from "./pages/Purchase/Payment";
 import Login from "./pages/Auth/login";
 import Register from "./pages/Auth/register";
 import LoadingScreen from "./pages/Loading/LoadingScreen";

@@ -2,7 +2,7 @@ import CommentButton from "../Buttons/CommentButton";
 import LikeButton from "../Buttons/LikeButton";
 import ShareButton from "../Buttons/ShareButton";
 import CommentsCard from "./CommentsCard";
-import styles from "./PostCard.module.css";
+import styles from "./postCard.module.css";
 import React, { useEffect, useState } from 'react';
 import PostService from "../../services/PostService";
 import DeleteService from "../../services/DeleteService";

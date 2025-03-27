@@ -1,5 +1,5 @@
-import styles from "./DestCard.module.css";
-import LogoImg from "../../assets/logo2.png";
+import styles from "./destCard.module.css";
+import LogoImg from "/assets/logo2.png";
 
 
 function AboutCard() {

@@ -41,6 +41,7 @@
     grid-template-columns: repeat(2, 0.5fr);
 }
 
+
 .myInput1 {
     background-color: rgb(34, 31, 30);
     border: 1px solid rgba(255, 255, 255, 0.556);
@@ -92,6 +93,7 @@
     margin: 15px;
     margin-left: 100px;
 }
+
 
 
 .instructions {
