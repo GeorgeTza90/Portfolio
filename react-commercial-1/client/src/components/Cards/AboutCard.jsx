@@ -1,8 +1,4 @@
-<<<<<<< HEAD
 import styles from "./destCard.module.css";
-=======
-import styles from "./DestCard.module.css";
->>>>>>> fde86449a43f8a04e7588577b11fc36b198d8ad9
 import LogoImg from "/assets/logo2.png";
 
 
