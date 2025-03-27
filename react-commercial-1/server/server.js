@@ -21,7 +21,9 @@ const registerController = require("./controllers/registerController");
 
 
 // MIDDLEWARE
-app.use(cors());
+app.use(cors({
+  origin: "https://icvacations.up.railway.app",
+}));
 app.use(express.json());
 
 
