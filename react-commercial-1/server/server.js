@@ -24,7 +24,7 @@ const registerController = require("./controllers/registerController");
 app.use(cors({
   origin: ["https://icvacations.netlify.app", "http://localhost:5173"], 
 }));
-
+app.use(express.json());
 
 // API ROUTING
 app.post("/api/like", likeController.addLike);
