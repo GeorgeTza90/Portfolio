@@ -4,6 +4,7 @@ require("dotenv").config();
 const app = express();
 const PORT = process.env.PORT || 5000;
 const optAuthToken = require('./services/authToken');
+const API_URL = 'https://icvacations.up.railway.app';
 
 
 // CONTROLLERS
@@ -28,29 +29,29 @@ app.use(express.json());
 
 
 // API ROUTING
-app.post("/api/like", likeController.addLike);
-app.delete("/api/like", likeController.removeLike);
-app.post("/api/comment", commentController.addComment);
-app.delete("/api/comment/:commentID", commentController.deleteComment);
+app.post(`${API_URL}/api/like`, likeController.addLike);
+app.delete(`${API_URL}/api/like`, likeController.removeLike);
+app.post(`${API_URL}/api/comment`, commentController.addComment);
+app.delete(`${API_URL}/api/comment/:commentID`, commentController.deleteComment);
 
-app.get(`/api/news`, optAuthToken, newsController.getNews);
-app.get("/api/destination", destinationController.getDestination);
-app.get("/api/purchase", purchaseController.getPurchase);
-app.post("/api/purchase", purchaseController.postPurchase);
-app.get("/api/payment", optAuthToken, paymentController.getPayment);
-app.get("/api/about", aboutController.getAbout);
-app.get("/api/contact", optAuthToken, contactController.getContact);
-app.post("/api/contact", optAuthToken, contactController.postContact);
+app.get(`${API_URL}/api/news`, optAuthToken, newsController.getNews);
+app.get(`${API_URL}/api/destination`, destinationController.getDestination);
+app.get(`${API_URL}/api/purchase`, purchaseController.getPurchase);
+app.post(`${API_URL}/api/purchase`, purchaseController.postPurchase);
+app.get(`${API_URL}/api/payment`, optAuthToken, paymentController.getPayment);
+app.get(`${API_URL}/api/about`, aboutController.getAbout);
+app.get(`${API_URL}/api/contact`, optAuthToken, contactController.getContact);
+app.post(`${API_URL}/api/contact`, optAuthToken, contactController.postContact);
 
-app.get('/api/login', loginController.getLogin);
-app.post('/api/login', loginController.postLogin);
-app.post("/api/logout", logoutController.postLogout);
-app.get("/api/register", registerController.getRegister);
-app.post('/api/register', registerController.postRegister);
+app.get(`${API_URL}/api/login`, loginController.getLogin);
+app.post(`${API_URL}/api/login`, loginController.postLogin);
+app.post(`${API_URL}/api/logout`, logoutController.postLogout);
+app.get(`${API_URL}/api/register`, registerController.getRegister);
+app.post(`${API_URL}/api/register`, registerController.postRegister);
 
 
 // Unknown API routes (404)
-app.use("/api/*", (req, res) => {
+app.use(`/api/*`, (req, res) => {
   res.status(404).json({ error: "API route not found" });
 });
 
