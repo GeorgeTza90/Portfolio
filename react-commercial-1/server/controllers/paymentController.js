@@ -1,6 +1,5 @@
 const db = require("../db");  
 
-
 exports.getPayment = async (req, res) => {
   try {
     res.json({ heading: "Payment"});

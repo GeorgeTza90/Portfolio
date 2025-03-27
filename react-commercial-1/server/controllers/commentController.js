@@ -1,5 +1,4 @@
 const db = require("../db");  
-const LogEvents = require('../logEvents');
 
 
 exports.addComment = async (req, res) => {
@@ -18,7 +17,6 @@ exports.addComment = async (req, res) => {
       commentID
     });
 
-    LogEvents(`${username} commented on ${kind} No. ${kindID}`);
   } catch (error) {
     console.error("Comment not accepted: ", error);
     res.status(500).json({ message: "Internal Server Error" });
@@ -46,7 +44,7 @@ exports.deleteComment = async (req, res) => {
     );     
 
     res.status(200).json({ message: `Comment ID ${commentID} deleted` });
-    LogEvents(`${user} deleted comment ID ${commentID}`);
+
   } catch (error) {
     console.error("Cannot delete comment:", error);
     res.status(500).json({ message: "Internal Server Error" });

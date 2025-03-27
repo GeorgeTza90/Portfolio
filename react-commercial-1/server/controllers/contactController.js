@@ -1,5 +1,4 @@
 const db = require("../db");
-const LogEvents = require('../logEvents');
 const MailMe = require( "../services/MailMe");
 
 
@@ -38,11 +37,10 @@ exports.postContact = async (req, res) => {
       "vern57@ethereal.email", 
       email, 
       `IceCream Vacations on request: ${topic}`,  
-      `Hello ${firstName},\n We have stored your request on ${topic} and you will have an answer soon!.`  // Add backticks here
+      `Hello ${firstName},\n We have stored your request on ${topic} and you will have an answer soon!.`  
     );
     
     res.status(201).json({ message: "Contact - Success" });
-    LogEvents(`${firstName} ${lastName} email: ${email} phoneNumber: ${phoneNumber} on: ${topic} message: ${message}`);
 
   } catch (error) {
     console.error("Error in Contact Form:", error);

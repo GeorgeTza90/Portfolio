@@ -1,5 +1,4 @@
 const db = require("../db");
-const LogEvents = require('../logEvents');
 
 
 exports.addLike = async (req, res) => {
@@ -9,7 +8,6 @@ exports.addLike = async (req, res) => {
     await db.promise().query("INSERT INTO likes (kind, kindID, user) VALUES (?, ?, ?)", [kind, kindID, user]);
 
     res.status(201).json({ message: `${user} liked ${kind} No. ${kindID}` });
-    LogEvents(`${user} liked ${kind} No. ${kindID}`);
 
   } catch (error) {
     console.error("Like not accepted: ", error);
@@ -25,7 +23,6 @@ exports.removeLike = async (req, res) => {
     await db.promise().query("DELETE FROM likes WHERE kind = ? AND kindID = ? AND user = ?", [kind, id, user]);
 
     res.status(201).json({ message: `${user} recalled like on ${kind} No. ${id}` });
-    LogEvents(`${user} recalled like on ${kind} No. ${id}`);
     
   } catch (error) {
     console.error("Like not accepted: ", error);

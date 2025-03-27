@@ -1,5 +1,4 @@
 const db = require("../db");
-const LogEvents = require('../logEvents');
 const bcrypt = require("bcrypt");
 
 
@@ -20,8 +19,7 @@ exports.postRegister = async (req, res) => {
 
     await db.promise().query("INSERT INTO users (username, email, password) VALUES (?, ?, ?)", [user, email, hashedPwd]);
 
-    res.status(201).json({ message: "User registered successfully" });
-    LogEvents("Registration Successful", `User: ${user} email: ${email}`);
+    res.status(201).json({ message: "User registered successfully" });   
 
   } catch (error) {
     console.error("Error registering user:", error);
