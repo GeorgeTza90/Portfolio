@@ -14,7 +14,7 @@ class GetService {
   async getNewsData(authToken) {
     const headers = authToken ? { Authorization: `Bearer ${authToken}` } : {};
     const err = "Error fetching news data:";
-    return this.getData("/news", { headers }, err);
+    return this.api.getData("/", { headers }, err);
   }
 
   async getDestinationData() {
