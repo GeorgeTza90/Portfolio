@@ -55,6 +55,7 @@ class GetService {
 
 
   async getData(endpoint, { headers }, err) {
+    console.log(baseURL);
     try {
       const response = await this.api.get(endpoint, { headers });
       return response.data;
