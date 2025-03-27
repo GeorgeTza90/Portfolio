@@ -1,11 +1,13 @@
 import axios from "axios";
+const API_URL = process.env.REACT_APP_API_URL;
+
 
 class DeleteService {
   constructor() {
     this.api = axios.create({
-      baseURL: "/api",  
+      baseURL: `${API_URL}/api`,
     });
-  }  
+  } 
   
 
   async deleteLikeData(kind, id, user) {

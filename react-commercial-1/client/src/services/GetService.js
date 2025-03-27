@@ -1,9 +1,11 @@
 import axios from "axios";
+const API_URL = process.env.REACT_APP_API_URL;
+
 
 class GetService {
   constructor() {
     this.api = axios.create({
-      baseURL: "/api",
+      baseURL: `${API_URL}/api`,
     });
   }
 
