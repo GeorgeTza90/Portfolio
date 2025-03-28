@@ -1,4 +1,4 @@
-import styles from "./CommentsCard.module.css";
+import styles from "./commentsCard.module.css";
 import LikeButton from "../Buttons/LikeButton";
 import React, { useState, useEffect } from 'react';
 import Button1 from "../Buttons/Button1";
