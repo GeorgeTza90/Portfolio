@@ -1,4 +1,4 @@
-import styles from "./Heading.module.css";
+import styles from "./heading.module.css";
 
 
 function Heading({ heading = "Current Page" }) {
