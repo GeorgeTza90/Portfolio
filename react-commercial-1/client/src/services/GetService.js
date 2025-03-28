@@ -1,7 +1,6 @@
 import axios from "axios";
 const API_URL = import.meta.env.VITE_API_URL || 'https://icvacations.up.railway.app';
 
-console.log("Frontend API URL:", API_URL);
 
 class GetService {
   constructor() {
@@ -13,7 +12,6 @@ class GetService {
 
 
   async getNewsData(authToken) {
-    console.log("reached");
     const headers = authToken ? { Authorization: `Bearer ${authToken}` } : {};
     const err = "Error fetching news data:";
     return this.getData("/news", { headers }, err);

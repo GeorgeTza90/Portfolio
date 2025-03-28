@@ -1,14 +1,15 @@
 import axios from "axios";
-// const API_URL = process.env.REACT_APP_API_URL || 'https://icvacations.up.railway.app';
-const API_URL = 'https://icvacations.up.railway.app';
+const API_URL = import.meta.env.VITE_API_URL || 'https://icvacations.up.railway.app';
 
 
 class DeleteService {
   constructor() {
     this.api = axios.create({
-      baseURL: `${API_URL}/api`, 
+      baseURL: `${API_URL}/api`,
+      withCredentials: true,
     });
-  } 
+  }
+
   
 
   async deleteLikeData(kind, id, user) {

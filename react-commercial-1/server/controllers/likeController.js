@@ -17,8 +17,7 @@ exports.addLike = async (req, res) => {
 
 exports.removeLike = async (req, res) => {
   try {
-    const { kind, id, user } = req.body;
-    console.log(kind, id, user);
+    const { kind, id, user } = req.body;   
 
     await db.promise().query("DELETE FROM likes WHERE kind = ? AND kindID = ? AND user = ?", [kind, id, user]);
 
