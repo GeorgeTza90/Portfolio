@@ -12,7 +12,7 @@ function Nav() {
   const [isLoggedIn, setIsLoggedIn] = useState(false);
 
   useEffect(() => {
-    if (cookies.auth_token !== "undefined") {
+    if (cookies.auth_token && cookies.auth_token !== "undefined") {
       setIsLoggedIn(true);
     } else {
       setIsLoggedIn(false);
