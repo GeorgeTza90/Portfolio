@@ -1,7 +1,9 @@
 const express = require("express");
 const cors = require("cors");
 require("dotenv").config();
+const axios = require("axios");
 const app = express();
+
 const PORT = process.env.PORT || 5000;
 const optAuthToken = require('./services/authToken');
 
@@ -18,6 +20,7 @@ const paymentController = require("./controllers/paymentController");
 const loginController = require("./controllers/loginController");
 const logoutController = require("./controllers/logoutController");
 const registerController = require("./controllers/registerController");
+const healthController = require("./controllers/healthController");
 
 
 // MIDDLEWARE
@@ -48,6 +51,18 @@ app.post('/api/login', loginController.postLogin);
 app.post("/api/logout", logoutController.postLogout);
 app.get("/api/register", registerController.getRegister);
 app.post('/api/register', registerController.postRegister);
+
+
+// Keep-Alive Self-Ping (Runs Once When Server Starts)
+app.get("/api/keep-alive", healthController.getKeepItAlive);
+
+const KEEP_ALIVE_URL = process.env.KEEP_ALIVE_URL; 
+
+setInterval(() => {
+  axios.get(KEEP_ALIVE_URL)
+    .then(() => console.log("Self-ping successful"))
+    .catch(err => console.error("Self-ping failed:", err));
+}, 1 * 60 * 1000); 
 
 
 // Unknown API routes (404)
