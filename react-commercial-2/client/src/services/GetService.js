@@ -1,9 +1,12 @@
 import axios from "axios";
+const API_URL = import.meta.env.VITE_API_URL || 'https://grandeplayer.up.railway.app';
+
 
 class GetService {
   constructor() {
     this.api = axios.create({
-      baseURL: "/api",
+      baseURL: `${API_URL}/api`,
+      withCredentials: true,
     });
   }
 

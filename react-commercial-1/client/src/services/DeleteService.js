@@ -8,9 +8,8 @@ class DeleteService {
       baseURL: `${API_URL}/api`,
       withCredentials: true,
     });
-  }
+  }  
 
-  
 
   async deleteLikeData(kind, id, user) {
     const data = { kind, id, user };

@@ -5,7 +5,7 @@ exports.addLike = async (req, res) => {
   try {
     const { kind, kindID, user } = req.body;
 
-    await db.promise().query("INSERT INTO likes (kind, kindID, user) VALUES (?, ?, ?)", [kind, kindID, user]);
+    await db.query("INSERT INTO likes (kind, kindID, user) VALUES (?, ?, ?)", [kind, kindID, user]);
 
     res.status(201).json({ message: `${user} liked ${kind} No. ${kindID}` });
 
@@ -19,7 +19,7 @@ exports.removeLike = async (req, res) => {
   try {
     const { kind, id, user } = req.body;   
 
-    await db.promise().query("DELETE FROM likes WHERE kind = ? AND kindID = ? AND user = ?", [kind, id, user]);
+    await db.query("DELETE FROM likes WHERE kind = ? AND kindID = ? AND user = ?", [kind, id, user]);
 
     res.status(201).json({ message: `${user} recalled like on ${kind} No. ${id}` });
     

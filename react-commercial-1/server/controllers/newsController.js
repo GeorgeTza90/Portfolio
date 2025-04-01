@@ -3,16 +3,16 @@ const db = require("../db");
 
 exports.getNews = async (req, res) => {
   try {
-    const [posts] = await db.promise().query("SELECT * FROM posts");
-    const [comments] = await db.promise().query("SELECT * FROM comments");
-    const [likes] = await db.promise().query("SELECT * FROM likes");
+    const [posts] = await db.query("SELECT * FROM posts");
+    const [comments] = await db.query("SELECT * FROM comments");
+    const [likes] = await db.query("SELECT * FROM likes");
 
     let heading = "Our News";
     let user = "Guest";
 
     if (req.user) {
       const email = req.user.email;
-      const [users] = await db.promise().query("SELECT * FROM users WHERE email = ?", [email]);
+      const [users] = await db.query("SELECT * FROM users WHERE email = ?", [email]);
 
       if (users.length > 0) {
         user = users[0].username;

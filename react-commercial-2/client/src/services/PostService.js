@@ -1,12 +1,15 @@
 import axios from "axios";
-const SONG_URL = import.meta.env.VITE_SONG_URL;
+const API_URL = import.meta.env.VITE_API_URL || 'https://grandeplayer.up.railway.app';
+
 
 class PostService {
   constructor() {
     this.api = axios.create({
-      baseURL: "/api",
+      baseURL: `${API_URL}/api`,
+      withCredentials: true,
     });
   }
+  
 
   async postLoginData(email, password) {
     const data = { email, password };

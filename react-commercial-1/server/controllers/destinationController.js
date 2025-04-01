@@ -3,7 +3,7 @@ const db = require("../db");
 
 exports.getDestination = async (req, res) => {
   try {    
-    const [destination] = await db.promise().query("SELECT * FROM destination");
+    const [destination] = await db.query("SELECT * FROM destination");
 
     console.log("Fetched destinations:", destination);
     

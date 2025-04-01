@@ -6,7 +6,6 @@ const app = express();
 const PORT = process.env.PORT;
 
 
-
 // CONTROLLERS
 const likeController = require("./controllers/likeController");
 const commentController = require("./controllers/commentController");

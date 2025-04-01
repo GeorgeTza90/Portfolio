@@ -5,7 +5,7 @@ exports.addComment = async (req, res) => {
   try {
     const { username, text, kind, kindID } = req.body;
 
-    const [result] = await db.promise().query(
+    const [result] = await db.query(
       "INSERT INTO comments (username, text, kind, kindID) VALUES (?, ?, ?, ?)",
       [username, text, kind, kindID]
     );
@@ -29,7 +29,7 @@ exports.deleteComment = async (req, res) => {
     const { user } = req.body;
     console.log(user);
     
-    const [result] = await db.promise().query(
+    const [result] = await db.query(
         "DELETE FROM comments WHERE id = ? AND username = ?",
         [commentID, user]
       );
@@ -38,7 +38,7 @@ exports.deleteComment = async (req, res) => {
       return res.status(404).json({ message: "Comment not found or unauthorized" });
     }
 
-    await db.promise().query(
+    await db.query(
       "DELETE FROM likes WHERE kind = ? AND kindID = ?",
       ["comment", commentID]
     );     

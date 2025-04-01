@@ -9,7 +9,7 @@ exports.getContact = async (req, res) => {
     
     if (req.user) {
       const email  = req.user.email;
-      const [users] = await db.promise().query("SELECT * FROM users WHERE email = ?", [email]);
+      const [users] = await db.query("SELECT * FROM users WHERE email = ?", [email]);
   
       if (users.length > 0) {
           user = users[0].email;
@@ -28,7 +28,7 @@ exports.postContact = async (req, res) => {
   try {
     const {firstName, lastName, email, phoneNumber, topic, message} = req.body;
 
-    await db.promise().query(
+    await db.query(
       'INSERT INTO contacts (firstName, lastName, email, phoneNumber, topic, message) VALUES (?, ?, ?, ?, ?, ?)', 
       [firstName, lastName, email, phoneNumber, topic, message]
     );

@@ -1,11 +1,15 @@
 import axios from "axios";
+const API_URL = import.meta.env.VITE_API_URL || 'https://grandeplayer.up.railway.app';
+
 
 class DeleteService {
   constructor() {
     this.api = axios.create({
-      baseURL: "/api",  
+      baseURL: `${API_URL}/api`,
+      withCredentials: true,
     });
-  }
+  }  
+
 
   async deleteSongData(song) {
       const data = { song };
@@ -22,7 +26,6 @@ class DeleteService {
       throw error;
     }
   }
-
 }
 
 export default new DeleteService();
