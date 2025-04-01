@@ -2,7 +2,7 @@ const db = require("../db");
 const path = require("path");
 const fs = require("fs");
 
-const uploadDirectory = path.join(__dirname, "../../client/public");
+const uploadDirectory = path.join(__dirname, "../../server/public");
 if (!fs.existsSync(uploadDirectory)) {
   fs.mkdirSync(uploadDirectory);
 }
