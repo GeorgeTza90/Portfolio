@@ -5,7 +5,7 @@ const axios = require("axios");
 const app = express();
 
 const PORT = process.env.PORT || 5000;
-const optAuthToken = require('./services/authToken');
+
 
 
 // CONTROLLERS
@@ -24,6 +24,7 @@ const healthController = require("./controllers/healthController");
 
 
 // MIDDLEWARE
+const optAuthToken = require('./services/authToken');
 app.use(cors({
   origin: ["https://icvacations.netlify.app", "http://localhost:5173"],
   credentials: true

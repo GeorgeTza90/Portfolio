@@ -15,10 +15,14 @@ const registerController = require("./controllers/registerController");
 const storeController = require("./controllers/storeController");
 
 // MIDDLEWARE
-app.use(cors());
+const verifyToken = require('./middleware/authMiddleware');
+app.use(cors({
+  origin: ["https://grandeplayer.netlify.app", "http://localhost:5173"],
+  credentials: true
+}));
 app.use(express.json());
 app.use(fileUpload()); 
-const verifyToken = require('./middleware/authMiddleware');
+
 
 // API ROUTING
 app.get("/api/", verifyToken, homeController.getHome);
