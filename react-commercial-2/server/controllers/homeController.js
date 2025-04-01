@@ -1,6 +1,6 @@
 const db = require("../db");  
 const bcrypt = require("bcrypt");
-const LogEvents = require('../logEvents');
+
 
 exports.getHome = async (req, res) => {
   try {  
@@ -54,7 +54,7 @@ exports.getProfile = async (req, res) => {
     avatars = avatar;
 
   return res.json({ heading, user, avatars, songs });
-
+  
   } catch (error) {
     console.error("Error on Profile Page:", error);
     res.status(500).json({ message: "Internal Server Error" });  
@@ -63,8 +63,7 @@ exports.getProfile = async (req, res) => {
 
 
 exports.postProfile = async (req, res) => {
-  try {
-  
+  try {  
     const { username, pwd, email, selectedAvatar, userID } = req.body;
     console.log(username, pwd, email, selectedAvatar)
 
@@ -79,7 +78,6 @@ exports.postProfile = async (req, res) => {
     );
 
     res.status(201).json({ message: "User updated successfully" });
-    LogEvents("User updated Successful", `User: ${username} email: ${email}`);
 
   } catch (error) {
     console.error("Error registering user:", error);

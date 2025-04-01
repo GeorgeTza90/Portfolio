@@ -1,5 +1,4 @@
 const db = require("../db");
-const LogEvents = require('../logEvents');
 const jwt = require("jsonwebtoken");
 const bcrypt = require("bcrypt");
 const SECRET_KEY = process.env.JWT_SECRET;
@@ -27,7 +26,6 @@ exports.postLogin = async (req, res) => {
     const token = jwt.sign({ email: foundUser.email }, SECRET_KEY, { expiresIn: "1h" });
 
     res.status(200).json({ message:"Logged In Successful", token });
-    LogEvents("Logged In Successful", `User: ${foundUser.username} email: ${foundUser.email}`);
 
   } catch (error) {
     console.error("Error during login:", error);

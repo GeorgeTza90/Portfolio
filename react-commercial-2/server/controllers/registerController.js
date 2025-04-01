@@ -1,5 +1,4 @@
 const db = require("../db");  
-const LogEvents = require('../logEvents');
 const bcrypt = require("bcrypt");
 
 exports.getRegister = async (req, res) => {
@@ -26,7 +25,6 @@ exports.postRegister = async (req, res) => {
     await db.promise().query("INSERT INTO users (username, email, password, premium, gp, avatar) VALUES (?, ?, ?, ?, ?, ?)", [user, email, hashedPwd, 0, 3, selectedAvatar]);
 
     res.status(201).json({ message: "User registered successfully" });
-    LogEvents("Registration Successful", `User: ${user} email: ${email}`);
 
   } catch (error) {
     console.error("Error registering user:", error);

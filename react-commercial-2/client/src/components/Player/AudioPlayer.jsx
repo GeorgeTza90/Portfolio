@@ -21,6 +21,8 @@ function AudioPlayer({ songs, user }) {
     const [instrAudioContext, setInstrAudioContext] = useState(Array(5).fill(null));
     const instrRefs = instrSrc.map((src) => useRef(src));
 
+    console.log(instrRefs);
+
     useEffect(() => {
         const audio = instrRefs[0].current;
         instrRefs.map((ref, index) => {

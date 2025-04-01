@@ -1,5 +1,4 @@
 const db = require("../db");  
-const LogEvents = require('../logEvents');
 
 exports.getStore = async (req, res) => {
   try {  
@@ -14,7 +13,6 @@ exports.getStore = async (req, res) => {
         heading = `Welcome to GP Store ${user.username}`;  
       }
     }
-
   return res.json({ heading, user });
 
   } catch (error) {
@@ -32,15 +30,12 @@ exports.postPurchase = async (req, res) => {
     if (users.length > 0) {
       username = users[0].username;
       
-    const [result] = await db.promise().query("UPDATE users SET premium = ? WHERE username = ?", [premium, username]);
-    if (premium) {
-      res.status(200).json({ message: `User ${username} got Premium` });
-      LogEvents(`User ${username} got Premium`);
-    } else {
-      res.status(200).json({ message: `User ${username} lost Premium` });
-      LogEvents(`User ${username} lost Premium`);
-    }
-
+      const [result] = await db.promise().query("UPDATE users SET premium = ? WHERE username = ?", [premium, username]);
+      if (premium) {
+        res.status(200).json({ message: `User ${username} got Premium` });
+      } else {
+        res.status(200).json({ message: `User ${username} lost Premium` });
+      }
     }  
 
   } catch (error) {

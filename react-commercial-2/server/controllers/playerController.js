@@ -1,5 +1,4 @@
 const db = require("../db");
-const LogEvents = require('../logEvents');
 const path = require("path");
 const fs = require("fs");
 
@@ -80,8 +79,7 @@ exports.postCreateSong = async (req, res) => {
       [gp, username]
     );
     
-    res.status(200).json({ message: "Song data created successfully", songId: result1.insertId, username: `GP: ${gp}`  });
-    LogEvents("Song data created successfully", `Song: ${song} Artist: ${artist}`, `by ${username}`);
+    res.status(200).json({ message: "Song data created successfully", songId: result1.insertId, username: `GP: ${gp}`  });    
 
   } catch (error) {
     console.error("Error creating song data:", error);
@@ -165,7 +163,6 @@ exports.deleteSong = async (req, res) => {
     const [result] = await db.promise().query("DELETE FROM songs WHERE id = ?", [songs[0].id]);
 
     res.status(200).json({ message: "Song deleted successfully ", result });
-    LogEvents("Song deleted successfully ", `Song: ${songs[0].title} Artist: ${songs[0].artist}`);
 
   } catch (error) {
     console.error("Error deleting song:", error);
