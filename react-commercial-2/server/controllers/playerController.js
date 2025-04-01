@@ -1,8 +1,11 @@
 const db = require("../db");
 const path = require("path");
 const fs = require("fs");
+SONG_URL = process.env.SONG_URL;
 
-const uploadDirectory = path.join(__dirname, "../../server/public");
+
+const uploadDirectory = path.join(SONG_URL);
+console.log(uploadDirectory);
 if (!fs.existsSync(uploadDirectory)) {
   fs.mkdirSync(uploadDirectory);
 }

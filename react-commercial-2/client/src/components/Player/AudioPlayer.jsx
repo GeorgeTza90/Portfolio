@@ -1,7 +1,7 @@
 import React, { useRef, useState, useEffect } from "react";
 import styles from "./audioPlayer.module.css";
 import Visualizer from "../Visualizer/Visualizer";
-import Playlist from "../../components/Playlist/Playlist";
+import Playlist from "../Playlist/Playlist";
 import useFormatTime from "../../hooks/useFormatTime";
 
 function AudioPlayer({ songs, user }) {
@@ -20,8 +20,6 @@ function AudioPlayer({ songs, user }) {
     const instrSrc = [1, 2, 3, 4, 5].map(i => currentSong.urls[`inst${i}_url`] || null);
     const [instrAudioContext, setInstrAudioContext] = useState(Array(5).fill(null));
     const instrRefs = instrSrc.map((src) => useRef(src));
-
-    console.log(instrRefs);
 
     useEffect(() => {
         const audio = instrRefs[0].current;

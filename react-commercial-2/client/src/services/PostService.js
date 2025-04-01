@@ -1,4 +1,5 @@
 import axios from "axios";
+const SONG_URL = import.meta.env.VITE_SONG_URL;
 
 class PostService {
   constructor() {
@@ -92,7 +93,7 @@ class PostService {
       const extension = getFileExtension(instFiles[`inst${i}`]);
 
       if (instNames[`inst${i}`] && extension) {
-        urls[`inst${i}_url`] = `/${artist}/${song}/${song}_${instNames[`inst${i}`]}.${extension}`;
+        urls[`inst${i}_url`] = `${SONG_URL}/${artist}/${song}/${song}_${instNames[`inst${i}`]}.${extension}`;
       }
     }
 

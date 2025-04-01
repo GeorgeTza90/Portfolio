@@ -23,7 +23,6 @@ app.use(cors({
 app.use(express.json());
 app.use(fileUpload()); 
 
-
 // API ROUTING
 app.get("/api/", verifyToken, homeController.getHome);
 app.get("/api/profile", verifyToken, homeController.getProfile);
