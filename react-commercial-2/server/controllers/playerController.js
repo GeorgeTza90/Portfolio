@@ -73,8 +73,8 @@ exports.postCreateSong = async (req, res) => {
     }
 
     const [result1] = await db.promise().query(
-      "INSERT INTO songs (artist, title, instruments, urls, byUser) VALUES (?, ?, ?, ?, ?)",
-      [artist, song, JSON.stringify(instruments), JSON.stringify(urls), userID]
+      "INSERT INTO songs (artist, title, instruments, byUser) VALUES (?, ?, ?, ?)",
+      [artist, song, JSON.stringify(instruments), userID]
     );
 
     const [result2] = await db.promise().query(
@@ -115,26 +115,40 @@ exports.postUploadSong = async (req, res) => {
 
     const cloudFolder = `${artist}/${song}`;
     let artworkUrl = null;
+    const instrumentUrls = {};
 
     if (req.files.artworkFile) {
       artworkUrl = await uploadToCloudinary(req.files.artworkFile, cloudFolder, `${song}_Img`);
     }
 
-    const instrumentFiles = {};
     for (let i = 1; i <= numInstruments; i++) {
       const instFileKey = `inst${i}`;
-      const instName = instNames[instFileKey];
+      const instName = instNames[instFileKey]; 
+      
       if (req.files[instFileKey]) {
-        instrumentFiles[instFileKey] = await uploadToCloudinary(req.files[instFileKey], cloudFolder, `${song}_${instName}`);
+        instrumentUrls[`inst${i}_url`] = await uploadToCloudinary(
+          req.files[instFileKey], 
+          cloudFolder, 
+          `${song}_${instName}`
+        );
       }
     }
+
+    const fileUrls = {
+      img_url: artworkUrl,  
+      ...instrumentUrls      
+    };
+
+    const [result1] = await db.promise().query(
+      "UPDATE songs SET urls = ? WHERE artist = ? AND title = ?",
+      [JSON.stringify(fileUrls), artist, song]
+    );
 
     res.status(200).json({
       message: "Song uploaded successfully",
       artist,
       song,
-      artworkUrl,
-      instrumentFiles
+      fileUrls
     });
   } catch (error) {
     console.error("Error uploading files:", error);
