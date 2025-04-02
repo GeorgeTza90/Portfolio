@@ -3,6 +3,7 @@ import { useState, useEffect } from "react";
 import { useCookies } from "react-cookie";
 import { useNavigate } from "react-router-dom";
 import DeleteService from "../../services/DeleteService";
+import StoreButton from "../../components/Buttons/StoreButton";
 
 
 function UserCard({ user, avatar, songs }) {
@@ -42,11 +43,15 @@ function UserCard({ user, avatar, songs }) {
         }
     };
 
+    const handleUploadButton = () => {
+        navigate("/player/upload");
+    }
+
     const handleInfo = () => {
         setHidden(false);
         setTimeout(() => {
             setHidden(true);
-        }, 8000);
+        }, 5000);
     };
 
 
@@ -73,7 +78,15 @@ function UserCard({ user, avatar, songs }) {
                                                 </div>
                                                 <br />
                                             </>
-                                        ) : ""}
+                                        ) :
+                                            <>
+                                                <div onClick={handleProfileSettings} className={styles.stats3}>
+                                                    <label onMouseEnter={handleInfo}>⚙️</label>
+                                                    <label className={styles.info2}>{!hidden ? " settings only for premium users " : ""}</label>
+                                                </div>
+                                                <br />
+                                            </>
+                                        }
 
                                         <label className={styles.labeled}>Username:</label>
                                         <label>{user.username}</label>
@@ -118,7 +131,12 @@ function UserCard({ user, avatar, songs }) {
                                     </tbody>
                                 </table>
                             ) : (
-                                <p>No songs uploaded yet!</p>
+                                <>
+                                    <div className={styles.emptyList}>
+                                        <p>No songs uploaded yet!</p>
+                                        <StoreButton slot={"Upload song"} onClick={handleUploadButton} fontSize="10px" size="180px" />
+                                    </div>
+                                </>
                             )}
                         </div>
                     </div>

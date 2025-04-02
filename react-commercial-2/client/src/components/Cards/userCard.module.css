@@ -113,6 +113,19 @@
     color: #1100ff9d;
 }
 
+.info2 {
+    font-size: small;
+    cursor: pointer;
+    color: #1100ff9d;
+    margin-right: 12px;
+}
+
 .delete {
     cursor: pointer;
+}
+
+.emptyList {
+    display: flexbox;
+    align-items: center;
+    justify-items: center;
 }

@@ -33,6 +33,7 @@ function UploadForm({ user }) {
 
     const [errMsg, setErrMsg] = useState("");
     const [success, setSuccess] = useState(false);
+    const [uploading, setUploading] = useState(false);
 
     useEffect(() => setGrandePoints(user.gp), [user.gp]);
     useEffect(() => setValidArtist(NAME_REGEX.test(artist)), [artist]);
@@ -92,6 +93,8 @@ function UploadForm({ user }) {
     const handleSubmit = async (e) => {
         e.preventDefault();
 
+        setUploading(true);
+
         if (!validArtist || !validSong || !artworkFile || !instFiles || !instNames) {
             setErrMsg("Please provide all required information.");
             return;
@@ -107,9 +110,9 @@ function UploadForm({ user }) {
             const response2 = await PostService.postUploadData(artist, song, artworkFile, numInstruments, instNames, instFiles);
             console.log("Response Data:", response2.data);
 
-
             setSuccess(true);
             resetForm();
+            setUploading(false);
             navigate("/player")
 
         } catch (error) {
@@ -121,107 +124,115 @@ function UploadForm({ user }) {
 
     return (
         <>
-            {success ? (
-                <section className={styles.RegContainer}>
-                    <div className={styles.success}>
-                        <h1>Successfully Uploaded</h1>
-                    </div>
-                </section>
+            {uploading ? (
+                <>UPLOADING YOUR SONG...</>
             ) : (
-                <section className={styles.RegContainer}>
-                    <label>GrandePoints: {user.gp}</label>
-                    <form onSubmit={handleSubmit}>
-                        <div className={styles.text}>
-                            <h2>About the song</h2>
-                            <div className={styles.fillContainer}>
-                                <label>Artist's Name:</label>
-                                <input
-                                    className={styles.myInput}
-                                    type="text"
-                                    id="artist_name"
-                                    autoComplete="off"
-                                    placeholder="Artist"
-                                    onChange={(e) => setArtist(e.target.value)}
-                                    required
-                                    aria-invalid={validArtist ? "false" : "true"}
-                                    aria-describedby="uidartist"
-                                    value={artist}
-                                    onFocus={() => setArtistFocus(true)}
-                                    onBlur={() => setArtistFocus(false)}
-                                />
-                                <div className={styles.checkContainer}>
-                                    <span className={validArtist ? styles.valid : styles.offscreen}> ✅</span>
-                                    <span className={!validArtist ? styles.invalid : styles.offscreen}> ❌</span>
-                                </div>
+                <>
+                    {success ? (
+                        <section className={styles.RegContainer}>
+                            <div className={styles.success}>
+                                <h1>Successfully Uploaded</h1>
                             </div>
-                            <p id="uidartist" className={artistFocus && !validArtist ? styles.instructions : styles.offscreen}> 1 to 23 characters. Allowed special characters.</p>
-                            <br />
+                        </section>
+                    ) : (
+                        <section className={styles.RegContainer}>
+                            <label>GrandePoints: {user.gp}</label>
+                            <form onSubmit={handleSubmit}>
+                                <div className={styles.text}>
+                                    <h2>About the song</h2>
+                                    <div className={styles.fillContainer}>
+                                        <label>Artist's Name:</label>
+                                        <input
+                                            className={styles.myInput}
+                                            type="text"
+                                            id="artist_name"
+                                            autoComplete="off"
+                                            placeholder="Artist"
+                                            onChange={(e) => setArtist(e.target.value)}
+                                            required
+                                            aria-invalid={validArtist ? "false" : "true"}
+                                            aria-describedby="uidartist"
+                                            value={artist}
+                                            onFocus={() => setArtistFocus(true)}
+                                            onBlur={() => setArtistFocus(false)}
+                                        />
+                                        <div className={styles.checkContainer}>
+                                            <span className={validArtist ? styles.valid : styles.offscreen}> ✅</span>
+                                            <span className={!validArtist ? styles.invalid : styles.offscreen}> ❌</span>
+                                        </div>
+                                    </div>
+                                    <p id="uidartist" className={artistFocus && !validArtist ? styles.instructions : styles.offscreen}> 1 to 23 characters. Allowed special characters.</p>
+                                    <br />
 
-                            <div className={styles.fillContainer}>
-                                <label>Song's Name:</label>
-                                <input
-                                    className={styles.myInput}
-                                    type="text"
-                                    id="song_name"
-                                    placeholder="Song"
-                                    onChange={(e) => setSong(e.target.value)}
-                                    required
-                                    aria-invalid={validSong ? "false" : "true"}
-                                    aria-describedby="uidsong"
-                                    value={song}
-                                    onFocus={() => setSongFocus(true)}
-                                    onBlur={() => setSongFocus(false)}
-                                />
-                                <div className={styles.checkContainer}>
-                                    <span className={validSong ? styles.valid : styles.offscreen}> ✅</span>
-                                    <span className={!validSong ? styles.invalid : styles.offscreen}> ❌</span>
+                                    <div className={styles.fillContainer}>
+                                        <label>Song's Name:</label>
+                                        <input
+                                            className={styles.myInput}
+                                            type="text"
+                                            id="song_name"
+                                            placeholder="Song"
+                                            onChange={(e) => setSong(e.target.value)}
+                                            required
+                                            aria-invalid={validSong ? "false" : "true"}
+                                            aria-describedby="uidsong"
+                                            value={song}
+                                            onFocus={() => setSongFocus(true)}
+                                            onBlur={() => setSongFocus(false)}
+                                        />
+                                        <div className={styles.checkContainer}>
+                                            <span className={validSong ? styles.valid : styles.offscreen}> ✅</span>
+                                            <span className={!validSong ? styles.invalid : styles.offscreen}> ❌</span>
+                                        </div>
+                                    </div>
+                                    <p id="uidsong" className={songFocus && !validSong ? styles.instructions : styles.offscreen}> 1 to 23 characters. Allowed special characters.</p>
+                                    <br /><br />
+
+                                    <h2>Song's Artwork</h2>
+                                    <div className={styles.fillContainer2}>
+                                        <label>File:</label>
+                                        <input
+                                            className={styles.myInput}
+                                            type="file"
+                                            onChange={handleFileChange}
+                                            accept=".jpg, .jpeg, .png, .pdf"
+                                            id="song_img"
+                                            required
+                                        />
+                                        <div>
+                                            <span className={artworkFile ? styles.valid : styles.offscreen}> ✅</span>
+                                            <span className={!artworkFile ? styles.invalid : styles.offscreen}> ❌</span>
+                                        </div>
+                                    </div><br /><br />
+
+                                    <label>Select Number of Instruments:</label>
+                                    <select
+                                        value={numInstruments}
+                                        onChange={(e) => handleNumInstruments(Number(e.target.value))}
+                                        required
+                                    >
+                                        {[...Array(maxInstruments)].map((_, index) => (
+                                            <option key={index + 1} value={index + 1}>{index + 1}</option>
+                                        ))}
+
+                                    </select><br /><br />
+
+                                    {[...Array(numInstruments)].map((_, index) => (
+                                        <InstForm
+                                            key={index + 1}
+                                            num={index + 1}
+                                            onInstName={handleInstNameChange(index + 1)}
+                                            onInstFile={handleInstFileChange(index + 1)}
+                                        />
+                                    ))}<br /><br />
+                                    It will take a liiiiiitle time after submit, just be patient, ok?<br /><br />
+                                    <br />
+                                    <Button1 type="submit" slot="Submit Song" disabled={!validArtist || !validSong} />
                                 </div>
-                            </div>
-                            <p id="uidsong" className={songFocus && !validSong ? styles.instructions : styles.offscreen}> 1 to 23 characters. Allowed special characters.</p>
-                            <br /><br />
 
-                            <h2>Song's Artwork</h2>
-                            <div className={styles.fillContainer2}>
-                                <label>File:</label>
-                                <input
-                                    className={styles.myInput}
-                                    type="file"
-                                    onChange={handleFileChange}
-                                    accept=".jpg, .jpeg, .png, .pdf"
-                                    id="song_img"
-                                    required
-                                />
-                                <div>
-                                    <span className={artworkFile ? styles.valid : styles.offscreen}> ✅</span>
-                                    <span className={!artworkFile ? styles.invalid : styles.offscreen}> ❌</span>
-                                </div>
-                            </div><br /><br />
-
-                            <label>Select Number of Instruments:</label>
-                            <select
-                                value={numInstruments}
-                                onChange={(e) => handleNumInstruments(Number(e.target.value))}
-                                required
-                            >
-                                {[...Array(maxInstruments)].map((_, index) => (
-                                    <option key={index + 1} value={index + 1}>{index + 1}</option>
-                                ))}
-
-                            </select><br /><br />
-
-                            {[...Array(numInstruments)].map((_, index) => (
-                                <InstForm
-                                    key={index + 1}
-                                    num={index + 1}
-                                    onInstName={handleInstNameChange(index + 1)}
-                                    onInstFile={handleInstFileChange(index + 1)}
-                                />
-                            ))}
-                            <br />
-                            <Button1 type="submit" slot="Submit Song" disabled={!validArtist || !validSong} />
-                        </div>
-                    </form>
-                </section>
+                            </form>
+                        </section>
+                    )}
+                </>
             )}
         </>
     );
