@@ -17,7 +17,7 @@ const storeController = require("./controllers/storeController");
 // MIDDLEWARE
 const verifyToken = require('./middleware/authMiddleware');
 app.use(cors({
-  origin: ["https://grandeplayer.netlify.app", "http://localhost:5173"],
+  origin: ["https://grandeplayer.netlify.app", "http://localhost:5173", "https://console.cloudinary.com"],
   credentials: true
 }));
 app.use(express.json());

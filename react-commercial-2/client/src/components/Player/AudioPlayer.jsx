@@ -154,7 +154,14 @@ function AudioPlayer({ songs, user }) {
             <div className={styles.all}><br />
                 <label className={styles.name}>{currentSong.artist} - {currentSong.title}</label><br /><br />
 
-                {instrSrc.map((src, i) => src ? <audio key={i} ref={instrRefs[i]} src={src} /> : null)}
+                {instrSrc.map((src, i) => src ?
+                    <audio
+                        key={i}
+                        ref={instrRefs[i]}
+                        src={src}
+                        crossOrigin="anonymous"
+                    />
+                    : null)}
 
                 <div className={styles.vol}>
                     <div className={styles.buttonDiv}>

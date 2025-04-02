@@ -1,4 +1,3 @@
-
 exports.getAbout = async (req, res) => {
   try {
     res.json({ heading: "About Grande Player" });

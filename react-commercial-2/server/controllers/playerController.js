@@ -3,14 +3,12 @@ const path = require("path");
 const fs = require("fs");
 const cloudinary = require('cloudinary').v2;
 const streamifier = require('streamifier');
-const uploadDirectory = process.env.SONG_URL;
 
 cloudinary.config({ 
   cloud_name: process.env.CLOUD_NAME, 
   api_key: process.env.API_KEY, 
   api_secret: process.env.API_SECRET
 });
-
 
 exports.getPlayer = async (req, res) => {
   try {
