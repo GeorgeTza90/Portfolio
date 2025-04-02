@@ -80,9 +80,9 @@ function UserCard({ user, avatar, songs }) {
                                             </>
                                         ) :
                                             <>
-                                                <div onClick={handleProfileSettings} className={styles.stats3}>
+                                                <div className={styles.stats3}>
                                                     <label onMouseEnter={handleInfo}>⚙️</label>
-                                                    <label className={styles.info2}>{!hidden ? " settings only for premium users " : ""}</label>
+                                                    <label className={styles.info2}>{!hidden ? "only for premium users" : ""}</label>
                                                 </div>
                                                 <br />
                                             </>
@@ -134,7 +134,7 @@ function UserCard({ user, avatar, songs }) {
                                 <>
                                     <div className={styles.emptyList}>
                                         <p>No songs uploaded yet!</p>
-                                        <StoreButton slot={"Upload song"} onClick={handleUploadButton} fontSize="10px" size="180px" />
+                                        <StoreButton slot={"Upload song"} onClick={handleUploadButton} fontSize="15px" size="195px" />
                                     </div>
                                 </>
                             )}

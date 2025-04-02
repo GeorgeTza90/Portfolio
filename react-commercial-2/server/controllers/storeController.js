@@ -6,7 +6,7 @@ exports.getStore = async (req, res) => {
 
     if (req.user) {
       const email = req.user.email;  
-      const [users] = await db.promise().query("SELECT * FROM users WHERE email = ?", [email]); 
+      const [users] = await db.query("SELECT * FROM users WHERE email = ?", [email]); 
 
       if (users.length > 0) {
         user = users[0];
@@ -25,12 +25,12 @@ exports.postPurchase = async (req, res) => {
   try {  
     let username = {};
     const { firstName, lastName, email, premium, price } = req.body;     
-    const [users] = await db.promise().query("SELECT * FROM users WHERE email = ?", [email]); 
+    const [users] = await db.query("SELECT * FROM users WHERE email = ?", [email]); 
 
     if (users.length > 0) {
       username = users[0].username;
       
-      const [result] = await db.promise().query("UPDATE users SET premium = ? WHERE username = ?", [premium, username]);
+      const [result] = await db.query("UPDATE users SET premium = ? WHERE username = ?", [premium, username]);
       if (premium) {
         res.status(200).json({ message: `User ${username} got Premium` });
       } else {

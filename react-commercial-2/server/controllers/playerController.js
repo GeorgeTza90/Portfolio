@@ -12,14 +12,14 @@ cloudinary.config({
 
 exports.getPlayer = async (req, res) => {
   try {
-    const [songs] = await db.promise().query("SELECT * FROM songs");
+    const [songs] = await db.query("SELECT * FROM songs");
 
     let heading = "Player";
     let user = "Guest";  
 
     if (req.user) {
       const email = req.user.email;  
-      const [users] = await db.promise().query("SELECT * FROM users WHERE email = ?", [email]);
+      const [users] = await db.query("SELECT * FROM users WHERE email = ?", [email]);
 
       if (users.length > 0) {
         user = users[0];
@@ -42,7 +42,7 @@ exports.getUploader = async (req, res) => {
 
     if (req.user) {
       const email = req.user.email;  
-      const [users] = await db.promise().query("SELECT * FROM users WHERE email = ?", [email]);
+      const [users] = await db.query("SELECT * FROM users WHERE email = ?", [email]);
 
       if (users.length > 0) {
         user = users[0];
@@ -66,18 +66,18 @@ exports.postCreateSong = async (req, res) => {
     let userID = ""; 
 
     if (username) {
-      const [users] = await db.promise().query("SELECT * FROM users WHERE username = ?", [username]);
+      const [users] = await db.query("SELECT * FROM users WHERE username = ?", [username]);
       if (users.length > 0) {
         userID = users[0].id;
       }
     }
 
-    const [result1] = await db.promise().query(
+    const [result1] = await db.query(
       "INSERT INTO songs (artist, title, instruments, byUser) VALUES (?, ?, ?, ?)",
       [artist, song, JSON.stringify(instruments), userID]
     );
 
-    const [result2] = await db.promise().query(
+    const [result2] = await db.query(
       "UPDATE users SET gp = ? WHERE username = ?",
       [gp, username]
     );
@@ -139,7 +139,7 @@ exports.postUploadSong = async (req, res) => {
       ...instrumentUrls      
     };
 
-    const [result1] = await db.promise().query(
+    const [result1] = await db.query(
       "UPDATE songs SET urls = ? WHERE artist = ? AND title = ?",
       [JSON.stringify(fileUrls), artist, song]
     );
@@ -160,7 +160,7 @@ exports.postUploadSong = async (req, res) => {
 exports.deleteSong = async (req, res) => {
   try {
     const { song } = req.body.data;
-    const [songs] = await db.promise().query("SELECT * FROM songs WHERE id = ?", [song.id]);
+    const [songs] = await db.query("SELECT * FROM songs WHERE id = ?", [song.id]);
 
     if (!songs.length) {
       return res.status(404).json({ message: "Song not found." });
@@ -221,7 +221,7 @@ exports.deleteSong = async (req, res) => {
       });
     });
 
-    const [result] = await db.promise().query("DELETE FROM songs WHERE id = ?", [song.id]);
+    const [result] = await db.query("DELETE FROM songs WHERE id = ?", [song.id]);
     res.status(200).json({ message: "Song deleted successfully", result });
 
   } catch (error) {

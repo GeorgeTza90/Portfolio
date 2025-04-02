@@ -2,8 +2,10 @@ const express = require("express");
 const cors = require("cors");
 const fileUpload = require("express-fileupload"); 
 require("dotenv").config();
+const axios = require("axios");
 const app = express();
 const PORT = process.env.PORT;
+
 
 // CONTROLLERS
 const homeController = require("./controllers/homeController");
@@ -13,6 +15,8 @@ const loginController = require("./controllers/loginController");
 const logoutController = require("./controllers/logoutController");
 const registerController = require("./controllers/registerController");
 const storeController = require("./controllers/storeController");
+const healthController = require("./controllers/healthController");
+
 
 // MIDDLEWARE
 const verifyToken = require('./middleware/authMiddleware');
@@ -22,6 +26,7 @@ app.use(cors({
 }));
 app.use(express.json());
 app.use(fileUpload()); 
+
 
 // API ROUTING
 app.get("/api/", verifyToken, homeController.getHome);
@@ -45,10 +50,24 @@ app.post("/api/logout", logoutController.postLogout);
 app.get("/api/register", registerController.getRegister);
 app.post('/api/register', registerController.postRegister);
 
+
+// Keep-Alive Self-Ping (Runs Once When Server Starts)
+app.get("/api/keep-alive", healthController.getKeepItAlive);
+
+const KEEP_ALIVE_URL = process.env.KEEP_ALIVE_URL; 
+
+setInterval(() => {
+  axios.get(KEEP_ALIVE_URL)
+    .then(() => console.log("Self-ping successful"))
+    .catch(err => console.error("Self-ping failed:", err));
+}, 5 * 60 * 1000); 
+
+
 // Unknown API routes (404)
 app.use("/api/*", (req, res) => {
   res.status(404).json({ error: "API route not found" });
 });
+
 
 // Start Server
 app.listen(PORT, () => console.log(`Server running on port ${PORT}`));

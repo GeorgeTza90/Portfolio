@@ -12,7 +12,7 @@ exports.postLogin = async (req, res) => {
   try {
     const { email, password } = req.body;
 
-    const [users] = await db.promise().query("SELECT * FROM users WHERE email = ?", [email])
+    const [users] = await db.query("SELECT * FROM users WHERE email = ?", [email])
     if (users.length === 0) {
       return res.status(401).json({ message: "User Does Not Exist" })
     }

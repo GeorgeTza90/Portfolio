@@ -11,9 +11,9 @@ exports.getHome = async (req, res) => {
 
     if (req.user) {
       const email = req.user.email;  
-      const [users] = await db.promise().query("SELECT * FROM users WHERE email = ?", [email]);     
-      const [avatars] = await db.promise().query("SELECT * FROM avatars WHERE id = ?", [users[0].avatar]);
-      const [songsByUser] = await db.promise().query("SELECT * FROM songs WHERE byUser = ?", [users[0].id]);
+      const [users] = await db.query("SELECT * FROM users WHERE email = ?", [email]);     
+      const [avatars] = await db.query("SELECT * FROM avatars WHERE id = ?", [users[0].avatar]);
+      const [songsByUser] = await db.query("SELECT * FROM songs WHERE byUser = ?", [users[0].id]);
 
       if (users.length > 0) {
         user = users[0];
@@ -41,8 +41,8 @@ exports.getProfile = async (req, res) => {
    
     if (req.user) {
       const email = req.user.email;  
-      const [users] = await db.promise().query("SELECT * FROM users WHERE email = ?", [email]);  
-      const [songsByUser] = await db.promise().query("SELECT * FROM songs WHERE byUser = ?", [users[0].id]);
+      const [users] = await db.query("SELECT * FROM users WHERE email = ?", [email]);  
+      const [songsByUser] = await db.query("SELECT * FROM songs WHERE byUser = ?", [users[0].id]);
 
       if (users.length > 0) {
         user = users[0];
@@ -50,7 +50,7 @@ exports.getProfile = async (req, res) => {
         heading = `Profile Settings ${user.username}`;  
       }
     }
-    const [avatar] = await db.promise().query("SELECT * FROM avatars");     
+    const [avatar] = await db.query("SELECT * FROM avatars");     
     avatars = avatar;
 
   return res.json({ heading, user, avatars, songs });
@@ -69,10 +69,10 @@ exports.postProfile = async (req, res) => {
 
     if (pwd.length > 0) {
       const hashedPwd = await bcrypt.hash(pwd, 10);
-      await db.promise().query("UPDATE users SET password = ? WHERE username = ?", [hashedPwd, username]);
+      await db.query("UPDATE users SET password = ? WHERE username = ?", [hashedPwd, username]);
     }
 
-    await db.promise().query(
+    await db.query(
       "UPDATE users SET username = ?, email = ?, avatar = ? WHERE id = ?",
       [username, email, selectedAvatar, userID] 
     );
