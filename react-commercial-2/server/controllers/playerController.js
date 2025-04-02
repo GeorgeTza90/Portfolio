@@ -153,66 +153,53 @@ exports.deleteSong = async (req, res) => {
     if (!songs.length) {
       return res.status(404).json({ message: "Song not found." });
     }
-
     const songData = songs[0];
-    console.log(songData);
-
-    // Ανάκτηση του ονόματος του φακέλου
     const folderName = `${songData.artist}/${songData.title}/`;
+    let publicIDs = [];
 
-    // Βήμα 1: Ανάκτηση εικόνων
     cloudinary.api.resources({
       type: 'upload',
       prefix: folderName,
-      resource_type: 'image',  // Ανάκτηση μόνο εικόνων
+      resource_type: 'image', 
       max_results: 100,
     }, async (error, result) => {
       if (error) {
         console.error('Error fetching images:', error);
       } else {
         const imageResources = result.resources;
-        console.log('Found image files in folder:', imageResources);
 
-        const deleteImageFiles = imageResources.map(async (resource) => {
-          try {
-            console.log(`Deleting image file with public_id: ${resource.public_id}`);
-            await cloudinary.api.delete_resources(resource.public_id);
-            console.log(`Deleted image file: ${resource.public_id}`);
-          } catch (deleteError) {
-            console.error(`Error deleting image file ${resource.public_id}:`, deleteError);
-          }
+        imageResources.forEach(resource => {
+          publicIDs.push(resource.public_id);
         });
-
-        await Promise.all(deleteImageFiles);
       }
 
-      // Βήμα 2: Ανάκτηση ήχου/βίντεο
       cloudinary.api.resources({
         type: 'upload',
         prefix: folderName,
-        resource_type: 'video',  // Ανάκτηση μόνο ήχου/βίντεο
+        resource_type: 'video',  
         max_results: 100,
       }, async (error, result) => {
         if (error) {
           console.error('Error fetching audio/video files:', error);
         } else {
-          const mediaResources = result.resources;
-          console.log('Found audio/video files in folder:', mediaResources);
+          const audioResources = result.resources;
 
-          const deleteMediaFiles = mediaResources.map(async (resource) => {
-            try {
-              console.log(`Deleting media file with public_id: ${resource.public_id}`);
-              await cloudinary.api.delete_resources(resource.public_id);
-              console.log(`Deleted media file: ${resource.public_id}`);
-            } catch (deleteError) {
-              console.error(`Error deleting media file ${resource.public_id}:`, deleteError);
-            }
+          audioResources.forEach(resource => {
+            publicIDs.push(resource.public_id);
           });
-
-          await Promise.all(deleteMediaFiles);
         }
 
-        // Στο τέλος διαγράφουμε τον φάκελο, αν είναι άδειος
+        const deleteMediaFiles = publicIDs.map(async (public_id) => {
+          try {
+            console.log(`Deleting media file: ${public_id}`);
+            await cloudinary.api.delete_resources(public_id);
+            console.log(`Deleted media file: ${public_id}`);
+          } catch (error) {
+            console.error(`Error deleting media file ${public_id}:`, error);
+          }  
+        });
+        await Promise.all(deleteMediaFiles);
+  
         try {
           await cloudinary.api.delete_folder(folderName);
           console.log(`Deleted folder: ${folderName}`);
@@ -222,7 +209,6 @@ exports.deleteSong = async (req, res) => {
       });
     });
 
-    // Διαγραφή του τραγουδιού από την βάση δεδομένων
     const [result] = await db.promise().query("DELETE FROM songs WHERE id = ?", [song.id]);
     res.status(200).json({ message: "Song deleted successfully", result });
 
