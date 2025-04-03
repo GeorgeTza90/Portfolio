@@ -1,5 +1,5 @@
 import { useEffect, useState } from "react";
-import GetService from "../../services/getService";
+import GetService from "../../services/GetService";
 import Heading from "../../layouts/Heading/Heading";
 import AboutCard from "../../components/Cards/AboutCard";
 
