@@ -3,7 +3,7 @@ import { useCookies } from "react-cookie";
 import Heading from "../../layouts/Heading/Heading";
 import UserCard from "../../components/Cards/UserCard";
 import GetService from "../../services/GetService";
-import GpsCard from "../../components/Cards/GPSCard";
+import GpsCard from "../../components/Cards/GpsCard";
 import GuestCard from "../../components/Cards/GuestCard";
 
 
