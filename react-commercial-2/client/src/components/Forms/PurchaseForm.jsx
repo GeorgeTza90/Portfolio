@@ -97,7 +97,7 @@ function PurchaseForm() {
             ) : (
                 <section className={styles.all}>
                     <div className={styles.Container}>
-                        <img src="src/assets/GP-Store.png" className={styles.img} />
+                        <img src="/assets/GP-Store.png" className={styles.img} />
                         <form type="POST" onSubmit={handleSubmit}>
                             <label className={styles.label}>Name</label>
                             <div className={styles.row}>

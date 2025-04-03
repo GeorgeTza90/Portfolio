@@ -1,5 +1,5 @@
 .footer {
-    background-image: url(src/assets/foot3.png);
+    background-image: url(/assets/foot3.png);
     background-position: center;
     background-repeat: no-repeat;
     background-size: cover;
@@ -10,7 +10,7 @@
 }
 
 .footer:hover {
-    background-image: url(src/assets/foot3_hover.png);
+    background-image: url(/assets/foot3_hover.png);
     transition: background-image 0.40s;
 }
 

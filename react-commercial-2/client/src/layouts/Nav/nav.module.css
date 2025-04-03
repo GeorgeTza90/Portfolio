@@ -1,5 +1,5 @@
 .nav {
-    background-image: url(src/assets/nav3.png);
+    background-image: url(/assets/nav3.png);
     background-position: center;
     background-repeat: no-repeat;
     background-size: cover;
@@ -11,7 +11,7 @@
 }
 
 .navHidden {
-    background-image: url(src/assets/nav3.png);
+    background-image: url(/assets/nav3.png);
     background-position: center;
     background-repeat: no-repeat;
     background-size: cover;
@@ -73,12 +73,12 @@
 
 /* HOVERS */
 .nav:hover {
-    background-image: url(src/assets/nav3_hover.png);
+    background-image: url(/assets/nav3_hover.png);
     transition: background-image 0.40s;
 }
 
 .navHidden:hover {
-    background-image: url(src/assets/nav3_hover.png);
+    background-image: url(/assets/nav3_hover.png);
     transition: background-image 0.40s;
 }
 

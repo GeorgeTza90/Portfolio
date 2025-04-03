@@ -14,7 +14,7 @@ function GpsCard({ user }) {
     return (
         <>
             <div className={styles.all}>
-                <img src="src/assets/GPS.png" className={styles.img} />
+                <img src="/assets/GPS.png" className={styles.img} />
 
                 <div className={styles.main}>
                     <ul>
