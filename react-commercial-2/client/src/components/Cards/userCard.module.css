@@ -92,7 +92,7 @@
 
 .stats3 {
     text-decoration: double;
-    font-size: large;
+    font-size: medium;
     color: #fdfdfd;
     text-shadow: 5px 5px 10px #000000;
     cursor: pointer;
@@ -102,7 +102,7 @@
     background-color: #fff200;
     border-radius: 10px;
     text-decoration: double;
-    font-size: large;
+    font-size: medium;
     font-weight: bold;
     color: #fdfdfd;
     text-shadow: 5px 5px 10px #000000;
