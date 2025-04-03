@@ -44,7 +44,6 @@ function Player() {
     navigate("/login");
   }
 
-  console.log(songs);
 
   return (
     <>

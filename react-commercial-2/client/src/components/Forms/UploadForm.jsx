@@ -6,7 +6,7 @@ import PostService from "../../services/PostService";
 import InstForm from "./InstForm";
 
 
-const NAME_REGEX = /^.{1,23}$/;
+const NAME_REGEX = /^[A-Za-z()]+(?: [A-Za-z()]+)*$/;
 
 function UploadForm({ user }) {
     const username = user.username;
@@ -39,10 +39,12 @@ function UploadForm({ user }) {
     useEffect(() => setValidArtist(NAME_REGEX.test(artist)), [artist]);
     useEffect(() => setValidSong(NAME_REGEX.test(song)), [song]);
     useEffect(() => {
-        if (GrandePoints <= 5 && GrandePoints > 0) {
-            setMaxInstruments(GrandePoints);
+        if (GrandePoints < 5 && GrandePoints > 0) {
+            setMaxInstruments(GrandePoints + 1);
+        } else if (GrandePoints >= 5) {
+            setMaxInstruments(5);
         } else {
-            setMaxInstruments(1);
+            setMaxInstruments(1)
         }
     }, [GrandePoints]);
 
@@ -86,7 +88,6 @@ function UploadForm({ user }) {
             setInstNames(updatedInstNames);
             setInstFiles(updatedInstFiles);
         }
-
         setNumInstruments(num);
     }
 
@@ -101,8 +102,8 @@ function UploadForm({ user }) {
         }
 
         try {
-            gp = GrandePoints - (numInstruments - 1) + 1;
-            console.log(gp);
+            gp = GrandePoints - numInstruments + 1;
+            console.log(`Remaining GP: ${gp}`);
 
             const response1 = await PostService.postCreateSongData(artist, song, artworkFile, numInstruments, instNames, instFiles, username, gp);
             console.log("Response Data:", response1.data);
@@ -125,13 +126,17 @@ function UploadForm({ user }) {
     return (
         <>
             {uploading ? (
-                <>UPLOADING YOUR SONG...</>
+                <><br /><br />
+                    UPLOADING YOUR SONG...<br /><br />
+                    It will take a liiiiiitle time after submit, just be patient, ok?<br /><br /><br />
+                </>
             ) : (
                 <>
                     {success ? (
                         <section className={styles.RegContainer}>
                             <div className={styles.success}>
-                                <h1>Successfully Uploaded</h1>
+                                <h1>Successfully Uploaded</h1><br /><br />
+
                             </div>
                         </section>
                     ) : (
@@ -213,7 +218,6 @@ function UploadForm({ user }) {
                                         {[...Array(maxInstruments)].map((_, index) => (
                                             <option key={index + 1} value={index + 1}>{index + 1}</option>
                                         ))}
-
                                     </select><br /><br />
 
                                     {[...Array(numInstruments)].map((_, index) => (
@@ -224,8 +228,7 @@ function UploadForm({ user }) {
                                             onInstFile={handleInstFileChange(index + 1)}
                                         />
                                     ))}<br /><br />
-                                    It will take a liiiiiitle time after submit, just be patient, ok?<br /><br />
-                                    <br />
+
                                     <Button1 type="submit" slot="Submit Song" disabled={!validArtist || !validSong} />
                                 </div>
 

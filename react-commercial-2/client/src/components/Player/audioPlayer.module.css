@@ -54,8 +54,8 @@ label {
 .song {
     background-color: #3d3d3d;
     color: #d6d6d3;
-    padding: 25px;
-    border-radius: 25px;
+    padding: 50px;
+    border-radius: 35px;
     box-shadow: 2px 2px 15px #000000bf;
     font-size: medium;
 }
@@ -69,6 +69,7 @@ label {
 
 .instr {
     margin-left: 5px;
+    min-width: 110px;
 }
 
 .Volumes {
