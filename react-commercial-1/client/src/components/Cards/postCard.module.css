@@ -13,7 +13,7 @@
 }
 
 .label {
-    font-size: x-large;
+    font-size: large;
     text-shadow: 3px 3px 5px #0000002b;
 }
 
@@ -25,7 +25,7 @@
 }
 
 .text {
-    font-size: medium;
+    font-size: small;
     text-shadow: 3px 3px 5px #0000002b;
     text-align: left;
     margin-left: 50px;
@@ -36,7 +36,7 @@
 }
 
 .ul {
-    font-size: medium;
+    font-size: small;
 }
 
 
