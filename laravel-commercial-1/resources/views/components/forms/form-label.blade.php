@@ -1,0 +1,1 @@
+<label class="form-field" {{ $attributes }}>{{ $slot }}</label>

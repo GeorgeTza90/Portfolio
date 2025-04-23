@@ -1,0 +1,1 @@
+<a href="https://www.cardkingdom.com/" class="buy-button" {{ $attributes }} target="_blank"> {{ $slot }}</a>

@@ -1,5 +1,5 @@
 # Exclude projects
-laravel-commercial-1
+# laravel-commercial-1
 
 # Exclude node_modules and package-lock.json 
 react-commercial-1/client/node_modules/
