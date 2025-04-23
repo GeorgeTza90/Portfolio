@@ -60,7 +60,7 @@ setInterval(() => {
   axios.get(KEEP_ALIVE_URL)
     .then(() => console.log("Self-ping successful"))
     .catch(err => console.error("Self-ping failed:", err));
-}, 480 * 60 * 1000); 
+}, 6 * 60 * 60 * 1000); 
 
 
 // Unknown API routes (404)
