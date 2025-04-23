@@ -1,7 +1,7 @@
 <x-layouts.main>
     <x-slot:heading>{{ $heading }}</x-slot:heading>
     <x-slot:title>{{ $title }}</x-slot:title>
-    <form method="POST" action="{{ route('register') }}" class="register-form">
+    <form method="POST" action="{{ route('register.store') }}" class="register-form">
         @csrf
 
         <div class="form-container-1">

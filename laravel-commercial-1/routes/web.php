@@ -27,8 +27,8 @@ Route::get('/search/{card}', [SearchController::class, 'show'])->name('search.sh
 Route::get('/search/set/{setName}', [SearchController::class, 'showBySet'])->name('search.bySet');
 
 // Auth
-Route::get('/register', [RegisteredUserController::class, 'create']);
-Route::post('/register', [RegisteredUserController::class, 'store']);
+Route::get('/register', [RegisteredUserController::class, 'create'])->name('register');
+Route::post('/register', [RegisteredUserController::class, 'store'])->name('register.store');
 
 Route::get('/login', [SessionController::class, 'create'])->name('login');
 Route::post('/login', [SessionController::class, 'store']);
