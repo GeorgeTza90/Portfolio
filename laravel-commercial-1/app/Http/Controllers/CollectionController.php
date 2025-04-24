@@ -5,8 +5,6 @@ namespace App\Http\Controllers;
 use App\Models\Collection;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Auth;
-use Illuminate\Support\Facades\Cache;
-use App\Models\CardStore;
 
 class CollectionController extends Controller
 {
@@ -19,8 +17,10 @@ class CollectionController extends Controller
     {
         $user = Auth::user();
 
-        $cards = $user->collections()
-            ->with('card')
+        $cards = \DB::table('collections')
+            ->join('card_store', 'collections.card_id', '=', 'card_store.card_id')
+            ->where('collections.user_id', $user->id)
+            ->select('card_store.*')
             ->get();
 
         return view('cards.index', [
@@ -43,16 +43,14 @@ class CollectionController extends Controller
             return redirect()->back()->with('error', 'Card is already in your collection.');
         }
 
-        $cardStore = CardStore::where('card_id', $cardId)->first();
+        $cardStore = \App\Models\CardStore::where('card_id', $cardId)->first();
 
         if (!$cardStore) {
             try {
-                $card = Cache::remember("card_{$cardId}", now()->addMinutes(30), function () use ($cardId) {
-                    return \mtgsdk\Card::find($cardId);
-                });
+                $card = \mtgsdk\Card::find($cardId);
 
                 if ($card) {
-                    $cardStore = CardStore::create([
+                    \App\Models\CardStore::create([
                         'card_id' => $card->id,
                         'name' => $card->name,
                         'type' => $card->type ?? null,
