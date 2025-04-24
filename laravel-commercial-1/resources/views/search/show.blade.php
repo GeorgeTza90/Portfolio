@@ -6,14 +6,13 @@
         <div class="card-stats">
             <p><strong>ID:</strong> {{ $card->id ?? 'No ID available' }}</p>
             <p><strong>Type:</strong> {{ $card->type ?? 'No type available' }}</p>
-            <p><strong>Color:</strong> {{ implode(', ', $card->colors) }}</p>
+            <p><strong>Color:</strong> {{ implode(', ', $card->colors) ?? "No color available" }}</p>
             <p><strong>Rarity:</strong> {{ $card->rarity ?? 'No rarity available' }}</p>
             <p><strong>Mana Cost:</strong> {{ $card->manaCost ?? 'No manaCost available' }}</p>
             <p><strong>Text:</strong> {{ $card->text ?? 'No text available' }}</p>
             <p><strong>Artist:</strong> {{ $card->artist ?? 'No artist available' }}</p>
             <br /><br />
 
-            <!-- Display success or error messages -->
             @if(session('success'))
                 <div class="alert alert-success">
                     {{ session('success') }}

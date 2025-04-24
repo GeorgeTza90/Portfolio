@@ -4,9 +4,6 @@ namespace App\Models;
 
 use Illuminate\Database\Eloquent\Factories\HasFactory;
 use Illuminate\Database\Eloquent\Model;
-use mtgsdk\Card;
-use Illuminate\Support\Facades\Cache;
-use Illuminate\Support\Facades\Log;
 
 class Collection extends Model
 {
@@ -14,25 +11,14 @@ class Collection extends Model
 
     public $timestamps = false;
 
-    public static function get($cardIds)
+    protected $fillable = [
+        'user_id',
+        'card_id',
+    ];
+
+    // Relationship to CardStore
+    public function card()
     {
-        $collection = [];
-
-        foreach ($cardIds as $cardId) {
-            $card = Cache::remember("mtg_card_{$cardId}", now()->addHours(6), function () use ($cardId) {
-                try {
-                    return Card::find($cardId);
-                } catch (\Exception $e) {
-                    Log::error("MTG API error for card {$cardId}: " . $e->getMessage());
-                    return null;
-                }
-            });
-
-            if ($card) {
-                $collection[] = $card;
-            }
-        }
-
-        return $collection;
+        return $this->belongsTo(CardStore::class, 'card_id', 'card_id');
     }
 }

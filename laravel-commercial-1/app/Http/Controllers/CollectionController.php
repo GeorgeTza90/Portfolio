@@ -10,15 +10,18 @@ class CollectionController extends Controller
 {
     public function __construct()
     {
-        $this->middleware('auth'); // ensure user is logged in
+        $this->middleware('auth');
     }
 
     public function index()
     {
         $user = Auth::user();
-        $collections = Collection::where('user_id', $user->id)->get();
-        $cardIds = $collections->pluck('card_id')->toArray();
-        $cards = collect(Collection::get($cardIds));
+
+        $cards = \DB::table('collections')
+            ->join('card_store', 'collections.card_id', '=', 'card_store.card_id')
+            ->where('collections.user_id', $user->id)
+            ->select('card_store.*')
+            ->get();
 
         return view('cards.index', [
             'cards' => $cards,
@@ -31,12 +34,39 @@ class CollectionController extends Controller
     {
         $user = Auth::user();
         $cardId = $request->input('card_id');
+
         $existingCollection = Collection::where('user_id', $user->id)
             ->where('card_id', $cardId)
             ->first();
 
         if ($existingCollection) {
             return redirect()->back()->with('error', 'Card is already in your collection.');
+        }
+
+        $cardStore = \App\Models\CardStore::where('card_id', $cardId)->first();
+
+        if (!$cardStore) {
+            try {
+                $card = \mtgsdk\Card::find($cardId);
+
+                if ($card) {
+                    \App\Models\CardStore::create([
+                        'card_id' => $card->id,
+                        'name' => $card->name,
+                        'type' => $card->type ?? null,
+                        'colors' => is_array($card->colors) ? implode(', ', $card->colors) : $card->colors,
+                        'rarity' => $card->rarity ?? null,
+                        'mana_cost' => $card->manaCost ?? null,
+                        'text' => $card->text ?? null,
+                        'power' => $card->power ?? null,
+                        'toughness' => $card->toughness ?? null,
+                        'image_url' => $card->imageUrl ?? null,
+                    ]);
+                }
+            } catch (\Exception $e) {
+                \Log::error("Failed to fetch or store card {$cardId}: " . $e->getMessage());
+                return redirect()->back()->with('error', 'Could not fetch card details.');
+            }
         }
 
         $collection = new Collection();

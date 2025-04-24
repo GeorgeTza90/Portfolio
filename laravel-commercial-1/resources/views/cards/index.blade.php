@@ -13,10 +13,10 @@
             <ul class="card-list">
                 @foreach($cards as $card)
 
-                    <a href="{{ route('search.show', $card->id) }}">
+                    <a href="{{ route('search.show', ['card' => $card->card_id]) }}">
                         <li class="collection">
-                            @if(!empty($card->imageUrl))
-                                <img src="{{ preg_replace('/^http:/i', 'https:', $card->imageUrl) }}" alt="{{ $card->name }}"
+                            @if(!empty($card->image_url))
+                                <img src="{{ preg_replace('/^http:/i', 'https:', $card->image_url) }}" alt="{{ $card->name }}"
                                     class="card-image-show">
                             @else
                                 <img src="{{ asset('logos/NoImage.png') }}" alt="No Image">
@@ -26,7 +26,8 @@
                                 @include('components.cards.card-info', ['card' => $card])
 
 
-                                <form action="{{ route('remove.from.collection', $card->id) }}" method="POST">
+                                <form action="{{ route('remove.from.collection', ['cardId' => $card->card_id]) }}"
+                                    method="POST">
                                     @csrf
                                     <x-buttons.remove-button type="submit">Remove from collection</x-buttons.remove-button>
                                 </form>

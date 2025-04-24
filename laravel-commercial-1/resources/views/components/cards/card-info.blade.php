@@ -12,8 +12,8 @@
     <p><strong>Rarity:</strong> {{ $card->rarity }}</p>
 @endif
 
-@if($card->manaCost)
-    <p><strong>Mana Cost:</strong> {{ $card->manaCost }}</p>
+@if($card->mana_cost)
+    <p><strong>Mana Cost:</strong> {{ $card->mana_cost }}</p>
 @endif
 
 @if($card->text)
