@@ -2,10 +2,10 @@
 
 namespace App\Http\Controllers;
 
+use Illuminate\Validation\Rule;
+use Illuminate\Support\Facades\Hash;
 use App\Models\User;
-use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Auth;
-use Illuminate\Validation\Rules\Password;
 
 class RegisteredUserController extends Controller
 {
@@ -22,9 +22,11 @@ class RegisteredUserController extends Controller
         $attributes = request()->validate([
             'first_name' => ['required', 'min:3', 'max:12'],
             'last_name' => ['required', 'min:3', 'max:12'],
-            'email' => ['required', 'email'],
-            'password' => ['required', Password::min(6), 'confirmed']
+            'email' => ['required', 'email', Rule::unique('users', 'email')],
+            'password' => ['required', 'min:6', 'confirmed'],
         ]);
+
+        $attributes['password'] = Hash::make($attributes['password']);
 
         $user = User::create($attributes);
 
