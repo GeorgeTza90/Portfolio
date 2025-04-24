@@ -11,8 +11,8 @@
             <x-layouts.nav-link href="/" :active="request()->is('/')">
                 <img src="{{ asset('icons/home.png') }}" alt="Home" class="nav-link-icon">
             </x-layouts.nav-link>
-            <x-layouts.nav-link href="/cards" :active="request()->is('cards')">
-                <img src="{{ asset('icons/cards.png') }}" alt="Cards" class="nav-link-icon">
+            <x-layouts.nav-link href="/collection" :active="request()->is('collection')">
+                <img src="{{ asset('icons/cards.png') }}" alt="Collection" class="nav-link-icon">
             </x-layouts.nav-link>
             <x-layouts.nav-link href="/search" :active="request()->is('search')">
                 <img src="{{ asset('icons/search.png') }}" alt="Search" class="nav-link-icon">

@@ -30,7 +30,7 @@
             @endguest
 
             @auth
-                <form method="POST" action="/cards">
+                <form method="POST" action="/collection">
                     @csrf
                     <input type="hidden" name="card_id" value="{{ $card->id }}">
                     <x-forms.form-button>Add to collection</x-forms.form-button>
@@ -41,7 +41,7 @@
             <a href="{{ route('search.index') }}">Back to Search</a><br /><br />
 
             @auth
-                <a href="{{ route('cards.index') }}">Back to Collection</a>
+                <a href="{{ route('collection.index') }}">Back to Collection</a>
             @endauth
         </div>
         <div class="card-stats">

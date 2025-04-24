@@ -16,8 +16,8 @@ Route::get('/', [HomeController::class, 'index'])->name('/');
 Route::get('/about', [AboutController::class, 'index'])->name('about');
 
 // Collection
-Route::get('/cards', [CollectionController::class, 'index'])->name('cards.index');
-Route::post('/cards', [CollectionController::class, 'store']);
+Route::get('/collection', [CollectionController::class, 'index'])->name('collection.index');
+Route::post('/collection', [CollectionController::class, 'store']);
 Route::post('/remove-from-collection/{cardId}', [CollectionController::class, 'removeFromCollection'])->name('remove.from.collection');
 
 // Search
