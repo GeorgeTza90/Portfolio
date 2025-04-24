@@ -2,9 +2,6 @@
     <x-slot:heading>{{ $heading }}</x-slot:heading>
     <x-slot:title>{{ $title }}</x-slot:title>
 
-    @auth
-    @endauth
-
     <div class="cards-collection">
         @if($cards->isEmpty())
             <p>Your collection is empty.</p>
