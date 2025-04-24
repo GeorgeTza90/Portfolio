@@ -5,6 +5,7 @@ namespace App\Http\Controllers;
 use App\Models\Collection;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Auth;
+use Illuminate\Support\Facades\Log;
 
 class CollectionController extends Controller
 {
@@ -15,13 +16,18 @@ class CollectionController extends Controller
 
     public function index()
     {
+        Log::info('Reached index function'); // Log message to Laravel logs
+
         $user = Auth::user();
+        Log::info('Reached user auth');
 
         $cards = \DB::table('collections')
             ->join('card_store', 'collections.card_id', '=', 'card_store.card_id')
             ->where('collections.user_id', $user->id)
             ->select('card_store.*')
             ->get();
+
+        Log::info('Reached card DB search');
 
         return view('cards.index', [
             'cards' => $cards,
