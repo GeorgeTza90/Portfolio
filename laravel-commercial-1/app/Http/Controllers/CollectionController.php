@@ -17,9 +17,8 @@ class CollectionController extends Controller
     {
         $user = Auth::user();
 
-        $cards = \DB::table('collections')
+        $cards = $user->collections()
             ->join('card_store', 'collections.card_id', '=', 'card_store.card_id')
-            ->where('collections.user_id', $user->id)
             ->select('card_store.*')
             ->get();
 
