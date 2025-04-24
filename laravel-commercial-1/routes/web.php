@@ -9,6 +9,14 @@ use App\Http\Controllers\SessionController;
 
 use Illuminate\Support\Facades\Route;
 
+Route::get('/db-test', function () {
+    try {
+        DB::connection()->getPdo();
+        return 'Η σύνδεση με τη βάση δεδομένων είναι επιτυχής!';
+    } catch (\Exception $e) {
+        return 'Η σύνδεση απέτυχε. Λάθος: ' . $e->getMessage();
+    }
+});
 
 // About
 Route::get('/about', [AboutController::class, 'index'])->name('about');
