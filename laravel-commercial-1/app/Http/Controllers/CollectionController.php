@@ -11,21 +11,13 @@ class CollectionController extends Controller
 {
     public function __construct()
     {
-        $this->middleware('auth');
+
     }
 
     public function index()
     {
-        $user = Auth::user();
-
-        $cards = \DB::table('collections')
-            ->join('card_store', 'collections.card_id', '=', 'card_store.card_id')
-            ->where('collections.user_id', $user->id)
-            ->select('card_store.*')
-            ->get();
-
         return view('cards.index', [
-            'cards' => $cards,
+            'cards' => '',
             'heading' => 'Your Collection',
             'title' => 'Collection Page',
         ]);
