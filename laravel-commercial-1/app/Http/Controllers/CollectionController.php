@@ -89,6 +89,6 @@ class CollectionController extends Controller
             $collection->delete();
         }
 
-        return redirect()->route('cards.index')->with('message', 'Card removed from your collection.');
+        return redirect()->route('collection.index')->with('message', 'Card removed from your collection.');
     }
 }
