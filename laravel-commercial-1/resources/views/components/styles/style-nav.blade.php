@@ -69,7 +69,7 @@ $transientColor = 'rgba(168, 166, 176, 0.22)';
     }
 
     .logo-link {
-        cursor: default;
+        cursor: pointer;
     }
 
     .nav-link-icon {

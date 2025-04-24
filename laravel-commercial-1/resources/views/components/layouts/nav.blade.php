@@ -41,7 +41,7 @@
                         <img src="{{ asset('icons/logout.png') }}" alt="Log Out" class="nav-link-icon">
                     </x-buttons.logout-button>
                 </form>
-                <a href="/cards" class="logo-link">
+                <a href="/collection" class="logo-link">
                     <img src="{{ asset('logos/UserLogo.png') }}" alt="Logo" class="nav-logo-user">
                 </a>
             @endauth
