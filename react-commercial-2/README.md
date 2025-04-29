@@ -1,4 +1,4 @@
-# Portfolio Web App - George Tzachristas
+# Grande Player - George Tzachristas
 ## react-commercial-2 v0.1
 This is my second portfolio web app built with:  
 - **React** (client)  

@@ -1,4 +1,4 @@
-# Portfolio Web App - George Tzachristas
+# IceCream Vacations - George Tzachristas
 ## react-commercial-1 v0.1
 This is my first portfolio web app built with:  
 - **React** (client)  
