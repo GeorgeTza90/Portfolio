@@ -1,0 +1,129 @@
+.hero {
+    height: 30vh;
+    width: 100%;
+    background-image: linear-gradient(to top, #111111b0 5%, rgba(0, 0, 0, 0) 30%), url("/images/homeBG.jpg");
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: cover;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    position: relative;
+}
+
+.overlay {
+    background-color: rgba(0, 0, 0, 0.227);
+    width: 100%;
+    height: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.overlay img {
+    max-width: 60%;
+    height: auto;
+}
+
+.sectionTitle {
+    font-size: 1.5rem;
+    font-weight: bold;
+    color: white;
+    text-align: center;
+}
+
+.textOverlay {
+    background-color: rgba(0, 0, 0, 0.794);
+    padding: 0.5rem 1rem;
+    border-radius: 6px;
+    font-size: 1.2rem;
+    color: white;
+    text-align: center;
+}
+
+.portfolioPages {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 1rem;
+    padding: 1.5rem;
+}
+
+.projectBox {
+    width: 100%;
+    height: 550px;
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+    color: white;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    text-shadow: 0 0 10px rgba(0, 0, 0, 0.5);
+    border-radius: 10px;
+    margin: 0.5rem;
+}
+
+.projectBox:hover {
+    font-size: 1.8rem;
+    text-shadow: 2px 2px 10px rgb(0, 0, 0);
+    transition: transform 0.8s ease;
+    transform: scale(1.02);
+    border: 1px solid #4f4baab0;
+    box-shadow: 5px 5px 5px #291c50;
+}
+
+.icvImg {
+    background-image: url("/images/icv-hover.jpg");
+}
+
+.gpImg {
+    background-image: url("/images/gp-hover.jpg");
+}
+
+.cwImg {
+    background-image: url("/images/cw-hover.jpg");
+}
+
+.icvImg:hover {
+    background-image: url("/images/icv.jpg");
+}
+
+.gpImg:hover {
+    background-image: url("/images/gp.jpg");
+}
+
+.cwImg:hover {
+    background-image: url("/images/cw.jpg");
+}
+
+.portfolioAnimation {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    gap: 1rem;
+    padding: 1.5rem;
+}
+
+.bgVideo {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    border-radius: 10px;
+}
+
+.bgVideo:hover {
+    border: 1px solid #4f4baab0;
+    box-shadow: 5px 5px 5px #291c50;
+}
+
+.foot {
+    height: 10vh;
+    width: 100%;
+    background-image: linear-gradient(to bottom, #111111b0 0%, rgba(0, 0, 0, 0) 60%), url("/images/homeBG.jpg");
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: cover;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    position: relative;
+}
