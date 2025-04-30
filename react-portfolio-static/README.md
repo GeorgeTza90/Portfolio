@@ -1,6 +1,6 @@
 # TZA UniVerse - George Tzachristas
 ## react-portfolio-static v1.0
-This is a static Web Page that contains links of my works:  
+This is a static Web Page that contains links of my work:  
 **React**
 **JavaScript**
 
