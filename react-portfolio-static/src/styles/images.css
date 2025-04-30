@@ -1,0 +1,103 @@
+.icvImg {
+    background-image: url("/images/icv-hover.jpg");
+}
+
+.gpImg {
+    background-image: url("/images/gp-hover.jpg");
+}
+
+.cwImg {
+    background-image: url("/images/cw-hover.jpg");
+}
+
+.p13 {
+    background-image: url("/images/p13-hover.jpg");
+}
+
+.runner {
+    background-image: url("/images/runner-hover.jpg");
+}
+
+.cybernation {
+    background-image: url("/images/cybernation-hover.jpg");
+}
+
+.ptesmata {
+    background-image: url("/images/ptesmata-hover.jpg");
+}
+
+.minokawa {
+    background-image: url("/images/minokawa-hover.jpg");
+}
+
+.vritra {
+    background-image: url("/images/vritra-hover.jpg");
+}
+
+.scalling {
+    background-image: url("/images/scaling-hover.jpg");
+}
+
+.zenaida {
+    background-image: url("/images/zenaida-hover.jpg");
+}
+
+.happy {
+    background-image: url("/images/happy-hover.jpg");
+}
+
+.drawing {
+    background-image: url("/images/drawing-hover.jpg");
+}
+
+.icvImg:hover {
+    background-image: url("/images/icv.jpg");
+}
+
+.gpImg:hover {
+    background-image: url("/images/gp.jpg");
+}
+
+.cwImg:hover {
+    background-image: url("/images/cw.jpg");
+}
+
+.p13:hover {
+    background-image: url("/images/p13.jpg");
+}
+
+.runner:hover {
+    background-image: url("/images/runner.jpg");
+}
+
+.cybernation:hover {
+    background-image: url("/images/cybernation.jpg");
+}
+
+.ptesmata:hover {
+    background-image: url("/images/ptesmata.jpg");
+}
+
+.minokawa:hover {
+    background-image: url("/images/minokawa.jpg");
+}
+
+.vritra:hover {
+    background-image: url("/images/vritra.jpg");
+}
+
+.scalling:hover {
+    background-image: url("/images/scaling.jpg");
+}
+
+.zenaida:hover {
+    background-image: url("/images/zenaida.jpg");
+}
+
+.happy:hover {
+    background-image: url("/images/happy.jpg");
+}
+
+.drawing:hover {
+    background-image: url("/images/drawing.jpg");
+}

@@ -21,7 +21,7 @@ function PortfolioPages() {
                     </div>
                 </a>
             </div>
-            <br />
+            <br /><br />
         </>
     )
 }

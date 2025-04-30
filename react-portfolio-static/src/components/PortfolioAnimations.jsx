@@ -6,7 +6,7 @@ function PortfolioAnimations() {
     const [videoSrc2, setVideoSrc2] = useState("/videos/bt-hover.mp4");
     return (
         <>
-            <h1 className={styles.sectionTitle}>Animation Videos</h1>
+            <h1 className={styles.sectionTitle}>Animated Videos</h1>
             <div className={styles.portfolioAnimation}>
                 <a href="https://www.youtube.com/watch?v=MUzcgtwxnr8" target="_blank">
                     <div className={styles.projectBox}
@@ -25,7 +25,7 @@ function PortfolioAnimations() {
                     </div>
                 </a>
             </div>
-            <br />
+            <br /><br />
         </>
     )
 }
