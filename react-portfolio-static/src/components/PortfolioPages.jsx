@@ -15,7 +15,7 @@ function PortfolioPages() {
                         <h3 className={styles.textOverlay}>Grande Player</h3>
                     </div>
                 </a>
-                <a href="https://cardwizard.up.railway.app/login" target="_blank">
+                <a href="https://cardwizard.up.railway.app/" target="_blank">
                     <div className={`${styles.projectBox} ${styles.cwImg}`}>
                         <h3 className={styles.textOverlay}>Card Wizard</h3>
                     </div>
