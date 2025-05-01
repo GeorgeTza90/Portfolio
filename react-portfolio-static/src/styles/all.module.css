@@ -23,7 +23,7 @@
 }
 
 .overlay img {
-    max-width: 80%;
+    max-width: 100%;
     height: auto;
 }
 
@@ -133,10 +133,14 @@
     position: relative;
 }
 
-@media (max-width: 640px) {
+@media (max-width: 720px) {
+    .overlay {
+        overflow: hidden;
+    }
+
     .overlay img {
-        max-width: 100%;
-        height: auto;
+        width: 160%;
+        max-width: none;
     }
 
     .musicWork {
