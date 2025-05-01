@@ -133,9 +133,9 @@
     position: relative;
 }
 
-@media (max-width: 1120px) {
+@media (max-width: 640px) {
     .overlay img {
-        max-width: 160%;
+        max-width: 100%;
         height: auto;
     }
 
