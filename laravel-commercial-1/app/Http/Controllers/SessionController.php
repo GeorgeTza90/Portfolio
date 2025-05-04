@@ -30,7 +30,7 @@ class SessionController extends Controller
 
         request()->session()->regenerate();
 
-        return redirect('/cards');
+        return redirect('/collection');
     }
 
     public function destroy()
