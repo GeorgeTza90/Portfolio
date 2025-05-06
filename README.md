@@ -1,33 +1,48 @@
-Hello, I am George Tzachristas. I am a Mechanical Engineer, Musician, Music Technician, Teacher, and Junior Full-Stack Web Developer. 
+# 👋 Hello, I'm George Tzachristas
 
-This portfolio page consist of: 
+I am a **Mechanical Engineer**, **Musician**, **Music Technician**, **Teacher**, and **Junior Full-Stack Web Developer** based in Ioannina, Greece. This portfolio showcases some of the projects I’ve built using technologies like **React**, **Node.js**, **PHP (Laravel)**, and **MySQL**.
 
-IceCream Vacations – https://icvacations.netlify.app/
-React, Node.js, MySQL
-•	Developed a full-stack CRUD web application featuring user authentication and RESTful API integration.
-•	Built a secure backend with Express and connected it to a MySQL database.
-•	Managed frontend state with React hooks and designed a responsive UI using HTML5 and CSS3.
-•	Highlight : Interactive like/comment system.	
+---
 
+## 📂 Projects
 
-Grande Player – https://icvacations.netlify.app/
-React, Node.js, MySQL
-•	Created a CRUD-capable web app with secure login functionality and RESTful API endpoints.
-•	Implemented backend logic using Express.js and structured data interactions with MySQL.
-•	Focused on responsive design and dynamic UI updates with React.
-•	Highlight : Multi-audio context player with interactive mixer.
+### 🚀 [IceCream Vacations](https://icvacations.netlify.app/)
+**Stack:** React, Node.js, MySQL  
+- Full-stack CRUD web application with user authentication.  
+- Backend built using Express.js with a MySQL database.  
+- Frontend developed with React Hooks and styled with HTML5/CSS3.  
+- **Highlight:** Interactive like/comment system.
 
+---
 
-Card Wizard – https://cardwizard.up.railway.app/
-Laravel, PHP, MySQL
-•	Built a content management system using Laravel's MVC architecture.
-•	Implemented user registration, login, content creation, and role-based access control.
-•	Applied REST principles and used Eloquent ORM for database management.
-•	Highlight : External API card search and collection builder.
+### 🎵 [Grande Player](https://icvacations.netlify.app/)
+**Stack:** React, Node.js, MySQL  
+- CRUD web app with secure login and RESTful API endpoints.  
+- Backend logic in Express.js with MySQL data handling.  
+- Responsive UI and dynamic frontend updates using React.  
+- **Highlight:** Multi-audio context player with interactive mixer.
 
- 
-ZA Universe – https://tzauniverse.netlify.app/
-React, JavaScript
-•	A static portfolio webpage showcasing links to my work and projects.
-•	Designed using React to present a clean, professional interface for easy navigation.
+---
 
+### 🃏 [Card Wizard](https://cardwizard.up.railway.app/)
+**Stack:** Laravel, PHP, MySQL  
+- Content management system using Laravel’s MVC structure.  
+- Features user authentication, content creation, and role-based access control.  
+- RESTful backend and Eloquent ORM for efficient data management.  
+- **Highlight:** Card search and collection building via external API.
+
+---
+
+### 🌐 [TZA Universe](https://tzauniverse.netlify.app/)
+**Stack:** React, JavaScript  
+- A static portfolio site displaying all my work.  
+- Built with React for a clean, professional, and easy-to-navigate interface.
+
+---
+
+## 📫 Contact
+
+- 📧 Email: gtzahristas@hotmail.com  
+- 📱 Phone: +30 6949599706  
+- 🔗 [LinkedIn](https://www.linkedin.com/in/george-tzachristas)  
+- 💻 [GitHub](https://github.com/GeorgeTza90/Portfolio)  
