@@ -15,7 +15,7 @@ I am a **Mechanical Engineer**, **Musician**, **Music Technician**, **Teacher**,
 
 ---
 
-### 🎵 [Grande Player](https://icvacations.netlify.app/)
+### 🎵 [Grande Player](https://grandeplayer.netlify.app/player)
 **Stack:** React, Node.js, MySQL  
 - CRUD web app with secure login and RESTful API endpoints.  
 - Backend logic in Express.js with MySQL data handling.  
