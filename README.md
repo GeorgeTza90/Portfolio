@@ -41,8 +41,6 @@ I am a **Mechanical Engineer**, **Musician**, **Music Technician**, **Teacher**,
 ---
 
 ## 📫 Contact
-
-- 📧 Email: gtzahristas@hotmail.com  
-- 📱 Phone: +30 6949599706  
+- 📧 Email: [georgetza90@gmail.com](mailto:georgetza90@gmail.com)
 - 🔗 [LinkedIn](https://www.linkedin.com/in/george-tzachristas)  
-- 💻 [GitHub](https://github.com/GeorgeTza90/Portfolio)  
+- 💻 [GitHub](https://github.com/GeorgeTza90)
