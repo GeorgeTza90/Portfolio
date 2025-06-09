@@ -1,0 +1,81 @@
+.all {
+    background-color: #d4c0b44e;
+    box-shadow: 2px 2px 15px #00000034;
+    border-radius: 10rem;
+    margin: 40px;
+    display: grid;
+    align-items: center;
+    justify-items: center;
+    color: #260b03;
+}
+
+.myH1 {
+    font-size: large;
+}
+
+
+.commentSection {
+    font-size: 80%;
+}
+
+.commentUser {
+    display: flex;
+    text-align: left;
+    font-weight: bolder;
+    margin-bottom: 5px;
+}
+
+.commentContainer {
+    display: grid;
+    grid-template-columns: auto 20px;
+}
+
+.commentText {
+    background-color: #72706d;
+    color: rgb(255, 255, 255);
+    text-shadow: 3px 3px 5px #0000002b;
+    box-shadow: inset 2px 2px 15px #000000ee;
+    margin-right: 25px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 40px;
+    min-width: 450px;
+}
+
+.interaction {
+    color: #ffffff;
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    justify-items: right;
+}
+
+.commentText2 {
+    background-color: #191610;
+    color: rgb(255, 255, 255);
+    text-shadow: 3px 3px 5px #0000002b;
+    box-shadow: inset 2px 2px 15px #000000ee;
+    margin-right: 25px;
+    height: auto;
+    min-height: 40px;
+    min-width: 450px;
+}
+
+.deleteButton {
+    text-align: right;
+    text-justify: right;
+    color: #ff0000;
+}
+
+.signInMsg {
+    color: #ffffffac;
+    font-size: small;
+    text-decoration: double;
+    margin-bottom: 12px;
+}
+
+.signInMsg:hover {
+    color: #ffffff;
+    text-decoration: double;
+    text-shadow: 2px 2px 5px #000000;
+}

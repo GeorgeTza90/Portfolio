@@ -1,0 +1,71 @@
+.nav {
+  background-image: url(/assets/nav1.png);
+  background-position: center;
+  background-repeat: no-repeat;
+  background-size: cover;
+  height: 180px;
+  width: 100%;
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+}
+
+.nav .navImage {
+  height: 60px;
+  width: auto;
+  margin-left: 25px;
+}
+
+.nav .UserImage {
+  height: 35px;
+  width: auto;
+  margin-left: 25px;
+}
+
+.nav .navLinks {
+  align-items: center;
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  margin-bottom: 250px;
+  font-weight: bold;
+}
+
+.nav .navLinks2 {
+  display: flex;
+  align-items: center;
+  justify-content: right;
+  margin-right: 25px;
+  margin-bottom: 250px;
+  font-weight: bold;
+  font-size: medium;
+}
+
+.nav .navLink {
+  color: #421406;
+  text-decoration: double;
+  margin-left: 25px;
+  text-shadow: 3px 3px 15px #0000002b;
+  padding-left: 6px;
+  padding-right: 6px;
+  border-radius: 18px;
+  background-color: #91c7c725;
+  box-shadow: 3px 3px 15px #0000002b;
+  backdrop-filter: blur(8px);
+  font-size: larger;
+  border: solid #42140600;
+  padding-left: 10px;
+  padding-right: 10px;
+}
+
+.offscreen {
+  position: absolute;
+  left: -9999px;
+}
+
+/* HOVERS */
+.nav .navLink:hover {
+  color: #ffe2da;
+  background-color: #55545455;
+  border-radius: 18px;
+  transition: color 0.40s;
+  box-shadow: 3px 3px 15px #00000093;
+}
