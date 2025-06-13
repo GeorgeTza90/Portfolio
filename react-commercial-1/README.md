@@ -57,6 +57,7 @@ No framework was used in this one. You can clone this repo and run it on your lo
     npm start
 
 ## Upcoming Features
+- Full code in Typescript (already uploaded in dev branch)
 - comment on comment system
 - admin check for users 
 - create post, if admin feature
