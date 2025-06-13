@@ -43,8 +43,5 @@ I am a **Mechanical Engineer**, **Musician**, **Music Technician**, **Teacher**,
 ## 📫 Contact
 - 📧 Email: [georgetza90@gmail.com](mailto:georgetza90@gmail.com)
 - 🔗 [LinkedIn](https://www.linkedin.com/in/george-tzachristas)  
-<<<<<<< HEAD
-- 💻 [GitHub](https://github.com/GeorgeTza90)
-=======
 - 💻 [GitHub](https://github.com/GeorgeTza90/Portfolio)
->>>>>>> a674b865f7e6e303f46e752a608e61e7a1d70864
+
