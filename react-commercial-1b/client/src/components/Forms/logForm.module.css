@@ -58,3 +58,10 @@
     text-decoration: double;
     text-shadow: 2px 2px 5px #000000;
 }
+
+@media (max-width: 768px) {
+    .LogContainer {
+        height: 600px;
+        width: 100%;
+    }
+}

@@ -3,25 +3,26 @@
   background-position: center;
   background-repeat: no-repeat;
   background-size: cover;
-  height: 180px;
   width: 100%;
   display: grid;
   grid-template-columns: repeat(3, 1fr);
 }
 
-.nav .navImage {
+.navImage {
+  margin-top: 2%;
   height: 60px;
   width: auto;
   margin-left: 25px;
 }
 
-.nav .UserImage {
+.UserImage {
   height: 35px;
   width: auto;
   margin-left: 25px;
 }
 
-.nav .navLinks {
+.navLinks {
+  margin-top: 3%;
   align-items: center;
   display: grid;
   grid-template-columns: repeat(4, 1fr);
@@ -29,7 +30,8 @@
   font-weight: bold;
 }
 
-.nav .navLinks2 {
+.navLinks2 {
+  margin-top: 4%;
   display: flex;
   align-items: center;
   justify-content: right;
@@ -39,7 +41,7 @@
   font-size: medium;
 }
 
-.nav .navLink {
+.navLink {
   color: #421406;
   text-decoration: double;
   margin-left: 25px;
@@ -62,10 +64,101 @@
 }
 
 /* HOVERS */
-.nav .navLink:hover {
+.navLink:hover {
   color: #ffe2da;
   background-color: #55545455;
   border-radius: 18px;
   transition: color 0.40s;
   box-shadow: 3px 3px 15px #00000093;
+}
+
+.sidebar {
+  display: none;
+}
+
+/* MOBILE */
+@media (max-width: 768px) {
+  .nav {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 13%;
+    z-index: 9999;
+  }
+
+  .desktopOnly {
+    display: none;
+  }
+
+  .navLogo {
+    cursor: pointer;
+  }
+
+  .navLink {
+    color: #c8ddde;
+    background-color: #1c1b1a;
+    max-width: 120px;
+    padding: 5px;
+    margin-top: 20px;
+  }
+
+  .sidebar {
+    margin-top: 110px;
+    display: flex;
+    position: fixed;
+    top: 0;
+    left: -260px;
+    width: 150px;
+    height: 100%;
+    background-color: #93c8c9cc;
+    padding: 2rem 1rem;
+    box-shadow: 2px 0 10px rgba(0, 0, 0, 0.2);
+    transition: left 0.25s ease-in-out;
+    z-index: 100;
+    flex-direction: column;
+    gap: 0.8rem;
+    overflow-y: auto;
+    font-size: small;
+    border-radius: 10px;
+  }
+
+  .sidebar.open {
+    left: 0;
+  }
+
+  .overlay {
+    display: block;
+    position: fixed;
+    top: 0;
+    left: 0;
+    z-index: 99;
+    width: 100%;
+    height: 100%;
+    background: rgba(0, 0, 0, 0.3);
+  }
+
+  .navLink:hover {
+    color: #421406;
+    font-weight: bold;
+    background-color: #dadadaaa;
+    border-radius: 18px;
+    transition: color 0.40s;
+    box-shadow: 1.5px 1.5px 10px #000000f7;
+  }
+}
+
+/* DESKTOP styles */
+@media (min-width: 769px) {
+  .desktopOnly {
+    display: flex;
+  }
+
+  .sidebar {
+    display: none !important;
+  }
+
+  .overlay {
+    display: none !important;
+  }
 }

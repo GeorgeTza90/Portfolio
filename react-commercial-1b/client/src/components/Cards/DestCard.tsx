@@ -54,7 +54,7 @@ function DestCard({ dest }: DestCardProps): JSX.Element {
                   />
                 </div>
                 <div className={styles.textDiv}>
-                  <h2>{`${destination.planet} - ${destination.city}`}</h2>
+                  <h2 className={styles.myH1}>{`${destination.planet} - ${destination.city}`}</h2>
                   <p className={styles.textP}>{destination.text}</p>
                   <p className={styles.price}>
                     Price:{" "}

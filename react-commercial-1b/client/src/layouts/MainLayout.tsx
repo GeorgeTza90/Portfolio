@@ -6,7 +6,7 @@ const MainLayout: React.FC = () => {
   return (
     <>
       <Nav />
-      <main className="flex-grow">
+      <main className="main">
         <Outlet />
       </main>
       <Footer />

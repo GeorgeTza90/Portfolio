@@ -7,21 +7,17 @@ import styles from "./logForm.module.css";
 import Button1 from "../Buttons/Button1.tsx";
 
 function LogForm() {
-  // Specify ref type for a HTMLParagraphElement (the <p> showing errors)
   const errRef = useRef<HTMLParagraphElement>(null);
 
   const navigate = useNavigate();
 
-  // State variables with inferred types (string and boolean)
   const [email, setEmail] = useState<string>("");
   const [password, setPassword] = useState<string>("");
   const [errMsg, setErrMsg] = useState<string>("");
   const [success, setSuccess] = useState<boolean>(false);
 
-  // Cookies - typing inferred from useCookies generic
   const [_cookies, setCookies] = useCookies(['auth_token']);
 
-  // Add typing for the event: FormEvent<HTMLFormElement>
   const handleSubmit = async (e: FormEvent<HTMLFormElement>) => {
     e.preventDefault();
 
@@ -48,7 +44,6 @@ function LogForm() {
         navigate('/');
       }, 1800);
 
-      // cleanup timeout on unmount or success change
       return () => clearTimeout(timer);
     }
   }, [success, navigate]);
@@ -73,9 +68,8 @@ function LogForm() {
               required
               className={styles.myInput}
               placeholder="example@mail.com"
-            />
+            />   
             <br />
-
             <label htmlFor="password">Password: </label>
             <input
               type="password"
@@ -86,7 +80,7 @@ function LogForm() {
               className={styles.myInput}
               placeholder="password"
             />
-
+            <br />
             <p ref={errRef} className={errMsg ? styles.errmsg : styles.offscreen}>
               {errMsg}
             </p>

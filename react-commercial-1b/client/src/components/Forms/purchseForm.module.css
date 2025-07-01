@@ -121,3 +121,46 @@
     margin-top: 100px;
     font-size: large;
 }
+
+@media (max-width: 768px) {
+    .row {
+        grid-template-columns: repeat(2, 0.5fr);
+        justify-content: center;
+    }
+
+    .Container {
+        max-width: 550px;
+        justify-items: left;
+        padding-right: 60px;
+    }
+
+    .myInput1 {
+        height: 35px;
+        min-width: 150px;
+    }
+
+    .myInput2 {
+        height: 35px;
+        max-width: 550px;
+    }
+
+    .myInput3 {
+        height: 35px;
+        min-width: 100px;
+    }
+
+    .myInput4 {
+        height: 35px;
+        min-width: 30px;
+        margin-left: 10px;
+    }
+
+    .label {
+        font-size: large;
+    }
+
+    .label2 {
+        margin-left: 168px;
+        font-size: large;
+    }
+}

@@ -79,3 +79,24 @@
     text-decoration: double;
     text-shadow: 2px 2px 5px #000000;
 }
+
+@media (max-width: 768px) {
+    .all {
+        border-radius: 2rem;
+        padding: 15px;
+        margin: 10px;
+    }
+
+    .commentSection {
+        margin-bottom: 10px;
+    }
+
+    .interaction {
+        height: auto;
+        width: 0%;
+    }
+
+    .commentText {
+        margin-right: 5px;
+    }
+}

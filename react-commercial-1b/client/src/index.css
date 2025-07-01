@@ -13,7 +13,14 @@ body {
   background-color: #1c1b1a;
 }
 
-.body {
-  padding-left: 15%;
-  padding-right: 15%;
+
+
+@media (max-width: 768px) {
+  .body {
+    margin-bottom: 250px;
+  }
+
+  .main {
+    margin-top: 150px;
+  }
 }

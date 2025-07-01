@@ -45,3 +45,12 @@
 .rightArrow {
     right: 10rem;
 }
+
+@media (max-width: 768px) {
+    .image {
+        height: auto;
+        width: 200px;
+
+        border-radius: 5dvb;
+    }
+}

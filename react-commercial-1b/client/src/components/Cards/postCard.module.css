@@ -14,6 +14,7 @@
 
 .label {
     font-size: large;
+    font-weight: bold;
     text-shadow: 3px 3px 5px #0000002b;
 }
 
@@ -25,7 +26,6 @@
 }
 
 .text {
-    font-size: small;
     text-shadow: 3px 3px 5px #0000002b;
     text-align: left;
     margin-left: 50px;
@@ -34,11 +34,6 @@
     align-items: center;
     justify-items: center;
 }
-
-.ul {
-    font-size: small;
-}
-
 
 .interactionContainer {
     display: flex;
@@ -51,4 +46,11 @@
     grid-template-columns: repeat(3, 1fr);
     justify-items: right;
     font-size: 90%;
+}
+
+@media (max-width: 768px) {
+    .card {
+        min-width: 300px;
+        max-width: 720px;
+    }
 }
