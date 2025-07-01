@@ -83,7 +83,7 @@
     top: 0;
     left: 0;
     width: 100%;
-    height: 13%;
+    height: 170px;
     z-index: 9999;
   }
 
@@ -151,20 +151,4 @@
     height: auto;
     width: 50px;
   }
-}
-
-/* DESKTOP styles */
-@media (min-width: 769px) {
-  .desktopOnly {
-    display: flex;
-  }
-
-  .sidebar {
-    display: none !important;
-  }
-
-  .overlay {
-    display: none !important;
-  }
-
 }
