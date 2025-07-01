@@ -241,7 +241,9 @@
     "yallist": "^4.0.0"
   },
   "scripts": {
-    "start": "node server.js"
+    "dev": "ts-node-dev --respawn src/server.ts",
+    "build": "tsc",
+    "start": "node dist/server.js"
   },
   "keywords": [],
   "author": "",
