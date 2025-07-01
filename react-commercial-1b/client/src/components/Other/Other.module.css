@@ -1,0 +1,8 @@
+.container {
+    background-image: url(/assets/UnderConstruction.png);
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: contain;
+    height: 400px;
+    width: auto;
+}
