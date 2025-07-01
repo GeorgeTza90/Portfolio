@@ -146,6 +146,11 @@
     transition: color 0.40s;
     box-shadow: 1.5px 1.5px 10px #000000f7;
   }
+
+  .UserImage {
+    height: auto;
+    width: 50px;
+  }
 }
 
 /* DESKTOP styles */
@@ -161,4 +166,5 @@
   .overlay {
     display: none !important;
   }
+
 }
