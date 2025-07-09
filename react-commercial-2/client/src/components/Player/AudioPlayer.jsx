@@ -163,6 +163,8 @@ function AudioPlayer({ songs, user }) {
                     />
                     : null)}
 
+
+                {/* Desktop */}
                 <div className={styles.vol}>
                     <div className={styles.buttonDiv}>
                         <button onClick={handlePrevious} className={trackID > 0 ? styles.playButton : styles.playButtonInactive}>
@@ -192,6 +194,38 @@ function AudioPlayer({ songs, user }) {
 
                     <span className={styles.time}>{useFormatTime(currentTime, instrRefs[0])}</span>
                 </div>
+
+                {/* Mobile */}
+                <div className={styles.volMobile}>
+                    <br />
+                    <div className={styles.buttonDiv}>
+                        <button onClick={handlePrevious} className={trackID > 0 ? styles.playButton : styles.playButtonInactive}>
+                            {'◀◀'}
+                        </button>
+                        <button onClick={handleStop} className={styles.playButton}>
+                            {'■'}
+                        </button>
+                        <button onClick={handlePlayPause} className={styles.playButton}>
+                            {isPlaying ? "⏸" : "▶"}
+                        </button>
+                        <button onClick={handleNext} className={trackID < songs.length - 1 ? styles.playButton : styles.playButtonInactive}>
+                            {'▶▶'}
+                        </button>
+                    </div><br />
+
+                    <input
+                        type="range"
+                        min="0"
+                        max="100"
+                        step="0.1"
+                        value={progress}
+                        onChange={handleSeek}
+                        style={{ width: "400px", height: "5px" }}
+                        className={styles.progressBar}
+                    />
+
+                    <span className={styles.time}>{useFormatTime(currentTime, instrRefs[0])}</span>
+                </div><br /><br /><br />
 
                 <div className={styles.song}>
                     <label onMouseEnter={handleInfo} className={styles.info}>ℹ️</label>

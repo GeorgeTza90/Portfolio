@@ -90,3 +90,33 @@
     box-shadow: 2px 2px 15px #00000088;
     transition: background-color 0.40s;
 }
+
+@media (min-width: 769px) {
+    .mobileOnly {
+        display: none;
+    }
+}
+
+/* MOBILE */
+@media (max-width: 768px) {
+    .nav {
+        height: 80px;
+    }
+
+    .navHidden {
+        height: 80px;
+    }
+
+    .all {
+        grid-template-columns: repeat(4, 1fr);
+    }
+
+    .navButton {
+        margin-top: 5px;
+        margin-bottom: 5px;
+    }
+
+    .desktopOnly {
+        display: none;
+    }
+}

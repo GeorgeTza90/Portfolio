@@ -9,6 +9,7 @@ function Nav({ hid = true }) {
     const navigate = useNavigate();
     const [hidden, setHidden] = useState(hid);
     const [cookies, setCookies, removeCookies] = useCookies(["auth_token"]);
+    const [sidebarOpen, setSidebarOpen] = useState(false);
     const token = cookies.auth_token;
 
     const handleNav = () => {
@@ -31,26 +32,49 @@ function Nav({ hid = true }) {
     if (hidden === false) {
         setTimeout(() => {
             setHidden(true);
-        }, 10000);
+        }, 5000);
     }
 
 
     return (
         <>
-            <div className={hidden ? styles.hidden : styles.all}>
-                <a href="/" className={styles.navButton}>Home</a>
-                <a href="/player" className={styles.navButton}>Player</a>
-                <label className={styles.label}>The One & Only Smart Audio Player</label>
-                <a href="/about" className={styles.navButton}>About</a>
-                {!token ? <a href="/login" className={styles.navButton}>Login</a> : <a onClick={handleLogout} className={styles.navButton}>Logout</a>}
+            {/* Desktop */}
+            <div className={styles.desktopOnly}>
+                <div className={hidden ? styles.hidden : styles.all} >
+                    <a href="/" className={styles.navButton}>Home</a>
+                    <a href="/player" className={styles.navButton}>Player</a>
+                    <label className={styles.label}>The One & Only Smart Audio Player</label>
+                    <a href="/about" className={styles.navButton}>About</a>
+                    {!token ? <a href="/login" className={styles.navButton}>Login</a> : <a onClick={handleLogout} className={styles.navButton}>Logout</a>}
+                </div>
+                <span onClick={handleNav}>
+                    <nav className={!hidden ? styles.nav : styles.navHidden}>
+                        <div className={styles.trademark}><br />
+                            &copy;{new Date().getFullYear()} GrandePlayer
+                        </div>
+                    </nav>
+                </span>
             </div>
-            <span onClick={handleNav}>
-                <nav className={!hidden ? styles.nav : styles.navHidden}>
-                    <div className={styles.trademark}><br />
-                        &copy;{new Date().getFullYear()} GrandePlayer
-                    </div>
-                </nav>
-            </span>
+
+
+            {/* Mobile */}
+            <div className={styles.mobileOnly}>
+                <div className={hidden ? styles.hidden : styles.all} >
+                    <a href="/" className={styles.navButton} >Home</a>
+                    <a href="/player" className={styles.navButton} >Player</a>
+                    <a href="/about" className={styles.navButton} >About</a>
+                    {!token ? <a href="/login" className={styles.navButton} >Login</a> : <a onClick={handleLogout} className={styles.navButton}>Logout</a>}
+                </div>
+                <span onClick={handleNav}>
+                    <nav className={!hidden ? styles.nav : styles.navHidden}>
+                        <div className={styles.trademark}><br />
+                            &copy;{new Date().getFullYear()} GrandePlayer
+                        </div>
+
+
+                    </nav>
+                </span>
+            </div >
         </>
     );
 }

@@ -15,12 +15,10 @@ const Nav: React.FC = () => {
     setIsLoggedIn(!!cookies.auth_token && cookies.auth_token !== "undefined");
   }, [cookies.auth_token]);
 
-  // Κλείσιμο sidebar όταν κάνουμε κλικ στο overlay
   const handleOverlayClick = () => {
     setSidebarOpen(false);
   };
 
-  // Toggle sidebar όταν πατάμε το logo
   const toggleSidebar = () => {
     setSidebarOpen(!sidebarOpen);
   };

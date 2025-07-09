@@ -6,8 +6,9 @@ function Footer() {
         <>
             <div className={styles.footer}>
                 <a href="/player" className={styles.trademark}></a>
+                <label className={styles.labeled}>by George Tzachristas</label>
             </div>
-            <label className={styles.labeled}>by George Tzachristas</label>
+
         </>
     );
 }
