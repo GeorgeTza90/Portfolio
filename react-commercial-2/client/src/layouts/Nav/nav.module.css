@@ -90,20 +90,21 @@
     transition: background-color 0.40s;
 }
 
-@media (min-width: 769px) {
+@media (min-width: 1081px) {
     .mobileOnly {
         display: none;
     }
 }
 
 /* MOBILE */
-@media (max-width: 768px) {
+@media (max-width: 1080px) {
+
     .nav {
-        height: 80px;
+        height: 68px;
     }
 
     .navHidden {
-        height: 80px;
+        height: 68px;
     }
 
     .all {

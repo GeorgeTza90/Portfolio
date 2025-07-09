@@ -220,7 +220,7 @@ function AudioPlayer({ songs, user }) {
                         step="0.1"
                         value={progress}
                         onChange={handleSeek}
-                        style={{ width: "400px", height: "5px" }}
+                        style={{ width: "15rem", height: "5px" }}
                         className={styles.progressBar}
                     />
 
