@@ -141,3 +141,55 @@
     margin-top: 100px;
     font-size: large;
 }
+
+@media (max-width: 768px) {
+    .all {
+        font-size: medium;
+        background-size: 100rem;
+    }
+
+    .Container {
+        background: linear-gradient(to left, #d1d1ff3d, #fbffe8b3);
+        border-radius: 5rem;
+        max-width: 100%;
+        padding: 40px;
+
+    }
+
+    .myInput1 {
+        height: 35px;
+        max-width: 260px;
+        letter-spacing: 2px;
+        font-size: medium;
+        margin-left: 0px;
+    }
+
+    .myInput2 {
+        height: 35px;
+        width: 405px;
+        font-size: medium;
+        margin-left: 0px;
+    }
+
+    .myInput3 {
+        height: 35px;
+        width: 150px;
+        letter-spacing: 2px;
+        font-size: medium;
+        margin-left: 0px;
+    }
+
+    .myInput4 {
+        height: 35px;
+        width: 150px;
+        letter-spacing: 2px;
+        margin-left: 100px;
+        font-size: medium;
+        margin-left: 90px;
+    }
+
+    .img {
+        display: none
+    }
+
+}

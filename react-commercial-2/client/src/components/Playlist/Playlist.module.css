@@ -31,5 +31,22 @@ td {
     padding: 25px;
     border-radius: 25px;
     border-color: black;
-    min-width: 500px;
+    width: 550px;
+    max-width: 150%;
+}
+
+@media (max-width: 768px) {
+    .all {
+        background-color: #1d1d1d;
+        color: #d6d6d3;
+        padding: 25px;
+        border-radius: 25px;
+        border-color: black;
+        max-width: 80%;
+        font-size: 95%;
+    }
+
+    .myLabel {
+        font-size: medium;
+    }
 }

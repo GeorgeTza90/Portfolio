@@ -120,3 +120,46 @@
     color: #ffffff;
     text-shadow: 2px 2px 5px #000000;
 }
+
+@media (max-width: 768px) {
+    .RegContainer {
+        display: flexbox;
+        margin-left: 350px;
+        margin-right: 0px;
+
+    }
+
+    .label {
+        margin-left: 150px;
+    }
+
+    .text {
+        font-size: medium;
+        margin-right: 0px;
+        max-width: 600px;
+    }
+
+    .fillContainer {
+        max-width: 55%;
+        margin-right: 0px;
+    }
+
+    .fillContainer2 {
+        max-width: 55%;
+        margin-right: 0px;
+    }
+
+    .fillContainer3 {
+        max-width: 55%;
+        margin-right: 0px;
+    }
+
+    .myInput {
+        max-width: 350px;
+        margin-right: 0px;
+    }
+
+    .myH2 {
+        width: 55%;
+    }
+}

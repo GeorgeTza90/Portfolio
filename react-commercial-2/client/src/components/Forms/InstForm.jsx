@@ -28,7 +28,7 @@ function InstForm({ num, onInstName, onInstFile }) {
 
     return (
         <>
-            <h2>Instrument {num}</h2>
+            <h2 className={styles.myH2}>Instrument {num}</h2>
 
             <div className={styles.fillContainer3}>
                 <label>Name:</label>

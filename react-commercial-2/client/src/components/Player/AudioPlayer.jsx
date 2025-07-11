@@ -163,7 +163,6 @@ function AudioPlayer({ songs, user }) {
                     />
                     : null)}
 
-
                 {/* Desktop */}
                 <div className={styles.vol}>
                     <div className={styles.buttonDiv}>
@@ -197,7 +196,8 @@ function AudioPlayer({ songs, user }) {
 
                 {/* Mobile */}
                 <div className={styles.volMobile}>
-                    <br />
+                    <img src={imgSrc} className={styles.imgMobile} /><br />
+
                     <div className={styles.buttonDiv}>
                         <button onClick={handlePrevious} className={trackID > 0 ? styles.playButton : styles.playButtonInactive}>
                             {'◀◀'}
@@ -224,8 +224,8 @@ function AudioPlayer({ songs, user }) {
                         className={styles.progressBar}
                     />
 
-                    <span className={styles.time}>{useFormatTime(currentTime, instrRefs[0])}</span>
-                </div><br /><br /><br />
+                    <span className={styles.time}>{useFormatTime(currentTime, instrRefs[0])}</span><br /><br />
+                </div><br />
 
                 <div className={styles.song}>
                     <label onMouseEnter={handleInfo} className={styles.info}>ℹ️</label>

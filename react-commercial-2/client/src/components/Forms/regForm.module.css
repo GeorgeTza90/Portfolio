@@ -96,3 +96,14 @@
     color: #ffffff;
     text-shadow: 2px 2px 5px #000000;
 }
+
+@media (max-width: 768px) {
+    .avatars {
+        grid-template-columns: repeat(4, 0.12fr);
+    }
+
+    .text {
+        margin-top: 30px;
+        font-size: 90%;
+    }
+}

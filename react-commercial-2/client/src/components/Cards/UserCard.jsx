@@ -101,10 +101,13 @@ function UserCard({ user, avatar, songs }) {
                                     </div>
                                     <img src={avatar} className={styles.img} />
                                 </div>
+                                <img src={avatar} className={styles.imgMobile} />
                             </div>
+
                         </div>
                     </div>
                     <br /><br />
+
 
                     <div className={styles.overal}>
                         <div className={styles.bg}>

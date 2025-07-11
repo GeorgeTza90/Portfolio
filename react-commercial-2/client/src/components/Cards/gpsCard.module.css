@@ -17,3 +17,9 @@
     height: 80px;
     width: auto;
 }
+
+@media (max-width: 768px) {
+    .all {
+        font-size: medium;
+    }
+}

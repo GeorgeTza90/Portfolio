@@ -33,8 +33,9 @@ label {
 .name {
     font-size: x-large;
     font-weight: bold;
-    color: #010053;
-    text-shadow: 2px 2px 20px #ffffff;
+    color: #38384c;
+    text-shadow: 1px 1px 5px #ffffff;
+    max-width: 80%;
 }
 
 .info {
@@ -180,6 +181,10 @@ input[type="range"]::-webkit-slider-thumb:hover {
     background: #1100ff;
 }
 
+.imgMobile {
+    display: none;
+}
+
 @media (max-width: 768px) {
     .all {
         background: linear-gradient(to left, #dadada69, #dfdfdf);
@@ -188,17 +193,23 @@ input[type="range"]::-webkit-slider-thumb:hover {
         display: flexbox;
         justify-items: center;
         align-items: center;
-        min-width: 150px;
+        min-width: 30%;
         min-height: auto;
     }
 
     .name {
         padding: 15px;
         border-radius: 5px;
-        font-size: large;
+        font-size: medium;
         font-weight: bold;
         color: #000000;
         text-shadow: 1px 1px 5px #00000062;
+    }
+
+    .imgMobile {
+        display: flex;
+        width: 60%;
+        border-radius: 2.5rem
     }
 
     .song {
@@ -206,6 +217,7 @@ input[type="range"]::-webkit-slider-thumb:hover {
         color: #d6d6d3;
         padding: 28px;
         border-radius: 35px;
+        max-width: 80%;
     }
 
     .AudioVisualizer {
@@ -231,6 +243,10 @@ input[type="range"]::-webkit-slider-thumb:hover {
         min-width: 110px;
     }
 
+    .img {
+        display: none;
+    }
+
     /* BUTTONS */
     .playButton {
         width: 55px;
@@ -253,7 +269,7 @@ input[type="range"]::-webkit-slider-thumb:hover {
 
     /* SLIDERS */
     input[type="range"] {
-        width: 120px;
+        max-width: 90%;
         height: 4px;
         background: #181818;
         box-shadow: 1px 1px 5px #0000006c;

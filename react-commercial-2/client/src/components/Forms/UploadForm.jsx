@@ -144,7 +144,7 @@ function UploadForm({ user }) {
                             <label>GrandePoints: {user.gp}</label>
                             <form onSubmit={handleSubmit}>
                                 <div className={styles.text}>
-                                    <h2>About the song</h2>
+                                    <h2 className={styles.myH2}>About the song</h2>
                                     <div className={styles.fillContainer}>
                                         <label>Artist's Name:</label>
                                         <input
@@ -192,7 +192,7 @@ function UploadForm({ user }) {
                                     <p id="uidsong" className={songFocus && !validSong ? styles.instructions : styles.offscreen}> 1 to 23 characters. Allowed special characters.</p>
                                     <br /><br />
 
-                                    <h2>Song's Artwork</h2>
+                                    <h2 className={styles.myH2}>Song's Artwork</h2>
                                     <div className={styles.fillContainer2}>
                                         <label>File:</label>
                                         <input
