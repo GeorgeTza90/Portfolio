@@ -17,7 +17,7 @@ body {
 
 @media (max-width: 768px) {
   body {
-    margin-bottom: 250px;
+    margin-bottom: 150px;
     max-width: 87.5%;
   }
 
