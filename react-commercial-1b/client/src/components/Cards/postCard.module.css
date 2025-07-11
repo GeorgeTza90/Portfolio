@@ -49,8 +49,12 @@
 }
 
 @media (max-width: 768px) {
-    .card {
-        min-width: 300px;
-        max-width: 720px;
+    .card {}
+
+    .image {
+        height: 80%;
+        max-width: 90%;
     }
+
+
 }
