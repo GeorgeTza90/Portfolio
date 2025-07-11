@@ -49,8 +49,18 @@
 @media (max-width: 768px) {
     .image {
         height: auto;
-        width: 200px;
-
+        width: 85%;
         border-radius: 5dvb;
+        margin-bottom: 30px;
+    }
+
+    .leftArrow {
+        margin-top: 50px;
+        padding: 6px;
+    }
+
+    .rightArrow {
+        padding: 6px;
+        margin-bottom: 50px;
     }
 }
