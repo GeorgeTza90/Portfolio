@@ -37,7 +37,7 @@ function UserCard() {
 
             <div className={styles.overal}>
                 <div className={styles.bg}>
-                    <StoreButton slot={"Sign Up Now"} onClick={handleSignUp} />
+                    <StoreButton slot={"Sign Up Now"} onClick={handleSignUp} fontSize={"medium"} />
                 </div>
             </div>
         </>
