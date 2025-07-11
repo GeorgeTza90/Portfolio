@@ -49,18 +49,17 @@
 @media (max-width: 768px) {
     .image {
         height: auto;
-        width: 85%;
+        width: 100%;
         border-radius: 5dvb;
         margin-bottom: 30px;
+
     }
 
     .leftArrow {
-        margin-top: 50px;
-        padding: 6px;
+        display: none;
     }
 
     .rightArrow {
-        padding: 6px;
-        margin-bottom: 50px;
+        display: none;
     }
 }

@@ -49,12 +49,31 @@
 }
 
 @media (max-width: 768px) {
-    .card {}
+    .card {
+        background-color: rgba(240, 248, 255, 0.38);
+        border-radius: 8%;
+        padding: 12px;
+        color: #260b03;
+        margin-bottom: 50px;
+    }
+
+    .all {
+        background-color: #dff6f6bd;
+        border-radius: 8%;
+        padding: 2px;
+    }
 
     .image {
         height: 80%;
         max-width: 90%;
     }
 
+    .interactionContainer {
+        margin-right: 20px;
+    }
 
+    .label {
+        margin-top: 20px;
+        padding: 10px;
+    }
 }

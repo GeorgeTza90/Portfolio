@@ -161,7 +161,7 @@ function PostCard({ posts, comments, user, likes }: PostCardProps): JSX.Element 
       {posts.length > 0 ? (
         posts.map((post, index) => (
           <div key={index} className={styles.card}>
-            <div className={styles.all}>
+            <div className={styles.all}><br />
               <label className={styles.label}>{post.label}</label>
               <br />
               <img src={post.imgLink} className={styles.image} alt="Post Image" />

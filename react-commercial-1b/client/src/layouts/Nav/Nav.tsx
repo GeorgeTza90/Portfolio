@@ -53,6 +53,7 @@ const Nav: React.FC = () => {
 
       {/* Μobile */}
       <div className={`${styles.sidebar} ${sidebarOpen ? styles.open : ""}`}>
+        <br /><br /><br /><br /><br />
         <Link className={styles.navLink} to="/" onClick={() => setSidebarOpen(false)}>News</Link>
         <Link className={styles.navLink} to="/destination" onClick={() => setSidebarOpen(false)}>Destination</Link>
         <Link className={styles.navLink} to="/about" onClick={() => setSidebarOpen(false)}>About</Link>
