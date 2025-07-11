@@ -61,7 +61,7 @@ No framework was used in this one. You can clone this repo and run it on your lo
 - comment on comment system
 - admin check for users 
 - create post, if admin feature
-- css style fixes for smartphone view and more...
+- css style fixes for smartphone view and more...(Changes have been made in react-commercial-1b)
 
 
 ## Thank you very much!!!
