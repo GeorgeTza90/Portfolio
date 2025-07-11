@@ -108,6 +108,20 @@
         max-height: 150%;
     }
 
+    .navButton {
+        font-family: Arial, Helvetica, sans-serif;
+        background-color: #dadadae5;
+        text-decoration: double;
+        font-weight: bold;
+        color: #010053;
+        text-shadow: 2px 2px 15px #0000002b;
+        box-shadow: 2px 2px 15px #0000002b;
+        padding: 8px;
+        padding-left: 12%;
+        padding-right: 12%;
+        border-radius: 14px;
+    }
+
     .all {
         grid-template-columns: repeat(4, 1fr);
     }
