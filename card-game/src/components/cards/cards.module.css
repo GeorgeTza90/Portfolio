@@ -1,0 +1,107 @@
+.difCardWrapper {
+    width: 70%;
+    max-width: 700px;
+    height: auto;
+    aspect-ratio: 16 / 6;
+
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+
+    border-radius: 1rem;
+    margin: 1.1rem auto;
+    cursor: pointer;
+    color: rgb(125, 180, 96);
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.3);
+}
+
+.difCardWrapper:hover {
+    transform: scale(1.02);
+    color: rgb(255, 255, 255);
+    box-shadow: 0 4px 25px rgb(65, 0, 90);
+    border: 2px solid rgb(145, 52, 182);
+}
+
+.difCardTitle {
+    margin-top: 0.1rem;
+    margin-bottom: 0.1rem;
+    font-size: 2.5vw;
+    padding: 0.5rem;
+    font-weight: bold;
+    text-shadow: 1px 1px 3px black;
+    text-align: center;
+    border-radius: 10px;
+    background-color: rgba(0, 0, 0, 0.653);
+}
+
+.difCardImage {
+    width: 80%;
+    max-width: 95%;
+    height: auto;
+    object-fit: contain;
+}
+
+.difCardImage:hover {
+    max-width: 95%;
+}
+
+
+/* Optional media query for small screens */
+@media (max-width: 600px) {
+    .difCardWrapper {
+        width: 50%;
+        max-width: 600px;
+        height: auto;
+        aspect-ratio: 16 / 9;
+
+        background-size: cover;
+        background-position: center;
+        background-repeat: no-repeat;
+
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+
+        border-radius: 1rem;
+        margin: 1rem auto;
+        cursor: pointer;
+        color: rgb(125, 180, 96);
+        box-shadow: 0 4px 12px rgba(0, 0, 0, 0.3);
+        transition: transform 0.2s ease;
+    }
+
+    .difCardWrapper:hover {
+        transform: scale(1.02);
+        color: rgb(255, 255, 255);
+        box-shadow: 0 4px 25px rgb(65, 0, 90);
+    }
+
+    .difCardTitle {
+        margin-top: 0.5rem;
+        margin-bottom: 0.01rem;
+        font-size: 3.9vw;
+        padding: 0.5rem;
+        font-weight: bold;
+
+        text-align: center;
+        border-radius: 10px;
+        background-color: rgba(0, 0, 0, 0.653);
+    }
+
+    .difCardImage {
+        width: 80%;
+        max-width: 95%;
+        height: auto;
+        object-fit: contain;
+    }
+
+    .difCardImage:hover {
+        max-width: 95%;
+    }
+}

@@ -1,0 +1,6 @@
+.heading {
+  display: flex;
+  justify-content: center;
+  align-content: center;
+  text-shadow: 0.1px 0.1px 3.2px white;
+}
