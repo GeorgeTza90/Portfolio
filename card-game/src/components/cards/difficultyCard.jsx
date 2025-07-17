@@ -1,9 +1,10 @@
 import { useNavigate } from "react-router-dom";
 import styles from "./cards.module.css";
-import { useRef } from "react";
+import { useRef, useState } from "react";
 
 function DifficultyCard({ slot = "Click Me", bgI }) {
     const navigate = useNavigate();
+    const [loading, setLoading] = useState(false);
 
     const hoverSoundRef = useRef(null);
     const clickSoundRef = useRef(null);
@@ -17,8 +18,10 @@ function DifficultyCard({ slot = "Click Me", bgI }) {
 
     const start = () => {
         playSound(clickSoundRef);
+        setLoading(true)
+
         setTimeout(() => {
-            navigate("/start", { state: { mode: bgI } });
+            navigate("/game", { state: { mode: bgI } });
         }, 2000)
 
     };
@@ -39,7 +42,7 @@ function DifficultyCard({ slot = "Click Me", bgI }) {
                 if (e.key === "Enter" || e.key === " ") start();
             }}
         >
-            <div className={styles.difCardTitle}>{slot}</div>
+            <div className={styles.difCardTitle}>{loading ? "Loading..." : `${slot}`}</div>
             <img className={styles.difCardImage} src={`/${bgI}.png`} alt={bgI} />
 
             {/* Ήχοι */}

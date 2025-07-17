@@ -12,7 +12,7 @@ function AppRouter() {
             <Route element={<MainLayout />}>
                 <Route path="/" element={<Home />} />
                 <Route path="/difficulty" element={<Difficulty />} />
-                <Route path="/start" element={<Start />} />
+                <Route path="/game" element={<Start />} />
             </Route>
         </Routes>
     );

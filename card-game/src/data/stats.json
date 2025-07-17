@@ -1,0 +1,142 @@
+{
+    "levels": {
+        "easy": {
+            "level1": "I",
+            "level2": "I",
+            "level3": "I",
+            "level4": "II",
+            "level5": "II"
+        },
+        "normal": {
+            "level1": "I",
+            "level2": "I",
+            "level3": "II",
+            "level4": "II",
+            "level5": "III"
+        },
+        "hard": {
+            "level1": "I",
+            "level2": "II",
+            "level3": "II",
+            "level4": "III",
+            "level5": "III"
+        },
+        "hell": {
+            "level1": "II",
+            "level2": "II",
+            "level3": "III",
+            "level4": "III",
+            "level5": "III"
+        }
+    },
+    "playersStats": {
+        "Xensy": {
+            "life": 60,
+            "energy": 9,
+            "attack": 6,
+            "shield": 1
+        },
+        "Miron": {
+            "life": 140,
+            "energy": 6,
+            "attack": 2,
+            "shield": 3
+        }
+    },
+    "playersAbilities": {
+        "Xensy": [
+            {
+                "ability": "Overdrive",
+                "text": "Spend 3 Energy to deal +6 Damage this turn.",
+                "cost": {
+                    "points": 3,
+                    "type": "energy"
+                },
+                "buff": {
+                    "kind": "attack",
+                    "modifier": "+",
+                    "points": 6,
+                    "target": "self"
+                },
+                "duration": "turn"
+            },
+            {
+                "ability": "Charge",
+                "text": "Spend 2 Energy to gain +3 Shield this turn.",
+                "cost": {
+                    "points": 2,
+                    "type": "energy"
+                },
+                "buff": {
+                    "kind": "shield",
+                    "modifier": "+",
+                    "points": 3,
+                    "target": "self"
+                },
+                "duration": "turn"
+            },
+            {
+                "ability": "Exchange",
+                "text": "Spend all your Energy to gain +20 Life.",
+                "cost": {
+                    "points": "all",
+                    "type": "energy"
+                },
+                "buff": {
+                    "kind": "life",
+                    "modifier": "+",
+                    "points": 20,
+                    "target": "self"
+                },
+                "duration": "permanent"
+            }
+        ],
+        "Miron": [
+            {
+                "ability": "Fortify",
+                "text": "Spend 2 Energy to reduce next attack’s damage by 5.",
+                "cost": {
+                    "points": 2,
+                    "type": "energy"
+                },
+                "buff": {
+                    "kind": "attack",
+                    "modifier": "-",
+                    "points": 5,
+                    "target": "enemy"
+                },
+                "duration": "next attack"
+            },
+            {
+                "ability": "Agro-F",
+                "text": "Spend 1 Energy to take next turn's damage.",
+                "cost": {
+                    "points": 1,
+                    "type": "energy"
+                },
+                "buff": {
+                    "kind": "life",
+                    "modifier": "-",
+                    "points": "all",
+                    "target": "self"
+                },
+                "duration": "next attack"
+            },
+            {
+                "ability": "Sacrifice",
+                "text": "Lose 20 Life to gain +6 Energy.",
+                "cost": {
+                    "points": 20,
+                    "type": "life"
+                },
+                "buff": {
+                    "kind": "energy",
+                    "modifier": "+",
+                    "points": 6,
+                    "target": "self"
+                },
+                "duration": "permanent"
+            }
+        ]
+    }
+}

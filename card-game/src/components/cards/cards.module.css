@@ -1,28 +1,28 @@
+/* =================== DESKTOP =================== */
+
 .difCardWrapper {
     width: 70%;
     max-width: 700px;
-    height: auto;
     aspect-ratio: 16 / 6;
-
     background-size: cover;
     background-position: center;
     background-repeat: no-repeat;
-
     display: flex;
     flex-direction: column;
     justify-content: center;
     align-items: center;
-
     border-radius: 1rem;
-    margin: 1.1rem auto;
+    margin: 0.4rem auto;
     cursor: pointer;
     color: rgb(125, 180, 96);
     box-shadow: 0 4px 12px rgba(0, 0, 0, 0.3);
+    border: 2px solid rgba(0, 0, 0, 0.317);
+    transition: transform 0.2s ease;
 }
 
 .difCardWrapper:hover {
     transform: scale(1.02);
-    color: rgb(255, 255, 255);
+    color: white;
     box-shadow: 0 4px 25px rgb(65, 0, 90);
     border: 2px solid rgb(145, 52, 182);
 }
@@ -50,58 +50,236 @@
     max-width: 95%;
 }
 
+.gameContainer {
+    width: 100%;
+    display: grid;
+    grid-template-columns: repeat(1, 1fr);
+    justify-content: center;
+    align-items: center;
+}
 
-/* Optional media query for small screens */
+.tabBackground {
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+    width: 100%;
+    height: auto;
+    display: grid;
+    grid-template-columns: 200px repeat(1, 1fr);
+    column-gap: 2rem;
+    justify-content: left;
+    align-items: center;
+}
+
+.locationsContainer {
+    display: grid;
+    grid-template-columns: repeat(5, 1fr);
+    column-gap: 1rem;
+    justify-content: center;
+    align-items: center;
+    max-width: 1920px;
+    margin-right: 5rem;
+}
+
+.LocationCard {
+    font-family: 'Times New Roman', Times, serif;
+    background-image: url(/Back.png);
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+    width: 100%;
+    min-width: 100px;
+    aspect-ratio: 12.5 / 17.5;
+    margin: 1rem;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    border-radius: 7%;
+    box-shadow: 1px 1px 5px black;
+}
+
+.playerCol {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+}
+
+.playersContainer {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    column-gap: 1rem;
+    justify-content: center;
+    align-items: center;
+    max-width: 1920px;
+    margin-right: 5rem;
+}
+
+.playerCard {
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+    box-shadow: 1px 1px 5px black;
+    border-radius: 10px;
+    margin-bottom: 1.5rem;
+}
+
+.level {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    font-size: x-large;
+    background-color: black;
+    min-width: 30px;
+    min-height: 30px;
+    border-radius: 60%;
+    padding: 0.8rem;
+}
+
+.title {
+    margin-left: 50px;
+    margin-right: 1000px;
+    background-color: black;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    font-size: x-large;
+    min-width: 55%;
+    min-height: 30px;
+    border-radius: 60%;
+    padding: 1rem;
+}
+
+.stats {
+    margin-left: 10px;
+    margin-top: 10px;
+}
+
+.statsImg {
+    width: 45px;
+    margin-bottom: 10px;
+}
+
+.specStat {
+    display: flex;
+    justify-content: left;
+    align-items: center;
+    margin-bottom: 0.5rem;
+    font-size: larger;
+    font-weight: bolder;
+}
+
+.abilities {
+    display: grid;
+    grid-template-columns: 100px;
+    row-gap: 1rem;
+    justify-content: right;
+}
+
+.ability {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    font-size: large;
+    font-weight: bolder;
+    background-color: rgba(0, 0, 0, 0.859);
+    border-radius: 10px;
+    padding: 2px;
+    cursor: pointer;
+    text-align: center;
+}
+
+.ability:hover {
+    transform: scale(1.02);
+    background-color: rgb(65, 0, 90);
+    font-size: larger;
+}
+
+/* =================== MOBILE =================== */
+
 @media (max-width: 600px) {
     .difCardWrapper {
-        width: 50%;
-        max-width: 600px;
-        height: auto;
+        width: 90%;
+        max-width: 100%;
         aspect-ratio: 16 / 9;
-
-        background-size: cover;
-        background-position: center;
-        background-repeat: no-repeat;
-
-        display: flex;
-        flex-direction: column;
-        justify-content: center;
-        align-items: center;
-
-        border-radius: 1rem;
         margin: 1rem auto;
-        cursor: pointer;
-        color: rgb(125, 180, 96);
-        box-shadow: 0 4px 12px rgba(0, 0, 0, 0.3);
-        transition: transform 0.2s ease;
-    }
-
-    .difCardWrapper:hover {
-        transform: scale(1.02);
-        color: rgb(255, 255, 255);
-        box-shadow: 0 4px 25px rgb(65, 0, 90);
     }
 
     .difCardTitle {
-        margin-top: 0.5rem;
-        margin-bottom: 0.01rem;
-        font-size: 3.9vw;
+        font-size: 1rem;
+        padding: 0.3rem;
+    }
+
+    .gameContainer,
+    .playersContainer,
+    .locationsContainer {
+        grid-template-columns: 1fr;
+        margin-right: 0;
+        column-gap: 0;
+        row-gap: 1rem;
+        padding: 0 1rem;
+    }
+
+    .tabBackground {
+        grid-template-columns: 100px repeat(1, 1fr);
+    }
+
+    .playerCard {
+        width: 90%;
+        margin: 0 auto 1.5rem;
+    }
+
+    .playerCol {
+        grid-template-columns: 1fr;
+    }
+
+    .locationsContainer {
+        max-width: 80px;
+        display: grid;
+        grid-template-columns: repeat(2, 1fr);
+        column-gap: 2rem;
+        margin-left: 5rem;
+    }
+
+    .LocationCard {
+        min-width: 80px;
+        aspect-ratio: 10 / 14;
+        margin: 0.5rem auto;
+    }
+
+    .level {
+        font-size: medium;
         padding: 0.5rem;
-        font-weight: bold;
-
-        text-align: center;
-        border-radius: 10px;
-        background-color: rgba(0, 0, 0, 0.653);
+        min-width: 25px;
+        min-height: 25px;
     }
 
-    .difCardImage {
-        width: 80%;
-        max-width: 95%;
-        height: auto;
-        object-fit: contain;
+    .title {
+        font-size: medium;
+        margin: 0 auto;
+        width: 90%;
+        margin-left: 10px;
+        margin-right: auto;
     }
 
-    .difCardImage:hover {
-        max-width: 95%;
+    .statsImg {
+        width: 32px;
+    }
+
+    .specStat {
+        font-size: medium;
+    }
+
+    .abilities {
+        grid-template-columns: 1fr;
+        justify-content: center;
+    }
+
+    .ability {
+        font-size: medium;
+        padding: 0.4rem;
+    }
+
+    .ability:hover {
+        font-size: medium;
+        padding: 0.4rem;
     }
 }
