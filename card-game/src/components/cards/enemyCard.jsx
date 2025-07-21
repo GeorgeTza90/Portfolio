@@ -68,7 +68,7 @@ function EnemyCard({ name, stats, abilities = [], type, onRemove }) {
                                         style={{
                                             position: "absolute",
                                             top: "-175%",
-                                            left: "-207%",
+                                            left: "-205%",
                                             backgroundColor: "rgba(73, 5, 110, 0.89)",
                                             boxShadow: "1px 1px 8px black",
                                             border: "1px solid black",
@@ -109,7 +109,7 @@ function EnemyCard({ name, stats, abilities = [], type, onRemove }) {
                                             style={{
                                                 position: "absolute",
                                                 top: "-195%",
-                                                left: "-102%",
+                                                left: "-157%",
                                                 backgroundColor: "rgba(73, 5, 110, 0.89)",
                                                 boxShadow: "1px 1px 8px black",
                                                 border: "1px solid black",
@@ -119,7 +119,7 @@ function EnemyCard({ name, stats, abilities = [], type, onRemove }) {
                                                 zIndex: 10,
                                                 fontSize: "1rem",
                                                 pointerEvents: "none",
-                                                width: "280px",
+                                                width: "360px",
                                             }}
                                         >
                                             {ability.text}
