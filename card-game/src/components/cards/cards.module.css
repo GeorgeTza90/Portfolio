@@ -109,15 +109,17 @@
     column-gap: 1rem;
     justify-content: center;
     align-items: center;
-    max-width: 1920px;
-    margin-right: 5rem;
+    max-width: 150%;
+    max-height: 100%;
+    min-width: 90%;
+    margin-right: 3rem;
 }
 
 .playerCard {
     background-size: cover;
     background-position: center;
     background-repeat: no-repeat;
-    box-shadow: 1px 1px 5px black;
+    box-shadow: 1px 1px 8px black;
     border-radius: 10px;
     margin-bottom: 1.5rem;
 }
@@ -148,14 +150,25 @@
     padding: 1rem;
 }
 
-.stats {
-    margin-left: 10px;
-    margin-top: 10px;
+.name {
+    font-size: 1.5rem;
+    background-color: rgba(0, 0, 0, 0.859);
+    border-radius: 10px;
+    padding-left: 5px;
 }
 
+.stats {
+    margin-top: 9rem;
+    width: 38%;
+    padding: 0.5rem;
+    border-radius: 10px;
+    background-color: rgba(0, 0, 0, 0.859);
+}
+
+
 .statsImg {
-    width: 45px;
-    margin-bottom: 10px;
+    width: 32px;
+    margin-bottom: 0.5rem;
 }
 
 .specStat {
@@ -168,9 +181,9 @@
 }
 
 .abilities {
+    margin-top: 2.2rem;
     display: grid;
     grid-template-columns: 100px;
-    row-gap: 1rem;
     justify-content: right;
 }
 
@@ -193,6 +206,88 @@
     font-size: larger;
 }
 
+.addCard {
+    min-width: 80%;
+    min-height: 400px;
+    margin: 1rem;
+    border: 2px dashed #ccc;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 3rem;
+    color: #64fc6b;
+    cursor: pointer;
+    border-radius: 12px;
+    text-shadow: 1px 1px 5px black;
+    font-size: 3.8rem;
+}
+
+.addCard:hover {
+    transform: scale(1.03);
+    transition: transform 15s ease;
+    background-color: #eaff001e;
+    border-color: #888;
+    color: #b2ecb5;
+    font-size: 3.3rem;
+}
+
+.selectCard {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    padding: 10px;
+    border: 2px solid #ccc;
+    border-radius: 12px;
+    max-width: 1920px;
+    min-width: 90%;
+    min-height: 500px;
+}
+
+.enemyDropdown {
+    width: 100%;
+    padding: 6px;
+    margin-bottom: 10px;
+    border-radius: 6px;
+    border: 1px solid #aaa;
+    font-size: 1.5rem;
+}
+
+.enemyLevel {
+    font-family: 'Times New Roman', Times, serif;
+}
+
+.confirmButton {
+    padding: 6px 12px;
+    background: #4caf50;
+    color: white;
+    border: none;
+    border-radius: 6px;
+    cursor: pointer;
+}
+
+.confirmButton:hover {
+    background: #45a049;
+}
+
+.removeButton {
+    width: 10px;
+    height: 10px;
+    position: absolute;
+    font-size: xx-large;
+    cursor: pointer;
+    color: #ff0000;
+}
+
+.removeButton:hover {
+    position: absolute;
+    font-size: x-large;
+    z-index: 20;
+    cursor: pointer;
+    color: #ff0000;
+}
+
+
 /* =================== MOBILE =================== */
 
 @media (max-width: 600px) {
@@ -209,13 +304,9 @@
     }
 
     .gameContainer,
-    .playersContainer,
-    .locationsContainer {
+    .playersContainer {
         grid-template-columns: 1fr;
-        margin-right: 0;
-        column-gap: 0;
-        row-gap: 1rem;
-        padding: 0 1rem;
+        width: 100%;
     }
 
     .tabBackground {
@@ -224,23 +315,24 @@
 
     .playerCard {
         width: 90%;
+        height: 60%;
         margin: 0 auto 1.5rem;
     }
 
     .playerCol {
-        grid-template-columns: 1fr;
+        grid-template-columns: 1fr 1fr;
     }
 
     .locationsContainer {
-        max-width: 80px;
+        max-width: 110px;
         display: grid;
         grid-template-columns: repeat(2, 1fr);
         column-gap: 2rem;
-        margin-left: 5rem;
+        margin-left: 8.5rem;
     }
 
     .LocationCard {
-        min-width: 80px;
+        min-width: 150px;
         aspect-ratio: 10 / 14;
         margin: 0.5rem auto;
     }
@@ -260,6 +352,10 @@
         margin-right: auto;
     }
 
+    .name {
+        font-size: 1.2rem;
+    }
+
     .statsImg {
         width: 32px;
     }
@@ -268,9 +364,14 @@
         font-size: medium;
     }
 
+    .stats {
+
+        max-width: 70px;
+    }
+
     .abilities {
-        grid-template-columns: 1fr;
-        justify-content: center;
+        margin-top: 0.1rem;
+
     }
 
     .ability {

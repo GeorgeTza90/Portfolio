@@ -1,0 +1,107 @@
+{
+    "enemiesList": [
+        "Rogue Android - Burglar",
+        "Rogue Android - Telepath",
+        "Rogue Android - Slasher",
+        "Rogue Android - Shamurai"
+    ],
+    "enemiesStats": {
+        "Rogue Android - Burglar": {
+            "Lv1": {
+                "life": 4,
+                "energy": 0,
+                "attack": 3,
+                "shield": 0,
+                "ability": "If defeated by basic attack, explodes and each player loses 2 Life."
+            },
+            "Lv2": {
+                "life": 7,
+                "energy": 1,
+                "attack": 4,
+                "shield": 1,
+                "ability": "Uses 1 Energy to gain +3 Shield.",
+                "abilityTurn": "2nd"
+            },
+            "Lv3": {
+                "life": 14,
+                "energy": 1,
+                "attack": 6,
+                "shield": 3,
+                "ability": "Uses 1 Energy to gain +5 Attack.",
+                "abilityTurn": "4th"
+            }
+        },
+        "Rogue Android - Telepath": {
+            "Lv1": {
+                "life": 6,
+                "energy": 0,
+                "attack": 3,
+                "shield": 0,
+                "ability": "Telepathy - Every turn roll 1d6. If its 4 it steals 1 Shield from players."
+            },
+            "Lv2": {
+                "life": 12,
+                "energy": 0,
+                "attack": 5,
+                "shield": 1,
+                "ability": "Telepathy - Every turn roll 1d6. If its 4 it steals 1 Shield from players."
+            },
+            "Lv3": {
+                "life": 20,
+                "energy": 1,
+                "attack": 6,
+                "shield": 2,
+                "ability": "Telepathy - Every turn roll 1d6. If its 4 it steals 1 Shield from players. Uses 1 Energy, players lose 1 Energy.",
+                "abilityTurn": "2nd"
+            }
+        },
+        "Rogue Android - Slasher": {
+            "Lv1": {
+                "life": 4,
+                "energy": 0,
+                "attack": 3,
+                "shield": 0,
+                "ability": "Phase Shift - At the start of battle roll 1d6. If its 1 or 4 : it gets +2 attack."
+            },
+            "Lv2": {
+                "life": 10,
+                "energy": 0,
+                "attack": 4,
+                "shield": 1,
+                "ability": "Phase Shift - At the start of battle roll 1d6. If its 1 or 4 it gets +2 attack."
+            },
+            "Lv3": {
+                "life": 16,
+                "energy": 1,
+                "attack": 6,
+                "shield": 3,
+                "ability": "Uses 1 Energy, players lose 1 Shield.",
+                "abilityTurn": "2nd"
+            }
+        },
+        "Rogue Android - Shamurai": {
+            "Lv1": {
+                "life": 8,
+                "energy": 1,
+                "attack": 6,
+                "shield": 1,
+                "ability": "Echo Damage - Uses 1 Energy to draw a weapon. It uses the weapon on the next turn."
+            },
+            "Lv2": {
+                "life": 10,
+                "energy": 0,
+                "attack": 4,
+                "shield": 1,
+                "ability": "No abilities"
+            },
+            "Lv3": {
+                "life": 25,
+                "energy": 2,
+                "attack": 9,
+                "shield": 4,
+                "ability": "Echo Damage - Uses 1 Energy to draw a weapon. It uses the weapon on the next turn. Uses 1 Energy, players lose 1 Shield",
+                "abilityTurn": "4th and 5th"
+            }
+        }
+    }
+}

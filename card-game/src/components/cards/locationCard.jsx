@@ -25,14 +25,16 @@ function LocationCard({ level, id, revealed, cleared }) {
             {hovered && (
                 <div
                     style={{
+                        position: "absolute",
                         fontFamily: "system-ui, Avenir, Helvetica, Arial, sans-serif",
                         position: "absolute",
-                        top: "50%",
-                        left: isMobile ? "0" : "-200px",
+                        top: isMobile ? "50%" : "80%",
+                        left: isMobile ? "-10%" : "100px",
                         transform: isMobile ? "translateY(-50%)" : "translate(-50%, -120%)",
                         backgroundColor: "rgba(73, 5, 110, 0.89)",
                         color: "white",
                         padding: "6px 12px",
+                        border: "1px solid black",
                         borderRadius: "12px",
                         zIndex: 100,
                         fontSize: "1.2rem",

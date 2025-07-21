@@ -1,12 +1,22 @@
-import { useState } from "react";
+import { useState, useEffect } from "react";
 import styles from "./cards.module.css";
 
 function PlayerCard({ name, stats, abilities }) {
     const [hoveredAbility, setHoveredAbility] = useState(null);
     const [isMobile, setIsMobile] = useState(false);
 
+    useEffect(() => {
+        const checkMobile = () => {
+            setIsMobile(window.innerWidth <= 768);
+        };
+
+        checkMobile();
+        window.addEventListener("resize", checkMobile);
+        return () => window.removeEventListener("resize", checkMobile);
+    }, []);
+
     const playerCardStyle = {
-        backgroundImage: `url(/${name}.jpg)`,
+        backgroundImage: `url(/artworks/${name}.jpg)`,
     };
 
     return (
@@ -40,23 +50,30 @@ function PlayerCard({ name, stats, abilities }) {
                                 className={styles.ability}
                                 onMouseEnter={() => setHoveredAbility(index)}
                                 onMouseLeave={() => setHoveredAbility(null)}
-                                style={{ position: "relative", cursor: "pointer" }}
+                                style={{
+                                    position: "relative",
+                                    cursor: "pointer",
+                                    height: "40px",
+                                    marginTop: "60px"
+                                }}
                             >
                                 {ability.ability}
-
                                 {hoveredAbility === index && (
                                     <div
                                         style={{
                                             position: "absolute",
-                                            top: isMobile ? "-40px" : "-60px",
-                                            left: isMobile ? "125%" : "20%",
-                                            backgroundColor: "rgba(78, 5, 110, 0.97)",
+                                            top: "-140%",
+                                            left: "-207%",
+                                            backgroundColor: "rgba(73, 5, 110, 0.89)",
+                                            boxShadow: "1px 1px 8px black",
+                                            border: "1px solid black",
+                                            borderRadius: "12px",
                                             color: "white",
                                             padding: "6px 10px",
-                                            borderRadius: "4px",
                                             zIndex: 10,
                                             fontSize: "1rem",
                                             pointerEvents: "none",
+                                            width: "280px",
                                         }}
                                     >
                                         {ability.text}
@@ -67,7 +84,7 @@ function PlayerCard({ name, stats, abilities }) {
                     </div>
                 </div>
             </div>
-        </div >
+        </div>
     );
 }
 

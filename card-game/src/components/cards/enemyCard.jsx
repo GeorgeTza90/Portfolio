@@ -1,0 +1,95 @@
+import { useState, useEffect } from "react";
+import styles from "./cards.module.css";
+import RemoveButton from "../../components/buttons/RemoveButton"
+
+function EnemyCard({ name, stats, onRemove }) {
+    const [hoveredAbility, setHoveredAbility] = useState(false);
+    const [isMobile, setIsMobile] = useState(false);
+
+    useEffect(() => {
+        const checkMobile = () => {
+            setIsMobile(window.innerWidth <= 768);
+        };
+
+        checkMobile();
+        window.addEventListener("resize", checkMobile);
+        return () => window.removeEventListener("resize", checkMobile);
+    }, []);
+
+    const playerCardStyle = {
+        backgroundImage: `url(/artworks/${encodeURIComponent(name)}.jpg)`
+    };
+
+    return (
+        <div style={{ display: "block" }}>
+            <div style={playerCardStyle} className={styles.playerCard}>
+                <h1 className={styles.name}>{name}</h1>
+                <RemoveButton
+                    onClick={onRemove}
+                    slot="X"
+                />
+
+                <div className={styles.playerCol}>
+                    <div className={styles.stats}>
+                        <div className={styles.specStat}>
+                            <img src="/life.png" alt="life" className={styles.statsImg} />
+                            {stats.life}
+                        </div>
+                        <div className={styles.specStat}>
+                            <img src="/energy.png" alt="energy" className={styles.statsImg} />
+                            {stats.energy}
+                        </div>
+                        <div className={styles.specStat}>
+                            <img src="/attack.png" alt="attack" className={styles.statsImg} />
+                            {stats.attack}
+                        </div>
+                        <div className={styles.specStat}>
+                            <img src="/shield.png" alt="shield" className={styles.statsImg} />
+                            {stats.shield}
+                        </div>
+                    </div>
+
+                    <div className={styles.abilities}>
+                        <div
+                            className={styles.ability}
+                            onMouseEnter={() => setHoveredAbility(true)}
+                            onMouseLeave={() => setHoveredAbility(false)}
+                            style={{
+                                position: "relative",
+                                cursor: "pointer",
+                                height: "40px",
+                                marginTop: "280px"
+                            }}
+                        >
+                            Ability
+                            {hoveredAbility && stats.ability && (
+                                <div
+                                    style={{
+                                        position: "absolute",
+                                        top: "-260%",
+                                        left: "-207%",
+                                        backgroundColor: "rgba(73, 5, 110, 0.89)",
+                                        boxShadow: "1px 1px 8px black",
+                                        border: "1px solid black",
+                                        borderRadius: "12px",
+                                        color: "white",
+                                        padding: "2px 10px",
+                                        zIndex: 10,
+                                        fontSize: "1rem",
+                                        pointerEvents: "none",
+                                        width: "280px",
+                                    }}
+                                >
+                                    {stats.ability}
+                                    {stats.abilityTurn ? ` Activates in ${stats.abilityTurn} turn` : ""}
+                                </div>
+                            )}
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    );
+}
+
+export default EnemyCard;

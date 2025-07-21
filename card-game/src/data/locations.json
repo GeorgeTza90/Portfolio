@@ -1,0 +1,32 @@
+{
+    "levels": {
+        "easy": {
+            "level1": "I",
+            "level2": "I",
+            "level3": "I",
+            "level4": "II",
+            "level5": "II"
+        },
+        "normal": {
+            "level1": "I",
+            "level2": "I",
+            "level3": "II",
+            "level4": "II",
+            "level5": "III"
+        },
+        "hard": {
+            "level1": "I",
+            "level2": "II",
+            "level3": "II",
+            "level4": "III",
+            "level5": "III"
+        },
+        "hell": {
+            "level1": "II",
+            "level2": "II",
+            "level3": "III",
+            "level4": "III",
+            "level5": "III"
+        }
+    }
+}
