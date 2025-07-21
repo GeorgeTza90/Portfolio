@@ -207,19 +207,20 @@
 }
 
 .addCard {
-    min-width: 80%;
-    min-height: 400px;
-    margin: 1rem;
     border: 2px dashed #ccc;
     display: flex;
     align-items: center;
     justify-content: center;
     font-size: 3rem;
     color: #64fc6b;
-    cursor: pointer;
-    border-radius: 12px;
     text-shadow: 1px 1px 5px black;
     font-size: 3.8rem;
+    cursor: pointer;
+    min-width: 80%;
+    min-height: 400px;
+    margin: 1rem;
+    border-radius: 12px;
+
 }
 
 .addCard:hover {
@@ -236,12 +237,11 @@
     flex-direction: column;
     align-items: center;
     justify-content: center;
-    padding: 10px;
     border: 2px solid #ccc;
+    min-width: 80%;
+    min-height: 400px;
+    margin: 1rem;
     border-radius: 12px;
-    max-width: 1920px;
-    min-width: 90%;
-    min-height: 500px;
 }
 
 .enemyDropdown {
@@ -258,16 +258,21 @@
 }
 
 .confirmButton {
-    padding: 6px 12px;
-    background: #4caf50;
+    margin-top: 2rem;
+    margin-bottom: 1rem;
+    padding: 15px 25px;
+    background: #308f33;
     color: white;
     border: none;
-    border-radius: 6px;
+    border-radius: 12px;
     cursor: pointer;
 }
 
 .confirmButton:hover {
-    background: #45a049;
+    background: #3fac43;
+    box-shadow: 1px 1px 15px rgba(73, 5, 110, 0.89);
+    text-shadow: 1px 1px 5px #000000;
+
 }
 
 .removeButton {

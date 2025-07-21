@@ -7,6 +7,7 @@ import styles from "../../components/cards/cards.module.css";
 import Players from "../../data/players.json";
 import Locations from "../../data/locations.json";
 import Enemies from "../../data/enemies.json";
+import RemoveButton from "../../components/buttons/RemoveButton.jsx";
 
 function Game() {
     const location = useLocation();
@@ -14,7 +15,7 @@ function Game() {
     const { mode } = location.state || {};
     const { playersStats, playersAbilities } = Players;
     const { levels } = Locations;
-    const { enemiesList, enemiesStats } = Enemies;
+    const { enemiesList, enemiesStats, leviathanList } = Enemies;
     const [activeLocation, setActiveLocation] = useState();
 
     const [enemyList, setEnemyList] = useState([]);
@@ -43,8 +44,6 @@ function Game() {
         setSelectingEnemy(false);
         setSelectedEnemy("");
     };
-
-    console.log(Enemies);
 
     return (
         <>
@@ -89,7 +88,11 @@ function Game() {
                         ))}
 
                         {!selectingEnemy ? (
-                            <div className={styles.addCard} onClick={() => { setSelectingEnemy(true), setAddEnemySymbol("+") }} onMouseEnter={() => setAddEnemySymbol("Spawn Enemy")} onMouseLeave={() => setAddEnemySymbol("+")} >
+                            <div className={styles.addCard}
+                                onClick={() => { setSelectingEnemy(true), setAddEnemySymbol("+") }}
+                                onMouseEnter={() => setAddEnemySymbol("Spawn Enemy")}
+                                onMouseLeave={() => setAddEnemySymbol("+")}
+                            >
                                 <span className={styles.plusSign}>{addEnemySymbol}</span>
                             </div>
                         ) : (
@@ -106,20 +109,23 @@ function Game() {
                                         </option>
                                     ))}
                                 </select>
-                                <select
-                                    className={styles.enemyDropdown}
-                                    value={selectedEnemyLevel}
-                                    onChange={(e) => setSelectedEnemyLevel(e.target.value)}
-                                >
-                                    <option value="" className={styles.enemyLevel}>Enemy's Level...</option>
-                                    <option value="Lv1" className={styles.enemyLevel}>I</option>
-                                    <option value="Lv2" className={styles.enemyLevel}>II</option>
-                                    <option value="Lv3" className={styles.enemyLevel}>III</option>
+                                {!leviathanList.includes(selectedEnemy) && (
+                                    <select
+                                        className={styles.enemyDropdown}
+                                        value={selectedEnemyLevel}
+                                        onChange={(e) => setSelectedEnemyLevel(e.target.value)}
+                                    >
+                                        <option value="" className={styles.enemyLevel}>Enemy's Level...</option>
+                                        <option value="Lv1" className={styles.enemyLevel}>I</option>
+                                        <option value="Lv2" className={styles.enemyLevel}>II</option>
+                                        <option value="Lv3" className={styles.enemyLevel}>III</option>
 
-                                </select>
+                                    </select>)}
+
                                 <button className={styles.confirmButton} onClick={handleConfirmAddEnemy}>
                                     Add
-                                </button>
+                                </button><br />
+                                <RemoveButton slot="X" onClick={() => setSelectingEnemy(false)} />
                             </div>
                         )}
                     </div>

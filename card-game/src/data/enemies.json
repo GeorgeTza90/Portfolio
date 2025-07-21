@@ -11,7 +11,17 @@
         "GJC Elite - Sniper",
         "GJC Elite - Huntsman",
         "GJC Elite - Hacker",
-        "GJC Elite - Sword Artisan"
+        "GJC Elite - Sword Artisan",
+        "Virelyth - the Dreamborne Wyrm",
+        "Thornmaw - the Verdant Devourer",
+        "Molgrith - the Hollow Saint",
+        "Skelra - The Feathered Harbinger"
+    ],
+    "leviathanList": [
+        "Virelyth - the Dreamborne Wyrm",
+        "Thornmaw - the Verdant Devourer",
+        "Molgrith - the Hollow Saint",
+        "Skelra - The Feathered Harbinger"
     ],
     "enemiesStats": {
         "Rogue Android - Burglar": {
