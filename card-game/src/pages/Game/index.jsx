@@ -2,7 +2,7 @@ import { useLocation } from "react-router-dom";
 import { useState } from "react";
 import Location from "../../components/cards/locationCard";
 import Player from "../../components/cards/playerCard";
-import Enemy from "../../components/cards/EnemyCard";
+import Enemy from "../../components/cards/EnemyCard"
 import styles from "../../components/cards/cards.module.css";
 import Players from "../../data/players.json";
 import Locations from "../../data/locations.json";
@@ -43,6 +43,8 @@ function Game() {
         setSelectingEnemy(false);
         setSelectedEnemy("");
     };
+
+    console.log(Enemies);
 
     return (
         <>

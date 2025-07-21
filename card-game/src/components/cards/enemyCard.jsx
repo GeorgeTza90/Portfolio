@@ -1,6 +1,6 @@
 import { useState, useEffect } from "react";
 import styles from "./cards.module.css";
-import RemoveButton from "../../components/buttons/RemoveButton"
+import RemoveButton from "../buttons/RemoveButton"
 
 function EnemyCard({ name, stats, onRemove }) {
     const [hoveredAbility, setHoveredAbility] = useState(false);
