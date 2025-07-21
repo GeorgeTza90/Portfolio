@@ -3,7 +3,8 @@
     background-size: cover;
     background-position: center;
     background-repeat: no-repeat;
-    min-height: 23%;
+    height: 10vh;
+    width: auto;
     display: flex;
     justify-content: center;
     align-items: center;
@@ -11,24 +12,16 @@
 
 .img {
     width: 30%;
-    height: fit-content;
+    height: auto;
 }
 
 @media (max-width: 768px) {
-
     .nav {
-        background-image: url(/bg.jpg);
-        background-position: center;
-        background-repeat: no-repeat;
-        background-size: cover;
-        height: 15%;
-        display: flex;
-        justify-content: center;
-        align-items: center;
+        height: 15vh;
     }
 
     .img {
         width: 60%;
-        height: fit-content;
+        height: auto;
     }
 }
