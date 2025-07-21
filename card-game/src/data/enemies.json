@@ -102,6 +102,79 @@
                 "ability": "Echo Damage - Uses 1 Energy to draw a weapon. It uses the weapon on the next turn. Uses 1 Energy, players lose 1 Shield",
                 "abilityTurn": "4th and 5th"
             }
+        },
+        "Yuko Soldier - Handler": {
+            "Lv1": {
+                "life": 8,
+                "energy": 0,
+                "attack": 3,
+                "shield": 2,
+                "ability": "Blink - Immune to damage at 1st turn. On death deals 3 damage to players."
+            },
+            "Lv2": {
+                "life": 14,
+                "energy": 2,
+                "attack": 5,
+                "shield": 3,
+                "ability": "Blink - Immune to damage at 1st turn. Uses 2 Energy to gain +5 Life.",
+                "abilityTurn": "3d"
+            },
+            "Lv3": {
+                "life": 18,
+                "energy": 3,
+                "attack": 4,
+                "shield": 4,
+                "ability": "Uses 1 Energy, players gets -1 Energy.",
+                "abilityTurn": "2nd, 3d and 4th"
+            }
+        },
+        "Yuko Soldier - Golem": {
+            "Lv1": {
+                "life": 8,
+                "energy": 0,
+                "attack": 3,
+                "shield": 2,
+                "ability": "Rage Attacl - Each turn a weapon is played Handler gets permanent +1 Attack next turn."
+            },
+            "Lv2": {
+                "life": 12,
+                "energy": 0,
+                "attack": 5,
+                "shield": 4,
+                "ability": "Rage Attacl - Each turn a weapon is played Handler gets permanent +1 Attack next turn."
+            },
+            "Lv3": {
+                "life": 16,
+                "energy": 2,
+                "attack": 8,
+                "shield": 5,
+                "ability": "Uses 1 Energy, players gets -1 Shield.",
+                "abilityTurn": "2nd and 4th"
+            }
+        },
+        "Yuko Soldier - Golem": {
+            "Lv1": {
+                "life": 8,
+                "energy": 0,
+                "attack": 3,
+                "shield": 2,
+                "ability": "Rage Attacl - Each turn a weapon is played Handler gets permanent +1 Attack next turn."
+            },
+            "Lv2": {
+                "life": 12,
+                "energy": 0,
+                "attack": 5,
+                "shield": 4,
+                "ability": "Rage Attacl - Each turn a weapon is played Handler gets permanent +1 Attack next turn."
+            },
+            "Lv3": {
+                "life": 16,
+                "energy": 2,
+                "attack": 8,
+                "shield": 5,
+                "ability": "Uses 1 Energy, players gets -1 Shield.",
+                "abilityTurn": "2nd and 4th"
+            }
         }
     }
 }
