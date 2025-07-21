@@ -24,6 +24,8 @@ function PlayerCard({ name, stats, abilities }) {
             <div style={playerCardStyle} className={styles.playerCard}>
                 <h1 className={styles.name}>{name}</h1>
                 <div className={styles.playerCol}>
+
+                    {/* Stats */}
                     <div className={styles.stats}>
                         <div className={styles.specStat}>
                             <img src="/life.png" alt="life" className={styles.statsImg} />
@@ -43,6 +45,7 @@ function PlayerCard({ name, stats, abilities }) {
                         </div>
                     </div>
 
+                    {/* Abilities */}
                     <div className={styles.abilities}>
                         {abilities.map((ability, index) => (
                             <div
@@ -62,7 +65,7 @@ function PlayerCard({ name, stats, abilities }) {
                                     <div
                                         style={{
                                             position: "absolute",
-                                            top: "-140%",
+                                            top: "-145%",
                                             left: "-207%",
                                             backgroundColor: "rgba(73, 5, 110, 0.89)",
                                             boxShadow: "1px 1px 8px black",

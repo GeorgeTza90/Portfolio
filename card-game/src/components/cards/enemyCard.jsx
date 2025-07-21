@@ -1,9 +1,9 @@
 import { useState, useEffect } from "react";
 import styles from "./cards.module.css";
-import RemoveButton from "../buttons/RemoveButton"
+import RemoveButton from "../buttons/RemoveButton";
 
-function EnemyCard({ name, stats, onRemove }) {
-    const [hoveredAbility, setHoveredAbility] = useState(false);
+function EnemyCard({ name, stats, abilities = [], type, onRemove }) {
+    const [hoveredAbility, setHoveredAbility] = useState(null);
     const [isMobile, setIsMobile] = useState(false);
 
     useEffect(() => {
@@ -17,19 +17,18 @@ function EnemyCard({ name, stats, onRemove }) {
     }, []);
 
     const playerCardStyle = {
-        backgroundImage: `url(/artworks/${encodeURIComponent(name)}.jpg)`
+        backgroundImage: `url(/artworks/${encodeURIComponent(name)}.jpg)`,
     };
 
     return (
         <div style={{ display: "block" }}>
             <div style={playerCardStyle} className={styles.playerCard}>
                 <h1 className={styles.name}>{name}</h1>
-                <RemoveButton
-                    onClick={onRemove}
-                    slot="X"
-                />
+
+                <RemoveButton onClick={onRemove} slot="X" />
 
                 <div className={styles.playerCol}>
+                    {/* Stats */}
                     <div className={styles.stats}>
                         <div className={styles.specStat}>
                             <img src="/life.png" alt="life" className={styles.statsImg} />
@@ -49,46 +48,92 @@ function EnemyCard({ name, stats, onRemove }) {
                         </div>
                     </div>
 
-                    <div className={styles.abilities}>
-                        <div
-                            className={styles.ability}
-                            onMouseEnter={() => setHoveredAbility(true)}
-                            onMouseLeave={() => setHoveredAbility(false)}
-                            style={{
-                                position: "relative",
-                                cursor: "pointer",
-                                height: "40px",
-                                marginTop: "280px"
-                            }}
-                        >
-                            Ability
-                            {hoveredAbility && stats.ability && (
+                    {/* Abilities */}
+                    {type === "Enemy" && stats.ability && (
+                        <div className={styles.abilities}>
+                            <div
+                                className={styles.ability}
+                                onMouseEnter={() => setHoveredAbility(true)}
+                                onMouseLeave={() => setHoveredAbility(false)}
+                                style={{
+                                    position: "relative",
+                                    cursor: "pointer",
+                                    height: "40px",
+                                    marginTop: "280px"
+                                }}
+                            >
+                                Ability
+                                {hoveredAbility && (
+                                    <div
+                                        style={{
+                                            position: "absolute",
+                                            top: "-175%",
+                                            left: "-207%",
+                                            backgroundColor: "rgba(73, 5, 110, 0.89)",
+                                            boxShadow: "1px 1px 8px black",
+                                            border: "1px solid black",
+                                            borderRadius: "12px",
+                                            color: "white",
+                                            padding: "2px 10px",
+                                            zIndex: 10,
+                                            fontSize: "1rem",
+                                            pointerEvents: "none",
+                                            width: "280px",
+                                        }}
+                                    >
+                                        {stats.ability}
+                                        {stats.abilityTurn ? ` Activates in ${stats.abilityTurn} turn` : ""}
+                                    </div>
+                                )}
+                            </div>
+                        </div>
+                    )}
+
+                    {type === "Leviathan" && abilities.length > 0 && (
+                        <div className={styles.levithanAbilities}>
+                            {abilities.map((ability, index) => (
                                 <div
+                                    key={index}
+                                    className={styles.ability}
+                                    onMouseEnter={() => setHoveredAbility(index)}
+                                    onMouseLeave={() => setHoveredAbility(null)}
                                     style={{
-                                        position: "absolute",
-                                        top: "-260%",
-                                        left: "-207%",
-                                        backgroundColor: "rgba(73, 5, 110, 0.89)",
-                                        boxShadow: "1px 1px 8px black",
-                                        border: "1px solid black",
-                                        borderRadius: "12px",
-                                        color: "white",
-                                        padding: "2px 10px",
-                                        zIndex: 10,
-                                        fontSize: "1rem",
-                                        pointerEvents: "none",
-                                        width: "280px",
+                                        position: "relative",
+                                        cursor: "pointer",
+                                        height: "40px",
                                     }}
                                 >
-                                    {stats.ability}
-                                    {stats.abilityTurn ? ` Activates in ${stats.abilityTurn} turn` : ""}
+                                    {ability.ability}
+                                    {hoveredAbility === index && (
+                                        <div
+                                            style={{
+                                                position: "absolute",
+                                                top: "-195%",
+                                                left: "-102%",
+                                                backgroundColor: "rgba(73, 5, 110, 0.89)",
+                                                boxShadow: "1px 1px 8px black",
+                                                border: "1px solid black",
+                                                borderRadius: "12px",
+                                                color: "white",
+                                                padding: "6px 10px",
+                                                zIndex: 10,
+                                                fontSize: "1rem",
+                                                pointerEvents: "none",
+                                                width: "280px",
+                                            }}
+                                        >
+                                            {ability.text}
+                                        </div>
+                                    )}
                                 </div>
-                            )}
+                            ))}
                         </div>
-                    </div>
+                    )}
                 </div>
+
             </div>
         </div>
+
     );
 }
 

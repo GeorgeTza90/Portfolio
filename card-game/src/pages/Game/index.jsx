@@ -15,7 +15,7 @@ function Game() {
     const { mode } = location.state || {};
     const { playersStats, playersAbilities } = Players;
     const { levels } = Locations;
-    const { enemiesList, enemiesStats, leviathanList } = Enemies;
+    const { enemiesList, enemiesStats, leviathanList, leviathanAbilities } = Enemies;
     const [activeLocation, setActiveLocation] = useState();
 
     const [enemyList, setEnemyList] = useState([]);
@@ -31,18 +31,21 @@ function Game() {
     const handleConfirmAddEnemy = () => {
         if (!selectedEnemy) return;
 
-        const level = selectedEnemyLevel;
-        const stats = enemiesStats[selectedEnemy]?.[level] || {};
+        const isLeviathan = leviathanList.includes(selectedEnemy);
+        const stats = isLeviathan
+            ? enemiesStats[selectedEnemy] || {}
+            : enemiesStats[selectedEnemy]?.[selectedEnemyLevel] || {};
 
         const newEnemy = {
             name: selectedEnemy,
             stats: stats,
-            abilities: stats.ability ? [stats.ability] : [],
+            abilities: isLeviathan ? leviathanAbilities[selectedEnemy] || [] : [],
         };
 
         setEnemyList(prev => [...prev, newEnemy]);
         setSelectingEnemy(false);
         setSelectedEnemy("");
+        setSelectedEnemyLevel("");
     };
 
     return (
@@ -74,18 +77,23 @@ function Game() {
                 <div style={tabBackground} className={styles.tabBackground}>
                     <h1 className={styles.title} style={{ fontSize: "x-large" }}>Enemies</h1>
                     <div className={styles.playersContainer}>
-                        {enemyList.map((enemy, index) => (
-                            <Enemy
-                                key={index}
-                                name={enemy.name}
-                                stats={enemy.stats}
-                                onRemove={() => {
-                                    const newList = [...enemyList];
-                                    newList.splice(index, 1);
-                                    setEnemyList(newList);
-                                }}
-                            />
-                        ))}
+                        {enemyList.map((enemy, index) => {
+                            const isLeviathan = leviathanList.includes(enemy.name);
+                            return (
+                                <Enemy
+                                    key={index}
+                                    name={enemy.name}
+                                    stats={enemy.stats}
+                                    abilities={isLeviathan ? leviathanAbilities[enemy.name] || [] : []}
+                                    type={isLeviathan ? "Leviathan" : "Enemy"}
+                                    onRemove={() => {
+                                        const newList = [...enemyList];
+                                        newList.splice(index, 1);
+                                        setEnemyList(newList);
+                                    }}
+                                />
+                            );
+                        })}
 
                         {!selectingEnemy ? (
                             <div className={styles.addCard}
@@ -97,34 +105,44 @@ function Game() {
                             </div>
                         ) : (
                             <div className={styles.selectCard}>
+
                                 <select
                                     className={styles.enemyDropdown}
                                     value={selectedEnemy}
                                     onChange={(e) => setSelectedEnemy(e.target.value)}
                                 >
-                                    <option value="">Choose enemy...</option>
+                                    <option value="" disabled hidden>Choose enemy...</option>
                                     {enemiesList.map((enemyName) => (
                                         <option key={enemyName} value={enemyName}>
                                             {enemyName}
                                         </option>
                                     ))}
                                 </select>
+
                                 {!leviathanList.includes(selectedEnemy) && (
                                     <select
                                         className={styles.enemyDropdown}
                                         value={selectedEnemyLevel}
                                         onChange={(e) => setSelectedEnemyLevel(e.target.value)}
                                     >
-                                        <option value="" className={styles.enemyLevel}>Enemy's Level...</option>
+                                        <option value="" disabled hidden>Enemy's Level...</option>
                                         <option value="Lv1" className={styles.enemyLevel}>I</option>
                                         <option value="Lv2" className={styles.enemyLevel}>II</option>
                                         <option value="Lv3" className={styles.enemyLevel}>III</option>
-
                                     </select>)}
 
-                                <button className={styles.confirmButton} onClick={handleConfirmAddEnemy}>
-                                    Add
-                                </button><br />
+                                {(
+                                    (leviathanList.includes(selectedEnemy)) ||
+                                    (!leviathanList.includes(selectedEnemy) && selectedEnemyLevel)
+                                ) && (
+                                        <button
+                                            className={styles.confirmButton}
+                                            onClick={handleConfirmAddEnemy}
+                                        >
+                                            Add
+                                        </button>
+                                    )}<br />
+
                                 <RemoveButton slot="X" onClick={() => setSelectingEnemy(false)} />
                             </div>
                         )}
