@@ -7,7 +7,11 @@
         "Yuko Soldier - Handler",
         "Yuko Soldier - Golem",
         "Yuko Soldier - Trickster",
-        "Yuko Soldier - Engineer"
+        "Yuko Soldier - Engineer",
+        "GJC Elite - Sniper",
+        "GJC Elite - Huntsman",
+        "GJC Elite - Hacker",
+        "GJC Elite - Sword Artisan"
     ],
     "enemiesStats": {
         "Rogue Android - Burglar": {
@@ -202,8 +206,34 @@
             "Lv3": {
                 "life": 9,
                 "energy": 6,
-                "attack": 0,
+                "attack": 1,
                 "shield": 6,
+                "ability": "Uses 2 Energy, players take 4 damage.",
+                "abilityTurn": "2nd, 3d and 4th"
+            }
+        },
+        "GJC Elite - Sniper": {
+            "Lv1": {
+                "life": 8,
+                "energy": 2,
+                "attack": 3,
+                "shield": 1,
+                "ability": "Uses 2 Energy, each player takes 3 damage.",
+                "abilityTurn": "1st and 2nd"
+            },
+            "Lv2": {
+                "life": 8,
+                "energy": 2,
+                "attack": 3,
+                "shield": 1,
+                "ability": "Uses 3 Energy, players get -2 Shield.",
+                "abilityTurn": "2nd and 3d"
+            },
+            "Lv3": {
+                "life": 8,
+                "energy": 2,
+                "attack": 3,
+                "shield": 1,
                 "ability": "Uses 2 Energy, players take 4 damage.",
                 "abilityTurn": "2nd, 3d and 4th"
             }
