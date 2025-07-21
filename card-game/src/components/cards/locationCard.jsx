@@ -27,7 +27,6 @@ function LocationCard({ level, id, revealed, cleared }) {
                     style={{
                         position: "absolute",
                         fontFamily: "system-ui, Avenir, Helvetica, Arial, sans-serif",
-                        position: "absolute",
                         top: isMobile ? "50%" : "80%",
                         left: isMobile ? "-10%" : "100px",
                         transform: isMobile ? "translateY(-50%)" : "translate(-50%, -120%)",
