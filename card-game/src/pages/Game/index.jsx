@@ -1,8 +1,8 @@
 import { useLocation } from "react-router-dom";
 import { useState } from "react";
-import Location from "../../components/cards/LocationCard.jsx";
-import Player from "../../components/cards/PlayerCard.jsx";
-import Enemy from "../../components/cards/EnemyCard.jsx"
+import Location from "../../components/cards/locationCard.jsx";
+import Player from "../../components/cards/playerCard.jsx";
+import Enemy from "../../components/cards/enemyCard.jsx"
 import styles from "../../components/cards/cards.module.css";
 import Players from "../../data/players.json";
 import Locations from "../../data/locations.json";

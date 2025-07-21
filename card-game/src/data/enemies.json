@@ -3,7 +3,11 @@
         "Rogue Android - Burglar",
         "Rogue Android - Telepath",
         "Rogue Android - Slasher",
-        "Rogue Android - Shamurai"
+        "Rogue Android - Shamurai",
+        "Yuko Soldier - Handler",
+        "Yuko Soldier - Golem",
+        "Yuko Soldier - Trickster",
+        "Yuko Soldier - Engineer"
     ],
     "enemiesStats": {
         "Rogue Android - Burglar": {
@@ -152,28 +156,56 @@
                 "abilityTurn": "2nd and 4th"
             }
         },
-        "Yuko Soldier - Golem": {
+        "Yuko Soldier - Trickster": {
             "Lv1": {
                 "life": 8,
-                "energy": 0,
+                "energy": 2,
                 "attack": 3,
-                "shield": 2,
-                "ability": "Rage Attacl - Each turn a weapon is played Handler gets permanent +1 Attack next turn."
+                "shield": 1,
+                "ability": "Uses 2 Energy, roll 1d6. If its 5 or 6 each player gets -1 Shield next turn.",
+                "abilityTurn": "1st"
             },
             "Lv2": {
-                "life": 12,
-                "energy": 0,
-                "attack": 5,
-                "shield": 4,
-                "ability": "Rage Attacl - Each turn a weapon is played Handler gets permanent +1 Attack next turn."
+                "life": 10,
+                "energy": 4,
+                "attack": 3,
+                "shield": 2,
+                "ability": "Uses 2 Energy, players get -1 Energy.",
+                "abilityTurn": "2nd and 3d"
             },
             "Lv3": {
-                "life": 16,
-                "energy": 2,
-                "attack": 8,
+                "life": 18,
+                "energy": 4,
+                "attack": 5,
+                "shield": 2,
+                "ability": "Uses 2 Energy, Weapons cannot be used this turn.",
+                "abilityTurn": "1st and 3d"
+            }
+        },
+        "Yuko Soldier - Engineer": {
+            "Lv1": {
+                "life": 5,
+                "energy": 4,
+                "attack": 1,
+                "shield": 3,
+                "ability": "Uses 2 Energy, each player takes 3 damage.",
+                "abilityTurn": "1st and 2nd"
+            },
+            "Lv2": {
+                "life": 7,
+                "energy": 6,
+                "attack": 1,
                 "shield": 5,
-                "ability": "Uses 1 Energy, players gets -1 Shield.",
-                "abilityTurn": "2nd and 4th"
+                "ability": "Uses 3 Energy, players get -2 Shield.",
+                "abilityTurn": "2nd and 3d"
+            },
+            "Lv3": {
+                "life": 9,
+                "energy": 6,
+                "attack": 0,
+                "shield": 6,
+                "ability": "Uses 2 Energy, players take 4 damage.",
+                "abilityTurn": "2nd, 3d and 4th"
             }
         }
     }

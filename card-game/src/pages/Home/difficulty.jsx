@@ -1,5 +1,5 @@
 import { useNavigate } from "react-router-dom";
-import DifficultyCard from "../../components/cards/difficultyCard"
+import DifficultyCard from "../../components/cards/difficultyCard.jsx"
 import styles from "../../components/cards/cards.module.css"
 
 function Difficulty() {
