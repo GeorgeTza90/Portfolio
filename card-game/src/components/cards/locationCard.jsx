@@ -31,9 +31,9 @@ function LocationCard({ level, id, revealed, cleared, name = "Back", stats, onRe
                         position: "absolute",
                         fontFamily: "system-ui, Avenir, Helvetica, Arial, sans-serif",
                         top: isMobile ? "50%" : "105%",
-                        left: isMobile ? "-10%" : "50%",
+                        left: isMobile ? "-100%" : "50%",
                         transform: isMobile ? "translateY(-50%)" : "translate(-50%, -120%)",
-                        backgroundColor: "rgba(73, 5, 110, 0.89)",
+                        backgroundColor: "rgba(73, 5, 110, 0.93)",
                         color: "white",
                         padding: "5px 5px",
                         border: "1px solid black",
@@ -55,7 +55,6 @@ function LocationCard({ level, id, revealed, cleared, name = "Back", stats, onRe
                             style={{
                                 fontSize: "1rem",
                                 width: "180px",
-
                             }}
                         >
                             {!stats.encounters ? "" : `Encounters: ${stats.encounters} \n`}
