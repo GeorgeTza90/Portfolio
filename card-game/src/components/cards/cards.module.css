@@ -78,19 +78,19 @@
     justify-content: center;
     align-items: center;
     max-width: 1920px;
-    margin-right: 5rem;
+    margin-right: 4rem;
+    margin-left: 0.5rem;
 }
 
 .LocationCard {
     font-family: 'Times New Roman', Times, serif;
-    background-image: url(/Back.png);
     background-size: cover;
     background-position: center;
     background-repeat: no-repeat;
-    width: 100%;
-    min-width: 100px;
+    min-width: 120px;
+    max-width: 250px;
     aspect-ratio: 12.5 / 17.5;
-    margin: 1rem;
+    margin: 1rem 0rem;
     display: flex;
     justify-content: center;
     align-items: center;
@@ -131,8 +131,9 @@
     align-items: center;
     font-size: x-large;
     background-color: black;
-    min-width: 30px;
-    min-height: 30px;
+    width: 2vh;
+    height: 2vh;
+    height: 2vh;
     border-radius: 60%;
     padding: 0.8rem;
 }
@@ -216,8 +217,24 @@
     font-size: larger;
 }
 
+.selectLocation {
+    background-image: url("/Back2.png");
+    background-color: rgba(0, 0, 0, 0.649);
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+    min-width: 120px;
+    max-width: 250px;
+    aspect-ratio: 12.5 / 17.5;
+    margin: 1rem 0rem;
+    display: grid;
+    justify-content: center;
+    align-items: center;
+    border-radius: 7%;
+    box-shadow: 1px 1px 5px black;
+}
+
 .addCard {
-    border: 2px dashed #ccc;
     display: flex;
     align-items: center;
     justify-content: center;
@@ -231,7 +248,6 @@
     border-radius: 12px;
     min-height: 400px;
     max-width: 775px;
-
 }
 
 .addCard:hover {
@@ -261,7 +277,7 @@
     margin-bottom: 10px;
     border-radius: 6px;
     border: 1px solid #aaa;
-    font-size: 1.5rem;
+    font-size: 1.1rem;
 }
 
 .enemyLevel {

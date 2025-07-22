@@ -1,9 +1,10 @@
 import { useState, useEffect } from "react";
 import styles from "./cards.module.css";
 
-function LocationCard({ level, id, revealed, cleared }) {
+function LocationCard({ level, id, revealed, cleared, name = "Back", stats, onReveal }) {
     const [hovered, setHovered] = useState(false);
     const [isMobile, setIsMobile] = useState(false);
+    const [isRevealed, setIsRevealed] = useState(revealed);
 
     useEffect(() => {
         const checkScreen = () => setIsMobile(window.innerWidth <= 600);
@@ -17,7 +18,9 @@ function LocationCard({ level, id, revealed, cleared }) {
             className={styles.LocationCard}
             onMouseEnter={() => setHovered(true)}
             onMouseLeave={() => setHovered(false)}
+            onClick={onReveal}
             style={{
+                backgroundImage: `url(/artworks/${encodeURIComponent(name)}.png)`,
                 position: "relative",
                 cursor: "pointer",
             }}
@@ -27,25 +30,40 @@ function LocationCard({ level, id, revealed, cleared }) {
                     style={{
                         position: "absolute",
                         fontFamily: "system-ui, Avenir, Helvetica, Arial, sans-serif",
-                        top: isMobile ? "50%" : "80%",
-                        left: isMobile ? "-10%" : "100px",
+                        top: isMobile ? "50%" : "105%",
+                        left: isMobile ? "-10%" : "50%",
                         transform: isMobile ? "translateY(-50%)" : "translate(-50%, -120%)",
                         backgroundColor: "rgba(73, 5, 110, 0.89)",
                         color: "white",
-                        padding: "6px 12px",
+                        padding: "5px 5px",
                         border: "1px solid black",
                         borderRadius: "12px",
                         zIndex: 100,
-                        fontSize: "1.2rem",
+                        fontSize: "1.1rem",
                         pointerEvents: "none",
                         whiteSpace: "pre-wrap",
                         maxWidth: "280px",
-                        minWidth: "120px",
+                        minWidth: "150px",
                         textAlign: "center",
                     }}
                 >
-                    Location Level {level} - Reveal Card to see details
-                    {cleared ? " (Cleared)" : revealed ? " (Revealed)" : ""}
+                    {name === "Back" ? (<>
+                        Location Level {level} - Reveal Card to see details
+                        {cleared ? " (Cleared)" : revealed ? " (Revealed)" : ""}
+                    </>) : (<>
+                        <div
+                            style={{
+                                fontSize: "1rem",
+                                width: "180px",
+
+                            }}
+                        >
+                            {!stats.encounters ? "" : `Encounters: ${stats.encounters} \n`}
+                            {!stats.advantage ? "" : `Advantage: ${stats.advantage} \n`}
+                            {!stats.disadvantage ? "" : `Disadvantage: ${stats.disadvantage} \n`}
+                        </div>
+                    </>)}
+
                 </div>
             )}
 

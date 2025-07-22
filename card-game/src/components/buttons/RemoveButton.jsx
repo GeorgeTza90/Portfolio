@@ -1,17 +1,24 @@
 import { useState, useRef } from "react";
 
-function RemoveButton({ slot = "Click Me", disabled, onClick }) {
+function RemoveButton({
+    slot = "Click Me",
+    disabled, onClick,
+    alt = "Remove Enemy",
+    fontSize = "1.2rem",
+    backgroundColor = "rgba(0, 0, 0, 0.61)",
+    backgroundColorHovered = "rgba(196, 255, 202, 1)"
+}) {
     const [isHovered, setIsHovered] = useState(false);
 
     const hoverSoundRef = useRef(null);
     const clickSoundRef = useRef(null);
 
     const styles = {
-        backgroundColor: isHovered ? "rgba(196, 255, 202, 1)" : "rgba(0, 0, 0, 0.61)",
+        backgroundColor: isHovered ? backgroundColorHovered : backgroundColor,
         borderRadius: "1rem",
-        fontSize: "1.2rem",
+        fontSize: fontSize,
         fontWeight: "bolder",
-        color: isHovered ? "#ff00009b" : "#ff0000ff",
+        color: isHovered ? "#ff0000ff" : "#ff00009b",
         cursor: "pointer",
         boxShadow: isHovered
             ? "0 4px 15px rgb(65, 0, 90)"
@@ -27,7 +34,7 @@ function RemoveButton({ slot = "Click Me", disabled, onClick }) {
             onMouseLeave={() => setIsHovered(false)}
             onClick={onClick}
         >
-            {isHovered ? "Remove Enemy" : slot}
+            {isHovered ? alt : slot}
         </button>
     );
 }

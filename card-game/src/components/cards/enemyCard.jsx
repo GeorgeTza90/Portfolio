@@ -59,7 +59,6 @@ function EnemyCard({ name, stats, abilities = [], type, onRemove }) {
                                     position: "relative",
                                     cursor: "pointer",
                                     height: "40px",
-                                    marginTop: "280px"
                                 }}
                             >
                                 Ability
