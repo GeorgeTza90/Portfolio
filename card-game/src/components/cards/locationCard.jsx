@@ -31,7 +31,7 @@ function LocationCard({ level, id, revealed, cleared, name = "Back", stats, onRe
                         position: "absolute",
                         fontFamily: "system-ui, Avenir, Helvetica, Arial, sans-serif",
                         top: isMobile ? "50%" : "105%",
-                        left: isMobile ? "-100%" : "50%",
+                        left: isMobile ? "3%" : "50%",
                         transform: isMobile ? "translateY(-50%)" : "translate(-50%, -120%)",
                         backgroundColor: "rgba(73, 5, 110, 0.93)",
                         color: "white",

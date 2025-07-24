@@ -83,7 +83,7 @@ function Game() {
 
             if (newLocations.length === 0) {
                 setLocationBG("Back");
-                setEncounterLevel("I"); // reset σε default level
+                setEncounterLevel("I");
             } else {
                 const previousLocationName = newLocations[newLocations.length - 1].locationName;
                 const previousLevel = locationStats[previousLocationName]?.level || "I";
@@ -133,12 +133,10 @@ function Game() {
         <div className={styles.gameContainer}>
 
             {/* LOCATIONS & ENCOUNTERS*/}
-
             <div style={tabLocationBackground} className={styles.tabBackground}>
                 <h1 className={styles.title} style={{ fontSize: "x-large" }}>
                     Locations
                 </h1>
-
                 <div className={styles.locationsContainer}>
                     {(() => {
                         const levelKeys = Object.keys(levels[mode]);
@@ -235,7 +233,7 @@ function Game() {
                             ♻️
                         </button>
                     </div>
-                    <div>{currentEncounter ? currentEncounter.text : "No Encounters Yet"}</div>
+                    <div className={styles.encounterText}>{currentEncounter ? currentEncounter.text : "No Encounters Yet"}</div>
                 </div>
             </div><br />
 

@@ -58,7 +58,7 @@ function EnemyCard({ name, stats, abilities = [], type, onRemove }) {
                                     cursor: "pointer",
                                     height: isMobile ? "20px" : "40px",
                                     width: isMobile ? "100px" : "100px",
-                                    marginTop: isMobile ? "100$" : "200%"
+                                    marginTop: isMobile ? "150%" : "200%"
                                 }}
                             >
                                 Ability
