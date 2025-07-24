@@ -317,8 +317,10 @@ function Game() {
                                 </select>
                             )}
 
-                            {(leviathanList.includes(selectedEnemy) ||
-                                (!leviathanList.includes(selectedEnemy) && selectedEnemyLevel)) && (
+                            {(
+                                (leviathanList.includes(selectedEnemy)) ||
+                                (selectedEnemy && !leviathanList.includes(selectedEnemy) && selectedEnemyLevel)
+                            ) && (
                                     <button className={styles.confirmButton} onClick={handleConfirmAddEnemy}>
                                         Add
                                     </button>
