@@ -7,7 +7,7 @@ function PlayerCard({ name, stats, abilities }) {
 
     useEffect(() => {
         const checkMobile = () => {
-            setIsMobile(window.innerWidth <= 768);
+            setIsMobile(window.innerWidth <= 600);
         };
 
         checkMobile();

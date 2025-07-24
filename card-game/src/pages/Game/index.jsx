@@ -9,6 +9,7 @@ import Locations from "../../data/locations.json";
 import Enemies from "../../data/enemies.json";
 import Encounters from "../../data/encounters.json";
 import RemoveButton from "../../components/buttons/RemoveButton.jsx";
+import DiceRoller from "../../components/cards/diceRoller.jsx";
 
 function Game() {
     const navigate = useNavigate();
@@ -41,7 +42,10 @@ function Game() {
                 : `url(/artworks/${encodeURIComponent(locationBG)}.png)`,
     };
 
+    const tabRollerBackground = { backgroundImage: "url(/bg3.jpg)", display: "flex", justifyContent: "center" };
+
     const tabBackground = { backgroundImage: "url(/bg3.jpg)" };
+
 
     const handleConfirmAddEnemy = () => {
         if (!selectedEnemy) return;
@@ -329,8 +333,17 @@ function Game() {
                         </div>
                     )}
                 </div>
+            </div><br />
+
+            {/* DICE ROLLER */}
+            <div style={tabLocationBackground} className={styles.tabBackground}>
+                <h1 className={styles.title} style={{ fontSize: "x-large" }}>
+                    DiceRoller
+                </h1>
+                <DiceRoller />
             </div>
         </div >
+
     );
 }
 
