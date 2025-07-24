@@ -26,7 +26,11 @@ function PlayerCard({ name, stats, abilities }) {
                 <div className={styles.playerCol}>
 
                     {/* Stats */}
-                    <div className={styles.stats}>
+                    <div className={styles.stats}
+                        style={{
+                            marginTop: isMobile ? "35%" : "40%"
+                        }}
+                    >
                         <div className={styles.specStat}>
                             <img src="/life.png" alt="life" className={styles.statsImg} />
                             {stats.life}
@@ -55,9 +59,9 @@ function PlayerCard({ name, stats, abilities }) {
                                 onMouseLeave={() => setHoveredAbility(null)}
                                 style={{
                                     cursor: "pointer",
-                                    height: isMobile ? "20px" : "40px",
+                                    height: isMobile ? "18px" : "40px",
                                     width: isMobile ? "100px" : "100px",
-                                    marginTop: isMobile ? "20%" : "40%"
+                                    marginTop: isMobile ? "35%" : "40%"
                                 }}
                             >
                                 {ability.ability}
@@ -65,8 +69,8 @@ function PlayerCard({ name, stats, abilities }) {
                                     <div
                                         style={{
                                             position: "absolute",
-                                            top: isMobile ? "0%" : "-145%",
-                                            left: isMobile ? "-250%" : "-207%",
+                                            top: isMobile ? "-170%" : "-145%",
+                                            left: isMobile ? "-165%" : "-207%",
                                             backgroundColor: "rgba(73, 5, 110, 0.89)",
                                             boxShadow: "1px 1px 8px black",
                                             border: "1px solid black",

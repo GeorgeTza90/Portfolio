@@ -111,10 +111,6 @@
     margin-bottom: 0.8rem;
 }
 
-.encType {}
-
-.encText {}
-
 .playersContainer {
     display: grid;
     grid-template-columns: repeat(2, 1fr);
@@ -177,7 +173,6 @@
 }
 
 .stats {
-    margin-top: 9rem;
     width: 38%;
     max-width: 70px;
     padding: 0.5rem;
@@ -235,8 +230,6 @@
     font-size: 1.1rem;
 }
 
-
-
 .selectLocation {
     background-image: url("/Back2.png");
     background-color: rgba(0, 0, 0, 0.649);
@@ -262,12 +255,11 @@
     background-color: #00000030;
     color: #64fc6b;
     text-shadow: 1px 1px 5px black;
-    font-size: 3.8rem;
     cursor: pointer;
-    margin: 1rem;
+    font-size: 3.8rem;
     border-radius: 12px;
-    min-height: 400px;
-    max-width: 775px;
+    margin: 1.08rem;
+    height: 400px;
 }
 
 .addCard:hover {
@@ -285,19 +277,19 @@
     align-items: center;
     justify-content: center;
     border: 2px solid #ccc;
-    min-width: 80%;
-    min-height: 400px;
-    margin: 1rem;
     border-radius: 12px;
+    border-radius: 12px;
+    margin: 1rem;
+    height: 400px;
 }
 
 .enemyDropdown {
-    width: 100%;
+    width: 90%;
     padding: 6px;
     margin-bottom: 10px;
     border-radius: 6px;
     border: 1px solid #aaa;
-    font-size: 1.1rem;
+    font-size: 1.2rem;
 }
 
 .enemyLevel {
@@ -371,7 +363,7 @@
 
     .playerCard {
         width: 90%;
-        height: 320px;
+        height: 17.5rem;
         margin-left: 0.8rem;
     }
 
@@ -403,15 +395,20 @@
     .addCard {
         font-size: 2.5rem;
         min-height: 250px;
-        width: 90%;
         margin: 1rem auto;
-        padding: 1rem;
+        margin-right: 2rem;
+        margin-left: 0.8rem;
+        width: 89%;
+        height: 16rem;
     }
 
     .selectCard {
-        width: 90%;
-        min-height: 300px;
+        font-size: 2.5rem;
+        min-height: 250px;
         margin: 1rem auto;
+        margin-left: 1rem;
+        width: 89%;
+        height: 15.5rem;
     }
 
     .enemyDropdown {
@@ -445,7 +442,6 @@
 
     .stats {
         width: 60px;
-        margin-top: 60px;
     }
 
     .statsImg {
@@ -473,12 +469,16 @@
         justify-content: right;
         font-size: 1rem;
         margin-right: 4.1rem;
-
     }
 
     .ability {
         font-size: 0.9rem;
         padding: 0.5rem;
+    }
+
+    .selectCard {
+        width: 85%;
+        margin-right: 40px;
     }
 
     .encounterCard {
