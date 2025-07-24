@@ -24,11 +24,12 @@ const DiceRoller = () => {
 
     const myStyles = {
         dice: {
+            color: '#ffffffc8',
             fontSize: isMobile ? '120px' : '200px',
             marginBottom: isMobile ? "0" : "5%",
+            textShadow: "1px 1px 18px  black",
         },
         button: {
-            padding: '10px 20px',
             fontSize: '18px',
             fontWeight: "bolder",
             backgroundColor: '#56e546c8',
