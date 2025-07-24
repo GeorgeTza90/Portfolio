@@ -4,6 +4,7 @@ function Footer() {
 
     return (
         <>
+            <br />
             <div className={styles.footer}>
                 <a href="/player" className={styles.trademark}></a>
                 <label className={styles.labeled}> &copy;{new Date().getFullYear()} by George Tzachristas</label>

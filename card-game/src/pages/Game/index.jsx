@@ -220,7 +220,7 @@ function Game() {
                 </h1>
                 <div className={styles.encounterCard}>
                     <div>
-                        {currentEncounter ? "Type: " + currentEncounter.type : "Generate Encounter"}
+                        {currentEncounter ? "Type: " + currentEncounter.type : "Generate"}
                         <button
                             style={{
                                 fontSize: "1rem",
@@ -330,7 +330,6 @@ function Game() {
                     )}
                 </div>
             </div>
-            <br />
         </div >
     );
 }

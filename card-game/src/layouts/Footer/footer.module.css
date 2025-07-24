@@ -10,11 +10,6 @@
     align-items: center;
 }
 
-.footer:hover {
-    background-image: url(/assets/foot3_hover.png);
-    transition: background-image 0.40s;
-}
-
 .labeled {
     font-family: 'Times New Roman', Times;
     color: rgba(255, 255, 255, 0.51);
