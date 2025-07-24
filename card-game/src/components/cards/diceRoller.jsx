@@ -27,12 +27,18 @@ const DiceRoller = () => {
             color: '#ffffffc8',
             fontSize: isMobile ? '120px' : '200px',
             marginBottom: isMobile ? "0" : "5%",
-            textShadow: "1px 1px 18px  black",
+            textShadow: "1px 1px 25px  #001706ff",
+        },
+        diceBG: {
+            backgroundColor: "#472a52d6",
+            margin: "50px",
+            padding: isMobile ? "0px 50px" : "",
+            borderRadius: "70px",
         },
         button: {
-            fontSize: '18px',
+            fontSize: isMobile ? "18px" : '30px',
             fontWeight: "bolder",
-            backgroundColor: '#56e546c8',
+            backgroundColor: '#56e546e7',
             color: 'black',
             border: 'none',
             borderRadius: '8px',
@@ -45,7 +51,9 @@ const DiceRoller = () => {
 
     return (
         <div className={styles.diceRollerTab}>
-            <div style={myStyles.dice}>{face}</div>
+            <div style={myStyles.diceBG}>
+                <div style={myStyles.dice}>{face}</div>
+            </div>
             <button style={myStyles.button} onClick={rollDice}>
                 Roll Dice
             </button>
