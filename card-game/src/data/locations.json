@@ -51,57 +51,69 @@
     },
     "locationStats": {
         "Mayhem 373": {
+            "level": "I",
             "encounters": 3,
             "advantage": "Players may swap one weapon card between them inside battle."
         },
         "Xochipilli": {
+            "level": "I",
             "encounters": 2,
             "advantage": "Draw a weapon after the first encounder."
         },
         "Kirki": {
+            "level": "I",
             "encounters": 2,
             "advantage": "+1 Energy regeneration per encounter."
         },
         "Ganesa": {
+            "level": "I",
             "encounters": 3,
             "advantage": "First Enemy encountered has -1 Shield."
         },
         "Luxandria": {
+            "level": "II",
             "encounters": 3,
             "advantage": "Enemies in first encounter has -1 Attack.",
             "disadvantage": "Players start with -1 Energy for entire location."
         },
         "Glacivora": {
+            "level": "II",
             "encounters": 4,
             "advantage": "All attacks ignore 1 point of enemy shield.",
             "disadvantage": "Enemies gain +1 Attack."
         },
         "Shimir": {
+            "level": "II",
             "encounters": 3,
             "advantage": "+1 Energy regeneration per encounter.",
             "disadvantage": "Medical systems offline - All healing is reduced by 2."
         },
         "Loghel A-45F": {
+            "level": "II",
             "encounters": 4,
             "advantage": "Draw a weapon at the end of first encounter.",
             "disadvantage": "Medical systems offline- All healing is reduced by 2."
         },
         "Horus Nebula": {
+            "level": "III",
             "encounters": 5,
             "advantage": "Players may revive with 5 Life per encounter.",
             "disadvantage": "Neutron field Mutation - All enemies gain +5 Life."
         },
         "Sanitys Edge": {
+            "level": "III",
             "encounters": 5,
             "advantage": "Every turn roll 1d6: \n 1 - 3: each player gains +1 Attack. \n 4 - 6: each player gains +1 Shield.",
             "disadvantage": "Players cannot equip simple weapons. Enemies gain +3 Attack."
         },
         "Herios Factory": {
+            "level": "III",
             "encounters": 4,
             "advantage": "Energy cost for weapon use is reduced by 1.",
             "disadvantage": "Poisonus Gas - Each player loses 2 Life at the start of each encounter."
         },
         "Eye Of Mimir": {
+            "level": "III",
             "encounters": 4,
             "advantage": "One permanent weapon may be equiped without energy cost.",
             "disadvantage": "Players defence is reduced to 0 if hit by more than 4 damage."

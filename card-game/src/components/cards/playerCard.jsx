@@ -54,10 +54,10 @@ function PlayerCard({ name, stats, abilities }) {
                                 onMouseEnter={() => setHoveredAbility(index)}
                                 onMouseLeave={() => setHoveredAbility(null)}
                                 style={{
-                                    position: "relative",
                                     cursor: "pointer",
-                                    height: "40px",
-                                    marginTop: "60px"
+                                    height: isMobile ? "20px" : "40px",
+                                    width: isMobile ? "100px" : "100px",
+                                    marginTop: isMobile ? "20%" : "40%"
                                 }}
                             >
                                 {ability.ability}
@@ -65,8 +65,8 @@ function PlayerCard({ name, stats, abilities }) {
                                     <div
                                         style={{
                                             position: "absolute",
-                                            top: "-145%",
-                                            left: "-207%",
+                                            top: isMobile ? "0%" : "-145%",
+                                            left: isMobile ? "-250%" : "-207%",
                                             backgroundColor: "rgba(73, 5, 110, 0.89)",
                                             boxShadow: "1px 1px 8px black",
                                             border: "1px solid black",
@@ -87,7 +87,7 @@ function PlayerCard({ name, stats, abilities }) {
                     </div>
                 </div>
             </div>
-        </div>
+        </div >
     );
 }
 

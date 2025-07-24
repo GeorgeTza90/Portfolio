@@ -27,8 +27,8 @@ function EnemyCard({ name, stats, abilities = [], type, onRemove }) {
 
                 <RemoveButton onClick={onRemove} slot="X" />
 
+                {/* ENEMY */}
                 <div className={styles.playerCol}>
-                    {/* Stats */}
                     <div className={styles.stats}>
                         <div className={styles.specStat}>
                             <img src="/life.png" alt="life" className={styles.statsImg} />
@@ -48,7 +48,6 @@ function EnemyCard({ name, stats, abilities = [], type, onRemove }) {
                         </div>
                     </div>
 
-                    {/* Abilities */}
                     {type === "Enemy" && stats.ability && (
                         <div className={styles.abilities}>
                             <div
@@ -56,9 +55,10 @@ function EnemyCard({ name, stats, abilities = [], type, onRemove }) {
                                 onMouseEnter={() => setHoveredAbility(true)}
                                 onMouseLeave={() => setHoveredAbility(false)}
                                 style={{
-                                    position: "relative",
                                     cursor: "pointer",
-                                    height: "40px",
+                                    height: isMobile ? "20px" : "40px",
+                                    width: isMobile ? "100px" : "100px",
+                                    marginTop: isMobile ? "100$" : "200%"
                                 }}
                             >
                                 Ability
@@ -66,14 +66,14 @@ function EnemyCard({ name, stats, abilities = [], type, onRemove }) {
                                     <div
                                         style={{
                                             position: "absolute",
-                                            top: "-175%",
-                                            left: "-205%",
+                                            top: isMobile ? "0%" : "-200%",
+                                            left: isMobile ? "-250%" : "-207%",
                                             backgroundColor: "rgba(73, 5, 110, 0.89)",
                                             boxShadow: "1px 1px 8px black",
                                             border: "1px solid black",
                                             borderRadius: "12px",
                                             color: "white",
-                                            padding: "2px 10px",
+                                            padding: "6px 10px",
                                             zIndex: 10,
                                             fontSize: "1rem",
                                             pointerEvents: "none",
@@ -88,6 +88,7 @@ function EnemyCard({ name, stats, abilities = [], type, onRemove }) {
                         </div>
                     )}
 
+                    {/* LEVIATHAN */}
                     {type === "Leviathan" && abilities.length > 0 && (
                         <div className={styles.levithanAbilities}>
                             {abilities.map((ability, index) => (
@@ -97,9 +98,10 @@ function EnemyCard({ name, stats, abilities = [], type, onRemove }) {
                                     onMouseEnter={() => setHoveredAbility(index)}
                                     onMouseLeave={() => setHoveredAbility(null)}
                                     style={{
-                                        position: "relative",
                                         cursor: "pointer",
-                                        height: "40px",
+                                        height: isMobile ? "20px" : "40px",
+                                        width: isMobile ? "140px" : "135px",
+                                        marginTop: isMobile ? "20%" : "40%"
                                     }}
                                 >
                                     {ability.ability}
@@ -107,8 +109,8 @@ function EnemyCard({ name, stats, abilities = [], type, onRemove }) {
                                         <div
                                             style={{
                                                 position: "absolute",
-                                                top: "-195%",
-                                                left: "-157%",
+                                                top: isMobile ? "-100%" : "-202%",
+                                                left: isMobile ? "-155%" : "-120%",
                                                 backgroundColor: "rgba(73, 5, 110, 0.89)",
                                                 boxShadow: "1px 1px 8px black",
                                                 border: "1px solid black",
@@ -116,9 +118,9 @@ function EnemyCard({ name, stats, abilities = [], type, onRemove }) {
                                                 color: "white",
                                                 padding: "6px 10px",
                                                 zIndex: 10,
-                                                fontSize: "1rem",
+                                                fontSize: "0.9rem",
                                                 pointerEvents: "none",
-                                                width: "360px",
+                                                width: "230px",
                                             }}
                                         >
                                             {ability.text}

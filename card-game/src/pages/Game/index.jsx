@@ -7,17 +7,23 @@ import styles from "../../components/cards/cards.module.css";
 import Players from "../../data/players.json";
 import Locations from "../../data/locations.json";
 import Enemies from "../../data/enemies.json";
+import Encounters from "../../data/encounters.json";
 import RemoveButton from "../../components/buttons/RemoveButton.jsx";
 
 function Game() {
     const navigate = useNavigate();
     const location = useLocation();
     const { mode } = location.state || {};
+    const { encounterList } = Encounters;
     const { playersStats, playersAbilities } = Players;
     const { levels, locationList, locationStats } = Locations;
     const { enemiesList, enemiesStats, leviathanList, leviathanAbilities } = Enemies;
 
     const [locationBG, setLocationBG] = useState("Back");
+
+    const [encounterLevel, setEncounterLevel] = useState("I");
+    const [currentEncounter, setCurrentEncounter] = useState("");
+
     const [enemyList, setEnemyList] = useState([]);
     const [selectingEnemy, setSelectingEnemy] = useState(false);
     const [selectedEnemy, setSelectedEnemy] = useState("");
@@ -34,6 +40,8 @@ function Game() {
                 ? "url(/bg3.jpg)"
                 : `url(/artworks/${encodeURIComponent(locationBG)}.png)`,
     };
+
+    console.log(encounterLevel);
 
     const tabBackground = { backgroundImage: "url(/bg3.jpg)" };
 
@@ -69,20 +77,31 @@ function Game() {
     const handleRemoveLastLocation = () => {
         setSelectedLocations((prev) => {
             if (prev.length === 0) return prev;
+
             const newLocations = [...prev];
             newLocations.pop();
+
             if (newLocations.length === 0) {
                 setLocationBG("Back");
+                setEncounterLevel("I"); // reset σε default level
             } else {
-                setLocationBG(newLocations[newLocations.length - 1].locationName);
+                const previousLocationName = newLocations[newLocations.length - 1].locationName;
+                const previousLevel = locationStats[previousLocationName]?.level || "I";
+                setLocationBG(previousLocationName);
+                setEncounterLevel(previousLevel);
             }
+
             return newLocations;
         });
+
         setSelectingLocation(null);
     };
 
+
     const handleConfirmLocation = (levelKey) => {
         if (!tempSelectedLocation) return;
+
+        setEncounterLevel(locationStats[tempSelectedLocation].level);
 
         setSelectedLocations((prev) => {
             const filtered = prev.filter((loc) => loc.levelKey !== levelKey);
@@ -94,64 +113,89 @@ function Game() {
         setTempSelectedLocation("");
     };
 
+    const handleNewEncounter = () => {
+        if (!encounterList || !encounterList[encounterLevel]) {
+            console.error("No encounters found for this level");
+            return;
+        }
+
+        const encountersForLevel = encounterList[encounterLevel];
+        const keys = Object.keys(encountersForLevel);
+        const randomKey = keys[Math.floor(Math.random() * keys.length)];
+        const newEncounter = encountersForLevel[randomKey];
+
+        setCurrentEncounter(newEncounter);
+    };
+
     return !location.state ? (
         ToDifficulty()
     ) : (
         <div className={styles.gameContainer}>
 
-            {/* LOCATIONS */}
+            {/* LOCATIONS & ENCOUNTERS*/}
+
             <div style={tabLocationBackground} className={styles.tabBackground}>
                 <h1 className={styles.title} style={{ fontSize: "x-large" }}>
                     Locations
                 </h1>
+
                 <div className={styles.locationsContainer}>
-                    {Object.entries(levels[mode]).map(([levelKey, locationGroup], index, array) => {
-                        const isFirst = index === 0;
-                        const prevKey = index > 0 ? array[index - 1][0] : null;
-                        const canReveal = isFirst || (prevKey && getSelectedLocationName(prevKey));
-                        const selectedLoc = getSelectedLocationName(levelKey);
+                    {(() => {
+                        const levelKeys = Object.keys(levels[mode]);
+                        const nextSelectableLevelKey = levelKeys.find(
+                            (key) => !selectedLocations.some((loc) => loc.levelKey === key)
+                        );
 
-                        return (
-                            <div key={levelKey} className={styles.locationSlot}>
-                                {selectingLocation === levelKey ? (
-                                    <div className={styles.selectLocation}>
-                                        <select
-                                            style={{ fontSize: "0.85rem" }}
-                                            className={styles.enemyDropdown}
-                                            value={tempSelectedLocation}
-                                            onChange={(e) => setTempSelectedLocation(e.target.value)}
-                                        >
-                                            <option value="" disabled hidden>
-                                                Choose location...
-                                            </option>
-                                            {locationList[locationGroup].map((loc) => (
-                                                <option key={loc} value={loc}>
-                                                    {loc}
+                        return levelKeys.map((levelKey, index) => {
+                            const locationGroup = levels[mode][levelKey];
+                            const isFirst = index === 0;
+                            const prevKey = index > 0 ? levelKeys[index - 1] : null;
+                            const canReveal = isFirst || (prevKey && selectedLocations.some(loc => loc.levelKey === prevKey));
+                            const selectedLoc = getSelectedLocationName(levelKey);
+
+                            return (
+                                <div key={levelKey} className={styles.locationSlot}>
+                                    {selectingLocation === levelKey ? (
+                                        <div className={styles.selectLocation}>
+                                            <select
+                                                style={{ fontSize: "0.85rem" }}
+                                                className={styles.enemyDropdown}
+                                                value={tempSelectedLocation}
+                                                onChange={(e) => setTempSelectedLocation(e.target.value)}
+                                            >
+                                                <option value="" disabled hidden>
+                                                    Choose location...
                                                 </option>
-                                            ))}
-                                        </select>
+                                                {locationList[locationGroup].map((loc) => (
+                                                    <option key={loc} value={loc}>
+                                                        {loc}
+                                                    </option>
+                                                ))}
+                                            </select>
 
-                                        <button
-                                            style={{ fontSize: "0.85rem" }}
-                                            className={styles.confirmButton}
-                                            onClick={() => handleConfirmLocation(levelKey)}
-                                        >
-                                            Confirm
-                                        </button>
-                                        {selectedLocations.length > 0 &&
-                                            selectedLocations[selectedLocations.length - 1].levelKey === levelKey && (
-                                                <RemoveButton
-                                                    onClick={handleRemoveLastLocation}
-                                                    slot="X"
-                                                    alt="X"
-                                                    fontSize="0.8rem"
-                                                    width="150px"
-                                                    backgroundColorHovered="rgba(0, 0, 0, 0.61)"
-                                                />
+                                            {levelKey === nextSelectableLevelKey && (
+                                                <button
+                                                    style={{ fontSize: "0.85rem" }}
+                                                    className={styles.confirmButton}
+                                                    onClick={() => handleConfirmLocation(levelKey)}
+                                                >
+                                                    Confirm
+                                                </button>
                                             )}
-                                    </div>
-                                ) : (
-                                    <>
+
+                                            {selectedLocations.length > 0 &&
+                                                selectedLocations[selectedLocations.length - 1].levelKey === levelKey && (
+                                                    <RemoveButton
+                                                        onClick={handleRemoveLastLocation}
+                                                        slot="X"
+                                                        alt="X"
+                                                        fontSize="0.8rem"
+                                                        width="150px"
+                                                        backgroundColorHovered="rgba(0, 0, 0, 0.61)"
+                                                    />
+                                                )}
+                                        </div>
+                                    ) : (
                                         <Location
                                             level={locationGroup}
                                             id={levelKey}
@@ -166,14 +210,35 @@ function Game() {
                                                 }
                                             }}
                                         />
-                                    </>
-                                )}
-                            </div>
-                        );
-                    })}
+                                    )}
+                                </div>
+                            );
+                        });
+                    })()}
                 </div>
-            </div>
-            <br />
+
+                <h1 className={styles.title} style={{ fontSize: "x-large" }}>
+                    Encounter
+                </h1>
+                <div className={styles.encounterCard}>
+                    <div>
+                        {currentEncounter ? "Type: " + currentEncounter.type : "Generate Encounter"}
+                        <button
+                            style={{
+                                fontSize: "1rem",
+                                backgroundColor: "grey",
+                                padding: "0.4rem 0.8rem",
+                                margin: "0.8rem",
+                            }}
+                            onClick={handleNewEncounter}
+                        >
+                            ♻️
+                        </button>
+                    </div>
+                    <div>{currentEncounter ? currentEncounter.text : "No Encounters Yet"}</div>
+                </div>
+            </div><br />
+
 
             {/* PLAYERS */}
             <div style={tabBackground} className={styles.tabBackground}>
@@ -184,8 +249,7 @@ function Game() {
                     <Player name="Xensy" stats={playersStats.Xensy} abilities={playersAbilities.Xensy} />
                     <Player name="Miron" stats={playersStats.Miron} abilities={playersAbilities.Miron} />
                 </div>
-            </div>
-            <br />
+            </div><br />
 
             {/* ENEMIES */}
             <div style={tabBackground} className={styles.tabBackground}>
@@ -266,8 +330,9 @@ function Game() {
                     )}
                 </div>
             </div>
-        </div>
+        </div >
     );
 }
 
 export default Game;
+
