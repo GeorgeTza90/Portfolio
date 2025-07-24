@@ -41,8 +41,6 @@ function Game() {
                 : `url(/artworks/${encodeURIComponent(locationBG)}.png)`,
     };
 
-    console.log(encounterLevel);
-
     const tabBackground = { backgroundImage: "url(/bg3.jpg)" };
 
     const handleConfirmAddEnemy = () => {
@@ -157,7 +155,7 @@ function Game() {
                                         <div className={styles.selectLocation}>
                                             <select
                                                 style={{ fontSize: "0.85rem" }}
-                                                className={styles.enemyDropdown}
+                                                className={styles.locationDropdown}
                                                 value={tempSelectedLocation}
                                                 onChange={(e) => setTempSelectedLocation(e.target.value)}
                                             >
@@ -172,13 +170,15 @@ function Game() {
                                             </select>
 
                                             {levelKey === nextSelectableLevelKey && (
-                                                <button
-                                                    style={{ fontSize: "0.85rem" }}
-                                                    className={styles.confirmButton}
-                                                    onClick={() => handleConfirmLocation(levelKey)}
-                                                >
-                                                    Confirm
-                                                </button>
+                                                <>
+                                                    <button
+                                                        style={{ fontSize: "0.85rem" }}
+                                                        className={styles.confirmButton}
+                                                        onClick={() => handleConfirmLocation(levelKey)}
+                                                    >
+                                                        Confirm
+                                                    </button>
+                                                </>
                                             )}
 
                                             {selectedLocations.length > 0 &&
@@ -328,6 +328,7 @@ function Game() {
                     )}
                 </div>
             </div>
+            <br />
         </div >
     );
 }

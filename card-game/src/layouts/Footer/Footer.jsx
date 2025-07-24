@@ -6,7 +6,7 @@ function Footer() {
         <>
             <div className={styles.footer}>
                 <a href="/player" className={styles.trademark}></a>
-                <label className={styles.labeled}>by George Tzachristas</label>
+                <label className={styles.labeled}> &copy;{new Date().getFullYear()} by George Tzachristas</label>
             </div>
 
         </>

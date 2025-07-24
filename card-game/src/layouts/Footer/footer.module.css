@@ -1,5 +1,13 @@
 .footer {
-    margin-top: 50px;
+    width: 100%;
+    height: 10vh;
+    background-image: url(/bg2.jpg);
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+    display: flex;
+    justify-content: left;
+    align-items: center;
 }
 
 .footer:hover {
@@ -9,8 +17,9 @@
 
 .labeled {
     font-family: 'Times New Roman', Times;
-    color: rgba(240, 248, 255, 0.285);
-
+    color: rgba(255, 255, 255, 0.51);
+    text-shadow: 1px 1px 5px black;
+    margin-left: 10%;
 }
 
 @media (max-width: 768px) {
@@ -21,6 +30,6 @@
 
     .labeled {
         font-family: 'Times New Roman', Times;
-        color: rgba(240, 248, 255, 0.285);
+
     }
 }
