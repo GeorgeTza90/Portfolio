@@ -174,28 +174,42 @@ function Game() {
                                             </select>
 
                                             {levelKey === nextSelectableLevelKey && (
-                                                <>
-                                                    <button
-                                                        style={{ fontSize: "0.85rem" }}
-                                                        className={styles.confirmButton}
-                                                        onClick={() => handleConfirmLocation(levelKey)}
-                                                    >
-                                                        Confirm
-                                                    </button>
-                                                </>
+                                                <button
+                                                    style={{ fontSize: "0.85rem" }}
+                                                    className={styles.confirmButton}
+                                                    onClick={() => handleConfirmLocation(levelKey)}
+                                                    disabled={!tempSelectedLocation}
+                                                >
+                                                    Confirm
+                                                </button>
                                             )}
 
                                             {selectedLocations.length > 0 &&
+                                                selectingLocation === levelKey &&
                                                 selectedLocations[selectedLocations.length - 1].levelKey === levelKey && (
                                                     <RemoveButton
                                                         onClick={handleRemoveLastLocation}
-                                                        slot="X"
+                                                        slot="Remove location"
                                                         alt="X"
                                                         fontSize="0.8rem"
                                                         width="150px"
                                                         backgroundColorHovered="rgba(0, 0, 0, 0.61)"
                                                     />
                                                 )}
+                                            {/* Cancel */}
+                                            <RemoveButton
+                                                slot="Cancel"
+                                                alt="X"
+                                                fontSize="0.8rem"
+                                                width="150px"
+                                                backgroundColorHovered="rgba(0, 0, 0, 0.61)"
+                                                onClick={() => {
+                                                    setSelectingLocation(null);
+                                                    setTempSelectedLocation("");
+                                                }}
+                                            />
+
+
                                         </div>
                                     ) : (
                                         <Location

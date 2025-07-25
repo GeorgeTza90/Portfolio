@@ -3,199 +3,199 @@
         "I": {
             "1": {
                 "type": "Enemy",
-                "text": "Spawn 1 Level I Enemy."
+                "text": "Spawn 2 Level I Enemies. If both survive the third turn they upgrade to Level II Enemies."
             },
             "2": {
-                "type": "Treasure",
-                "text": "Restore +2 Energy to each player. A player draws a Weapon."
+                "type": "Event",
+                "text": "Each Player rolls 1d6: 1 - 2: Discard a Weapon, if there is no Weapon to lose, each Player loses 2 Life. 3 - 4: Gain +2 Life. 5 - 6: Gain +1 Energy."
             },
             "3": {
                 "type": "Enemy",
-                "text": "Spawn 1 Level I Enemy."
+                "text": "Spawn 1 Level I Enemy. If defeated in 1 turn draw an extra Encounter card. You can replace the next Encouder with this card."
             },
             "4": {
-                "type": "Event",
-                "text": "Draw a Weapon."
+                "type": "Treasure",
+                "text": "Each Player draws a Weapon. Next Enemy you fight has -1 Shield."
             },
             "5": {
                 "type": "Event",
-                "text": "Roll 1d6: \n 1 - 3: Each Player loses 2 Life. \n 4 - 6: Each Player gains 2 Energy."
+                "text": "Each Player may retrive 1 card from discarded. Doing so costs 3 Energy."
             },
             "6": {
-                "type": "Enemy",
-                "text": "Spawn 1 Level I Enemy."
+                "type": "Event",
+                "text": "Players skip next turn unless they discard 1 Weapon. If both Players skip they gain +1 Energy."
             },
             "7": {
-                "type": "Treasure",
-                "text": "A Player gains an extra attack in next battle, the other player gains +5 Life."
+                "type": "Enemy",
+                "text": "Spawn 1 Level I Enemy."
             },
             "8": {
                 "type": "Enemy",
-                "text": "Spawn 2 Level I Enemies. If both survive the 3d turn they upgrade to Level II Enemies."
+                "text": "Spawn 1 Level I Enemy."
             },
             "9": {
                 "type": "Event",
-                "text": "Each Player rolls 1d6: \n 1 - 2: Discard a weapon, if you have no weapons left lose 5 Life. \n 3 - 4: Gain +2 Life. \n 5 - 6: Gain +1 Energy."
+                "text": "Each Player draws a Weapon."
             },
             "10": {
-                "type": "Enemy",
-                "text": "Spawn 1 Level I Enemy. If defeated in 1 turn draw an extra encounter card. You can replace the next encounter card with this card."
+                "type": "Treasure",
+                "text": "Restore +2 Energy to each Player. A Player draws a Weapon."
             },
             "11": {
                 "type": "Enemy",
-                "text": "Spawn 1 Level II Enemy. Roll 1d6: \n 1: Each Player loses +1 Energy. \n 2 - 5: Each Player gains +5 Energy. \n 6: Each Player Gains +5 Energy"
+                "text": "Spawn 1 Level I Enemy."
             },
             "12": {
-                "type": "Event",
-                "text": "Each Player may retrive 1 card from discard. Doing so costs 3 Energy."
-            },
-            "13": {
-                "type": "Treasure",
-                "text": "Draw a Weapon. Next Enemy you fight has -1 Shield."
-            },
-            "14": {
-                "type": "Event",
-                "text": "Skip your next turn unless you discard 1 Weapon. If both players skip they turn they gain +1 Energy."
-            },
-            "15": {
-                "type": "Enemy",
-                "text": "Spawn 1 Level II Enemy. Roll 1d6: \n 1: Each Player loses 1 Energy. \n 2 - 5: Each Player gains +5 Life. \n 6: Each player gains +3 Energy."
-            },
-            "16": {
                 "type": "Enemy",
                 "text": "Spawn 1 Level I Enemy."
+            },
+            "13": {
+                "type": "Enemy",
+                "text": "Spawn 1 Level II Enemy. Roll 1d6: 1 : Each Player loses 1 Energy. 2 - 5: Each Player gains +5 Life. 6: Each Player gains +5 Energy."
+            },
+            "14": {
+                "type": "Enemy",
+                "text": "Spawn 1 Level II Enemy. Roll 1d6: 1 : Each Player loses 3 Life. 2 - 4: Each Player gains +3 Energy. 5 - 6: Each Player draws a Weapon."
+            },
+            "15": {
+                "type": "Event",
+                "text": "Roll 1d6: 1 - 3: Each Player loses 2 Life. 4 - 6: Each Player gains +2 Energy."
+            },
+            "16": {
+                "type": "Treasure",
+                "text": "A Player gains an extra attack in the next battle, the other Player gains +5 Life."
             }
         },
         "II": {
             "1": {
                 "type": "Enemy",
-                "text": "Choose one: \n - Spawn 2 Level I Enemies. \n - Spawn 1 Level II Enemy."
+                "text": "Spawn 1 Level I Enemy and 1 Level II Enemy. Every turn roll 1d6: 1 - 2: Each Player takes 2 damage. 3 - 4: Each Player gains +2 Energy. 5 - 6: Each Enemy takes 2 damage."
             },
             "2": {
-                "type": "Event",
-                "text": "Draw 2 Weapons. Keep one for free. To keep both you must lose 5 Life divided between players."
+                "type": "Treasure",
+                "text": "Choose One: - Draw a Weapon. - Restore +3 Life to each Player."
             },
             "3": {
-                "type": "Enemy",
-                "text": "Spawn 1 Level II Enemy. Each Player loses 1 Energy per Turn unless they use only basic attacks."
+                "type": "Event",
+                "text": "Each Player takes 1 damage per card in its hand. If you discard a Weapon, reduce next damage by half."
             },
             "4": {
-                "type": "Event",
-                "text": "A Player equips the first weapon from the Used Weapon Deck. Then suffles the used Weapon deck."
-            },
-            "5": {
-                "type": "Event",
-                "text": "Spawn 2 Level I Enemy. If you defeat them both in 2 turns each player draws a weapon."
-            },
-            "6": {
-                "type": "Enemy",
-                "text": "Spawn 1 Level II Enemy. At the start of battle Enemy 1 Damage to the most offensive character."
-            },
-            "7": {
-                "type": "Event",
-                "text": "Each Player discards a Weapon and loses 1 Energy. If a Player has no Weapons, gains +3 Energy."
-            },
-            "8": {
-                "type": "Enemy",
-                "text": "Spawn a LEvel I Enemy and then a Level II Enemy. Every turn roll 1d6: \n 1 - 2: Each Player takes 2 Damage. \n 3 - 4: Each Player gains +2 Energy. \n 5 - 6: Each Enemy takes 2 Damage."
-            },
-            "9": {
-                "type": "Treasure",
-                "text": "Choose One: \n - Draw a Weapon OR \n - Restore 3 Life to each player."
-            },
-            "10": {
-                "type": "Event",
-                "text": "Take 1 damage per card in your hand. If you discard a weapon, reduce damage by half."
-            },
-            "11": {
-                "type": "Enemy",
-                "text": "Spawn 2 Level I Enemies."
-            },
-            "12": {
                 "type": "Enemy",
                 "text": "Spawn 2 Level I Enemies. If either survives 2 turns they gain +2 Attack."
             },
+            "5": {
+                "type": "Enemy",
+                "text": "Spawn 2 Level I Enemies. If either survives 2 turns they gain +2 Attack."
+            },
+            "6": {
+                "type": "Treasure",
+                "text": "Choose one: - One Weapon gains +2 Attack in the next battle. - Restore 5 Life split between Players."
+            },
+            "7": {
+                "type": "Enemy",
+                "text": "Spawn 1 Level II Enemy. At the start of battle Enemy deals 1 damage to the most offensive Player."
+            },
+            "8": {
+                "type": "Enemy",
+                "text": "Spawn 1 Level II Enemy. At the start of battle Enemy deals 3 damage to the most offensive Player."
+            },
+            "9": {
+                "type": "Treasure",
+                "text": "A Player equips the first Weapon from the Used Weapon Deck. Then shuffle the Used Weapon deck."
+            },
+            "10": {
+                "type": "Treasure",
+                "text": "Draw 2 Weapons. Keep 1 for free. To keep both Weapons a Player must lose 5 Life."
+            },
+            "11": {
+                "type": "Enemy",
+                "text": "Choose one: - Spawn 2 Level I Enemies. - Spawn 1 Level II Enemy."
+            },
+            "12": {
+                "type": "Enemy",
+                "text": "Spawn 1 Level II Enemy. Each Player loses 1 Energy per turn unless they use only basic attacks."
+            },
             "13": {
                 "type": "Enemy",
-                "text": "Spawn 1 Level II Enemy. If defeated without using Energy each player gains +1 Energy."
+                "text": "Spawn 2 Level I Enemies."
             },
             "14": {
-                "type": "Treasure",
-                "text": "Choose one: \n - One Weapon gains +2 Attack in the next battle. \n - Restore 5 Life split between the players."
+                "type": "Event",
+                "text": "A Player loses a Weapon. The other Player gains +3 Energy."
             },
             "15": {
-                "type": "Event",
-                "text": "A Player loses a Weapon. The other Player gains 3 Energy."
+                "type": "Enemy",
+                "text": "Spawn 2 Level I Enemies. If you defeat them both in 2 turns each Player draws a Weapon."
             },
             "16": {
-                "type": "Enemy",
-                "text": "Spawn 1 Level II Enemy. At the start of battle, Enemy deals 1 damage to the most offensive character."
+                "type": "Event",
+                "text": "Each Player discards a Weapon and loses 1 Energy. If a Player has no Weapons he gains 3 Energy."
             }
         },
         "III": {
             "1": {
-                "type": "Enemy",
-                "text": "Choose one: \n - Spawn 2 Level II Enemies. \n - Spawn 1 Level III Enemy."
+                "type": "Event",
+                "text": "Search the used Weapon deck for any card of your choice. Pay 2 Energy to take it or discard it. 1 Weapon per Player."
             },
             "2": {
                 "type": "Enemy",
-                "text": "Spawn 1 Level II Enemy and 1 Level III Enemy."
+                "text": "Spawn 1 Level III Enemy. Each Player rolls 1d6: 1 - 2: You can not use Energy in this fight. 3 - 6: You gain +2 Shield in this fight."
             },
             "3": {
                 "type": "Treasure",
-                "text": "Search the used Weapon Deck for a card of your choice. Pay 3 Energy to equip it. For 1 player only"
+                "text": "Choose one: - Each Player draws a Weapon. - Each Player gains a permanent +1 Shield."
             },
             "4": {
-                "type": "Event",
-                "text": "Each Player loses 2 Energy. If either has no Energy left it takes 3 Damage instead."
+                "type": "Enemy",
+                "text": "Spawn 1 Level III Enemy. Roll 1d6: 1 - 3: Players lose 2 Energy. 1 - 3: Players lose 5 Life."
             },
             "5": {
                 "type": "Event",
-                "text": "A Player must discard a Weapon and loses 5 Life. If not both players loses 2 Energy."
+                "text": "Lose 20 Life split between Players and search the Weapons deck for an Ultimate Weapon. A Player takes it on his hand. Then suffle the Weapons Deck. Decline and gain +10 Life."
             },
             "6": {
                 "type": "Enemy",
-                "text": "Roll 1d6: \n 1 - 2: Spawn 2 Level I Enemies. \n 3 - 4: Spawn 1 Level II Enemy. \n 5 - 6: Spawn 1 Level III Enemy and all players gain +1 Energy."
+                "text": "Spawn 1 Level I Enemy and 1 Level II Enemy. Every turn roll 1d6: 1 - 3: Each Player takes 2 damage. 4 - 6: Each Enemy gets -1 Shield."
             },
             "7": {
                 "type": "Enemy",
-                "text": "Choose One: \n - Spawn 2 Level II Enemies. \n  - Spawn 1 Level III Enemy."
+                "text": "Roll 1d6: 1 - 2: Spawn 2 Level I Enemies. 3 - 4: Spawn 1 Level II Enemy. 5 - 6: Spawn 1 Level III Enemy and all Players gain +1 Energy."
             },
             "8": {
-                "type": "Event",
-                "text": "Search the used Weapon Deck for a card of your choice. Pay 3 Energy to take it or discard it."
+                "type": "Enemy",
+                "text": "Roll 1d6: 1 - 2: Spawn 1 Level II Enemy. 3 - 4: Spawn 1 Level II Enemy and 1 Level I Enemy. 5 - 6: Spawn 1 Level III Enemy and all Players gain +1 Energy."
             },
             "9": {
-                "type": "Enemy",
-                "text": "Spawn 1 Level III Enemy. Each Player rolls 1d6: \n 1 - 2: You can not use Energy in this fight. \n 3 - 6: You Gain +2 Shield in this fight."
+                "type": "Event",
+                "text": "Each Player loses 2 Energy. If either has no Energy left, each Player takes 3 damage instead."
             },
             "10": {
-                "type": "Treasure",
-                "text": "Choose One: \n - Draw a Weapon. \n - Gain a permanent +1 Shield."
+                "type": "Enemy",
+                "text": "Spawn 1 Level II Enemy and 1 Level III Enemy."
             },
             "11": {
                 "type": "Enemy",
-                "text": "Spawn 1 Level III Enemy and 1 Level I Enemy. Weapons cost +1 Energy in this battle."
+                "text": "Choose one: - Spawn 2 Level II Enemies. - Spawn 1 Level III Enemy."
             },
             "12": {
-                "type": "Event",
-                "text": "Lose 20 Life and search the Weapons Deck for an Ultimate Weapon. A player takes it on his hand. Then suffle the Weapons Deck. Decline and gain +10 Life."
+                "type": "Treasure",
+                "text": "Search the Used Weapon Deck for a card of your choice. Pay 3 Energy to equip it. For 1 Player only."
             },
             "13": {
                 "type": "Enemy",
-                "text": "Spawn 1 Level III Enemy. Roll 1d6: \n 1 - 3: Each Player loses 2 Energy. \n Enemies lose 10 Life."
+                "text": "Spawn 1 Level III Enemy and 1 Level I Enemy.Weapons cost +1 Energy in this battle."
             },
             "14": {
-                "type": "Enemy",
-                "text": "Spawn 1 Level I Enemy and 1 Level II Enemy. Every turn roll 1d6: \n 1 - 2: Each Player takes 2 damage. \n 3 - 6: Each Enemy gets -1 Shield."
+                "type": "Treasure",
+                "text": "Each Player draws a Weapon. Each Player gains +6 Life."
             },
             "15": {
                 "type": "Treasure",
-                "text": "Each Player draws a weapon. Each Player gains +6 Life."
+                "text": "A Player must discard a weapon and the other Player loses 5 life. If not each player loses 2 Energy."
             },
             "16": {
                 "type": "Enemy",
-                "text": "Roll 1d6: \n 1 -2: Spawn 1 Level II Enemy. \n 3 -4: Spawn 1 Level II Enemy and 1 Level I Enemy. \n 5 -6: Spawn 1 Level III Enemy and all Players gain +1 Energy."
+                "text": "Choose one: - Spawn 2 Level II Enemies. - Spawn 1 Level III and 1 Level I Enemy."
             }
         }
     }
