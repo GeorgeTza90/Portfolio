@@ -1,4 +1,4 @@
-import React, { useState, useEffect } from 'react';
+import { useState, useEffect } from 'react';
 import styles from "./cards.module.css";
 
 const diceFaces = ['⚀', '⚁', '⚂', '⚃', '⚄', '⚅'];
@@ -58,7 +58,7 @@ const DiceRoller = () => {
             <button
                 style={myStyles.button}
                 onClick={() => {
-                    rollDice;
+                    rollDice();
                     setTimeout(() => setIsHovered(false), 1000);
                 }}
                 onMouseEnter={() => setIsHovered(true)}
