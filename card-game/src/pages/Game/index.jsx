@@ -99,7 +99,6 @@ function Game() {
         setSelectingLocation(null);
     };
 
-
     const handleConfirmLocation = (levelKey) => {
         if (!tempSelectedLocation) return;
 
@@ -262,8 +261,18 @@ function Game() {
                     Players
                 </h1>
                 <div className={styles.playersContainer}>
-                    <Player name="Xensy" stats={playersStats.Xensy} abilities={playersAbilities.Xensy} />
-                    <Player name="Miron" stats={playersStats.Miron} abilities={playersAbilities.Miron} />
+                    <Player
+                        name="Xensy"
+                        stats={playersStats.Xensy}
+                        abilities={playersAbilities.Xensy}
+                        locationLevel={encounterLevel}
+                    />
+                    <Player
+                        name="Miron"
+                        stats={playersStats.Miron}
+                        abilities={playersAbilities.Miron}
+                        locationLevel={encounterLevel}
+                    />
                 </div>
             </div><br />
 
@@ -311,7 +320,7 @@ function Game() {
                                 onChange={(e) => setSelectedEnemy(e.target.value)}
                             >
                                 <option value="" disabled hidden>
-                                    Choose enemy...
+                                    Choose Enemy...
                                 </option>
                                 {enemiesList.map((enemyName) => (
                                     <option key={enemyName} value={enemyName}>

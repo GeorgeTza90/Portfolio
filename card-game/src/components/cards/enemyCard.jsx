@@ -70,8 +70,8 @@ function EnemyCard({ name, stats, abilities = [], type, onRemove }) {
                                     <div
                                         style={{
                                             position: "absolute",
-                                            top: isMobile ? "-235%" : "-200%",
-                                            left: isMobile ? "-165%" : "-207%",
+                                            top: isMobile ? "-328%" : "-200%",
+                                            left: isMobile ? "-175%" : "-207%",
                                             backgroundColor: "rgba(73, 5, 110, 0.89)",
                                             boxShadow: "1px 1px 8px black",
                                             border: "1px solid black",
@@ -113,8 +113,8 @@ function EnemyCard({ name, stats, abilities = [], type, onRemove }) {
                                         <div
                                             style={{
                                                 position: "absolute",
-                                                top: isMobile ? "-160%" : "-202%",
-                                                left: isMobile ? "-60%" : "-120%",
+                                                top: isMobile ? "-295%" : "-202%",
+                                                left: isMobile ? "-73%" : "-120%",
                                                 backgroundColor: "rgba(73, 5, 110, 0.89)",
                                                 boxShadow: "1px 1px 8px black",
                                                 border: "1px solid black",

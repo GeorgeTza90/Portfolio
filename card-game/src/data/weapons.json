@@ -1,0 +1,292 @@
+{
+    "weaponList": [
+        "Space-Slasher Dag-8-ER",
+        "Anti-Mass Shotgun",
+        "Rift Pistol MK-IV",
+        "Auto-Phase Shuriken 68-b",
+        "Graviton Shardgun",
+        "Dimensional Exploder iT-12",
+        "λ-Snake Supporter 2.1",
+        "Lumen Daggers",
+        "Vicious Saber",
+        "Cryo Talon",
+        "Pulse Repeater",
+        "Time Bomb MR-2",
+        "X-Core Phase Disruptor",
+        "Omega Railgun v3.1",
+        "KR-77 Leviathan Cleaver",
+        "VX-9 Singularity Cannon"
+    ],
+    "ultimateWeaponList": [
+        "X-Core Phase Disruptor",
+        "Omega Railgun v3.1",
+        "KR-77 Leviathan Cleaver",
+        "VX-9 Singularity Cannon"
+    ],
+    "weaponStats": {
+        "Space-Slasher Dag-8-ER": {
+            "I": {
+                "cost": 2,
+                "costType": "Energy",
+                "use": "One Time Use",
+                "ability": "Gain +4 Life. Enemies lose next turn."
+            },
+            "II": {
+                "cost": 3,
+                "costType": "Energy",
+                "use": "One Time Use",
+                "ability": "Gain +10 Life. Enemies lose next turn."
+            },
+            "III": {
+                "cost": 4,
+                "costType": "Energy",
+                "use": "Permanent",
+                "ability": "Gain +10 Life, +3 Shield and +2 Attack."
+            }
+        },
+        "Anti-Mass Shotgun": {
+            "I": {
+                "cost": 1,
+                "costType": "Energy",
+                "use": "One Time Use",
+                "ability": "Add +2 Damage to your next attack."
+            },
+            "II": {
+                "cost": 2,
+                "costType": "Energy",
+                "use": "One Time Use",
+                "ability": "Add +4 Damage to your next attack."
+            },
+            "III": {
+                "cost": 3,
+                "costType": "Energy",
+                "use": "One Time Use",
+                "ability": "Add +6 Damage to your next attack."
+            }
+        },
+        "Rift Pistol MK-IV": {
+            "I": {
+                "cost": 1,
+                "costType": "Energy",
+                "use": "Permanent",
+                "ability": "Add +1 Attack."
+            },
+            "II": {
+                "cost": 2,
+                "costType": "Energy",
+                "use": "Permanent",
+                "ability": "Add +2 Attack."
+            },
+            "III": {
+                "cost": 4,
+                "costType": "Energy",
+                "use": "Permanent",
+                "ability": "Roll 1d6:1 - 2 :  Gain +4 Attack. 3 - 4 :  Gain +2 Shield and +2 Attack. 5 - 6 :  Gain +3 Attack and +2 Energy"
+            }
+        },
+        "Auto-Phase Shuriken 68-b": {
+            "I": {
+                "cost": 1,
+                "costType": "Energy",
+                "use": "Permanent",
+                "ability": "Add +2 Shield."
+            },
+            "II": {
+                "cost": 2,
+                "costType": "Energy",
+                "use": "Permanent",
+                "ability": "Add +4 Shield."
+            },
+            "III": {
+                "cost": 4,
+                "costType": "Energy",
+                "use": "Permanent",
+                "ability": "Roll 1d6: 1 - 2 :  Gain +7 Life. 3 - 4 :  Gain +3 Shield and +4 Life. 5 - 6 :  Gain +4 Life and +3 Energy."
+            }
+        },
+        "Graviton Shardgun": {
+            "I": {
+                "cost": 1,
+                "costType": "Energy",
+                "use": "One Time Use",
+                "ability": "Add +2 Damage to your next Attack."
+            },
+            "II": {
+                "cost": 2,
+                "costType": "Energy",
+                "use": "One Time Use",
+                "ability": "Add +4 Damage to your next attack."
+            },
+            "III": {
+                "cost": 3,
+                "costType": "Energy",
+                "use": "Permanent",
+                "ability": "Deal 3 Damage to all enemies at the end of next 3 turns."
+            }
+        },
+        "Dimensional Exploder iT-12": {
+            "I": {
+                "cost": 1,
+                "costType": "Energy",
+                "use": "Permanent",
+                "ability": "Add +2 Attack."
+            },
+            "II": {
+                "cost": 2,
+                "costType": "Energy",
+                "use": "Permanent",
+                "ability": "Add +2 Shield. Add +1 to your next attack."
+            },
+            "III": {
+                "cost": 4,
+                "costType": "Energy",
+                "use": "Permanent",
+                "ability": "Add +1 Attack, +1 Shield and +2 Life. Enemies take +5 Damage next turn."
+            }
+        },
+        "λ-Snake Supporter 2.1": {
+            "I": {
+                "cost": 1,
+                "costType": "Energy",
+                "use": "Permanent",
+                "ability": "Add +2 Attack."
+            },
+            "II": {
+                "cost": 2,
+                "costType": "Energy",
+                "use": "Permanent",
+                "ability": "Add +2 Shield. Add +1 to your next attack."
+            },
+            "III": {
+                "cost": 4,
+                "costType": "Energy",
+                "use": "Permanent",
+                "ability": "Add +1 Attack, +1 Shield and +2 Life. Enemies take +5 Damage next 1 turn."
+            }
+        },
+        "Lumen Daggers": {
+            "I": {
+                "cost": 1,
+                "costType": "Energy",
+                "use": "One Time Use",
+                "ability": "Add +2 to your next attack."
+            },
+            "II": {
+                "cost": 2,
+                "costType": "Energy",
+                "use": "One Time Use",
+                "ability": "Freeze Enemies for 2 turns. Add +1 to your next attack."
+            },
+            "III": {
+                "cost": 3,
+                "costType": "Energy",
+                "use": "One Time Use",
+                "ability": "Add +4 to next attack. Freeze Enemies for 1 turn."
+            }
+        },
+        "Vicious Saber": {
+            "I": {
+                "cost": 1,
+                "costType": "Energy",
+                "use": "One Time Use",
+                "ability": "Add +3 to your next attack."
+            },
+            "II": {
+                "cost": 2,
+                "costType": "Energy",
+                "use": "One Time Use",
+                "ability": "Cancel Enemies abilities next turn. Add +1 to your next attack."
+            },
+            "III": {
+                "cost": 4,
+                "costType": "Energy",
+                "use": "One Time Use",
+                "ability": "Add +5 to next attack. If this kills the enemy you gain +2 Energy."
+            }
+        },
+        "Cryo Talon": {
+            "I": {
+                "cost": 1,
+                "costType": "Energy",
+                "use": "One Time Use",
+                "ability": "Enemies have -1 Attack next turn."
+            },
+            "II": {
+                "cost": 2,
+                "costType": "Energy",
+                "use": "One Time Use",
+                "ability": "Cancel Enemies abilities next turn."
+            },
+            "III": {
+                "cost": 4,
+                "costType": "Energy",
+                "use": "One Time Use",
+                "ability": "Add +4 Damage to next attack. If this kills the enemy you gain +1 Energy."
+            }
+        },
+        "Pulse Repeater": {
+            "I": {
+                "cost": 1,
+                "costType": "Energy",
+                "use": "One Time Use",
+                "ability": "Stun enemy for 1 turn."
+            },
+            "II": {
+                "cost": 3,
+                "costType": "Energy",
+                "use": "One Time Use",
+                "ability": "Add +2 Damage to your attack for 3 turns."
+            },
+            "III": {
+                "cost": 2,
+                "costType": "Energy per turn",
+                "use": "One Time Use",
+                "ability": "Add +4 Damage to your attack for 4 turns. Also stuns the Enemy."
+            }
+        },
+        "Time Bomb MR-2": {
+            "I": {
+                "cost": 1,
+                "costType": "Energy",
+                "use": "One Time Use",
+                "ability": "Gain +5 Life."
+            },
+            "II": {
+                "cost": 2,
+                "costType": "Energy",
+                "use": "One Time Use",
+                "ability": "Add +4 Damage to your next attack."
+            },
+            "III": {
+                "cost": 4,
+                "costType": "Energy",
+                "use": "One Time Use",
+                "ability": "Deal 2 Damage to an enemy at the end of each turn."
+            }
+        },
+        "X-Core Phase Disruptor": {
+            "cost": 4,
+            "costType": "Energy",
+            "use": "One Time Use",
+            "ability": "Freezes a Leviathan for 3 turns or all Enemies for 2 turns. They cannot act or use abilities, also reduces its Shield by 2 permantly."
+        },
+        "Omega Railgun v3.1": {
+            "cost": 3,
+            "costType": "Energy per turn",
+            "use": "One Time Use",
+            "ability": "Unleash a burning chain reaction that deals 6 damage per turn to all kind of Enemies. Bypasses all Shield. Duration 4 Turns."
+        },
+        "KR-77 Leviathan Cleaver": {
+            "cost": 6,
+            "costType": "Energy",
+            "use": "One Time Use",
+            "ability": "Deals 5 damage to each Enemy or deals 20 damage to Leviathan. Bypasses all Shield. If used on a Leviathan, it disables their abilities for 2 turns."
+        },
+        "VX-9 Singularity Cannon": {
+            "cost": 5,
+            "costType": "Energy",
+            "use": "One Time Use",
+            "ability": "Deals 20 damage to a Leviathan or deals 15 damage to an Enemy. Bypasses all Shield. If it kills a Leviathan, each player gains +3 Energy."
+        }
+    }
+}
