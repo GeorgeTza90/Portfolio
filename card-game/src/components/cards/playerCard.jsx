@@ -28,21 +28,21 @@ function PlayerCard({ name, stats, abilities, locationLevel }) {
         return () => window.removeEventListener("resize", checkMobile);
     }, []);
 
-    const handleWeaponTap = () => {
-        if (!isMobile) return;
-
-        if (weaponTapped) {
-            equipWeapon();               // Second tap within timeframe → equip
-            setWeaponTapped(false);      // Reset tap state
-        } else {
-            setWeaponTapped(true);       // First tap → show tooltip
-            setHoveredAbility("weapon");
-
-            // Optional: reset after 1.5s if second tap doesn't come
-            setTimeout(() => {
+    const handleWeaponClick = () => {
+        if (isMobile) {
+            if (weaponTapped) {
+                equipWeapon();
                 setWeaponTapped(false);
-                setHoveredAbility(null);
-            }, 1500);
+            } else {
+                setWeaponTapped(true);
+                setHoveredAbility("weapon");
+                setTimeout(() => {
+                    setWeaponTapped(false);
+                    setHoveredAbility(null);
+                }, 1500);
+            }
+        } else {
+            equipWeapon();
         }
     };
 
@@ -59,9 +59,6 @@ function PlayerCard({ name, stats, abilities, locationLevel }) {
         setEquipedWeapon(weapon);
         setEquipingWeapon(false);
     };
-
-
-
 
     return (
         <>
