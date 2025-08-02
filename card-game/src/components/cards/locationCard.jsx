@@ -59,9 +59,14 @@ function LocationCard({ level, id, revealed, cleared, name = "Back", stats, onRe
                                 width: "180px",
                             }}
                         >
-                            {!stats.encounters ? "" : `Encounters: ${stats.encounters} \n`}
-                            {!stats.advantage ? "" : `Advantage: ${stats.advantage} \n`}
-                            {!stats.disadvantage ? "" : `Disadvantage: ${stats.disadvantage} \n`}
+                            <div className={styles.titleSmall}>{name}</div>
+                            <div>{!stats.encounters ? "" : `Encounters: ${stats.encounters} \n`}</div>
+                            <div>{!stats.advantage ? "" : `Advantage: ${stats.advantage} \n`}</div>
+                            <div>{!stats.disadvantage ? "" : `Disadvantage: ${stats.disadvantage} \n`}</div>
+                            <div>Click to change</div>
+
+
+
                         </div>
                     </>)}
 
