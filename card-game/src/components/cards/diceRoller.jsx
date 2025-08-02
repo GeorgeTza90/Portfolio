@@ -5,6 +5,7 @@ const diceFaces = ['⚀', '⚁', '⚂', '⚃', '⚄', '⚅'];
 
 const DiceRoller = () => {
     const [isMobile, setIsMobile] = useState(false);
+    const [isHovered, setIsHovered] = useState(false);
     const [face, setFace] = useState('🎲');
 
     useEffect(() => {
@@ -38,7 +39,7 @@ const DiceRoller = () => {
         button: {
             fontSize: isMobile ? "18px" : '30px',
             fontWeight: "bolder",
-            backgroundColor: '#56e546e7',
+            backgroundColor: isHovered ? '#c6f05dff' : '#b1c47f',
             color: 'black',
             border: 'none',
             borderRadius: '8px',
@@ -54,7 +55,15 @@ const DiceRoller = () => {
             <div style={myStyles.diceBG}>
                 <div style={myStyles.dice}>{face}</div>
             </div>
-            <button style={myStyles.button} onClick={rollDice}>
+            <button
+                style={myStyles.button}
+                onClick={() => {
+                    rollDice;
+                    setTimeout(() => setIsHovered(false), 1000);
+                }}
+                onMouseEnter={() => setIsHovered(true)}
+                onMouseLeave={() => setIsHovered(false)}
+            >
                 Roll Dice
             </button>
         </div>
@@ -62,3 +71,4 @@ const DiceRoller = () => {
 };
 
 export default DiceRoller;
+
