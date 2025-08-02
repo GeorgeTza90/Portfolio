@@ -11,7 +11,6 @@ function PlayerCard({ name, stats, abilities, locationLevel }) {
     const [weaponTapped, setWeaponTapped] = useState(false);
 
     const { weaponList, weaponStats, ultimateWeaponList, ultimateWeaponsStats, leviathanAbilities } = Weapons;
-
     const playerCardStyle = {
         backgroundImage: equipingWeapon
             ? `url(/artworks/${name}_bg.jpg)`
@@ -27,6 +26,21 @@ function PlayerCard({ name, stats, abilities, locationLevel }) {
         window.addEventListener("resize", checkMobile);
         return () => window.removeEventListener("resize", checkMobile);
     }, []);
+
+    useEffect(() => {
+        if (equipedWeapon && equipedWeapon.name) {
+            const stats = ultimateWeaponList.includes(equipedWeapon.name)
+                ? weaponStats?.[equipedWeapon.name] || {}
+                : weaponStats[equipedWeapon.name]?.[locationLevel] || {};
+
+            const text = `Spend ${stats.cost} ${stats.costType || ""}. ${stats.ability} ${stats.use}.`;
+
+            setEquipedWeapon({
+                name: equipedWeapon.name,
+                text,
+            });
+        }
+    }, [locationLevel]);
 
     const handleWeaponClick = () => {
         if (isMobile) {
@@ -117,14 +131,14 @@ function PlayerCard({ name, stats, abilities, locationLevel }) {
                                     }}
                                     onMouseEnter={() => !isMobile && setHoveredAbility("weapon")}
                                     onMouseLeave={() => !isMobile && setHoveredAbility(null)}
-                                    onClick={handleWeaponTap}
+                                    onClick={handleWeaponClick}
                                 >
                                     Weapon
                                     {hoveredAbility === "weapon" && (
                                         <div
                                             style={{
                                                 position: "absolute",
-                                                top: isMobile ? "100%" : "-45%",
+                                                top: isMobile ? "100%" : "125%",
                                                 left: isMobile ? "-175%" : "-207%",
                                                 backgroundColor: "rgba(73, 5, 110, 0.89)",
                                                 boxShadow: "1px 1px 8px black",
