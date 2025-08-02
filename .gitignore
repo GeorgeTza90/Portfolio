@@ -14,6 +14,10 @@ react-commercial-2/client/node_modules/
 react-commercial-2/client/package-lock.json
 react-commercial-2/server/node_modules/
 react-commercial-2/server/package-lock.json
+react-portfolio-static/node_modules/
+react-portfolio-static/package-lock.json
+card-game/node_modules/
+card-game/package-lock.json
 
 # ENV
 react-commercial-1/server/.env
