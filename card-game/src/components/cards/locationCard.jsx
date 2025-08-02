@@ -31,7 +31,7 @@ function LocationCard({ level, id, revealed, cleared, name = "Back", stats, onRe
                         position: "absolute",
                         fontFamily: "system-ui, Avenir, Helvetica, Arial, sans-serif",
                         top: isMobile ? "50%" : "105%",
-                        left: isMobile ? "3%" : "50%",
+                        left: isMobile ? "2%" : "50%",
                         transform: isMobile ? "translateY(-50%)" : "translate(-50%, -120%)",
                         backgroundColor: "rgba(73, 5, 110, 0.93)",
                         color: "white",
@@ -39,7 +39,7 @@ function LocationCard({ level, id, revealed, cleared, name = "Back", stats, onRe
                         border: "1px solid black",
                         borderRadius: "12px",
                         zIndex: 100,
-                        fontSize: "1.1rem",
+                        fontSize: isMobile ? "0.9rem" : "1.1rem",
                         pointerEvents: "none",
                         whiteSpace: "pre-wrap",
                         maxWidth: "280px",
@@ -48,11 +48,13 @@ function LocationCard({ level, id, revealed, cleared, name = "Back", stats, onRe
                     }}
                 >
                     {name === "Back" ? (<>
-                        Location Level {level} - Reveal Card to see details
+                        <div>Location Level {level}</div>
+                        <div>{isMobile ? `Click again to reveal Location` : `Click to reveal Location`}</div>
                         {cleared ? " (Cleared)" : revealed ? " (Revealed)" : ""}
                     </>) : (<>
                         <div
                             style={{
+                                maxWidth: "180px",
                                 fontSize: "1rem",
                                 width: "180px",
                             }}

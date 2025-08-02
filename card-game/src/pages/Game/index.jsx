@@ -1,5 +1,5 @@
 import { useLocation, useNavigate } from "react-router-dom";
-import { useState } from "react";
+import { useState, useEffect } from "react";
 import styles from "../../components/cards/cards.module.css";
 import Players from "../../data/players.json";
 import Locations from "../../data/locations.json";
@@ -21,6 +21,7 @@ function Game() {
     const { levels, locationList, locationStats } = Locations;
     const { enemiesList, enemiesStats, leviathanList, leviathanAbilities } = Enemies;
 
+    const [isMobile, setIsMobile] = useState(false);
     const [locationBG, setLocationBG] = useState("Back");
     const [encounterLevel, setEncounterLevel] = useState(levels[mode].level1);
     const [currentEncounter, setCurrentEncounter] = useState("");
@@ -32,6 +33,7 @@ function Game() {
     const [selectedLocations, setSelectedLocations] = useState([]);
     const [selectingLocation, setSelectingLocation] = useState(null);
     const [tempSelectedLocation, setTempSelectedLocation] = useState("");
+    const [hoveredLocationLevelKey, setHoveredLocationLevelKey] = useState(null);
 
     const tabLocationBackground = {
         backgroundImage:
@@ -42,25 +44,15 @@ function Game() {
     // const tabRollerBackground = { backgroundImage: "url(/bg3.jpg)", display: "flex", justifyContent: "center" };
     const tabBackground = { backgroundImage: "url(/bg3.jpg)" };
 
-    const handleConfirmAddEnemy = () => {
-        if (!selectedEnemy) return;
-
-        const isLeviathan = leviathanList.includes(selectedEnemy);
-        const stats = isLeviathan
-            ? enemiesStats[selectedEnemy] || {}
-            : enemiesStats[selectedEnemy]?.[selectedEnemyLevel] || {};
-
-        const newEnemy = {
-            name: selectedEnemy,
-            stats: stats,
-            abilities: isLeviathan ? leviathanAbilities[selectedEnemy] || [] : [],
+    useEffect(() => {
+        const checkMobile = () => {
+            setIsMobile(window.innerWidth <= 600);
         };
 
-        setEnemyList((prev) => [...prev, newEnemy]);
-        setSelectingEnemy(false);
-        setSelectedEnemy("");
-        setSelectedEnemyLevel("");
-    };
+        checkMobile(); // initial check
+        window.addEventListener("resize", checkMobile);
+        return () => window.removeEventListener("resize", checkMobile);
+    }, []);
 
     const ToDifficulty = () => {
         navigate("/difficulty");
@@ -70,12 +62,6 @@ function Game() {
         const found = selectedLocations.find((loc) => loc.levelKey === levelKey);
         return found ? found.locationName : null;
     };
-
-    const handleNewAdventure = () => {
-        if (window.confirm("Begin New Adventure?")) {
-            navigate("/difficulty");
-        }
-    }
 
     const handleRemoveLastLocation = () => {
         setSelectedLocations((prev) => {
@@ -128,6 +114,32 @@ function Game() {
 
         setCurrentEncounter(newEncounter);
     };
+
+    const handleConfirmAddEnemy = () => {
+        if (!selectedEnemy) return;
+
+        const isLeviathan = leviathanList.includes(selectedEnemy);
+        const stats = isLeviathan
+            ? enemiesStats[selectedEnemy] || {}
+            : enemiesStats[selectedEnemy]?.[selectedEnemyLevel] || {};
+
+        const newEnemy = {
+            name: selectedEnemy,
+            stats: stats,
+            abilities: isLeviathan ? leviathanAbilities[selectedEnemy] || [] : [],
+        };
+
+        setEnemyList((prev) => [...prev, newEnemy]);
+        setSelectingEnemy(false);
+        setSelectedEnemy("");
+        setSelectedEnemyLevel("");
+    };
+
+    const handleNewAdventure = () => {
+        if (window.confirm("Begin New Adventure?")) {
+            navigate("/difficulty");
+        }
+    }
 
     return !location.state ? (
         ToDifficulty()
@@ -220,7 +232,20 @@ function Game() {
                                             cleared={false}
                                             stats={locationStats[selectedLoc] || ""}
                                             onReveal={() => {
-                                                if (canReveal) {
+                                                if (!canReveal) return;
+
+                                                if (isMobile) {
+                                                    if (hoveredLocationLevelKey === levelKey) {
+                                                        // Second tap: confirm
+                                                        setSelectingLocation(levelKey);
+                                                        setTempSelectedLocation(selectedLoc || "");
+                                                        setHoveredLocationLevelKey(null); // reset
+                                                    } else {
+                                                        // First tap: preview only
+                                                        setHoveredLocationLevelKey(levelKey);
+                                                    }
+                                                } else {
+                                                    // Desktop: immediately open selection
                                                     setSelectingLocation(levelKey);
                                                     setTempSelectedLocation(selectedLoc || "");
                                                 }
