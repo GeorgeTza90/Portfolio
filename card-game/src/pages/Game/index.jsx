@@ -1,8 +1,5 @@
 import { useLocation, useNavigate } from "react-router-dom";
 import { useState } from "react";
-import Location from "../../components/cards/locationCard.jsx";
-import Player from "../../components/cards/playerCard.jsx";
-import Enemy from "../../components/cards/enemyCard.jsx";
 import styles from "../../components/cards/cards.module.css";
 import Players from "../../data/players.json";
 import Locations from "../../data/locations.json";
@@ -10,6 +7,10 @@ import Enemies from "../../data/enemies.json";
 import Encounters from "../../data/encounters.json";
 import RemoveButton from "../../components/buttons/RemoveButton.jsx";
 import DiceRoller from "../../components/cards/diceRoller.jsx";
+import Location from "../../components/cards/locationCard.jsx";
+import Player from "../../components/cards/playerCard.jsx";
+import Enemy from "../../components/cards/enemyCard.jsx";
+import BeginButton from "../../components/buttons/BeginButton.jsx";
 
 function Game() {
     const navigate = useNavigate();
@@ -21,16 +22,13 @@ function Game() {
     const { enemiesList, enemiesStats, leviathanList, leviathanAbilities } = Enemies;
 
     const [locationBG, setLocationBG] = useState("Back");
-
-    const [encounterLevel, setEncounterLevel] = useState("I");
+    const [encounterLevel, setEncounterLevel] = useState(levels[mode].level1);
     const [currentEncounter, setCurrentEncounter] = useState("");
-
     const [enemyList, setEnemyList] = useState([]);
     const [selectingEnemy, setSelectingEnemy] = useState(false);
     const [selectedEnemy, setSelectedEnemy] = useState("");
     const [selectedEnemyLevel, setSelectedEnemyLevel] = useState("");
     const [addEnemySymbol, setAddEnemySymbol] = useState("+");
-
     const [selectedLocations, setSelectedLocations] = useState([]);
     const [selectingLocation, setSelectingLocation] = useState(null);
     const [tempSelectedLocation, setTempSelectedLocation] = useState("");
@@ -41,11 +39,8 @@ function Game() {
                 ? "url(/bg3.jpg)"
                 : `url(/artworks/${encodeURIComponent(locationBG)}.png)`,
     };
-
-    const tabRollerBackground = { backgroundImage: "url(/bg3.jpg)", display: "flex", justifyContent: "center" };
-
+    // const tabRollerBackground = { backgroundImage: "url(/bg3.jpg)", display: "flex", justifyContent: "center" };
     const tabBackground = { backgroundImage: "url(/bg3.jpg)" };
-
 
     const handleConfirmAddEnemy = () => {
         if (!selectedEnemy) return;
@@ -75,6 +70,12 @@ function Game() {
         const found = selectedLocations.find((loc) => loc.levelKey === levelKey);
         return found ? found.locationName : null;
     };
+
+    const handleNewAdventure = () => {
+        if (window.confirm("Begin New Adventure?")) {
+            navigate("/difficulty");
+        }
+    }
 
     const handleRemoveLastLocation = () => {
         setSelectedLocations((prev) => {
@@ -364,8 +365,15 @@ function Game() {
                     DiceRoller
                 </h1>
                 <DiceRoller />
-            </div>
+            </div><br />
+
+            {/* NEW GAME BUTTON */}
+            <BeginButton
+                onClick={handleNewAdventure}
+                slot="Begin A New Adventure"
+            />
         </div >
+
 
     );
 }

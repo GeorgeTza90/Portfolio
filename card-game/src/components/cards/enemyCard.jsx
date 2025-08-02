@@ -1,6 +1,7 @@
 import { useState, useEffect } from "react";
 import styles from "./cards.module.css";
 import RemoveButton from "../buttons/RemoveButton";
+import StatsCard from "./statsCard.jsx";
 
 function EnemyCard({ name, stats, abilities = [], type, onRemove }) {
     const [hoveredAbility, setHoveredAbility] = useState(null);
@@ -33,22 +34,10 @@ function EnemyCard({ name, stats, abilities = [], type, onRemove }) {
                             marginTop: isMobile ? "10%" : "40%"
                         }}
                     >
-                        <div className={styles.specStat}>
-                            <img src="/life.png" alt="life" className={styles.statsImg} />
-                            {stats.life}
-                        </div>
-                        <div className={styles.specStat}>
-                            <img src="/energy.png" alt="energy" className={styles.statsImg} />
-                            {stats.energy}
-                        </div>
-                        <div className={styles.specStat}>
-                            <img src="/attack.png" alt="attack" className={styles.statsImg} />
-                            {stats.attack}
-                        </div>
-                        <div className={styles.specStat}>
-                            <img src="/shield.png" alt="shield" className={styles.statsImg} />
-                            {stats.shield}
-                        </div>
+                        <StatsCard type="life" initialValue={stats.life} />
+                        <StatsCard type="energy" initialValue={stats.energy} />
+                        <StatsCard type="attack" initialValue={stats.attack} />
+                        <StatsCard type="shield" initialValue={stats.shield} />
                     </div>
 
                     {/* ENEMY */}

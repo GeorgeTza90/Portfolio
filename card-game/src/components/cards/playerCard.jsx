@@ -1,9 +1,12 @@
 import { useState, useEffect } from "react";
+import { useNavigate } from "react-router-dom";
 import styles from "./cards.module.css";
-import ChooseWeapon from "./chooseWeapon.jsx";
 import Weapons from "../../data/weapons.json";
+import ChooseWeapon from "./chooseWeapon.jsx";
+import StatsCard from "./statsCard.jsx";
 
 function PlayerCard({ name, stats, abilities, locationLevel }) {
+    const navigate = useNavigate();
     const [hoveredAbility, setHoveredAbility] = useState(null);
     const [isMobile, setIsMobile] = useState(false);
     const [equipingWeapon, setEquipingWeapon] = useState(false);
@@ -16,6 +19,19 @@ function PlayerCard({ name, stats, abilities, locationLevel }) {
             ? `url(/artworks/${name}_bg.jpg)`
             : `url(/artworks/${name}.jpg)`,
     };
+
+    useEffect(() => {
+        const handleBeforeUnload = (e) => {
+            e.preventDefault();
+            e.returnValue = '';
+        };
+
+        window.addEventListener("beforeunload", handleBeforeUnload);
+
+        return () => {
+            window.removeEventListener("beforeunload", handleBeforeUnload);
+        };
+    }, []);
 
     useEffect(() => {
         const checkMobile = () => {
@@ -100,22 +116,10 @@ function PlayerCard({ name, stats, abilities, locationLevel }) {
                                     marginTop: isMobile ? "35%" : "40%",
                                 }}
                             >
-                                <div className={styles.specStat}>
-                                    <img src="/life.png" alt="life" className={styles.statsImg} />
-                                    {stats.life}
-                                </div>
-                                <div className={styles.specStat}>
-                                    <img src="/energy.png" alt="energy" className={styles.statsImg} />
-                                    {stats.energy}
-                                </div>
-                                <div className={styles.specStat}>
-                                    <img src="/attack.png" alt="attack" className={styles.statsImg} />
-                                    {stats.attack}
-                                </div>
-                                <div className={styles.specStat}>
-                                    <img src="/shield.png" alt="shield" className={styles.statsImg} />
-                                    {stats.shield}
-                                </div>
+                                <StatsCard type="life" initialValue={stats.life} />
+                                <StatsCard type="energy" initialValue={stats.energy} />
+                                <StatsCard type="attack" initialValue={stats.attack} />
+                                <StatsCard type="shield" initialValue={stats.shield} />
                             </div>
 
                             {/* Abilities & Weapon*/}
@@ -199,11 +203,8 @@ function PlayerCard({ name, stats, abilities, locationLevel }) {
                             </div>
                         </div>
                     </div>
-
-                )
-            }
+                )}
         </div >
-
     );
 }
 
