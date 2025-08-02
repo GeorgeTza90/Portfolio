@@ -53,7 +53,7 @@ function PlayerCard({ name, stats, abilities, locationLevel }) {
                 setTimeout(() => {
                     setWeaponTapped(false);
                     setHoveredAbility(null);
-                }, 1500);
+                }, 5000);
             }
         } else {
             equipWeapon();
@@ -75,12 +75,13 @@ function PlayerCard({ name, stats, abilities, locationLevel }) {
     };
 
     return (
-        <>
-            {equipingWeapon ? (
-                <div style={{ display: "block" }}>
+
+        <div style={{ display: "block" }}>
+            {
+                equipingWeapon ? (
                     <div style={playerCardStyle} className={styles.playerCard}>
                         <h1 className={styles.name}>{name}</h1>
-                        <div className={styles.playerCol}>
+                        <div className={styles.addWeapon}>
                             <ChooseWeapon
                                 weaponLevel={locationLevel}
                                 onRemove={handleRemoveChooseWeapon}
@@ -88,9 +89,7 @@ function PlayerCard({ name, stats, abilities, locationLevel }) {
                             />
                         </div>
                     </div>
-                </div>
-            ) : (
-                <div style={{ display: "block" }}>
+                ) : (
                     <div style={playerCardStyle} className={styles.playerCard}>
                         <h1 className={styles.name}>{name}</h1>
                         <div className={styles.playerCol}>
@@ -152,12 +151,11 @@ function PlayerCard({ name, stats, abilities, locationLevel }) {
                                                 width: "280px",
                                             }}
                                         >
-                                            {equipedWeapon ? (
-                                                <>
-                                                    <div className={styles.titleSmall}>{equipedWeapon.name}</div>
-                                                    <div>{equipedWeapon.text}</div>
-                                                    <div>Click again to change.</div>
-                                                </>) : "No Weapon Equiped. Click again to add Weapon"}
+                                            {equipedWeapon ? (<>
+                                                <div className={styles.titleSmall}>{equipedWeapon.name}</div>
+                                                <div>{equipedWeapon.text}</div>
+                                                <div>Click again to change.</div>
+                                            </>) : isMobile ? "No Weapon Equiped. Click again to add Weapon" : "No Weapon Equiped. Click to add Weapon"}
                                         </div>
                                     )}
                                 </div>
@@ -201,9 +199,11 @@ function PlayerCard({ name, stats, abilities, locationLevel }) {
                             </div>
                         </div>
                     </div>
-                </div>
-            )}
-        </>
+
+                )
+            }
+        </div >
+
     );
 }
 

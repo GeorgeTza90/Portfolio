@@ -157,6 +157,15 @@
     border-radius: 10px;
     margin-bottom: 1.5rem;
     max-width: 800px;
+    min-height: 380px;
+}
+
+.addWeapon {
+    display: flexbox;
+    justify-content: center;
+    align-items: center;
+    margin-top: 5rem;
+    margin: 2rem;
 }
 
 .level {
@@ -382,6 +391,7 @@
     .playerCard {
         width: 90%;
         height: 17.5rem;
+        min-height: 300px;
     }
 
     .encounterCard {

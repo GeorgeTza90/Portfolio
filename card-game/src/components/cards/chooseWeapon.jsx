@@ -53,8 +53,8 @@ function ChooseWeapon({ onRemove, onAdd, weaponLevel }) {
                 </button>
             )}
 
-            <RemoveButton slot="X" alt="c" onClick={onRemove} />
-        </div>
+            <RemoveButton slot="X" alt="cancel" onClick={onRemove} fontSize="1rem" />
+        </div >
     );
 }
 
