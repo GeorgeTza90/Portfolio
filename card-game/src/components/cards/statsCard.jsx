@@ -49,13 +49,19 @@ function StatsCard({ type, initialValue }) {
                     </button>
                     <button
                         style={{
+                            position: "relative",
+                            zIndex: 10,
+                            pointerEvents: "auto",
                             fontSize: "0.8rem",
                             backgroundColor: "rgba(73, 110, 5, 1)",
                             padding: "0.4rem 0.6rem",
                             color: "white",
                             cursor: "pointer",
                         }}
-                        onClick={confirmValue}
+                        onPointerDown={(e) => {
+                            e.preventDefault();
+                            confirmValue();
+                        }}
                     >
                         confirm
                     </button>
