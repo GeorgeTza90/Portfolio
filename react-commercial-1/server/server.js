@@ -53,15 +53,15 @@ app.post('/api/register', registerController.postRegister);
 
 
 // Keep-Alive Self-Ping (Runs Once When Server Starts)
-app.get("/api/keep-alive", healthController.getKeepItAlive);
+// app.get("/api/keep-alive", healthController.getKeepItAlive);
 
-const KEEP_ALIVE_URL = process.env.KEEP_ALIVE_URL; 
+// const KEEP_ALIVE_URL = process.env.KEEP_ALIVE_URL; 
 
-setInterval(() => {
-  axios.get(KEEP_ALIVE_URL)
-    .then(() => console.log("Self-ping successful"))
-    .catch(err => console.error("Self-ping failed:", err));
-}, 12 * 60 * 60 * 1000); 
+// setInterval(() => {
+//   axios.get(KEEP_ALIVE_URL)
+//     .then(() => console.log("Self-ping successful"))
+//     .catch(err => console.error("Self-ping failed:", err));
+// }, 12 * 60 * 60 * 1000); 
 
 
 // Unknown API routes (404)

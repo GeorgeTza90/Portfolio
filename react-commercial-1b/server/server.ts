@@ -23,7 +23,6 @@ import * as registerController from "./controllers/registerController";
 import * as healthController from "./controllers/healthController";
 
 
-
 // Middleware
 import optAuthToken from "./services/authToken";
 
@@ -66,15 +65,15 @@ app.get("/api/keep-alive", healthController.getKeepItAlive);
 
 
 // Self-Ping
-const KEEP_ALIVE_URL = process.env.KEEP_ALIVE_URL;
+// const KEEP_ALIVE_URL = process.env.KEEP_ALIVE_URL;
 
-if (KEEP_ALIVE_URL) {
-    setInterval(() => {
-        axios.get(KEEP_ALIVE_URL)
-            .then(() => console.log("Self-ping successful"))
-            .catch(err => console.error("Self-ping failed:", err));
-    }, 12 * 60 * 60 * 1000);
-}
+// if (KEEP_ALIVE_URL) {
+//     setInterval(() => {
+//         axios.get(KEEP_ALIVE_URL)
+//             .then(() => console.log("Self-ping successful"))
+//             .catch(err => console.error("Self-ping failed:", err));
+//     }, 12 * 60 * 60 * 1000);
+// }
 
 // 404 Handler
 app.use("/api/*", (_req: Request, res: Response): void => {
