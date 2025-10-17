@@ -23,7 +23,7 @@ export const getNews = async (req: Request, res: Response): Promise<void> => {
     const [comments] = await db.query("SELECT * FROM comments");
     const [likes] = await db.query("SELECT * FROM likes");
 
-    let heading = "Contact Us";
+    let heading = "Our News";
     let user: string | User = "Guest";
 
     if (req.user?.email) {
