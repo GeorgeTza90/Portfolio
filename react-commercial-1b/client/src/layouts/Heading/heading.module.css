@@ -1,12 +1,13 @@
 .heading {
-  background-color: rgba(240, 248, 255, 0.175);
-  box-shadow: 0px 15px 10px rgba(0, 0, 0, 0.329);
-  max-width: auto;
-  text-align: center;
-  margin-bottom: 50px;
+  background-color: rgba(18, 43, 38, 0.308);
+  box-shadow: 5px 15px 10px rgba(0, 0, 0, 0.103);
   display: flex;
   justify-content: center;
   align-content: center;
+  text-align: center;
+  height: 4rem;
+  width: 101%;
+  margin-top: 20px;
 }
 
 @media (max-width: 768px) {

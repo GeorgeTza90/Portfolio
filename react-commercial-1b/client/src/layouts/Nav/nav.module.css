@@ -1,42 +1,48 @@
 .nav {
-  background-image: url(/assets/nav1.png);
+  /* background-color: #96cdcd; */
+  background-image: url(/assets/nav3.png);
   background-position: center;
   background-repeat: no-repeat;
   background-size: cover;
+  min-height: 110px;
+  max-height: 120px;
   width: 100%;
   display: grid;
   grid-template-columns: repeat(3, 1fr);
+  position: fixed;
+  z-index: 9999;
+  top: -0.8%;
+}
+
+.navLogo {
+  margin-top: 2%;
+  margin-left: -5rem;
 }
 
 .navImage {
-  margin-top: 2%;
-  height: 60px;
+  height: 3rem;
   width: auto;
-  margin-left: 25px;
 }
 
 .UserImage {
-  height: 35px;
+  height: 28px;
   width: auto;
-  margin-left: 25px;
 }
 
 .navLinks {
-  margin-top: 3%;
-  align-items: center;
+  margin-top: 20px;
   display: grid;
   grid-template-columns: repeat(4, 1fr);
-  margin-bottom: 250px;
+  margin-bottom: 20rem;
   font-weight: bold;
 }
 
 .navLinks2 {
-  margin-top: 4%;
+  margin-top: 18px;
   display: flex;
-  align-items: center;
   justify-content: right;
   margin-right: 25px;
-  margin-bottom: 250px;
+  margin-bottom: 20rem;
   font-weight: bold;
   font-size: medium;
 }
@@ -46,16 +52,9 @@
   text-decoration: double;
   margin-left: 25px;
   text-shadow: 3px 3px 15px #0000002b;
-  padding-left: 6px;
-  padding-right: 6px;
   border-radius: 18px;
-  background-color: #91c7c725;
-  box-shadow: 3px 3px 15px #0000002b;
-  backdrop-filter: blur(8px);
-  font-size: larger;
-  border: solid #42140600;
-  padding-left: 10px;
-  padding-right: 10px;
+  background-color: rgba(163, 201, 201, 0.274);
+  padding: 4px;
 }
 
 .offscreen {
@@ -66,10 +65,12 @@
 /* HOVERS */
 .navLink:hover {
   color: #ffe2da;
-  background-color: #55545455;
+  background-color: rgb(57, 109, 109);
   border-radius: 18px;
   transition: color 0.40s;
   box-shadow: 3px 3px 15px #00000093;
+  padding: 4px;
+
 }
 
 .sidebar {
@@ -92,6 +93,7 @@
   }
 
   .navLogo {
+    margin-left: 0rem;
     cursor: pointer;
   }
 

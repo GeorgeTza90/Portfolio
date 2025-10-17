@@ -38,17 +38,19 @@ const Nav: React.FC = () => {
           <Link className={styles.navLink} to="/contact">Contact</Link>
         </div>
 
-        {!isLoggedIn ? (
-          <div className={`${styles.navLinks2} ${styles.desktopOnly}`}>
-            <Link className={styles.navLink} to="/login">Sign In</Link>
-            <Link className={styles.navLink} to="/register">Sign Up</Link>
-          </div>
-        ) : (
-          <div className={`${styles.navLinks2} ${styles.desktopOnly}`}>
-            <LogOutButton />
-            <img className={styles.UserImage} src={UserImage} alt="Profile" />
-          </div>
-        )}
+        <div className={`${styles.navLinks2} ${styles.desktopOnly}`}>
+          {!isLoggedIn ? (
+            <>
+              <Link className={styles.navLink} to="/login">Sign In</Link>
+              <Link className={styles.navLink} to="/register">Sign Up</Link>
+            </>
+          ) : (
+            <>
+              <LogOutButton />
+              <img className={styles.UserImage} src={UserImage} alt="Profile" />
+            </>
+          )}
+        </div>
       </nav>
 
       {/* Μobile */}

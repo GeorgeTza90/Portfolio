@@ -21,10 +21,11 @@ function AppRouter() {
   return (
     <Routes>
       <Route element={<WithLoading><MainLayout /></WithLoading>}>
-        <Route path="/" element={<News />} />
-        <Route path="/destination" element={<Destination />} />
+
       </Route>
       <Route element={<MainLayout />}>
+        <Route path="/" element={<News />} />
+        <Route path="/destination" element={<Destination />} />
         <Route path="/about" element={<About />} />
         <Route path="/contact" element={<Contact />} />
         <Route path="/purchase" element={<Purchase />} />

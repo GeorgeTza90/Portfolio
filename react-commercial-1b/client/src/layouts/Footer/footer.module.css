@@ -1,27 +1,33 @@
 .footer {
-  background-image: url(/assets/foot1.png);
+  background-image: url(/assets/foot3.png);
   background-position: center;
   background-repeat: no-repeat;
   background-size: cover;
-  height: 250px;
+  min-height: 190px;
+  max-height: 200px;
   width: 100%;
   display: grid;
-  grid-template-columns: repeat(2, 1fr);
-  margin-top: 100px;
+  grid-template-columns: repeat(3, 1fr);
+  position: fixed;
+  z-index: 9999;
+  top: 97%;
 }
 
 .footer .text {
-  color: #421406;
-  font-weight: bold;
+  color: #163a34;
+  font-weight: bolder;
   font-size: 90%;
-  margin-top: 70px;
+  margin-top: 1.3rem;
+  margin-right: 20rem;
 }
 
 .labeled {
   font-family: 'Times New Roman', Times;
-  color: #421406;
-  margin-left: 80px;
-  margin-top: 70px;
+  color: #ffffffc4;
+  font-weight: small;
+  font-size: 90%;
+  margin-left: 220px;
+  margin-top: 1rem;
 }
 
 @media (max-width: 768px) {

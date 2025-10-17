@@ -1,10 +1,10 @@
 import type { JSX } from "react";
 import styles from "./destCard.module.css";
-import LogoImg from "/assets/logo2.png";
+import LogoImg from "/assets/logo3.png";
 
 function AboutCard(): JSX.Element {
     return (
-        <div className={styles.all}>
+        <div>
             <div className={styles.card2}>
                 <div className={styles.textDiv}>
                     <img src={LogoImg} className={styles.logo} alt="IceCream Vacations" />

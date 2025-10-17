@@ -1,15 +1,15 @@
 .all {
+    background-image: url(/assets/DestCardImg2.png);
     display: flex;
     align-content: center;
     justify-content: center;
+    width: 101%;
 }
 
 .card {
-    background-image: url(/assets/DestCardImg.png);
     background-position: center;
     background-repeat: no-repeat;
     background-size: cover;
-    height: 100%;
     width: auto;
     margin-bottom: 50px;
     border-radius: 20dvb;
@@ -32,7 +32,7 @@
 }
 
 .textDiv {
-    color: #421406;
+    /* color: #421406; */
     margin-left: 25px;
     text-shadow: 3px 3px 5px #0000002b;
     padding: 25px;
@@ -40,11 +40,18 @@
     margin-right: 80px;
 }
 
+.myH1 {
+    text-shadow: 2px 4px 5px #000000;
+    margin-bottom: 2rem;
+}
+
 .textP {
     text-align: justify;
+    line-height: 1.5rem;
 }
 
 .textPAbout {
+    color: #dfd6d6;
     text-align: justify;
     padding: 50px;
     font-size: larger;
@@ -67,7 +74,7 @@
 }
 
 .card2 {
-    background-image: url(/assets/DestCardImg.png);
+    background-image: url(/assets/DestCardImg2.png);
     color: #000000;
     background-position: center;
     background-repeat: no-repeat;

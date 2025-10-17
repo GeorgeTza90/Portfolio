@@ -6,9 +6,9 @@ const MainLayout: React.FC = () => {
   return (
     <>
       <Nav />
-      <main className="main">
-        <Outlet />
-      </main>
+        <main className="main">         
+            <Outlet />        
+        </main>
       <Footer />
     </>
   );

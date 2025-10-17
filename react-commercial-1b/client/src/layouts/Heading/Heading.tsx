@@ -6,9 +6,13 @@ interface HeadingProps {
 
 function Heading({ heading = "Current Page" }: HeadingProps) {
   return (
-    <div className={styles.heading}>
-      <h2>{heading}</h2>
-    </div>
+    <>
+    <br /><br />
+      <div className={styles.heading}>        
+        <h2>{heading}</h2>
+      </div>
+      <br /><br /><br />
+    </>
   );
 }
 

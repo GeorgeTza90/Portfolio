@@ -45,6 +45,7 @@ const Destination: React.FC = () => {
       <div className="body">
         <DestCard dest={destinations} />
       </div>
+      <br /><br />
     </>
   );
 };

@@ -18,7 +18,7 @@ interface DestCardProps {
 }
 
 function DestCard({ dest }: DestCardProps): JSX.Element {
-  const itemsPerPage = 4;
+  const itemsPerPage = 3;
   const [currentPage, setCurrentPage] = useState<number>(1);
   const indexOfLastItem = currentPage * itemsPerPage;
   const indexOfFirstItem = indexOfLastItem - itemsPerPage;

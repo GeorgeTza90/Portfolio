@@ -36,6 +36,8 @@ const News: React.FC = () => {
     fetchData();
   }, [cookies.auth_token]);
 
+  console.log(heading);
+
   return (
     <>
       <Heading heading={heading} />
