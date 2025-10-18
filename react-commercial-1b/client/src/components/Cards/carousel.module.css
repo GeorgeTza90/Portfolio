@@ -46,11 +46,16 @@
     right: 10rem;
 }
 
+.carouselContainer {
+    display: block;
+    grid-template-columns: repeat(3, 1fr);
+}
+
 @media (max-width: 768px) {
     .image {
         height: auto;
-        width: 100%;
-        border-radius: 5dvb;
+        width: 90%;
+        border-radius: 10dvb;
         margin-bottom: 30px;
 
     }

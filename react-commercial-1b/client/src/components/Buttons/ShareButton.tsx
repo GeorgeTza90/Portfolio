@@ -25,7 +25,7 @@ function ShareButton({
     backgroundSize: `${size}ch`,
     padding: "20px",
     color: "aliceblue",
-    fontWeight: "bold",
+    fontWeight: "light",
     fontSize: "larger",
     cursor: "pointer",
     backgroundColor: "transparent",

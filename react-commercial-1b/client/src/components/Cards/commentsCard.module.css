@@ -1,13 +1,14 @@
 .all {
-    background-color: #d4c0b44e;
-    box-shadow: 2px 2px 15px #00000034;
+    /* background-color: #d4c0b44e;
+    box-shadow: 2px 2px 15px #00000034; */
     border-radius: 10rem;
-    margin: 40px;
     display: grid;
     align-items: center;
     justify-items: center;
-    color: #260b03;
+    color: #ececec;
 }
+
+
 
 .myH1 {
     font-size: large;
@@ -31,7 +32,7 @@
 }
 
 .commentText {
-    background-color: #72706d;
+    background-color: #72706d28;
     color: rgb(255, 255, 255);
     text-shadow: 3px 3px 5px #0000002b;
     box-shadow: inset 2px 2px 15px #000000ee;

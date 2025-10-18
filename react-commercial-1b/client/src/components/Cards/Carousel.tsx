@@ -22,19 +22,19 @@ function Carousel({ images }: CarouselProps): JSX.Element {
   };
 
   useEffect(() => {
-    const interval = setInterval(nextSlide, getRandomInterval(5000, 15000));
+    const interval = setInterval(nextSlide, getRandomInterval(2000, 5000));
     return () => clearInterval(interval);
   }, []);
 
   return (
     <div className={styles.carousel}>
-      <button onClick={prevSlide} className={styles.leftArrow} aria-label="Previous Slide">
+      {/* <button onClick={prevSlide} className={styles.leftArrow} aria-label="Previous Slide">
         ‹
-      </button>
+      </button> */}
       <img src={images[currentIndex]} alt={`Slide ${currentIndex + 1}`} className={styles.image} />
-      <button onClick={nextSlide} className={styles.rightArrow} aria-label="Next Slide">
+      {/* <button onClick={nextSlide} className={styles.rightArrow} aria-label="Next Slide">
         ›
-      </button>
+      </button> */}
     </div>
   );
 }

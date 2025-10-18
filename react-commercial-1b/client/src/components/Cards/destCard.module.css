@@ -3,7 +3,7 @@
     display: flex;
     align-content: center;
     justify-content: center;
-    width: 101%;
+
 }
 
 .card {
@@ -13,6 +13,7 @@
     width: auto;
     margin-bottom: 50px;
     border-radius: 20dvb;
+    max-width: 1500px;
 }
 
 .items {
@@ -51,7 +52,7 @@
 }
 
 .textPAbout {
-    color: #dfd6d6;
+    color: #d6dfdc;
     text-align: justify;
     padding: 50px;
     font-size: larger;

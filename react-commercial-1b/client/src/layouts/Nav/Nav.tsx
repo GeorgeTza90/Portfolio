@@ -5,6 +5,7 @@ import styles from "./nav.module.css";
 import NavImage from "/assets/logo2.png";
 import UserImage from "/assets/userImage.png";
 import LogOutButton from "../../components/Forms/LogOut";
+import NavButton from "../../components/Buttons/NavButton";
 
 const Nav: React.FC = () => {
   const [cookies] = useCookies(["auth_token"]);
@@ -32,17 +33,19 @@ const Nav: React.FC = () => {
 
         {/* Desktop */}
         <div className={`${styles.navLinks} ${styles.desktopOnly}`}>
-          <Link className={styles.navLink} to="/">News</Link>
-          <Link className={styles.navLink} to="/destination">Destination</Link>
-          <Link className={styles.navLink} to="/about">About</Link>
-          <Link className={styles.navLink} to="/contact">Contact</Link>
+          <NavButton to="/" slot="" size={2.1} image="home"/>                              
+          <NavButton to="/destination" slot="" size={2.5} image="destination"/>
+          <NavButton to="/about" slot="" size={2.3} image="about"/>
+          <NavButton to="/contact" slot="" size={2.1} image="contact"/>
         </div>
 
         <div className={`${styles.navLinks2} ${styles.desktopOnly}`}>
           {!isLoggedIn ? (
             <>
-              <Link className={styles.navLink} to="/login">Sign In</Link>
-              <Link className={styles.navLink} to="/register">Sign Up</Link>
+              <NavButton to="/login" slot="" size={2.1} image="login"/>
+              <NavButton to="/register" slot="" size={2.1} image="register"/>
+              {/* <Link className={styles.navLink} to="/login">Sign In</Link>
+              <Link className={styles.navLink} to="/register">Sign Up</Link> */}
             </>
           ) : (
             <>

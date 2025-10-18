@@ -1,15 +1,18 @@
 .card {
-    background-color: rgba(240, 248, 255, 0.38);
+    /* background-color: rgba(240, 248, 255, 0.38);
     border-radius: 10%;
     padding: 20px;
     color: #260b03;
-    margin-bottom: 50px;
+    margin-bottom: 50px; */
 }
 
 .all {
-    background-color: #dff6f6bd;
+    /* background-color: #dff6f6bd;
     border-radius: 10%;
-    padding: 25px;
+    padding: 25px; */
+    display: grid;
+    grid-template-columns: 1fr 30fr 1fr;
+    background: linear-gradient(to top, rgba(7, 22, 19, 0.062) 10%, rgba(183, 255, 251, 0.192) 200%);
 }
 
 .label {
@@ -21,8 +24,6 @@
 .image {
     -webkit-mask-image: linear-gradient(to right, transparent 0%, black 20%, transparent 100%);
     mask-image: linear-gradient(to right, transparent 0%, black 20%, transparent 100%);
-    padding: 10px;
-    height: 100px;
 }
 
 .text {
@@ -31,6 +32,7 @@
     margin-left: 50px;
     margin-right: 50px;
     display: grid;
+    grid-template-columns: repeat(1, 1fr);
     align-items: center;
     justify-items: center;
 }
@@ -38,6 +40,7 @@
 .interactionContainer {
     display: flex;
     justify-content: right;
+    margin-right: 1rem;
 }
 
 .interaction {
@@ -46,6 +49,23 @@
     grid-template-columns: repeat(3, 1fr);
     justify-items: right;
     font-size: 90%;
+}
+
+.carouselContainer {
+    display: grid;
+    grid-template-columns: (3, 1fr);
+}
+
+.buttonSlide {
+    background: transparent;
+    border-color: transparent;
+    font-size: larger;
+    font-weight: bolder;
+}
+
+.buttonSlide:hover {
+    background-color: #ffffff17;
+    border-radius: 5rem;
 }
 
 @media (max-width: 768px) {

@@ -18,13 +18,13 @@ interface DestCardProps {
 }
 
 function DestCard({ dest }: DestCardProps): JSX.Element {
-  const itemsPerPage = 3;
+  const itemsPerPage = 6;
   const [currentPage, setCurrentPage] = useState<number>(1);
   const indexOfLastItem = currentPage * itemsPerPage;
   const indexOfFirstItem = indexOfLastItem - itemsPerPage;
   const currentItems = dest.slice(indexOfFirstItem, indexOfLastItem);
-  const paginate = (pageNumber: number) => setCurrentPage(pageNumber);
-  const totalPages = Math.ceil(dest.length / itemsPerPage);
+  // const paginate = (pageNumber: number) => setCurrentPage(pageNumber);
+  // const totalPages = Math.ceil(dest.length / itemsPerPage);
   const navigate = useNavigate();
   const [cookies] = useCookies(["auth_token"]);
   const isLoggedIn = cookies.auth_token;
@@ -75,7 +75,7 @@ function DestCard({ dest }: DestCardProps): JSX.Element {
         <p>Loading destinations...</p>
       )}
 
-      <div className={styles.pagination}>
+      {/* <div className={styles.pagination}>
         {Array.from({ length: totalPages }, (_, index) => (
           <button
             key={index + 1}
@@ -86,7 +86,7 @@ function DestCard({ dest }: DestCardProps): JSX.Element {
             Page {index + 1}
           </button>
         ))}
-      </div>
+      </div> */}
     </>
   );
 }

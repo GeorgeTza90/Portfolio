@@ -1,4 +1,4 @@
-import { useEffect, useState } from "react";
+import { useEffect, useState, useRef } from "react";
 import type { JSX } from "react";
 import CommentButton from "../Buttons/CommentButton";
 import LikeButton from "../Buttons/LikeButton";
@@ -7,6 +7,8 @@ import CommentsCard from "./CommentsCard";
 import styles from "./postCard.module.css";
 import PostService from "../../services/PostService";
 import DeleteService from "../../services/DeleteService";
+import Carousel from "./PostCardCarousel";
+import SlideButton from "../Buttons/SlideButton";
 
 interface Like {
   id: number;
@@ -51,6 +53,7 @@ function PostCard({ posts, comments, user, likes }: PostCardProps): JSX.Element 
   const [liked, setLiked] = useState<LikedItem[]>([]);
   const [likeCount, setLikeCount] = useState<Record<string | number, number>>({});
   const [commentCount, setCommentCount] = useState<Record<string | number, number>>({});
+  const CarouselRef = useRef<{next: () => void; prev: () => void}>(null);
 
   const handleData = ({ id, counter }: { id: string | number; counter: number }) => {
     setCommentCount(prev => ({
@@ -127,7 +130,7 @@ function PostCard({ posts, comments, user, likes }: PostCardProps): JSX.Element 
       ...prev,
       [id]: !prev[id],
     }));
-  };
+  };  
 
   const handleLike = async (kind: "post" | "comment", id: string | number) => {
     try {
@@ -154,43 +157,84 @@ function PostCard({ posts, comments, user, likes }: PostCardProps): JSX.Element 
     } catch (err) {
       console.log((err as any)?.response, `Cannot like/unlike this ${kind}`);
     }
+  }; 
+
+  const handleCarousel = (choice: string) => {
+    if (choice === "prev") CarouselRef.current?.prev();
+    if (choice === "next") CarouselRef.current?.next();
   };
 
   return (
     <div>
       {posts.length > 0 ? (
-        posts.map((post, index) => (
-          <div key={index} className={styles.card}>
-            <div className={styles.all}><br />
-              <label className={styles.label}>{post.label}</label>
-              <br />
-              <img src={post.imgLink} className={styles.image} alt="Post Image" />
-              <div className={styles.text} dangerouslySetInnerHTML={{ __html: post.text }} />
-
-              <div className={styles.interactionContainer}>
-                <div className={styles.interaction}>
-                  <LikeButton slot={likeCount[post.id] || 0} onClick={() => handleLike("post", post.id)} />
-                  <CommentButton slot={commentCount[post.id] || 0} onClick={() => toggleCommentVis(post.id)} />
-                  <ShareButton slot="" />
+        <Carousel ref={CarouselRef}>
+          {posts.map((post, index) => (
+            <div key={index} className={styles.card}>
+              
+              
+              <div className={styles.all}>                 
+                <SlideButton
+                  slot=""
+                  onClick={() => handleCarousel("prev")}
+                  type="prev"
+                  size={3.3}
+                />
+                <div>
+                  <img src={post.imgLink} className={styles.image} alt="Post Image" />
+                  <br /><br />
+                  <label className={styles.label}>{post.label}</label>
+                  <br />
+                  <div
+                    className={styles.text}
+                    dangerouslySetInnerHTML={{ __html: post.text }}
+                  />
+                  <div className={styles.interactionContainer}>
+                    <div className={styles.interaction}>
+                      <LikeButton
+                        slot={likeCount[post.id] || 0}
+                        onClick={() => handleLike("post", post.id)}
+                        size={3.3}
+                      />
+                      <CommentButton
+                        slot={commentCount[post.id] || 0}
+                        onClick={() => toggleCommentVis(post.id)}
+                        size={3}
+                      />
+                      <ShareButton 
+                        slot="" 
+                        size={3.3}
+                      />
+                    </div>
+                  </div>
                 </div>
+       
+                <SlideButton
+                  slot=""
+                  onClick={() => handleCarousel("prev")}
+                  type="next"
+                  size={3.3}
+                />
               </div>
+              {commentVis[post.id] && (
+                <CommentsCard
+                  comments={postComments.filter(
+                    (comment) => comment.kindID === post.id
+                  )}
+                  likes={commentLikes}
+                  user={user}
+                  postID={post.id}
+                  sendData={handleData}
+                />
+              )}
             </div>
-            {commentVis[post.id] && (
-              <CommentsCard
-                comments={postComments.filter(comment => comment.kindID === post.id)}
-                likes={commentLikes}
-                user={user}
-                postID={post.id}
-                sendData={handleData}
-              />
-            )}
-          </div>
-        ))
+          ))}
+        </Carousel>
       ) : (
         <p>No posts yet.</p>
       )}
     </div>
   );
+
 }
 
 export default PostCard;

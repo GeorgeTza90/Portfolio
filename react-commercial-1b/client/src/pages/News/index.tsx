@@ -40,7 +40,7 @@ const News: React.FC = () => {
 
   return (
     <>
-      <Heading heading={heading} />
+      <Heading heading={"Our News"} />
 
       <div className="body">
         <PostCard posts={posts} comments={comments} user={user} likes={likes} />

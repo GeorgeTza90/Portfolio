@@ -124,7 +124,7 @@ function CommentsCard({ comments, likes, user, postID, sendData }: CommentsCardP
   };
 
   return (
-    <div className={styles.all}>
+    <div className={styles.all}>      
       <h1 className={styles.myH1}>Comments</h1>
       {
         commentsAll.length > 0 ? (
