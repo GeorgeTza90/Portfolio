@@ -177,7 +177,7 @@ function PostCard({ posts, comments, user, likes }: PostCardProps): JSX.Element 
                   slot=""
                   onClick={() => handleCarousel("prev")}
                   type="prev"
-                  size={3.3}
+                  size={3}
                 />
                 <div>
                   <img src={post.imgLink} className={styles.image} alt="Post Image" />
@@ -212,7 +212,7 @@ function PostCard({ posts, comments, user, likes }: PostCardProps): JSX.Element 
                   slot=""
                   onClick={() => handleCarousel("prev")}
                   type="next"
-                  size={3.3}
+                  size={3}
                 />
               </div>
               {commentVis[post.id] && (

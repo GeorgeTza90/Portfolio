@@ -70,26 +70,35 @@
 
 @media (max-width: 768px) {
     .card {
-        background-color: rgba(240, 248, 255, 0.38);
+        /* background-color: rgba(240, 248, 255, 0.38);
         border-radius: 8%;
         padding: 12px;
         color: #260b03;
-        margin-bottom: 50px;
+        margin-bottom: 50px; */
     }
 
     .all {
-        background-color: #dff6f6bd;
+        /* background-color: #dff6f6bd;
         border-radius: 8%;
-        padding: 2px;
+        padding: 2px; */
+    }
+
+    .text {
+        text-shadow: 1px 2px 3px #0000002b;
+        margin-left: 10px;
+        margin-right: 10px;
+        font-size: 0.85rem;
     }
 
     .image {
-        height: 80%;
-        max-width: 90%;
+        height: auto;
+        max-width: 100%;
     }
 
     .interactionContainer {
-        margin-right: 20px;
+        display: flex;
+        justify-content: left;
+
     }
 
     .label {

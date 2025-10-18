@@ -1,5 +1,5 @@
 import { useState } from "react";
-import type { JSX } from "react";
+import type { JSX, MouseEventHandler } from "react";
 import { Link } from "react-router-dom";
 
 interface NavButtonProps {
@@ -7,6 +7,7 @@ interface NavButtonProps {
   size?: number;
   to: string;
   image?: string;
+  onClick?: MouseEventHandler<HTMLAnchorElement>;
 }
 
 function NavButton({
@@ -14,6 +15,7 @@ function NavButton({
   size = 3.8,
   to = "/",
   image = "home",
+  onClick,
 }: NavButtonProps): JSX.Element {
     const [isHovered, setIsHovered] = useState(false);
 
@@ -24,6 +26,7 @@ function NavButton({
         backgroundSize: `${size}ch`,
         backgroundColor: !isHovered ? "transparent" : "rgba(89, 146, 148, 1)",
         maxWidth: "150px",
+        minHeight: "50px",
         padding: "1px 1px",
         borderRadius: '2rem',
         color: "black",
@@ -41,6 +44,8 @@ function NavButton({
             to={to}
             onMouseEnter={() => setIsHovered(true)}
             onMouseLeave={() => setIsHovered(false)}
+            onClick={onClick}
+
         >
         {slot}
         </Link>

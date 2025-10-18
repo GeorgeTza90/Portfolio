@@ -6,7 +6,7 @@ function AboutCard(): JSX.Element {
     return (
         <div>
             <div className={styles.card2}>
-                <div className={styles.textDiv}>
+                <div className={styles.textDiv2}>
                     <img src={LogoImg} className={styles.logo} alt="IceCream Vacations" />
                     <div className={styles.textPAbout}>
                         <p>

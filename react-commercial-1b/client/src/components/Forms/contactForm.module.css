@@ -5,7 +5,6 @@
 }
 
 .Container {
-    background-color: rgba(219, 241, 236, 0.733);
     min-height: 200px;
     padding: 25px;
     border-radius: 50px;
@@ -15,7 +14,6 @@
     display: grid;
     grid-template-columns: repeat(2, 0.5fr);
 }
-
 
 .myInput1 {
     background-color: rgb(34, 31, 30);
@@ -55,7 +53,6 @@
     margin: 15px;
 }
 
-
 .message {
     background-color: rgb(34, 31, 30);
     border: 1px solid rgba(255, 255, 255, 0.556);
@@ -63,14 +60,13 @@
     border-radius: 5px;
     max-height: 500px;
     max-width: 820px;
-    min-width: 460px;
+    min-width: 810px;
     text-align: left;
     text-justify: center;
     letter-spacing: 1.8px;
     margin: 15px;
     padding: 20px;
 }
-
 
 .instructions {
     color: rgb(255, 255, 255);
@@ -103,6 +99,15 @@
 }
 
 @media (max-width: 768px) {
+    .Container {
+        min-height: 200px;
+        margin-top: 4rem;
+        width: 80%;
+        padding: 5px;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+    }
 
     .name {
         grid-template-columns: repeat(2, 0.2fr);
@@ -111,21 +116,23 @@
 
     .myInput1 {
         height: 35px;
-        min-width: 230px;
+        min-width: 150px;
     }
 
     .myInput2 {
-        height: 40px;
-        max-width: 500px;
+        height: 35px;
+        max-width: 336px;
     }
 
     .myInput3 {
         height: 40px;
-        max-width: 500px;
+        max-width: 220px;
     }
 
     .message {
+        max-height: 500px;
         max-width: 300px;
-        min-height: 350px;
+        min-width: 300px;
+
     }
 }

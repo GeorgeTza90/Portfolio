@@ -8,12 +8,9 @@
     color: #ececec;
 }
 
-
-
 .myH1 {
     font-size: large;
 }
-
 
 .commentSection {
     font-size: 80%;
@@ -90,6 +87,7 @@
 
     .commentSection {
         margin-bottom: 10px;
+        font-size: 75%;
     }
 
     .interaction {
@@ -98,6 +96,15 @@
     }
 
     .commentText {
-        margin-right: 5px;
+        /* margin-right: 5px; */
+    }
+
+    .commentText {
+        background-color: #ffffff07;
+        color: rgb(255, 255, 255);
+        text-shadow: 1px 2px 3px #0000002b;
+        box-shadow: inset 2px 2px 15px #00000000;
+        height: 30px;
+        min-width: 280px;
     }
 }

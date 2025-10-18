@@ -32,7 +32,8 @@
     border-radius: 10dvb;
 }
 
-.textDiv {
+.textDiv,
+.textDiv2 {
     /* color: #421406; */
     margin-left: 25px;
     text-shadow: 3px 3px 5px #0000002b;
@@ -94,8 +95,8 @@
 
 @media (max-width: 768px) {
     .card {
-        min-width: 300px;
-        max-width: 720px;
+        min-width: 400px;
+        max-width: 740px;
     }
 
     .items {
@@ -116,8 +117,18 @@
         padding-left: 0px;
     }
 
+    .textDiv2 {
+        margin-left: -80px;
+        padding-left: 0px;
+    }
+
+    .logo {
+        width: 12rem;
+        height: auto;
+    }
+
     .myH1 {
-        font-size: larger;
+        font-size: medium;
         color: #ffffff;
         background-color: #084544;
         padding: 12px;
@@ -125,6 +136,17 @@
         box-shadow: 3px 3px 5px #0000002b;
     }
 
+    .textP {
+        font-size: small;
+        line-height: 1.2rem;
+    }
+
+    .textPAbout {
+        width: 22rem;
+        margin-right: 200rem;
+        font-size: small;
+        line-height: 1.3rem;
+    }
 
     .purchButton {
         width: 200px;

@@ -44,12 +44,10 @@ const Nav: React.FC = () => {
             <>
               <NavButton to="/login" slot="" size={2.1} image="login"/>
               <NavButton to="/register" slot="" size={2.1} image="register"/>
-              {/* <Link className={styles.navLink} to="/login">Sign In</Link>
-              <Link className={styles.navLink} to="/register">Sign Up</Link> */}
             </>
           ) : (
             <>
-              <LogOutButton />
+              <LogOutButton />              
               <img className={styles.UserImage} src={UserImage} alt="Profile" />
             </>
           )}
@@ -57,20 +55,19 @@ const Nav: React.FC = () => {
       </nav>
 
       {/* Μobile */}
-      <div className={`${styles.sidebar} ${sidebarOpen ? styles.open : ""}`}>
-        <br /><br /><br /><br /><br />
-        <Link className={styles.navLink} to="/" onClick={() => setSidebarOpen(false)}>News</Link>
-        <Link className={styles.navLink} to="/destination" onClick={() => setSidebarOpen(false)}>Destination</Link>
-        <Link className={styles.navLink} to="/about" onClick={() => setSidebarOpen(false)}>About</Link>
-        <Link className={styles.navLink} to="/contact" onClick={() => setSidebarOpen(false)}>Contact</Link>
-        
+      <div className={`${styles.sidebar} ${sidebarOpen ? styles.open : ""}`}>        
+        <NavButton to="/" slot="" size={2.1} image="home" onClick={() => setSidebarOpen(false)}/>                              
+        <NavButton to="/destination" slot="" size={2.5} image="destination" onClick={() => setSidebarOpen(false)}/>
+        <NavButton to="/about" slot="" size={2.3} image="about" onClick={() => setSidebarOpen(false)}/>
+        <NavButton to="/contact" slot="" size={2.1} image="contact" onClick={() => setSidebarOpen(false)}/>        
+        <br /><br />
         {!isLoggedIn ? (
           <>
-            <Link className={styles.navLink} to="/login" onClick={() => setSidebarOpen(false)}>Sign In</Link>
-            <Link className={styles.navLink} to="/register" onClick={() => setSidebarOpen(false)}>Sign Up</Link>
+            <NavButton to="/login" slot="" size={2.2} image="login"/>
+            <NavButton to="/register" slot="" size={2.1} image="register"/>
           </>
         ) : (
-          <>
+          <>          
             <LogOutButton />
             <img className={styles.UserImage} src={UserImage} alt="Profile" />
           </>
