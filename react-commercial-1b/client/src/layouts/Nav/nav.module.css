@@ -12,11 +12,12 @@
   position: fixed;
   z-index: 9999;
   top: -0.7%;
+  left: 0;
 }
 
 .navLogo {
   margin-top: 2%;
-  margin-left: -15rem;
+  margin-left: -11rem;
 }
 
 .navImage {
@@ -43,7 +44,7 @@
   display: grid;
   grid-template-columns: repeat(2, 1fr);
   margin-left: 15rem;
-  margin-right: 5rem;
+  margin-right: 10rem;
   margin-bottom: 21rem;
 }
 

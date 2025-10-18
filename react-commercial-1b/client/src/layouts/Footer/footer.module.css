@@ -3,31 +3,32 @@
   background-position: center;
   background-repeat: no-repeat;
   background-size: cover;
-  min-height: 190px;
-  max-height: 200px;
+  min-height: 200px;
+  max-height: 240px;
   width: 100%;
   display: grid;
   grid-template-columns: repeat(3, 1fr);
   position: fixed;
   z-index: 9999;
-  top: 97%;
+  top: 96%;
+  left: 0;
 }
 
 .footer .text {
   color: #163a34;
   font-weight: bolder;
-  font-size: 90%;
-  margin-top: 1.3rem;
-  margin-right: 20rem;
+  font-size: 88%;
+  margin-top: 2.2rem;
+  margin-right: 10rem;
 }
 
 .labeled {
   font-family: 'Times New Roman', Times;
-  color: #ffffffc4;
+  color: #ffffff9d;
   font-weight: small;
   font-size: 90%;
-  margin-left: 220px;
-  margin-top: 1rem;
+  margin-left: 180px;
+  margin-top: 1.5rem;
 }
 
 @media (max-width: 768px) {
