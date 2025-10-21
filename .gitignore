@@ -1,39 +1,58 @@
-# Exclude projects
+# ===============================
+# Global Node.js ignores
+# ===============================
+**/node_modules/
+**/package-lock.json
+# Mobile folder
+mobile/node_modules/
+mobile/.env
 
+# ===============================
+# Environment variables
+# ===============================
+**/.env
 
-# Exclude node_modules and package-lock.json 
-react-commercial-1/client/node_modules/
-react-commercial-1/client/package-lock.json
-react-commercial-1/server/node_modules/
-react-commercial-1/server/package-lock.json
-react-commercial-1b/client/node_modules/
-react-commercial-1b/client/package-lock.json
-react-commercial-1b/server/node_modules/
-react-commercial-1b/server/package-lock.json
-react-commercial-2/client/node_modules/
-react-commercial-2/client/package-lock.json
-react-commercial-2/server/node_modules/
-react-commercial-2/server/package-lock.json
-react-portfolio-static/node_modules/
-react-portfolio-static/package-lock.json
-card-game/node_modules/
-card-game/package-lock.json
+# ===============================
+# Temporary & log files
+# ===============================
+**/temp/
+**/logs/
+*.log
 
-# ENV
-react-commercial-1/server/.env
-react-commercial-1b/server/.env
-react-commercial-2/server/.env
-react-commercial-1/client/.env
-react-commercial-1b/client/.env
-react-commercial-2/client/.env
+# ===============================
+# System files
+# ===============================
+.DS_Store
+Thumbs.db
+**/data
 
-# EXTRA
+# ===============================
+# Build artifacts
+# ===============================
+dist/
+build/
+out/
+coverage/
+
+# ===============================
+# Editor / IDE specific
+# ===============================
+.vscode/
+.idea/
+*.swp
+
+# ===============================
+# Project-specific exclusions
+# ===============================
 notes.txt
-react-commercial-1/server/temp/
-react-commercial-1b/server/temp/
-react-commercial-2/server/temp/
 Test.txt
-react-commercial-2/client/src/components/Tests
 
+# Old or test files
+**/Tests/
+**/src/components/Tests/
+**/temp/
+*_v0.php
+
+# Example: exclude specific legacy files
 laravel-commercial-1/app/Http/Controllers/CollectionController_v0.php
 laravel-commercial-1/resources/views/cards/index.blade_v0.php
