@@ -42,7 +42,7 @@ const Nav: React.FC = () => {
         <div className={`${styles.navLinks2} ${styles.desktopOnly}`}>
           {!isLoggedIn ? (
             <>
-              <NavButton to="/login" slot="" size={2.1} image="login"/>
+              <NavButton to="/login" slot="" size={2.2} image="login"/>
               <NavButton to="/register" slot="" size={2.1} image="register"/>
             </>
           ) : (

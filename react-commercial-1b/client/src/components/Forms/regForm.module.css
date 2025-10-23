@@ -1,17 +1,30 @@
 .RegContainer {
-    background-image: url(/assets/form2.png);
+    background-image: url(/assets/DestCardImg2.png);
     background-position: center;
     background-repeat: no-repeat;
     background-size: cover;
     height: 600px;
-    width: auto;
-    padding: 40px;
+    padding: 10px;
 }
 
-.text {
-    color: #421406;
+.myForm {
+
+    color: #cef5f2d7;
     font-weight: bold;
-    margin-top: 60px;
+    margin-top: 100px;
+}
+
+.formGroup {
+    display: grid;
+    grid-template-columns: repeat(3, 0.1fr);
+    justify-content: center;
+    align-items: center;
+    margin-bottom: 1rem;
+}
+
+.myLabel {
+    font-size: 0.9rem;
+    margin-right: 1rem;
 }
 
 .myInput {
@@ -35,7 +48,6 @@
     font-size: smaller;
     background-color: #1c1b1a;
     padding: 5px;
-
     width: auto;
 }
 
@@ -51,11 +63,13 @@
 .valid {
     font-size: larger;
     border-radius: 15px;
+    margin-left: 0.8rem;
 }
 
 .invalid {
     font-size: small;
     border-radius: 15px;
+    margin-left: 0.8rem;
 }
 
 .Registered {
@@ -85,4 +99,29 @@
 .SignIn:hover {
     color: #ffffff;
     text-shadow: 2px 2px 5px #000000;
+}
+
+@media (max-width: 768px) {
+    .RegContainer {
+        height: 600px;
+        width: 95%;
+        font-size: 0.9rem;
+    }
+
+    .myInput {
+        background-color: rgba(0, 0, 0, 0.46);
+        border: 1px solid rgba(255, 255, 255, 0.556);
+        border-radius: 25px;
+        height: 30px;
+        width: 250px;
+        text-align: center;
+        text-justify: center;
+        letter-spacing: 1.8px;
+        margin-bottom: 10px;
+    }
+
+    .signInMsg {
+        font-size: 0.9rem;
+        margin-left: 80px;
+    }
 }

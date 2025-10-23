@@ -58,29 +58,32 @@ function LogForm() {
         </div>
       ) : (
         <div>
-          <form onSubmit={handleSubmit} className={styles.text}>
-            <label htmlFor="email">Email: </label>
-            <input
-              type="email"
-              id="email"
-              value={email}
-              onChange={(e) => setEmail(e.target.value)}
-              required
-              className={styles.myInput}
-              placeholder="example@mail.com"
-            />   
-            <br />
-            <label htmlFor="password">Password: </label>
-            <input
-              type="password"
-              id="password"
-              value={password}
-              onChange={(e) => setPassword(e.target.value)}
-              required
-              className={styles.myInput}
-              placeholder="password"
-            />
-            <br />
+          <form onSubmit={handleSubmit} className={styles.myForm}>
+            <div className={styles.formGroup}>
+              <label className={styles.myLabel} htmlFor="email">Email: </label>
+              <input
+                type="email"
+                id="email"
+                value={email}
+                onChange={(e) => setEmail(e.target.value)}
+                required
+                className={styles.myInput}
+                placeholder="example@mail.com"
+              />  
+            </div>
+            
+            <div className={styles.formGroup}>
+              <label className={styles.myLabel} htmlFor="password">Password: </label>
+              <input
+                type="password"
+                id="password"
+                value={password}
+                onChange={(e) => setPassword(e.target.value)}
+                required
+                className={styles.myInput}
+                placeholder="password"
+              />
+            </div>            
             <p ref={errRef} className={errMsg ? styles.errmsg : styles.offscreen}>
               {errMsg}
             </p>

@@ -91,9 +91,9 @@ function RegForm() {
         </section>
       ) : (
         <section className={styles.RegContainer}>
-          <form onSubmit={handleSubmit} className={styles.text}>
-            <div>
-              <label htmlFor="username">User Name: </label>
+          <form onSubmit={handleSubmit} className={styles.myForm}>
+            <div className={styles.formGroup}>
+              <label className={styles.myLabel} htmlFor="username">User Name: </label>
               <input
                 className={styles.myInput}
                 type="text"
@@ -108,18 +108,22 @@ function RegForm() {
                 onFocus={() => setUserFocus(true)}
                 onBlur={() => setUserFocus(false)}
               />
-              <span className={validName ? styles.valid : styles.offscreen}> ✅</span>
+              <div>
+                <span className={validName ? styles.valid : styles.offscreen}> ✅</span>
               <span className={validName || !user ? styles.offscreen : styles.invalid}> ❌</span>
-              <p
-                id="uidnote"
-                className={userFocus && user && !validName ? styles.instructions : styles.offscreen}
-              >
-                4 to 24 characters. Must begin with a letter. Letters, numbers, underscores, hyphens allowed.
-              </p>
-            </div>
+              </div>              
+            </div>              
+            <p
+              id="uidnote"
+              className={userFocus && user && !validName ? styles.instructions : styles.offscreen}
+            >
+              4 to 24 characters. Must begin with a letter. Letters, numbers, underscores, hyphens allowed.
+            </p>
+            
+              
 
-            <div>
-              <label htmlFor="password">Create Password: </label>
+            <div className={styles.formGroup}>
+              <label className={styles.myLabel} htmlFor="password">Create Password: </label>
               <input
                 className={styles.myInput}
                 type="password"
@@ -134,14 +138,14 @@ function RegForm() {
                 onBlur={() => setPwdFocus(false)}
               />
               <span className={validPwd ? styles.valid : styles.offscreen}> ✅</span>
-              <span className={validPwd || !pwd ? styles.offscreen : styles.invalid}> ❌</span>
-              <p id="pwdnote" className={pwdFocus && !validPwd ? styles.instructions : styles.offscreen}>
-                8 to 24 characters. Must include uppercase and lowercase letters, a number and a special character. Allowed special characters.
-              </p>
+              <span className={validPwd || !pwd ? styles.offscreen : styles.invalid}> ❌</span>              
             </div>
+            <p id="pwdnote" className={pwdFocus && !validPwd ? styles.instructions : styles.offscreen}>
+              8 to 24 characters. Must include uppercase and lowercase letters, a number and a special character. Allowed special characters.
+            </p>
 
-            <div>
-              <label htmlFor="confirm_pwd">Confirm Password: </label>
+            <div className={styles.formGroup}>
+              <label className={styles.myLabel} htmlFor="confirm_pwd">Confirm Password: </label>
               <input
                 className={styles.myInput}
                 type="password"
@@ -156,14 +160,14 @@ function RegForm() {
                 onBlur={() => setMatchFocus(false)}
               />
               <span className={validMatch && matchPwd ? styles.valid : styles.offscreen}> ✅</span>
-              <span className={validMatch || !matchPwd ? styles.offscreen : styles.invalid}> ❌</span>
-              <p id="confirmnote" className={matchFocus && !validMatch ? styles.instructions : styles.offscreen}>
-                Must match the Create Password input field.
-              </p>
+              <span className={validMatch || !matchPwd ? styles.offscreen : styles.invalid}> ❌</span>              
             </div>
+            <p id="confirmnote" className={matchFocus && !validMatch ? styles.instructions : styles.offscreen}>
+              Must match the Create Password input field.
+            </p>
 
-            <div>
-              <label htmlFor="email">Email: </label>
+            <div className={styles.formGroup}>
+              <label className={styles.myLabel} htmlFor="email">Email: </label>
               <input
                 className={styles.myInput}
                 type="email"
@@ -179,10 +183,10 @@ function RegForm() {
               />
               <span className={validEmail ? styles.valid : styles.offscreen}> ✅</span>
               <span className={validEmail || !email ? styles.offscreen : styles.invalid}> ❌</span>
+            </div>
               <p id="emailnote" className={emailFocus && !validEmail ? styles.instructions : styles.offscreen}>
                 Must be a valid email.
               </p>
-            </div>
 
             <p ref={errRef} className={errMsg ? styles.errmsg : styles.offscreen} aria-live="assertive">
               {errMsg}

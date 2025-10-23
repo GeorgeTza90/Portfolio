@@ -36,6 +36,7 @@ function NavButton({
         border: "none",
         display: "inline-block",
         textDecoration: "none",
+        transition: "0.3s",
     };
 
     return (

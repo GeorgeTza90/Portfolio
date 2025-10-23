@@ -40,12 +40,14 @@
 }
 
 .navLinks2 {
+  height: 40px;
   margin-top: 4px;
+  max-width: 200px;
+  margin-left: 180px;
   display: grid;
   grid-template-columns: repeat(2, 1fr);
-  margin-left: 15rem;
-  margin-right: 10rem;
-  margin-bottom: 21rem;
+  margin-bottom: 20rem;
+  font-weight: bold;
 }
 
 .offscreen {
@@ -55,6 +57,12 @@
 
 .sidebar {
   display: none;
+}
+
+.authContainer {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  min-width: 5rem;
 }
 
 /* MOBILE */
