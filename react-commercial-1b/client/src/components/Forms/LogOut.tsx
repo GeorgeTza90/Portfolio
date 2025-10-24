@@ -22,10 +22,11 @@ function LogOutButton() {
   };
 
   return (
-    <button className={styles.navLink} onClick={handleLogout}>
+    <button className={styles.LogOutButton} onClick={handleLogout}>
       Log Out
     </button>
   );
 }
 
 export default LogOutButton;
+

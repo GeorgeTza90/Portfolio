@@ -34,9 +34,7 @@ const News: React.FC = () => {
     };
 
     fetchData();
-  }, [cookies.auth_token]);
-
-  console.log(heading);
+  }, [cookies.auth_token]);  
 
   return (
     <>

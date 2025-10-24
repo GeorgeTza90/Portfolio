@@ -25,11 +25,6 @@
   width: auto;
 }
 
-.UserImage {
-  height: 28px;
-  width: auto;
-}
-
 .navLinks {
   height: 40px;
   margin-top: 4px;
@@ -63,6 +58,26 @@
   display: grid;
   grid-template-columns: repeat(2, 1fr);
   min-width: 5rem;
+}
+
+.LogOutButton {
+  margin-top: 1rem;
+  width: 4rem;
+  height: 1.5rem;
+  border-radius: 0.5rem;
+  background-color: rgb(36, 19, 9);
+  border: 1px solid rgba(255, 255, 255, 0.219)
+}
+
+.LogOutButton:hover {
+  background-color: rgb(216, 231, 233);
+  color: rgb(39, 20, 10);
+}
+
+.UserImage {
+  margin-top: 0.8rem;
+  height: 28px;
+  width: auto;
 }
 
 /* MOBILE */
@@ -134,5 +149,27 @@
   .UserImage {
     height: auto;
     width: 50px;
+  }
+
+  .LogOutButton {
+    padding: 1px;
+    margin-top: 0rem;
+    width: 2rem;
+    height: 2.5rem;
+    border-radius: 0.5rem;
+    background-color: rgb(36, 19, 9);
+    border: 1px solid rgba(255, 255, 255, 0.219)
+  }
+
+  .LogOutButton:hover {
+    background-color: rgb(216, 231, 233);
+    color: rgb(39, 20, 10);
+  }
+
+  .UserImage {
+    display: none;
+    margin-top: 0rem;
+    height: 28px;
+    width: auto;
   }
 }
