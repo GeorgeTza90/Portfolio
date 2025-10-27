@@ -22,9 +22,7 @@ function LogOutButton() {
   };
 
   return (
-    <button className={styles.LogOutButton} onClick={handleLogout}>
-      Log Out
-    </button>
+    <button className={styles.LogOutButton} onClick={handleLogout} />
   );
 }
 
