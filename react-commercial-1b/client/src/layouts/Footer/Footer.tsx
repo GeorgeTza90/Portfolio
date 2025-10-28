@@ -9,7 +9,6 @@ function Footer() {
         </div>
         <label className={styles.labeled}>by George Tzachristas</label>
       </nav>
-
     </>
   );
 }

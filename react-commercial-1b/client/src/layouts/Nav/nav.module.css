@@ -61,17 +61,21 @@
 }
 
 .LogOutButton {
-  margin-top: 1rem;
-  width: 4rem;
-  height: 1.5rem;
-  border-radius: 0.5rem;
-  background-color: rgb(36, 19, 9);
-  border: 1px solid rgba(255, 255, 255, 0.219)
+  background-image: url(/assets/logout.png);
+  background-size: cover;
+  margin-top: 0.8rem;
+  width: 30px;
+  height: auto;
+  cursor: pointer;
+  /* background-position: center;
+  background-repeat: no-repeat;
+*/
+  background-color: transparent;
+  border: transparent;
 }
 
 .LogOutButton:hover {
-  background-color: rgb(216, 231, 233);
-  color: rgb(39, 20, 10);
+  background-image: url(/assets/logout_hovered.png);
 }
 
 .UserImage {
@@ -152,18 +156,8 @@
   }
 
   .LogOutButton {
-    padding: 1px;
-    margin-top: 0rem;
-    width: 2rem;
-    height: 2.5rem;
-    border-radius: 0.5rem;
-    background-color: rgb(36, 19, 9);
-    border: 1px solid rgba(255, 255, 255, 0.219)
-  }
-
-  .LogOutButton:hover {
-    background-color: rgb(216, 231, 233);
-    color: rgb(39, 20, 10);
+    height: 20px;
+    width: auto;
   }
 
   .UserImage {
