@@ -3,6 +3,9 @@
 # ===============================
 **/node_modules/
 **/package-lock.json
+# Allow only this package-lock.json inside eclipse_player/mobile
+!eclipse_player/mobile/package-lock.json
+
 # Mobile folder
 mobile/node_modules/
 mobile/.env
