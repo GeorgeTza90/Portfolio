@@ -35,7 +35,7 @@
 }
 
 .textOverlay {
-    background-color: rgba(0, 0, 0, 0.794);
+    background-color: rgba(0, 0, 0, 0.952);
     padding: 0.5rem 1rem;
     border-radius: 6px;
     font-size: 1.2rem;
@@ -45,7 +45,7 @@
 
 .portfolioPages {
     display: grid;
-    grid-template-columns: repeat(3, 1fr);
+    grid-template-columns: repeat(4, 1fr);
     gap: 1rem;
     padding: 1.5rem;
 }

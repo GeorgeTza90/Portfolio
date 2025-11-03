@@ -1,3 +1,7 @@
+.epImg {
+    background-image: url("/images/ep-hovered.jpg");
+}
+
 .icvImg {
     background-image: url("/images/icv-hover.jpg");
 }
@@ -48,6 +52,10 @@
 
 .drawing {
     background-image: url("/images/drawing-hover.jpg");
+}
+
+.epImg:hover {
+    background-image: url("/images/ep.jpg");
 }
 
 .icvImg:hover {

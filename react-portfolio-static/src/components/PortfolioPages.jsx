@@ -5,6 +5,11 @@ function PortfolioPages() {
         <>
             <h1 className={styles.sectionTitle}>Portfolio Pages</h1>
             <div className={styles.portfolioPages}>
+                <a href="https://eclipseplayer.com/" target="_blank">
+                    <div className={`${styles.projectBox} ${styles.epImg}`}>
+                        <h3 className={styles.textOverlay}>Eclipse Player</h3>
+                    </div>
+                </a>
                 <a href="https://icvacations.netlify.app/" target="_blank">
                     <div className={`${styles.projectBox} ${styles.icvImg}`}>
                         <h3 className={styles.textOverlay}>IceCream Vacations</h3>
