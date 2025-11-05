@@ -1,13 +1,22 @@
 # 👋 Hello, I'm George Tzachristas
 
-I am a **Mechanical Engineer**, **Musician**, **Music Technician**, **Teacher**, and **Junior Full-Stack Web Developer** based in Ioannina, Greece. This portfolio showcases some of the projects I’ve built using technologies like **React**, **Node.js**, **PHP (Laravel)**, and **MySQL**.
+I am a **Junior Full-Stack Web Developer**, **Mechanical Engineer**, **Musician**, **Sound Engineer** and **Teacher** based in Ioannina, Greece. This portfolio showcases some of the projects I’ve built using technologies like **React**, **Javascript**, **Typescript**, **Node.js**, **PHP (Laravel)**, and **MySQL**.
 
 ---
 
 ## 📂 Projects
 
+### 🚀 [Eclipse Player](https://eclipseplayer.com/)
+**Stack:** React Native, React, Typescript, Node.js, MySQL  
+- Developed a full-featured mobile music player with secure JWT authentication and a deployed web interface.
+- Built RESTful API endpoints for songs, playlists, and user management using Express.js and MySQL.
+- Implemented dynamic playlist management with add, delete, and drag & drop reorder functionality.
+- **Highlight:** Multi-context audio player with persistent playback and Cloudinary media integration.
+
+---
+
 ### 🚀 [IceCream Vacations](https://icvacations.netlify.app/)
-**Stack:** React, Node.js, MySQL  
+**Stack:** React, Typescript, Node.js, MySQL  
 - Full-stack CRUD web application with user authentication.  
 - Backend built using Express.js with a MySQL database.  
 - Frontend developed with React Hooks and styled with HTML5/CSS3.  
