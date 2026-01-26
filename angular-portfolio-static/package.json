@@ -4,8 +4,7 @@
   "scripts": {
     "ng": "ng",
     "start": "ng serve",
-    "build": "ng build --configuration production",
-    "postbuild": "xcopy /y /i dist\\angular-portfolio-static\\browser\\_redirects dist\\angular-portfolio-static\\_redirects",
+    "build": "ng build --configuration production",   
     "watch": "ng build --watch --configuration development",
     "test": "ng test"
   },
