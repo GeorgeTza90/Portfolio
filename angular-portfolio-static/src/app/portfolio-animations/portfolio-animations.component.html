@@ -1,0 +1,20 @@
+<h1 class="sectionTitle">Animated Videos</h1>
+
+<div class="portfolioAnimation">
+
+  <a href="https://www.youtube.com/watch?v=MUzcgtwxnr8" target="_blank">
+    <div class="projectBox"
+         (mouseenter)="onMouseEnter1()"
+         (mouseleave)="onMouseLeave1()">
+      <video class="bgVideo" [src]="videoSrc1" autoplay loop muted playsinline></video>
+    </div>
+  </a>
+
+  <a href="https://www.youtube.com/watch?v=j1aYszgIKAs" target="_blank">
+    <div class="projectBox"
+         (mouseenter)="onMouseEnter2()"
+         (mouseleave)="onMouseLeave2()">
+      <video class="bgVideo" [src]="videoSrc2" autoplay loop muted playsinline></video>
+    </div>
+  </a>
+</div>

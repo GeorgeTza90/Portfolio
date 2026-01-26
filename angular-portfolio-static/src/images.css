@@ -1,0 +1,111 @@
+.epImg {
+    background-image: url("/assets/images/ep-hovered.jpg");
+}
+
+.icvImg {
+    background-image: url("/assets/images/icv-hover.jpg");
+}
+
+.gpImg {
+    background-image: url("/assets/images/gp-hover.jpg");
+}
+
+.cwImg {
+    background-image: url("/assets/images/cw-hover.jpg");
+}
+
+.p13 {
+    background-image: url("/assets/images/p13-hover.jpg");
+}
+
+.runner {
+    background-image: url("/assets/images/runner-hover.jpg");
+}
+
+.cybernation {
+    background-image: url("/assets/images/cybernation-hover.jpg");
+}
+
+.ptesmata {
+    background-image: url("/assets/images/ptesmata-hover.jpg");
+}
+
+.minokawa {
+    background-image: url("/assets/images/minokawa-hover.jpg");
+}
+
+.vritra {
+    background-image: url("/assets/images/vritra-hover.jpg");
+}
+
+.scalling {
+    background-image: url("/assets/images/scaling-hover.jpg");
+}
+
+.zenaida {
+    background-image: url("/assets/images/zenaida-hover.jpg");
+}
+
+.happy {
+    background-image: url("/assets/images/happy-hover.jpg");
+}
+
+.drawing {
+    background-image: url("/assets/images/drawing-hover.jpg");
+}
+
+.epImg:hover {
+    background-image: url("/assets/images/ep.jpg");
+}
+
+.icvImg:hover {
+    background-image: url("/assets/images/icv.jpg");
+}
+
+.gpImg:hover {
+    background-image: url("/assets/images/gp.jpg");
+}
+
+.cwImg:hover {
+    background-image: url("/assets/images/cw.jpg");
+}
+
+.p13:hover {
+    background-image: url("/assets/images/p13.jpg");
+}
+
+.runner:hover {
+    background-image: url("/assets/images/runner.jpg");
+}
+
+.cybernation:hover {
+    background-image: url("/assets/images/cybernation.jpg");
+}
+
+.ptesmata:hover {
+    background-image: url("/assets/images/ptesmata.jpg");
+}
+
+.minokawa:hover {
+    background-image: url("/assets/images/minokawa.jpg");
+}
+
+.vritra:hover {
+    background-image: url("/assets/images/vritra.jpg");
+}
+
+.scalling:hover {
+    background-image: url("/assets/images/scaling.jpg");
+}
+
+.zenaida:hover {
+    background-image: url("/assets/images/zenaida.jpg");
+}
+
+.happy:hover {
+    background-image: url("/assets/images/happy.jpg");
+}
+
+.drawing:hover {
+    background-image: url("/assets/images/drawing.jpg");
+}
