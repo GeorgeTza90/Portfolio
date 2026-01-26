@@ -95,7 +95,7 @@ body {
     justify-content: center;
     text-shadow: 0 0 10px rgba(0, 0, 0, 0.5);
     border-radius: 10px;
-    
+    transition: transform 0.8s ease;
     border: 1px solid #504baa00;
     transition: transform 0.8s ease;
 }
@@ -118,6 +118,7 @@ body {
     border-radius: 8px;
     margin: 0.2rem;
     border: 1px solid #504baa00;
+    transition: transform 0.8s ease;
 }
 
 .musicBox:hover {
