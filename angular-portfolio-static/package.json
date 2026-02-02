@@ -4,8 +4,7 @@
   "scripts": {
     "ng": "ng",
     "start": "ng serve",
-    "build": "ng build --configuration production && npm run copy-redirects",
-    "copy-redirects": "copy src\\_redirects dist\\angular-portfolio-static\\_redirects",
+    "build": "ng build --configuration production",
     "watch": "ng build --watch --configuration development",
     "test": "ng test"
   },

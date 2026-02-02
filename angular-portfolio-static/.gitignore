@@ -1,7 +1,7 @@
 # Compiled output
 
-!/dist
-!/dist/angular-portfolio-static/_redirects
+# !/dist
+# !/dist/angular-portfolio-static/_redirects
 /tmp
 /out-tsc
 /bazel-out
