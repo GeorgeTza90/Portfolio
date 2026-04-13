@@ -1,6 +1,6 @@
 # 👋 Hello, I'm George Tzachristas
 
-I am a **Junior Full-Stack Web Developer**, **Mechanical Engineer**, **Musician**, **Sound Engineer** and **Teacher** based in Ioannina, Greece. This portfolio showcases some of the projects I’ve built using technologies like **React**, **Javascript**, **Typescript**, **Node.js**, **PHP (Laravel)**, and **MySQL**.
+I am a **Full-Stack Developer**, **Mechanical Engineer**, **Musician**, **Sound Engineer** and **Teacher** based in Ioannina, Greece. This portfolio showcases some of the projects I’ve built using technologies like **React**, **Javascript**, **Typescript**, **Node.js**, **PHP (Laravel)**, and **MySQL**.
 
 ---
 
@@ -19,7 +19,7 @@ I am a **Junior Full-Stack Web Developer**, **Mechanical Engineer**, **Musician*
 **Stack:** React, Typescript, Node.js, MySQL  
 - Full-stack CRUD web application with user authentication.  
 - Backend built using Express.js with a MySQL database.  
-- Frontend developed with React Hooks and styled with HTML5/CSS3.  
+- Frontend developed with React Hooks and styled with HTML5/CSS3.
 - **Highlight:** Interactive like/comment system.
 
 ---
