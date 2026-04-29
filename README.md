@@ -2,18 +2,17 @@
 
 I am a **Full-Stack Developer**, **Mechanical Engineer**, **Musician**, **Sound Engineer** and **Teacher** based in Ioannina, Greece. This portfolio showcases some of the projects I’ve built using technologies like **React**, **Javascript**, **Typescript**, **Node.js**, **PHP (Laravel)**, and **MySQL**.
 
----
-
-## 📂 Projects
+## 📂 Full Stack Platform
 
 ### 🚀 [Eclipse Player](https://eclipseplayer.com/)
-**Stack:** React Native, React, Typescript, Node.js, MySQL  
-- Developed a full-featured mobile music player with secure JWT authentication and a deployed web interface.
-- Built RESTful API endpoints for songs, playlists, and user management using Express.js and MySQL.
-- Implemented dynamic playlist management with add, delete, and drag & drop reorder functionality.
-- **Highlight:** Multi-context audio player with persistent playback and Cloudinary media integration.
+**Stack:** React Native, React, Node.js, Express, MySQL, TypeScript  
+- Built a production-ready full-stack music streaming platform with web and mobile clients
+- Implemented JWT authentication with role-based access control (premium/private users)
+- Designed scalable RESTful APIs for users, playlists, and media management
+- Integrated Cloudinary for optimized media storage and delivery
+- Integrated email notification system using Resend API
 
----
+## 📂 Projects
 
 ### 🚀 [IceCream Vacations](https://icvacations.netlify.app/)
 **Stack:** React, Typescript, Node.js, MySQL  

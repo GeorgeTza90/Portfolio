@@ -10,6 +10,9 @@
 mobile/node_modules/
 mobile/.env
 
+# Exclude Eclipse Desktop App
+eclipse_player/desktop
+
 # ===============================
 # Environment variables
 # ===============================
@@ -55,6 +58,7 @@ Test.txt
 **/src/components/Tests/
 **/temp/
 *_v0.php
+
 
 # Example: exclude specific legacy files
 laravel-commercial-1/app/Http/Controllers/CollectionController_v0.php
