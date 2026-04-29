@@ -4,7 +4,7 @@ I am a **Full-Stack Developer**, **Mechanical Engineer**, **Musician**, **Sound 
 
 ## 📂 Full Stack Platform
 
-### 🚀 [Eclipse Player](https://eclipseplayer.com/)
+### [Eclipse Player](https://eclipseplayer.com/)
 **Stack:** React Native, React, Node.js, Express, MySQL, TypeScript  
 - Built a production-ready full-stack music streaming platform with web and mobile clients
 - Implemented JWT authentication with role-based access control (premium/private users)
