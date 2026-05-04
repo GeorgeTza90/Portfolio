@@ -2,15 +2,15 @@ import styles from "./purchseForm.module.css";
 import Button1 from "../Buttons/Button1";
 import LogoImg from "/assets/logo2.png";
 import { useRef, useState, useEffect } from "react";
-import type { FormEvent, ChangeEvent} from "react";
+import type { ChangeEvent} from "react";
 import { useNavigate } from "react-router-dom";
 import PostService from "../../services/PostService";
+import useTicketPrice from "../../hooks/useTicketPrice";
 
 const NAME_REGEX = /^[A-z]{2,35}$/;
 const EMAIL_REGEX = /^[a-zA-Z0-9._%+-]+@[a-zA-Z0-9.-]+\.[a-zA-Z]{2,}$/;
 
-
-function PurchaseForm() {
+const PurchaseForm = () => {
   const nameRef = useRef<HTMLInputElement>(null);
   const errRef = useRef<HTMLParagraphElement>(null);
   const navigate = useNavigate();
@@ -40,24 +40,11 @@ function PurchaseForm() {
     setPrice("$0.00");
   };
 
-  const handleSubmit = async (e: FormEvent<HTMLFormElement>) => {
+  const handleSubmit = async (e: ChangeEvent<HTMLFormElement>) => {
     e.preventDefault();
-
-    if (!validName || !validEmail) {
-      setErrMsg("Invalid Entry");
-      return;
-    }
-
+    if (!validName || !validEmail) { setErrMsg("Invalid Entry"); return; }
     try {
-      const response = await PostService.postPurchaseData({
-        firstName,
-        lastName,
-        email,
-        ticketType,
-        ticketQuantity,
-      });
-      console.log("Purchasing:", response.data);
-
+      await PostService.postPurchaseData({ firstName, lastName, email, ticketType, ticketQuantity });      
       setSuccess(true);
       resetForm();
     } catch (err: any) {
@@ -67,9 +54,7 @@ function PurchaseForm() {
     }
   };
 
-  useEffect(() => {
-    nameRef.current?.focus();
-  }, []);
+  useEffect(() => nameRef.current?.focus(), []);
 
   useEffect(() => {
     setValidEmail(EMAIL_REGEX.test(email));
@@ -77,44 +62,13 @@ function PurchaseForm() {
   }, [firstName, lastName, email]);
 
   useEffect(() => {
-    let calculatedPrice = 0;
-
-    switch (ticketType) {
-      case "Mars - New Olympus":
-        calculatedPrice = 14199.99 * ticketQuantity;
-        break;
-      case "Europa - Aquatropolis":
-        calculatedPrice = 27599.99 * ticketQuantity;
-        break;
-      case "Titan - Titan Harbor":
-        calculatedPrice = 32299.99 * ticketQuantity;
-        break;
-      case "Enceladus - Crystal Bay":
-        calculatedPrice = 25699.99 * ticketQuantity;
-        break;
-      case "Ganymede - Auroria":
-        calculatedPrice = 20599.99 * ticketQuantity;
-        break;
-      case "Callisto - Stormhaven":
-        calculatedPrice = 13599.99 * ticketQuantity;
-        break;
-      default:
-        calculatedPrice = 0;
-    }
-
-    const formattedPrice = new Intl.NumberFormat("en-US", {
-      style: "currency",
-      currency: "USD",
-    }).format(calculatedPrice);
-
-    setPrice(formattedPrice);
+    const finalPrice = useTicketPrice({ticketType, ticketQuantity});
+    setPrice(finalPrice);
   }, [ticketType, ticketQuantity]);
 
   useEffect(() => {
     if (success) {
-      const timer = setTimeout(() => {
-        navigate("/payment");
-      }, 3000);
+      const timer = setTimeout(() => navigate("/payment"), 3000);
       return () => clearTimeout(timer);
     }
   }, [success, navigate]);

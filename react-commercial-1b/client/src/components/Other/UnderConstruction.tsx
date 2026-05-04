@@ -1,15 +1,9 @@
-import styles from "./Other.module.css";
 import type { JSX } from "react"
+import styles from "./Other.module.css";
 
-interface UnderConstructionProps {
-  slot?: string;
-}
-
-function UnderConstruction({ slot }: UnderConstructionProps): JSX.Element {
+const UnderConstruction = (): JSX.Element => {
   return (
-    <section className={styles.container}>
-      {slot || "This page is under construction."}
-    </section>
+    <section className={styles.container} />      
   );
 }
 

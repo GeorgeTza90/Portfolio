@@ -3,10 +3,6 @@ import db from "../db";
 import bcrypt from "bcrypt";
 import { RowDataPacket } from "mysql2";
 
-export const getRegister = async (_req: Request, res: Response): Promise<void> => {
-  res.json({ heading: "Sign Up" });
-};
-
 export const postRegister = async (req: Request, res: Response): Promise<void> => {
   try {
     const { user, pwd, email } = req.body;

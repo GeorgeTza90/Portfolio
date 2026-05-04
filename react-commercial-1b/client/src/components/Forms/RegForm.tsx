@@ -1,15 +1,15 @@
-import styles from "./regForm.module.css";
-import Button1 from "../Buttons/Button1";
 import { useRef, useState, useEffect } from "react";
-import type { FormEvent } from "react"
+import type { ChangeEvent } from "react"
 import { useNavigate } from "react-router-dom";
 import PostService from "../../services/PostService";
+import Button1 from "../Buttons/Button1";
+import styles from "./regForm.module.css";
 
 const USER_REGEX = /^[A-z][A-z0-9-_]{3,23}$/;
 const PWD_REGEX = /^(?=.*[a-z])(?=.*[A-Z])(?=.*[0-9])(?=.*[!@#$%]).{8,24}$/;
 const EMAIL_REGEX = /^[a-zA-Z0-9._%+-]+@[a-zA-Z0-9.-]+\.[a-zA-Z]{2,}$/;
 
-function RegForm() {
+const RegForm = () => {
   const errRef = useRef<HTMLParagraphElement>(null);
   const navigate = useNavigate();
 
@@ -39,17 +39,12 @@ function RegForm() {
     setEmail("");
   };
 
-  const handleSubmit = async (e: FormEvent<HTMLFormElement>) => {
+  const handleSubmit = async (e: ChangeEvent<HTMLFormElement>) => {
     e.preventDefault();
-    if (!validName || !validPwd || !validMatch || !validEmail) {
-      setErrMsg("Invalid Entry");
-      return;
-    }
+    if (!validName || !validPwd || !validMatch || !validEmail) { setErrMsg("Invalid Entry"); return; }
 
     try {
-      const response = await PostService.postRegisterData(user, pwd, email);
-      console.log("Response Data:", response);
-
+      await PostService.postRegisterData(user, pwd, email);     
       setSuccess(true);
       resetForm();
     } catch (err: any) {
@@ -73,9 +68,7 @@ function RegForm() {
 
   useEffect(() => {
     if (success) {
-      const timer = setTimeout(() => {
-        navigate("/login");
-      }, 3000);
+      const timer = setTimeout(() => navigate("/login"), 3000);
       return () => clearTimeout(timer);
     }
   }, [success, navigate]);

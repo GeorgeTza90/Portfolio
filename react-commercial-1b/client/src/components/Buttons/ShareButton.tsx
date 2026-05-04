@@ -1,25 +1,11 @@
 import { useState} from "react";
-import type {MouseEventHandler} from "react";
+import type { ButtonProps } from "../../types/types";
 
-interface ShareButtonProps {
-  slot?: React.ReactNode;
-  size?: number;
-  disabled?: boolean;
-  onClick?: MouseEventHandler<HTMLButtonElement>;
-}
-
-function ShareButton({
-  slot = "Click Me",
-  size = 3.8,
-  disabled = false,
-  onClick,
-}: ShareButtonProps) {
+const ShareButton = ({ slot = "Click Me", size = 3.8, disabled = false, onClick }: ButtonProps) => {
   const [isHovered, setIsHovered] = useState(false);
 
   const styles: React.CSSProperties = {
-    backgroundImage: isHovered
-      ? "url(/assets/share_hovered.png)"
-      : "url(/assets/share.png)",
+    backgroundImage: isHovered ? "url(/assets/share_hovered.png)" : "url(/assets/share.png)",
     backgroundPosition: "center",
     backgroundRepeat: "no-repeat",
     backgroundSize: `${size}ch`,

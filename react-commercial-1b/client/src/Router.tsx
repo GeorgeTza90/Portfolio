@@ -12,29 +12,28 @@ import LoadingScreen from "./pages/Loading/LoadingScreen.tsx";
 import MainLayout from "./layouts/MainLayout.tsx";
 import useLoading from "./hooks/useLoading";
 
-function AppRouter() {
-  const WithLoading = ({ children }: { children: ReactNode }) => {
-    const loading = useLoading();
-    return loading ? <LoadingScreen /> : <>{children}</>;
-  };
+const AppRouter = () => {
+      const WithLoading = ({ children }: { children: ReactNode }) => {
+          const loading = useLoading();
+          return loading ? <LoadingScreen /> : <>{children}</>;
+      };
 
-  return (
-    <Routes>
-      <Route element={<WithLoading><MainLayout /></WithLoading>}>
-
-      </Route>
-      <Route element={<MainLayout />}>
-        <Route path="/" element={<News />} />
-        <Route path="/destination" element={<Destination />} />
-        <Route path="/about" element={<About />} />
-        <Route path="/contact" element={<Contact />} />
-        <Route path="/purchase" element={<Purchase />} />
-        <Route path="/payment" element={<Payment />} />
-        <Route path="/login" element={<Login />} />
-        <Route path="/register" element={<Register />} />
-      </Route>
-    </Routes>
-  );
+      return (
+          <Routes>
+              <Route element={<WithLoading><MainLayout /></WithLoading>}>
+                  <Route path="/payment" element={<Payment />} />
+              </Route>
+              <Route element={<MainLayout />}>
+                  <Route path="/" element={<News />} />
+                  <Route path="/destination" element={<Destination />} />
+                  <Route path="/about" element={<About />} />
+                  <Route path="/contact" element={<Contact />} />
+                  <Route path="/purchase" element={<Purchase />} />                  
+                  <Route path="/login" element={<Login />} />
+                  <Route path="/register" element={<Register />} />
+              </Route>
+          </Routes>
+    );
 }
 
 export default AppRouter;

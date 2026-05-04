@@ -1,25 +1,14 @@
 import type { JSX } from "react";
 import { useState, useEffect } from 'react';
+import type { CarouselProps } from "../../types/types";
 import styles from './carousel.module.css';
 
-interface CarouselProps {
-  images: string[];
-}
-
-function Carousel({ images }: CarouselProps): JSX.Element {
+const Carousel = ({ images }: CarouselProps): JSX.Element => {
   const [currentIndex, setCurrentIndex] = useState(0);
 
-  const nextSlide = () => {
-    setCurrentIndex((prevIndex) => (prevIndex + 1) % images.length);
-  };
-
-  const prevSlide = () => {
-    setCurrentIndex((prevIndex) => (prevIndex === 0 ? images.length - 1 : prevIndex - 1));
-  };
-  
-  const getRandomInterval = (min: number, max: number): number => {
-    return Math.floor(Math.random() * (max - min + 1) + min);
-  };
+  const nextSlide = () => setCurrentIndex((prevIndex) => (prevIndex + 1) % images.length);
+  // const prevSlide = () => setCurrentIndex((prevIndex) => (prevIndex === 0 ? images.length - 1 : prevIndex - 1));  
+  const getRandomInterval = (min: number, max: number): number => { return Math.floor(Math.random() * (max - min + 1) + min) };
 
   useEffect(() => {
     const interval = setInterval(nextSlide, getRandomInterval(2000, 5000));

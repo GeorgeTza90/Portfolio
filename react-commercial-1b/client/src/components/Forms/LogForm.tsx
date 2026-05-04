@@ -1,12 +1,12 @@
 import { useCookies } from "react-cookie";
 import { useEffect, useState, useRef } from "react";
-import type { FormEvent } from "react";
+import type { ChangeEvent } from "react";
 import { useNavigate } from "react-router-dom";
 import PostService from "../../services/PostService";
 import styles from "./logForm.module.css";
 import Button1 from "../Buttons/Button1.tsx";
 
-function LogForm() {
+const LogForm = () => {
   const errRef = useRef<HTMLParagraphElement>(null);
 
   const navigate = useNavigate();
@@ -18,16 +18,13 @@ function LogForm() {
 
   const [_cookies, setCookies] = useCookies(['auth_token']);
 
-  const handleSubmit = async (e: FormEvent<HTMLFormElement>) => {
+  const handleSubmit = async (e: ChangeEvent<HTMLFormElement>) => {
     e.preventDefault();
 
     try {
-      const response = await PostService.postLoginData(email, password);
-      console.log("Response Data:", response);
-
+      const response = await PostService.postLoginData(email, password);    
       const { token } = response;
       setCookies('auth_token', token);
-
       setSuccess(true);
       setErrMsg("");
     } catch (err) {
@@ -40,10 +37,7 @@ function LogForm() {
 
   useEffect(() => {
     if (success) {
-      const timer = setTimeout(() => {
-        navigate('/');
-      }, 1800);
-
+      const timer = setTimeout(() => navigate('/'), 1800);
       return () => clearTimeout(timer);
     }
   }, [success, navigate]);

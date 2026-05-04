@@ -3,16 +3,14 @@ import { useCookies } from 'react-cookie';
 import PostService from "../../services/PostService";
 import styles from "../../layouts/Nav/nav.module.css";
 
-function LogOutButton() {
+const LogOutButton = () => {
   const navigate = useNavigate();
   const [cookies, , removeCookie] = useCookies(["auth_token"]);
   const token = cookies.auth_token;
 
   const handleLogout = async () => {
     try {
-      const response = await PostService.postLogoutData(token);
-      console.log("Response Data:", response.data);
-
+      await PostService.postLogoutData(token);     
       removeCookie("auth_token", { path: '/' });
       navigate("/login");
     } catch (err) {

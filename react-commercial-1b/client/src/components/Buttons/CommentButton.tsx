@@ -1,14 +1,7 @@
 import { useState } from "react";
-import type { MouseEventHandler } from "react"
+import type { ButtonProps } from "../../types/types";
 
-interface CommentButtonProps {
-  slot?: React.ReactNode;
-  disabled?: boolean;
-  size?: number;
-  onClick?: MouseEventHandler<HTMLButtonElement>;
-}
-
-function CommentButton({ slot = "Click Me", disabled = false, size = 3.8, onClick }: CommentButtonProps) {
+const CommentButton = ({ slot = "Click Me", disabled = false, size = 3.8, onClick }: ButtonProps) => {
   const [isHovered, setIsHovered] = useState(false);
 
   const styles: React.CSSProperties = {

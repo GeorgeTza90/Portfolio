@@ -1,18 +1,16 @@
 import { useEffect, useState, useRef } from "react";
-import type { FormEvent } from "react";
+import type { ChangeEvent } from "react";
 import { useNavigate } from "react-router-dom";
+import type { ContactFormProps } from "../../types/types";
 import PostService from "../../services/PostService";
 import styles from "./contactForm.module.css";
 import Button1 from "../Buttons/Button1";
 
+
 const EMAIL_REGEX = /^[a-zA-Z0-9._%+-]+@[a-zA-Z0-9.-]+\.[a-zA-Z]{2,}$/;
 const PHONE_REGEX = /^[0-9]{10,}$/;
 
-interface ContactFormProps {
-  user?: string | null;
-}
-
-function ContactForm({ user }: ContactFormProps) {
+const ContactForm = ({ user }: ContactFormProps) => {
   const errRef = useRef<HTMLParagraphElement>(null);
   const navigate = useNavigate();
 
@@ -42,30 +40,16 @@ function ContactForm({ user }: ContactFormProps) {
     setMessage("");
   };
 
-  const handleContact = async (e: FormEvent<HTMLFormElement>) => {
+  const handleContact = async (e: ChangeEvent<HTMLFormElement>) => {
     e.preventDefault();
 
-    if (phoneNumber && !validPhoneNumber) {
-      setErrMsg("Invalid phone number format.");
-      return;
-    }
+    if (phoneNumber && !validPhoneNumber) { setErrMsg("Invalid phone number format."); return; }
 
-    if (!firstName || !lastName || !validEmail || !topic || !message) {
-      setErrMsg("Fill in all the form fields marked with *");
-      return;
-    }
+    if (!firstName || !lastName || !validEmail || !topic || !message) { setErrMsg("Fill in all the form fields marked with *"); return; }
 
     try {
-      const response = await PostService.postContactData(
-        firstName,
-        lastName,
-        email,
-        phoneNumber,
-        topic,
-        message
-      );
+      const response = await PostService.postContactData( firstName, lastName, email, phoneNumber, topic, message );
       console.log("Response Data:", response.data);
-
       setSuccess(true);
       resetForm();
     } catch (err: any) {
@@ -86,14 +70,9 @@ function ContactForm({ user }: ContactFormProps) {
   }, [email, phoneNumber, message]);
 
   useEffect(() => {
-    if (user && user !== "Guest") {
-      setEmail(user);
-    }
-
+    if (user && user !== "Guest")  setEmail(user);
     if (success) {
-      const timer = setTimeout(() => {
-        navigate("/");
-      }, 3000);
+      const timer = setTimeout(() =>  navigate("/"), 3000);
       return () => clearTimeout(timer);
     }
   }, [user, success, navigate]);

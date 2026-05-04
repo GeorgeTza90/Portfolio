@@ -1,23 +1,12 @@
 import { useState } from "react";
-import type { JSX } from "react";
 import { useNavigate } from "react-router-dom";
 import { useCookies } from "react-cookie";
-import styles from "./destCard.module.css";
+import type { JSX } from "react";
+import type { DestCardProps } from "../../types/types";
 import Carousel from "../Cards/Carousel";
+import styles from "./destCard.module.css";
 
-interface Destination {
-  id: number;
-  planet: string;
-  city: string;
-  text: string;
-  price: number;
-}
-
-interface DestCardProps {
-  dest: Destination[];
-}
-
-function DestCard({ dest }: DestCardProps): JSX.Element {
+const DestCard = ({ dest }: DestCardProps): JSX.Element => {
   const itemsPerPage = 6;
   const [currentPage, setCurrentPage] = useState<number>(1);
   const indexOfLastItem = currentPage * itemsPerPage;

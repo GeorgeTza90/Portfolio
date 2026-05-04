@@ -1,53 +1,33 @@
 import { useEffect, useState } from "react";
+import type { _Destination, DestinationData } from "../../types/types";
 import GetService from "../../services/GetService";
 import Heading from "../../layouts/Heading/Heading";
 import DestCard from "../../components/Cards/DestCard";
+import ErrorLoad from "../../components/Other/ErrorLoad";
 
-interface Destination {
-  id: number;
-  planet: string;
-  city: string;
-  text: string;
-  price: number;
-}
+const Destination: React.FC = () => {    
+    const [destinations, setDestinations] = useState<_Destination[]>([]);
+    const [error, setError] = useState<string | null>(null);
 
-interface DestinationData {
-  heading: string;
-  destinations: Destination[];
-}
+    useEffect(() => {
+        const fetchData = async () => {
+            try {
+                const data: DestinationData = await GetService.getDestinationData();                                
+                setDestinations(data.destinations);
+            } catch (err) {
+                setError("No Destinations Yet");
+            }
+        };
 
-const Destination: React.FC = () => {
-  const [heading, setHeading] = useState<string>("");
-  const [destinations, setDestinations] = useState<Destination[]>([]);
-  const [error, setError] = useState<string | null>(null);
+        fetchData();
+    }, []);
 
-  useEffect(() => {
-    const fetchData = async () => {
-      try {
-        const data: DestinationData = await GetService.getDestinationData();
-        setHeading(data.heading);
-        setDestinations(data.destinations);
-      } catch (err) {
-        setError("Failed to load data");
-      }
-    };
-
-    fetchData();
-  }, []);
-
-  if (error) {
-    return <div>{error}</div>;
-  }
-
-  return (
-    <>
-      <Heading heading={heading} />
-      <div className="body">
-        <DestCard dest={destinations} />
-      </div>
-      <br /><br />
-    </>
-  );
+    return (<>
+        <Heading heading={"Our Destinations"} />
+        <div className="body">            
+            {error ? (<ErrorLoad error={error} />) : (<DestCard dest={destinations} />)}
+        </div>        
+    </>);
 };
 
 export default Destination;

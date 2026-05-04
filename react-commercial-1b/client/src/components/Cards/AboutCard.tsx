@@ -2,7 +2,7 @@ import type { JSX } from "react";
 import styles from "./destCard.module.css";
 import LogoImg from "/assets/logo3.png";
 
-function AboutCard(): JSX.Element {
+const AboutCard = (): JSX.Element => {
     return (
         <div>
             <div className={styles.card2}>

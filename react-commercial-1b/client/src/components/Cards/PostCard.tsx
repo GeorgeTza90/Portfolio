@@ -1,51 +1,18 @@
 import { useEffect, useState, useRef } from "react";
 import type { JSX } from "react";
+import type { Comment, Like, PostCardProps, Liked as LikedItem } from "../../types/types";
+import PostService from "../../services/PostService";
+import DeleteService from "../../services/DeleteService";
 import CommentButton from "../Buttons/CommentButton";
 import LikeButton from "../Buttons/LikeButton";
 import ShareButton from "../Buttons/ShareButton";
-import CommentsCard from "./CommentsCard";
-import styles from "./postCard.module.css";
-import PostService from "../../services/PostService";
-import DeleteService from "../../services/DeleteService";
-import Carousel from "./PostCardCarousel";
 import SlideButton from "../Buttons/SlideButton";
+import CommentsCard from "./CommentsCard";
+import Carousel from "./PostCardCarousel";
+import styles from "./postCard.module.css";
 
-interface Like {
-  id: number;
-  kind: "post" | "comment";
-  kindID: number;
-  user: string;
-}
 
-interface Comment {
-  id: number;
-  username: string;
-  text: string;
-  kind: string;
-  kindID: number;
-}
-
-interface Post {
-  id: number;
-  label: string;
-  text: string;
-  imgLink: string;
-}
-
-interface LikedItem {
-  id: number | string;
-  liked: boolean;
-  user: string;
-}
-
-interface PostCardProps {
-  posts: Post[];
-  comments: Comment[];
-  user: string;
-  likes: Like[];
-}
-
-function PostCard({ posts, comments, user, likes }: PostCardProps): JSX.Element {
+const PostCard = ({ posts, comments, user, likes }: PostCardProps): JSX.Element => {
   const [postLikes, setPostLikes] = useState<Like[]>([]);
   const [commentLikes, setCommentLikes] = useState<Like[]>([]);
   const [postComments, setPostComments] = useState<Comment[]>([]);
@@ -144,9 +111,9 @@ function PostCard({ posts, comments, user, likes }: PostCardProps): JSX.Element 
             [id]: (prev[id] || 0) + 1,
           }));
 
-          setLiked(prev => [...prev, { id, liked: true, user }]);
+          setLiked(prev => [...prev, { id: Number(id), liked: true, user }]);
         } else {
-          await DeleteService.deleteLikeData(kind, id, user);
+          await DeleteService.deleteLikeData(kind, Number(id), user);
           setLikeCount(prev => ({
             ...prev,
             [id]: Math.max((prev[id] || 1) - 1, 0),
@@ -230,7 +197,7 @@ function PostCard({ posts, comments, user, likes }: PostCardProps): JSX.Element 
           ))}
         </Carousel>
       ) : (
-        <p>No posts yet.</p>
+        <p>Loading Posts...</p>
       )}
     </div>
   );

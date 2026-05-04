@@ -1,12 +1,8 @@
 {
   "compilerOptions": {
     "jsx": "react-jsx",
-    "lib": [
-      "dom",
-      "dom.iterable",
-      "esnext"
-    ],
-    "moduleResolution": "node",
+    "lib": [ "dom", "dom.iterable", "esnext" ],
+    "moduleResolution": "bundler",
     "module": "esnext",
     "target": "es6",
     "esModuleInterop": true,
@@ -14,25 +10,16 @@
     "allowJs": true,
     "strict": true,
     "baseUrl": "./src",
+    "ignoreDeprecations": "6.0",
     "paths": {
-      "@components/*": [
-        "components/*"
-      ],
-      "@layouts/*": [
-        "layouts/*"
-      ],
-      "@services/*": [
-        "services/*"
-      ]
+      "@components/*": ["components/*"],
+      "@layouts/*": ["layouts/*"],
+      "@services/*": ["services/*"]
     }
   },
   "files": [],
   "references": [
-    {
-      "path": "./tsconfig.app.json"
-    },
-    {
-      "path": "./tsconfig.node.json"
-    }
+    { "path": "./tsconfig.app.json" },
+    { "path": "./tsconfig.node.json" }
   ]
 }

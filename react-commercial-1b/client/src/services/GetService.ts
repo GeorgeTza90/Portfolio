@@ -1,9 +1,8 @@
 import axios, { AxiosHeaders } from "axios";
 import type { AxiosInstance, AxiosRequestHeaders } from "axios";
-import type { NewsData, AboutData, DestinationData } from "../types/types.ts";
+import type { NewsData, DestinationData } from "../types/types.ts";
 
-const API_URL = import.meta.env.VITE_API_URL || 'https://icvacations.up.railway.app';
-
+const API_URL = import.meta.env.VITE_API_URL;
 
 class GetService {
   private api: AxiosInstance;
@@ -29,11 +28,6 @@ class GetService {
     return this.getData<DestinationData>("/destination", {}, err);
   }
 
-  async getAboutData(): Promise<AboutData> {
-    const err = "Error fetching about data:";
-    return this.getData<AboutData>("/about", {}, err);
-  }
-
   async getContactData(authToken?: string): Promise<any> { // define proper type when you know the shape
     const headers: AxiosRequestHeaders | undefined = authToken
       ? new AxiosHeaders({ Authorization: `Bearer ${authToken}` })
@@ -41,26 +35,6 @@ class GetService {
 
     const err = "Error fetching contact data:";
     return this.getData<any>("/contact", { headers }, err);
-  }
-
-  async getLoginData(): Promise<any> {
-    const err = "Error fetching login data:";
-    return this.getData<any>("/login", {}, err);
-  }
-
-  async getRegisterData(): Promise<any> {
-    const err = "Error fetching register data:";
-    return this.getData<any>("/register", {}, err);
-  }
-
-  async getPurchaseData(): Promise<any> {
-    const err = "Error fetching purchase data:";
-    return this.getData<any>("/purchase", {}, err);
-  }
-
-  async getPaymentData(): Promise<any> {
-    const err = "Error fetching payment data:";
-    return this.getData<any>("/payment", {}, err);
   }
 
   private async getData<T>(

@@ -13,18 +13,19 @@ const pool = mysql.createPool({
   waitForConnections: true,
   connectionLimit: 10,
   queueLimit: 0,
-  ssl: {
-    rejectUnauthorized: false
-  }
+  ssl: { rejectUnauthorized: false }
 });
 
-pool.getConnection()
-  .then(connection => {
+const checkConnection = async () => {
+  try {
+    const connection = await pool.getConnection();
     console.log("Connected to MySQL Database");
-    connection.release();
-  })
-  .catch(err => {
-    console.error("Database connection failed:", err);
-  });
+    connection.release
+  } catch (err) {
+    console.log("Database Connection Failed:", err);
+  }
+}
+
+checkConnection();
 
 export default pool;

@@ -1,7 +1,7 @@
 import { useState, useEffect } from "react";
 import { useLocation } from "react-router-dom";
 
-const useLoading = (delay: number = 800): boolean => {
+export default function useLoading(delay: number = 800): boolean {
   const [loading, setLoading] = useState<boolean>(false);
   const location = useLocation();
 
@@ -16,5 +16,3 @@ const useLoading = (delay: number = 800): boolean => {
 
   return loading;
 };
-
-export default useLoading;

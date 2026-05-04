@@ -1,22 +1,9 @@
 import { useState } from "react";
-import type { JSX, MouseEventHandler } from "react";
 import { Link } from "react-router-dom";
+import type { JSX } from "react";
+import type { ButtonProps } from "../../types/types";
 
-interface NavButtonProps {
-  slot?: React.ReactNode;
-  size?: number;
-  to: string;
-  image?: string;
-  onClick?: MouseEventHandler<HTMLAnchorElement>;
-}
-
-function NavButton({
-  slot = "Click Me",
-  size = 3.8,
-  to = "/",
-  image = "home",
-  onClick,
-}: NavButtonProps): JSX.Element {
+const NavButton = ({ slot = "Click Me", size = 3.8, to = "/", image = "home", onClick}: ButtonProps): JSX.Element => {
     const [isHovered, setIsHovered] = useState(false);
 
     const styles: React.CSSProperties = {
@@ -48,7 +35,7 @@ function NavButton({
             onClick={onClick}
 
         >
-        {slot}
+            {slot}
         </Link>
     );
 }

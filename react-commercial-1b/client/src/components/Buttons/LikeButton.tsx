@@ -1,25 +1,12 @@
-import type {JSX, MouseEventHandler} from "react"
 import { useState } from "react";
+import type { JSX } from "react"
+import type { ButtonProps } from "../../types/types";
 
-interface LikeButtonProps {
-    slot?: React.ReactNode;
-    disabled?: boolean;
-    size?: number;
-    onClick?: MouseEventHandler<HTMLButtonElement>;
-}
-
-function LikeButton({
-    slot = "Click Me",
-    disabled = false,
-    size = 3.8,
-    onClick,
-}: LikeButtonProps): JSX.Element {
+const LikeButton = ({ slot = "Click Me", disabled = false, size = 3.8, onClick  }: ButtonProps): JSX.Element => {
     const [isHovered, setIsHovered] = useState(false);
 
     const styles: React.CSSProperties = {
-        backgroundImage: isHovered
-            ? "url(/assets/heart_hovered.png)"
-            : "url(/assets/heart.png)",
+        backgroundImage: isHovered ? "url(/assets/heart_hovered.png)" : "url(/assets/heart.png)",
         backgroundPosition: "center",
         backgroundRepeat: "no-repeat",
         backgroundSize: `${size}ch`,

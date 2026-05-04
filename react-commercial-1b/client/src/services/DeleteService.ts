@@ -2,7 +2,7 @@ import axios, { AxiosHeaders } from "axios";
 import type { AxiosInstance, AxiosRequestHeaders } from "axios";
 import type { DeleteLikeDataParams } from "../types/types.ts";
 
-const API_URL = import.meta.env.VITE_API_URL || 'https://icvacations.up.railway.app';
+const API_URL = import.meta.env.VITE_API_URL;
 
 class DeleteService {
   private api: AxiosInstance;
@@ -14,7 +14,7 @@ class DeleteService {
     });
   }
 
-  async deleteLikeData(kind: string, id: string | number, user: string): Promise<any> {
+  async deleteLikeData(kind: string, id: number, user: string): Promise<any> {
     const data: DeleteLikeDataParams = { kind, id, user };
     const headers: AxiosRequestHeaders = new AxiosHeaders({ "Content-Type": "application/json" });
     const err = `Cannot like/unlike this ${kind}`;

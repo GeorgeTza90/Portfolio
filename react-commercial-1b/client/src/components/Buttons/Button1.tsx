@@ -1,13 +1,7 @@
 import { useState } from "react";
-import type { MouseEventHandler, ReactNode} from "react";
+import type { ButtonProps } from "../../types/types";
 
-interface Button1Props {
-  slot?: ReactNode;
-  disabled?: boolean;
-  onClick?: MouseEventHandler<HTMLButtonElement>;
-}
-
-function Button1({ slot = "Click Me", disabled, onClick }: Button1Props) {
+const Button1 = ({ slot = "Click Me", disabled, onClick }: ButtonProps) => {
   const [isHovered, setIsHovered] = useState(false);
 
   const styles = {

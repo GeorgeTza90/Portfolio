@@ -2,7 +2,7 @@ import axios, { AxiosHeaders } from "axios";
 import type { AxiosInstance } from "axios";
 import type { PurchaseData } from "../types/types.ts";
 
-const API_URL = import.meta.env.VITE_API_URL || 'https://icvacations.up.railway.app';
+const API_URL = import.meta.env.VITE_API_URL;
 
 class PostService {
   private api: AxiosInstance;

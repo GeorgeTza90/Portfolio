@@ -5,21 +5,21 @@
   font-family: Arial, Helvetica, sans-serif;
   text-align: center;
   width: auto;
-
   left: 0;
 }
 
-body {
-  /* background-color: #1c1b1a; */
+body {  
   background-color: rgba(7, 22, 19, 0.062);
 }
 
+#errorDiv {
+  margin-top: 5rem;
+}
 
 
 @media (max-width: 768px) {
   body {
-    margin-bottom: 250px;
-    /* max-width: 67.5%; */
+    margin-bottom: 250px;    
   }
 
   .main {
