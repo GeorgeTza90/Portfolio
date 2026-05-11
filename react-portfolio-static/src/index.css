@@ -27,3 +27,34 @@ body {
   min-height: 100vh;
   background-color: #111111;
 }
+
+.contactIcon {
+    display: block;
+    width: 2.8rem;
+    height: 2.8rem;
+    margin: 2rem 1rem;
+    background-size: contain;
+    background-repeat: no-repeat;
+    background-position: center;
+    cursor: pointer;
+    transition: opacity 0.30s;
+    opacity: 50%;
+    
+}
+
+.contactIcon:hover {
+    opacity: 100%;
+    transition: opacity 1s;
+}
+
+.gitHub {
+    background-image: url("/icons/github.png");
+}
+
+.LinkedIn {
+    background-image: url("/icons/linkedin.png");
+}
+
+.mail {
+    background-image: url("/icons/mail.png");
+}

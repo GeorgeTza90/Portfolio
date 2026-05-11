@@ -133,6 +133,14 @@
     position: relative;
 }
 
+.LinksDiv {
+    display: column;    
+    height: 100%;
+    width: 5rem;
+    background-color: #000000c6;
+    box-shadow: 10px 1px 20px #00000096;
+}
+
 @media (max-width: 720px) {
     .overlay {
         overflow: hidden;

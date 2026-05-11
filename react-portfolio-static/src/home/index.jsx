@@ -6,7 +6,7 @@ import Footer from "../components/Footer.jsx";
 
 function Home() {
     return (
-        <>
+        <>  
             <Header />
             <PortfolioPages />
             <PortfolioAnimations />
