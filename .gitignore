@@ -55,6 +55,8 @@ Test.txt
 
 # Old or test files
 react-commercial-1/
+eclipse_player/desktop/
+angular-portfolio-static/
 **/src/components/Tests/
 **/temp/
 *_v0.php
