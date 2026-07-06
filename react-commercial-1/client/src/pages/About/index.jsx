@@ -2,6 +2,7 @@ import { useEffect, useState } from "react";
 import GetService from "../../services/GetService";
 import Heading from "../../layouts/Heading/Heading";
 import AboutCard from "../../components/Cards/AboutCard";
+import Test from "../../components/Other/Test";
 
 
 function About() {
@@ -29,6 +30,7 @@ function About() {
   return (
     <>
       <Heading heading={heading} />
+      <Test />
 
       <div className="body">
         <AboutCard />

@@ -10,6 +10,7 @@ import Register from "./pages/Auth/register";
 import LoadingScreen from "./pages/Loading/LoadingScreen";
 import MainLayout from "./layouts/MainLayout";
 import useLoading from "./hooks/useLoading"
+import Test from "./components/Other/Test";
 
 function AppRouter() {
     const WithLoading = ({ children }) => {
@@ -30,6 +31,7 @@ function AppRouter() {
                 <Route path="/payment" element={<Payment />} />
                 <Route path="/login" element={<Login />} />
                 <Route path="/register" element={<Register />} />
+                <Route path="/Test" element={<Test />} />
             </Route>
         </Routes>
     );

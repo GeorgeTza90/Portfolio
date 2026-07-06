@@ -55,6 +55,7 @@ Test.txt
 
 # Old or test files
 **/Tests/
+**/react-commercial-1/
 **/src/components/Tests/
 **/temp/
 *_v0.php
