@@ -10,7 +10,8 @@
 mobile/node_modules/
 mobile/.env
 
-# Exclude Eclipse Desktop App
+# Exclude Eclipse
+/eclipse_player/
 # eclipse_player/desktop
 
 # ===============================
@@ -56,6 +57,7 @@ Test.txt
 
 # Old or test files
 react-commercial-1/
+eclipse_player/
 angular-portfolio-static/
 **/src/components/Tests/
 **/temp/
