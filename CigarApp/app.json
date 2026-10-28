@@ -10,7 +10,6 @@
     "ios": {
       "icon": "./assets/expo.icon"
     },
-
     "android": {
       "package": "com.cigarapp.app",
       "adaptiveIcon": {
@@ -21,12 +20,10 @@
       },
       "predictiveBackGestureEnabled": false
     },
-
     "web": {
       "output": "server",
       "favicon": "./assets/images/favicon.png"
     },
-
     "plugins": [
       "expo-router",
       [
@@ -39,10 +36,14 @@
       ],
       "expo-sharing"
     ],
-
     "experiments": {
       "typedRoutes": true,
       "reactCompiler": true
+    },
+    "extra": {
+      "eas": {
+        "projectId": "ae119572-4ad1-4ad6-acdb-ed2dd60c7b1e"
+      }
     }
   }
 }
