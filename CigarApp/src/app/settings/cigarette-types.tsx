@@ -1,5 +1,5 @@
 import { useEffect, useState } from "react";
-import { ActivityIndicator, ScrollView, StyleSheet, View } from "react-native";
+import { ScrollView, StyleSheet, View } from "react-native";
 import { useAppColors } from "@/constants/app-colors";
 import useCigaretteTypes from "@/hooks/useCigaretteTypes";
 import CigaretteTypeCard from "@/components/cards/CigaretteTypeCard";
@@ -7,6 +7,7 @@ import CigaretteTypeModal from "@/components/modals/CigaretteTypeModal";
 import AddTypeButton from "@/components/buttons/AddTypeButton";
 import EmptyCigaretteTypes from "@/components/empty-states/EmptyCigaretteTypes";
 import ScreenHeader from "@/components/headers/ScreenHeader";
+import LoaderCircle from "@/components/loaders/LoaderCircle";
 
 export default function CigaretteTypesScreen() {
   const colors = useAppColors();
@@ -58,11 +59,7 @@ export default function CigaretteTypesScreen() {
       </View>
 
       {loading ? (
-        <ActivityIndicator
-          size="large"
-          color={colors.accent}
-          style={styles.loader}
-        />
+        <LoaderCircle />
       ) : (
         <ScrollView
           contentContainerStyle={styles.list}
@@ -107,9 +104,6 @@ const styles = StyleSheet.create({
     alignItems: "center",
     justifyContent: "space-between",
     marginBottom: 28,
-  },
-  loader: {
-    marginTop: 50,
   },
   list: {
     paddingBottom: 32,

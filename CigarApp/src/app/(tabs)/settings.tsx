@@ -1,22 +1,19 @@
-import { Text, StyleSheet, Alert } from "react-native";
+import { Alert } from "react-native";
 import { router } from "expo-router";
-import { useAppColors } from "@/constants/app-colors";
 import ScreenLayout from "@/components/ScreenLayout";
 import SettingItem from "@/components/items/SettingItem";
 import AboutAppCard from "@/components/cards/AboutAppCard";
+import HeadingText from "@/components/headers/HeadingText";
+import Footer from "@/components/headers/Footer";
 import useBackup from "@/hooks/useBackup";
 
 export default function SettingsScreen() {
-  const colors = useAppColors();
-
   const { backupLoading, handleExportBackup, handleRestoreBackup } =
     useBackup();
 
   return (
     <ScreenLayout title="Ρυθμίσεις">
-      <Text style={[styles.sectionTitle, { color: colors.secondary }]}>
-        ΠΡΟΣΩΠΟΠΟΙΗΣΗ
-      </Text>
+      <HeadingText text="ΠΡΟΣΩΠΟΠΟΙΗΣΗ" />
 
       <SettingItem
         icon="flame-outline"
@@ -25,15 +22,7 @@ export default function SettingsScreen() {
         onPress={() => router.push("/settings/cigarette-types")}
       />
 
-      <Text
-        style={[
-          styles.sectionTitle,
-          styles.sectionGap,
-          { color: colors.secondary },
-        ]}
-      >
-        ΔΕΔΟΜΕΝΑ
-      </Text>
+      <HeadingText text="ΔΕΔΟΜΕΝΑ" />
 
       <SettingItem
         icon="cloud-upload-outline"
@@ -64,39 +53,11 @@ export default function SettingsScreen() {
         }
       />
 
-      <Text
-        style={[
-          styles.sectionTitle,
-          styles.sectionGap,
-          { color: colors.secondary },
-        ]}
-      >
-        ΕΦΑΡΜΟΓΗ
-      </Text>
+      <HeadingText text="ΕΦΑΡΜΟΓΗ" />
 
       <AboutAppCard />
 
-      <Text style={[styles.footer, { color: colors.secondary }]}>
-        Απλό. Προσωπικό. Οργανωμένο.
-      </Text>
+      <Footer text="Απλό. Προσωπικό. Οργανωμένο." />
     </ScreenLayout>
   );
 }
-
-const styles = StyleSheet.create({
-  sectionTitle: {
-    fontSize: 11,
-    fontWeight: "700",
-    letterSpacing: 1.4,
-    marginBottom: 12,
-    marginLeft: 4,
-  },
-  sectionGap: {
-    marginTop: 12,
-  },
-  footer: {
-    textAlign: "center",
-    fontSize: 12,
-    marginTop: 28,
-  },
-});
